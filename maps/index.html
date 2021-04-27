@@ -190,18 +190,25 @@ title: "Maps"
             if (country.fields.mostRecentEducationStatusCode.length > 1) {
               country.modalityMapClass = 'modality-multiple';
               country.modalityText = "Mixed / Multiple";
-            } else if (country.fields.mostRecentEducationStatusCode.includes('1')) {
-              country.modalityMapClass = 'modality-covid-closure';
-              country.modalityText = "Closed due to COVID-19";
-            } else if (country.fields.mostRecentEducationStatusCode.includes('2')) {
-              country.modalityMapClass = 'modality-remote';
-              country.modalityText = 'Remote';
-            } else if (country.fields.mostRecentEducationStatusCode.includes('3')) {
-              country.modalityMapClass = "modality-hybrid";
-              country.modalityText = "Hybrid"
-            } else if (country.fields.mostRecentEducationStatusCode.includes('4')) {
-              country.modalityMapClass = 'modality-in-person';
-              country.modalityText = 'In person';
+            } else {
+              switch (country.fields.mostRecentEducationStatusCode[0]) {
+                case '1':
+                  country.modalityMapClass = 'modality-covid-closure';
+                  country.modalityText = "Closed due to COVID-19";
+                break
+                case '2':
+                  country.modalityMapClass = 'modality-remote';
+                  country.modalityText = 'Remote';
+                break
+                case '3':
+                  country.modalityMapClass = "modality-hybrid";
+                  country.modalityText = "Hybrid"
+                break
+                case '4':
+                  country.modalityMapClass = 'modality-in-person';
+                  country.modalityText = 'In person';
+                break
+              }
             }
           } else {
             country.modalityText = 'Unknown / no data';
