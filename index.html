@@ -45,8 +45,8 @@ libraries:
   </head>
   </head>
   <body>
+    {% include /global-tracker-navbar.html %}
     <div id="main" class="d-flex flex-column align-items-stretch">
-      {% include /global-tracker-navbar.html %}
       <div class="container-fluid">
         <div id="main-carousel" class="carousel slide" data-bs-ride="carousel" style="max-height: 80vh;">
           <!-- <div class="carousel-indicators">
@@ -54,11 +54,11 @@ libraries:
           </div> -->
           <div class="carousel-inner" style="background-color: #494949;">
             <div id="hero-image-container" class="carousel-item text-center active">
-              <div class="carousel-caption d-none d-md-block text-dark bg-light">
+              <div class="carousel-caption text-dark bg-light">
                 <h2>COVID-19 Global Education Recovery Tracker </h2>
                 <p><i>Monitoring the impact of the COVID-19 pandemic on response and recovery for students across the globe</i></p>
-                <a class="btn btn-primary" href="/stories/2021-03-26-new-global-tracker/">Read our launch announcement</a> 
-                <a class="btn btn-primary" href="/maps">See our maps</a>
+                <a class="btn btn-primary my-1 mx-1" href="/stories/2021-03-26-new-global-tracker/">Read our launch announcement</a> 
+                <a class="btn btn-primary my-1 mx-1" href="/maps">See our maps</a>
               </div>
             </div>
           </div>
@@ -73,6 +73,7 @@ libraries:
         </div>
       </div>
     </div>
+    <div class="spacer-10"></div>
     <section id="about">
       <div>
         <h2>About this site</h2>

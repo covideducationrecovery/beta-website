@@ -17,6 +17,8 @@ libraries:
   <body>
     {% include global-tracker-navbar.html %}
 
+    <div class="spacer-5"></div>
+
     <div id="vue-app" class="container-fluid" v-cloak>
       <div class="d-flex flex-row justify-content-between align-items-center">
         <h1>Country Details</h1>
@@ -85,12 +87,15 @@ libraries:
           </tr>
         </tbody>
       </table>
+      <div class="spacer-5"></div>
+
       <div class="container">
         To cite this work, use the following: Johns Hopkins University, World Bank & UNICEF (2021). COVID-19 Global Education Recovery Tracker. Last updated as of ${mostRecentResponseDate | iso8601ToLocaleDateString}. Baltimore, Washington DC, New York: JHU, World Bank, UNICEF. 
       </div>
 
     </div>
 
+    <div class="spacer-10"></div>
 
     <script>
 
