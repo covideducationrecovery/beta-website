@@ -12,7 +12,6 @@ title: "Graphs"
     {% include global-tracker-html-head.html %}
     <style>
       svg {fill: #DDDDDD;}
-      {% include /worldmap.css %}
       .support-targeted {fill: #1A49BF;}
       .support-tutoring-volunteer {fill: #000000;}
       .support-tutoring {fill: #26B1FF;}
@@ -42,7 +41,7 @@ title: "Graphs"
    <div id="vue-app" class="container mb-5">
     <h1>Graphs</h1>
     <div class="row text-center my-3">
-      <h2>In-Person Educational Support Strategies</h2>
+      <h2>In-Person Educational Supports</h2>
       <p>For systems where schools are open for in-person education, what additional educational support is being offered to mitigate learning loss among students?</p>
       <div id="observablehq-viewof-Data_Type-fc38e864" style="width: 50%;" ></div>
       <div id="observablehq-chart-fc38e864" style="width: 100%;"></div>
@@ -58,32 +57,28 @@ title: "Graphs"
           </thead>
           <tbody>
             <tr>
-              <td><svg class="support-targeted graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-              <td class="text-start"><strong>Targeted Remedial Measures for Specific Groups</strong>:  Interventions are offered as additional supports for targeted students or groups</td>
-            </tr>
-            <tr>
-              <td><svg class="support-tutoring-volunteer graph-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-              <td class="text-start"><strong>Additional Tutoring by Volunteer/Non-Profit Organizations</strong>:	Tutoring offered as a support or remediation strategy by volunteers to support available in-country learning options for vulnerable students.</td>
-            </tr>
-            <tr>
-              <td><svg class="support-tutoring graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-              <td class="text-start"><strong>Additional Tutoring by Teachers</strong>: Tutoring offered as a support or remediation strategy by teachers to support available in-country learning options for vulnerable students. </td>
+              <td><svg class="support-school-day graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+              <td class="text-start"><strong>Changes in School Day</strong>:  The school day is extended, contracted, or otherwise adjusted to accommodate loss of schooling.</td>
             </tr>
             <tr>
               <td><svg class="support-school-year graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
               <td class="text-start"><strong>Changes in School Year Calendar</strong>: The school year calendar is extended, contracted, or otherwise adjusted to accommodate loss of schooling. </td>
             </tr>
             <tr>
-              <td><svg class="support-school-day graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-              <td class="text-start"><strong>Changes in School Day</strong>:  The school day is extended, contracted, or otherwise adjusted to accommodate loss of schooling.</td>
+              <td><svg class="support-tutoring graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+              <td class="text-start"><strong>Additional Tutoring by Teachers</strong>: Tutoring offered as a support or remediation strategy by teachers to support available in-country learning options for vulnerable students. </td>
+            </tr>
+            <tr>
+              <td><svg class="support-tutoring-volunteer graph-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+              <td class="text-start"><strong>Additional Tutoring by Volunteer/Non-Profit Organizations</strong>:	Tutoring offered as a support or remediation strategy by volunteers to support available in-country learning options for vulnerable students.</td>
+            </tr>
+            <tr>
+              <td><svg class="support-targeted graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+              <td class="text-start"><strong>Targeted Remedial Measures for Specific Groups</strong>:  Interventions are offered as additional supports for targeted students or groups</td>
             </tr>
             <tr>
               <td><svg class="support-other graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
               <td class="text-start"><strong>Other</strong>:	Other academic supports not listed above.</td>
-            </tr>
-            <tr>
-              <td><svg class="support-no-data graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-              <td class="text-start"><strong>Unknown/Data Not Available</strong>: Unable to validate or locate information about additional supports. </td>
             </tr>
           </tbody>
         </table>
@@ -91,8 +86,8 @@ title: "Graphs"
     </div>
     <hr />
     <div class="row text-center my-3">
-      <h2>Remote Educational Modalities</h2>
-      <p>For those learning remotely, what teaching modalities are employed?</p>
+      <h2>Remote Educational Supports</h2>
+      <p>For those learning remotely, how is education provided?</p>
       <div id="observablehq-viewof-Data_Type-fc38e8642" style="width: 50%;" ></div>
       <div id="observablehq-chart-fc38e8642" style="width: 100%;"></div>
       <div class="my-3">
@@ -108,32 +103,28 @@ title: "Graphs"
           </thead>
           <tbody>
             <tr>
-              <td><svg class="modality-tutoring graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-              <td class="text-start"><strong>Tutoring</strong>:  Tutoring offered as a support or remediation strategy. </td>
-            </tr>
-            <tr>
-              <td><svg class="modality-paper-packets graph-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-              <td class="text-start"><strong>Take Home Packages (paper-based)</strong>:	Education is provided by distributing take home curriculum packages to students.</td>
-            </tr>
-            <tr>
-              <td><svg class="modality-mobile graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-              <td class="text-start"><strong>Mobile Devices</strong>: Education is provided through cellular phones and/or tablets.  </td>
-            </tr>
-            <tr>
-              <td><svg class="modality-radio graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-              <td class="text-start"><strong>Radio</strong>: Education is provided by broadcasting instruction through radio.  </td>
+              <td><svg class="modality-online graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+              <td class="text-start"><strong>Online Platforms</strong>:	Education is provided through synchronous or asynchronous online platforms. </td>
             </tr>
             <tr>
               <td><svg class="modality-television graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
               <td class="text-start"><strong>Television</strong>:  Education is provided by broadcasting instruction through television programs or education-designated channels. </td>
             </tr>
             <tr>
-              <td><svg class="modality-online graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-              <td class="text-start"><strong>Online Platforms</strong>:	Education is provided through synchronous or asynchronous online platforms. </td>
+              <td><svg class="modality-radio graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+              <td class="text-start"><strong>Radio</strong>: Education is provided by broadcasting instruction through radio.  </td>
             </tr>
             <tr>
-              <td><svg class="modality-no-data graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-              <td class="text-start"><strong>Unknown/Data Not Available</strong>: Unable to validate or locate information about remote learning modalities through in-country representatives or publicly available data.  </td>
+              <td><svg class="modality-mobile graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+              <td class="text-start"><strong>Mobile Devices</strong>: Education is provided through cellular phones and/or tablets.  </td>
+            </tr>
+            <tr>
+              <td><svg class="modality-paper-packets graph-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+              <td class="text-start"><strong>Take Home Packages (paper-based)</strong>:	Education is provided by distributing take home curriculum packages to students.</td>
+            </tr>
+            <tr>
+              <td><svg class="modality-tutoring graph-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+              <td class="text-start"><strong>Tutoring</strong>:  Tutoring offered as a support or remediation strategy. </td>
             </tr>
           </tbody>
         </table>
