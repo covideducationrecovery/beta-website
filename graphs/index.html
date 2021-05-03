@@ -32,6 +32,10 @@ title: "Graphs"
       /* .graph-key {display: flex; flex-flow: row nowrap; align-items: center; justify-content: center; font-size: small;} */
       .graph-key-color {height: 2rem; width: 2rem; margin: 0.2rem;}
     </style>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
     {% include global-tracker-navbar.html %}
@@ -41,10 +45,46 @@ title: "Graphs"
     <div id="vue-app" class="container mb-5">
       <h1>Graphs</h1>
       <div class="row text-center my-3">
+
+
         <h2>In-Person Educational Supports</h2>
         <p>For systems where schools are open for in-person education, what additional educational support is being offered to mitigate learning loss among students?</p>
-        <div id="observablehq-viewof-Data_Type-fc38e864" style="width: 50%;" ></div>
-        <div id="observablehq-chart-fc38e864" style="width: 100%;"></div>
+        <div class="container">
+          <ul class="nav nav-pills nav-justified">
+            <li class="active"><a data-toggle="pill" href="#individual1">Individual</a></li>
+            <li><a data-toggle="pill" href="#all1">All</a></li>
+          </ul>
+          
+          <div class="tab-content">
+            <div id="individual1" class="tab-pane fade in active">
+              <h3>Individual Grade Levels</h3>
+              <div id="observablehq-viewof-Data_Type-fc38e864" style="width: 50%;" ></div>
+              <div id="observablehq-chart-fc38e864" style="width: 100%;"></div>
+            </div>
+            <div id="all1" class="tab-pane fade">
+              <h3>All Grade Levels</h3>
+              <hr>
+              <h4>Pre Primary</h4>
+              <div id="observablehq-chart1-d9de13b5"></div>
+              <hr>
+              <h4>Primary</h4>
+              <div id="observablehq-chart2-d9de13b5"></div>
+              <hr>
+              <h4>Lower Secondary</h4>
+              <div id="observablehq-chart3-d9de13b5"></div>
+              <hr>
+              <h4>Upper Secondary</h4>
+              <div id="observablehq-chart4-d9de13b5"></div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        
+        
         <div class="my-3">
           This graph displays additional academic supports to mitigate learning loss for schools that are open for in-person education. Data is displayed by regional level and grade level as of the last survey response
         </div>
@@ -90,8 +130,47 @@ title: "Graphs"
       <div class="row text-center my-3">
         <h2>Remote Educational Supports</h2>
         <p>For those learning remotely, how is education provided?</p>
-        <div id="observablehq-viewof-Data_Type-fc38e8642" style="width: 50%;" ></div>
-        <div id="observablehq-chart-fc38e8642" style="width: 100%;"></div>
+
+        <div class="container">
+          <ul class="nav nav-pills nav-justified">
+            <li class="active"><a data-toggle="pill" href="#individual2">Individual</a></li>
+            <li><a data-toggle="pill" href="#all2">All</a></li>
+          </ul>
+          
+          <div class="tab-content">
+            <div id="individual2" class="tab-pane fade in active">
+              <h3>Individual Grade Levels</h3>
+              <div id="observablehq-viewof-Data_Type-fc38e8642" style="width: 50%;" ></div>
+              <div id="observablehq-chart-fc38e8642" style="width: 100%;"></div>
+            </div>
+            <div id="all2" class="tab-pane fade">
+              <h3>All Grade Levels</h3>
+              <hr>
+              <h4>Pre Primary</h4>
+              <div id="observablehq-chart1-33081867" style="width: 100%;"></div>
+              <hr>
+              <h4>Primary</h4>
+              <div id="observablehq-chart2-33081867" style="width: 100%;"></div>
+              <hr>
+              <h4>Lower Secondary</h4>
+              <div id="observablehq-chart3-33081867" style="width: 100%;"></div>
+              <hr>
+              <h4>Upper Secondary</h4>
+              <div id="observablehq-chart4-33081867" style="width: 100%;"></div>
+              <hr>
+              <h4>Higher Education</h4>
+              <div id="observablehq-chart5-33081867" style="width: 100%;"></div>
+              <hr>
+              <h4>Technical</h4>
+              <div id="observablehq-chart6-33081867" style="width: 100%;"></div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        
         <div class="my-3">
           This graph displays remote learning modalities at the regional level and grade level offered in each country as of the last survey response. 
           <br />
@@ -165,7 +244,11 @@ title: "Graphs"
     const runtime = new Runtime(library);
     const main = runtime.module(notebook, name => {
         if (name === "chart") return new Inspector(chart);
-  if (name === "viewof Data_Type") return new Inspector(chart_selector);
+        if (name === "chart1") return new Inspector(document.querySelector("#observablehq-chart1-d9de13b5"));
+        if (name === "chart2") return new Inspector(document.querySelector("#observablehq-chart2-d9de13b5"));
+        if (name === "chart3") return new Inspector(document.querySelector("#observablehq-chart3-d9de13b5"));
+        if (name === "chart4") return new Inspector(document.querySelector("#observablehq-chart4-d9de13b5"));
+        if (name === "viewof Data_Type") return new Inspector(chart_selector);
   return ["data","x0","test","y","yAxis","groupKey","keys","x1","xAxis"].includes(name);
     });
     
@@ -223,6 +306,55 @@ title: "Graphs"
     }));
     
     </script>
+
+
+
+<script type="module">
+
+  import {Runtime, Inspector, Library} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+  import notebook from "https://api.observablehq.com/@camdens/grouped-bar-chart-s2q4-all.js?v=3";
+  
+  // Select the element to scale off of
+  const chart = document.querySelector("#observablehq-chart-fc38e864");
+  // Instantiate a standard library that can be used by the definition of width below.
+  const library = new Library();
+  
+  // Pass the custom library to the runtime when instantiating our notebook.
+  const runtime = new Runtime(library);
+  const main = runtime.module(notebook, name => {
+    if (name === "chart1") return new Inspector(document.querySelector("#observablehq-chart1-33081867"));
+    if (name === "chart2") return new Inspector(document.querySelector("#observablehq-chart2-33081867"));
+    if (name === "chart3") return new Inspector(document.querySelector("#observablehq-chart3-33081867"));
+    if (name === "chart4") return new Inspector(document.querySelector("#observablehq-chart4-33081867"));
+    if (name === "chart5") return new Inspector(document.querySelector("#observablehq-chart5-33081867"));
+    if (name === "chart6") return new Inspector(document.querySelector("#observablehq-chart6-33081867"));
+return ["data","x0","test","y","yAxis","groupKey","keys","x1","xAxis"].includes(name);
+  });
+  
+  // Redefine width as a generator that yields the chart element’s clientWidth (if
+  // changed) whenever the window resize event fires. If desired, use a
+  // ResizeObserver instead; see the custom-fluid-width-and-height example.
+  main.redefine("width", library.Generators.observe(notify => {
+    let width = notify(chart.clientWidth); // initial width
+    function resized() {
+      let newWidth = chart.clientWidth;
+      if (newWidth !== width) {
+        notify(width = newWidth);
+      }
+    }
+    addEventListener("resize", resized);
+    return () => removeEventListener("resize", resized);
+  }));
+  
+  </script>
+
+
+
+
+
+
+
+
        
    </div>
        
