@@ -1,0 +1,8 @@
+destination: ../public-website/
+url: https://www.covideducationrecovery.global/
+keep_files:
+ - CNAME
+ - .git
+ - .nojekyll
+exclude:
+ - CNAME
