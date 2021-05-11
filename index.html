@@ -76,28 +76,20 @@ libraries:
     <section id="cards" class="container">
       <div class="row">
         <h2>Stories and Insights</h2>
-        <div class="col-md-5 my-3">
+        {% for post in site.posts limit:3 %}
+        <div class="col-md-4 my-3 d-flex align-items-stretch">
           <div class="card">
-            <img src="/img/kelly-sikkema-r2hTBxEkgWQ-unsplash.jpg" class="card-img-top mt-2 px-2" alt="this image missing!">
-            <div class="card-body">
-              <h5 class="card-title">Mapping the road to recovery</h5>
-              <p class="card-text">This is the first of a series of blogs and briefs highlighting key findings of the COVID
-                Education Recovery Tracker</p>
-              <a href="/stories/2021-04-30-mapping-the-road-to-recovery/" class="btn btn-primary">Read</a>
+            <div class="ratio ratio-16x9">
+              <img src="{% if post.image %}{{ post.image }}{% else %}{{ site.image }}{% endif %}" class="card-img-top mt-2 px-2">
+            </div>
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text">{{ post.description }}</p>
+              <a href="{{ post.url }}" class="btn btn-primary mt-auto">Read</a>
             </div>
           </div>
         </div>
-        <div class="col-md-2 my-3"></div>
-        <div class="col-md-5 my-3">
-          <div class="card">
-            <img src="/img/og-image.png" class="card-img-top mt-2 px-2" alt="this image missing!">
-            <div class="card-body">
-              <h5 class="card-title">New Global Tracker to Measure Pandemic’s Impact on Education Worldwide</h5>
-              <p class="card-text">Tracker a collaborative effort of Johns Hopkins University, the World Bank, and UNICEF</p>
-              <a href="/stories/2021-03-26-new-global-tracker/" class="btn btn-primary">Read</a>
-            </div>
-          </div>            
-        </div>
+        {% endfor %}
       </div>
     </section>
     <div class="spacer-10"></div>
