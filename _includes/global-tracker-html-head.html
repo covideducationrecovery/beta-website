@@ -56,15 +56,17 @@
       {% endif %}  
     {% endif %}
 
+  {% if site.gtag %}
     <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4XJB9Q7EK5"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.gtag }}"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
-    gtag('config', 'G-4XJB9Q7EK5');
+    gtag('config', '{{ site.gtag }}');
   </script>
+  {% endif %}
 
     <title>{% if page.title %}{{page.title}}{% else if site.title %}{{site.title}}{% endif %}</title>
     <style>
