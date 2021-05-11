@@ -2,15 +2,15 @@
     <meta charset="UTF-8">
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@{{ site.twitter }}" />
-    <meta name="twitter:creator" content="@{{ site.twitter }}" />
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}COVID-19 Global Education Recovery Tracker{% endif %}" />
-    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}Monitoring the impact of the COVID-19 pandemic on response and recovery for students across the globe, by Johns Hopkins University, the World Bank, and UNICEF.{% endif %}" />
-    <meta name="twitter:image" content="{{ site.url }}/img/og-image.png" />
+    {% if site.twitter %}<meta name="twitter:site" content="@{{ site.twitter }}" />{% endif %}
+    {% if site.twitter %}<meta name="twitter:creator" content="@{{ site.twitter }}" />{% endif %}
+    <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}" />
+    <meta name="twitter:image" content="{% if page.image %}{{ page.image }}{% else %}{{ site.url }}{{ site.image }}{% endif %}" />
 
-    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}COVID-19 Global Education Recovery Tracker{% endif %}">
-    <meta property="og:image" content="{{ site.url }}/img/og-image.png">
-    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}Monitoring the impact of the COVID-19 pandemic on response and recovery for students across the globe, by Johns Hopkins University, the World Bank, and UNICEF.{% endif %}">
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta property="og:image" content="{% if page.image %}{{ page.image }}{% else %}{{ site.url }}{{ site.image }}\{% endif %}">
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:url" content="{{ site.url }}{% if page.url %}{{ page.url }}{% endif %}" />
     <meta property="og:type" content="website">
 

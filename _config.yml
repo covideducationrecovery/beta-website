@@ -13,9 +13,9 @@ baseurl: /
 # Site settings
 title: COVID-19 Global Education Recovery Tracker 
 email: help@covideducationrecovery.global
-description: "Monitoring the impact of the COVID-19 pandemic on response and recovery for students across the globe."
+description: "Monitoring the impact of the COVID-19 pandemic on response and recovery for students across the globe, by Johns Hopkins University, the World Bank, and UNICEF."
 image: img/og-image.png
 
 # Build settings
 markdown: kramdown
-permalink: pretty
+permalink: /stories/:year-:month-:day-:slug/
