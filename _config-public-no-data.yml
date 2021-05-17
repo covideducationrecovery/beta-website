@@ -1,8 +1,18 @@
+destination: ../public-website/
+url: https://www.covideducationrecovery.global/
+gtag: G-4XJB9Q7EK5
 keep_files:
+ - CNAME
+ - .git
+ - .nojekyll
+ - README.md
  - data/global.csv
  - data/global.json
  - data/global.min.json
 exclude:
+ - CNAME
+ - README.md
  - data/global.csv
  - data/global.json
  - data/global.min.json
+ 
