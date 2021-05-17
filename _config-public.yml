@@ -5,5 +5,7 @@ keep_files:
  - CNAME
  - .git
  - .nojekyll
+ - README.md
 exclude:
  - CNAME
+ - README.md
