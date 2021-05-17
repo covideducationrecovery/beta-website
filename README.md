@@ -33,8 +33,13 @@ The [public-website](https://github.com/covideducationrecovery/public-website) r
 
 ```
 beta-website     % jekyll build --config _config.yml,_config-public.yml --safe
-# run this instead if you want to deploy content/structural changes but keep the data file intact
-# beta-website     % jekyll build --config _config.yml,_config-public-no-data.yml --safe
+```
+Or, run this instead if you want to deploy content/structural changes but keep the data files unchanged
+```
+beta-website     % jekyll build --config _config.yml,_config-public-no-data.yml --safe
+```
+and then continue with these commands
+```
 beta-website     % cd ../public-website
 public-website   % git add -A
 public-website   % git commit -m "[your update summary]"
