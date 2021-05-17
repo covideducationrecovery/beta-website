@@ -12,6 +12,7 @@ keep_files:
 exclude:
  - CNAME
  - README.md
+ - admin/
  - data/global.csv
  - data/global.json
  - data/global.min.json
