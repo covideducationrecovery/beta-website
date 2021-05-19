@@ -16,6 +16,17 @@ email: help@covideducationrecovery.global
 description: "Monitoring the impact of the COVID-19 pandemic on response and recovery for students across the globe, by Johns Hopkins University, the World Bank, and UNICEF."
 image: img/og-image.png
 
+# Collection Settings
+
+defaults:
+  -
+    scope:
+      path: "posts" # an empty string here means all files in the project
+      type: "posts"
+    values:
+      layout: "post"
+
+
 # Build settings
 markdown: kramdown
 permalink: /stories/:year-:month-:day-:slug/
