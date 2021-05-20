@@ -22,7 +22,7 @@ collections:
       - {label: 'Date', name: 'date', widget: 'datetime', date_format: "YYYY-MM-DD", picker_utc: true}
       - {label: "Featured Image", name: "thumbnail", widget: "image", media_folder: /img/posts, default: "unknown.png"}
       - {label: "Image Alt Text", name: "image-alt-text", widget: 'text', default: '', required: false}
-      - {label: "Description", name: "description", widget: 'text', default: '', required: false, default: 'a collaborative effort of Johns Hopkins University, the World Bank, and UNICEF' ,hint: 'a collaborative effort of Johns Hopkins University, the World Bank, and UNICEF'}
+      - {label: "Description", name: "description", widget: 'text', required: false, default: 'a collaborative effort of Johns Hopkins University, the World Bank, and UNICEF' ,hint: 'a collaborative effort of Johns Hopkins University, the World Bank, and UNICEF'}
       - { label: 'Media Contacts', name: 'media-contacts', widget: 'markdown' }
       - { label: 'Main Content', name: 'body', widget: 'markdown' }
 
