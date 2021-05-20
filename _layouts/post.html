@@ -8,8 +8,8 @@ libraries:
 <article class="container">
 
     <div class="row">
-      <h2>{% if post.date %}{{ page.title }}{% endif %}</h2>
-      <p class="text-muted">{{ page.date }} </p>
+      <h2>{{ page.title }}</h2>
+      <p class="text-muted">{% if page.date %}{{ page.date }}{% endif %} </p>
       <h4 class="text-muted"> {{ page.description }}</h4>
     </div>
     <div class="row my-4 px-3">
