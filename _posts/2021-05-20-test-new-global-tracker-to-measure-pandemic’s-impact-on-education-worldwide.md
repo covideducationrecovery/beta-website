@@ -2,7 +2,7 @@
 title: "TEST: New Global Tracker to Measure Pandemic’s Impact on Education Worldwide"
 date: 2021-05-28T13:10:07.831Z
 thumbnail: /img/posts/deer.jpg
-image-alt-text: This is a deer
+image-alt-text: ""
 description: Just a test description
 media-contacts: >-
   
@@ -13,8 +13,6 @@ media-contacts: >-
 
   * Kristyn Schrader-King / World Bank / [kschrader@worldbank.org](mailto:kschrader@worldbank.org) / [World Bank release](https://www.worldbank.org/en/news/press-release/2021/03/26/new-global-tracker-to-measure-pandemic-s-impact-on-education-worldwide)
 ---
-
-
 The Global Education Recovery Tracker seeks to build upon Johns Hopkins University’s pivotal work in gathering quality data on COVID-19 cases, testing, and vaccinations, along with the strategic roles that the World Bank and UNICEF play in operational and policy support to countries during the pandemic.
 
 “Throughout the pandemic Johns Hopkins has demonstrated the vital role for universities in providing accurate, evidence-based data and information for the world,” said Johns Hopkins Provost and Senior Vice President for Academic Affairs Sunil Kumar. “We hope the work of this partnership will build understanding of how COVID-19 continues to affect students everywhere.”
