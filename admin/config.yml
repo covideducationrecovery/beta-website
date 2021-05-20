@@ -16,7 +16,7 @@ collections:
     create: true
     editor:
       preview: true
-    slug: '{{year}}-{{month}}-{{day}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{title}}'
     fields:
       - {label: 'Title', name: 'title', widget: 'text', default: '', required: true}
       - {label: 'Date', name: 'date', widget: 'datetime', date_format: "YYYY-MM-DD", picker_utc: true}
