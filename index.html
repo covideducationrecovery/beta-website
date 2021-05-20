@@ -86,7 +86,7 @@ libraries:
             </div>
             <div class="card-body d-flex flex-column">
               <h5 class="card-title">{{ post.title }}</h5>
-              <p class="card-text">{{ post.description }}</p>
+              <p class="card-text">{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt }}{% endif %}</p>
               <a href="{{ post.url }}" class="btn btn-primary mt-auto">Read</a>
             </div>
           </div>
