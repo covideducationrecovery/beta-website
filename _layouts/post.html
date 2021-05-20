@@ -1,5 +1,8 @@
 ---
 layout: default
+libraries:
+- bootstrap
+- fontawesome
 ---
 <div class="spacer-5"></div>
 <article class="container">
@@ -34,11 +37,12 @@ layout: default
           </li>
         </ul> -->
 
+        {{ page.media-contacts | markdownify }}
         
       </div>  
     </aside>
 
-    {{ page.media-contacts }}
+    
 
     {{ content }}
   
