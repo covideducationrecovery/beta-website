@@ -33,3 +33,6 @@ defaults:
 # Build settings
 markdown: kramdown
 permalink: /stories/:year-:month-:day-:slug/
+
+# paginate: 5
+# paginate_path: "/stories/page:num/"
