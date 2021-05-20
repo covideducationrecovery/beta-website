@@ -14,8 +14,9 @@ layout: default
       </div>
       <div class="col-md-8 p-4 ps-md-0">
         <h5 class="mt-0">{{ post.title }}</h5>
-        <p>{{ post.excerpt }}</p>
+        <p>{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt }}{% endif %}</p>
         <a href="{{ post.url }}" class="btn btn-primary stretched-link">Read Story</a>
+        
       </div>
     </div>
     
