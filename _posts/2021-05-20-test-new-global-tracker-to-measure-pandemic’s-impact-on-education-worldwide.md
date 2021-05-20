@@ -3,7 +3,7 @@ title: "TEST: New Global Tracker to Measure Pandemic’s Impact on Education Wor
 date: 2021-05-28T13:10:07.831Z
 thumbnail: /img/posts/deer.jpg
 image-alt-text: ""
-description: Just a test description
+description:
 media-contacts: >-
   
 
