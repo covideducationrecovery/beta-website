@@ -24,7 +24,8 @@ layout: default
   {% endfor %}
 </div>
 
-
-{% for album in site.news %}
-    {{ album.content }}
+{% assign news = site.news %}
+{% for element in news %}
+<p>test</p>
+    {{ element.label }}
 {% endfor %}
