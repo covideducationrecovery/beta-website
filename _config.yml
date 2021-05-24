@@ -29,6 +29,9 @@ defaults:
       - bootstrap
       - fontawesome
 
+collections:
+  - faqs
+  - news
 
 # Build settings
 markdown: kramdown
