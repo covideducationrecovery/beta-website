@@ -26,3 +26,15 @@ collections:
       - { label: 'Media Contacts', name: 'media-contacts', widget: 'markdown' }
       - { label: 'Main Content', name: 'body', widget: 'markdown' }
 
+  - name: 'faq'
+    label: 'FAQ '
+    folder: '_faq'
+    identifier_field: question
+    create: true
+    editor:
+      preview: true
+    slug: '{{question}}'
+    fields:
+      - {label: 'Question', name: 'question', widget: 'text', default: '', required: true}
+      - { label: 'Answer', name: 'answer', widget: 'markdown' }
+
