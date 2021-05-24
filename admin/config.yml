@@ -20,7 +20,7 @@ collections:
     fields:
       - {label: 'Title', name: 'title', widget: 'text', default: '', required: true}
       - {label: 'Date', name: 'date', widget: 'date', date_format: "MM-DD-YYYY"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image", media_folder: /img/posts, default: "img/posts/unknown.png"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", media_folder: /img/posts, default: "/img/posts/unknown.png"}
       - {label: "Image Alt Text", name: "image-alt-text", widget: 'text', default: '', required: false}
       - {label: "Description", name: "description", widget: 'text', required: false, default: 'a collaborative effort of Johns Hopkins University, the World Bank, and UNICEF' ,hint: 'a collaborative effort of Johns Hopkins University, the World Bank, and UNICEF'}
       - { label: 'Media Contacts', name: 'media-contacts', widget: 'markdown' }
@@ -50,6 +50,6 @@ collections:
       - {label: 'Title', name: 'title', widget: 'text', default: '', required: true}
       - {label: 'Url/Link', name: 'link', widget: 'string', default: "https://www.covideducationrecovery.global/"}
       - {label: 'Publish Date', name: 'date', widget: 'date', date_format: "MM-DD-YYYY"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image", media_folder: /img/news, default: "img/news/unknown.png"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", media_folder: /img/news, default: "/img/news/unknown.png"}
       - {label: 'Description', name: 'description', widget: 'text', default: '', required: false}
 
