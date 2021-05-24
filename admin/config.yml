@@ -26,3 +26,30 @@ collections:
       - { label: 'Media Contacts', name: 'media-contacts', widget: 'markdown' }
       - { label: 'Main Content', name: 'body', widget: 'markdown' }
 
+  - name: 'faq'
+    label: 'FAQ '
+    folder: '_faq'
+    identifier_field: question
+    create: true
+    editor:
+      preview: true
+    slug: '{{question}}'
+    fields:
+      - {label: 'Question', name: 'question', widget: 'text', default: '', required: true}
+      - { label: 'Answer', name: 'answer', widget: 'markdown' }
+
+  - name: 'news'
+    label: 'News '
+    folder: '_news'
+    identifier_field: title
+    create: true
+    editor:
+      preview: true
+    slug: '{{date}}-{{title}}'
+    fields:
+      - {label: 'Title', name: 'title', widget: 'text', default: '', required: true}
+      - {label: 'Url', name: 'url', widget: 'string', default: "https://www.covideducationrecovery.global/"}
+      - {label: 'Publish Date', name: 'date', widget: 'date', date_format: "MM-DD-YYYY"}
+      - {label: "Featured Image", name: "thumbnail", widget: "image", media_folder: /img/news, default: "unknown.png"}
+      - {label: 'Description', name: 'description', widget: 'text', default: '', required: false}
+
