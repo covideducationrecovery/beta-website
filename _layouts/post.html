@@ -1,0 +1,34 @@
+---
+layout: default
+libraries:
+- bootstrap
+- fontawesome
+---
+<div class="spacer-5"></div>
+<article class="container">
+
+    <div class="row">
+      <h2>{{ page.title }}</h2>
+      <p class="text-muted">{% if page.date %}{{ page.date }}{% endif %} </p>
+      <h4 class="text-muted"> {{ page.description }}</h4>
+    </div>
+    <div class="row my-4 px-3">
+      <div class="col-md-3" id="logo-jhu" style="height: 75px; background-image: url(/img/eSchoolPlus-Blue.svg); background-repeat: no-repeat; background-size: contain; background-position: center center;"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-3" id="logo-wb" style="height: 75px; background-image: url(/img/WB-WBG-horizontal-RGB-high.png); background-repeat: no-repeat; background-size: contain; background-position: center center;"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-3" id="logo-unicef" style="height: 57px; background-image: url(/img/UNICEF_Logo.svg); background-repeat: no-repeat; background-size: contain; background-position: center center;"></div>
+    </div>
+    <aside>
+      <div class="row alert alert-info mx-2" role="alert">
+        <h4 class="alert-heading">Media Contacts</h4>
+
+        {{ page.media-contacts | markdownify }}
+        
+      </div>  
+    </aside>
+
+    {{ content }}
+  
+</article>
+<div class="spacer-5"></div>

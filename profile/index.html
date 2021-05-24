@@ -1,0 +1,467 @@
+---
+libraries:
+ - fontawesome
+ - vuejs
+ - bootstrap
+ - tippy
+---
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include global-tracker-html-head.html %}
+    <style>
+      [marked] {background-color: green !important;}
+      .table-header-sticky {position: sticky; top: 0; background-color: #FFFFFF !important; box-shadow: 0 5px 5px -5px #00000040 !important;}
+    </style>
+  </head>
+  <body>
+    {% include global-tracker-navbar.html %}
+
+    <div class="spacer-5"></div>
+
+    <div id="vue-app" class="container-fluid" style="width:50%" v-cloak>
+    <h2 class="text-center">United States Profile</h2>
+    <div class="spacer-3"></div>
+    
+    <br>
+
+        <div class="row g-0 bg-light position-relative rounded">
+        <div class="col-md-4 mb-md-0 p-md-4">
+            <img src="https://flagcdn.com/us.svg" class="w-100 rounded" alt="COUNTRY NAME">
+        </div>
+        <div class="col-md-5 p-4 ps-md-0">
+            <h5 class="mt-0">Current COVID-19 Statistics</h5>
+            <p>Updated COVID-19 Statistics for the United States as of 5/23/2021</p>
+            <a href="{{ post.url }}" class="btn btn-primary stretched-link">View More</a>
+            
+        </div>
+
+        <div class="col-md-3 p-4 ps-md-0">
+            <h6><i class="fas fa-biohazard fa-2x"></i> 23,000,000</h6><br>
+            <h6><i class="far fa-hospital fa-2x"></i>       14,000,000</h6><br>
+            <h6><i class="fas fa-syringe fa-2x"></i> 36,000,000</h6>            
+            
+        </div>
+
+        </div>
+        
+        <div class="spacer-5"></div>
+
+
+        <div class="row g-0 bg-light position-relative rounded">
+            
+            <div class="col-md-12 p-4 ps-md-4">
+                <h4 class="mt-0 text-center">Population Statistics</h5>
+                <br>
+
+                <h5 class="mt-0 text-center">Total Population</h5>
+                <div class="progress" style="height: 50px;">
+                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span style="font-size:22px;font-weight:bold" >316,000,000</span></div>
+                </div>
+                <br>
+                <div class="progress" style="height: 30px;">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                </div>
+                <br><br>
+
+
+                <h5 class="mt-0 text-center">Educational Population</h5>
+
+                
+
+
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Population Group</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Total Population</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Gender Distribution (Group)</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Gender Distribution (Last Year)</h6>
+                    </div>
+                    <hr>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Pre Primary</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">100,000</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                        </div>
+                    </div>
+                    <div class="col-3 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Primary</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">100,000</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                        </div>
+                    </div>
+                    <div class="col-3 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Lower Secondary</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">100,000</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                        </div>
+                    </div>
+                    <div class="col-3 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Secondary</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">100,000</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                        </div>
+                    </div>
+                    <div class="col-3 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Upper Secondary</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">100,000</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                        </div>
+                    </div>
+                    <div class="col-3 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <br><br>
+
+
+                <h5 class="mt-0 text-center">School Enrollment</h5>
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Population Group</h6>
+                    </div>
+                    <div class="col-4 text-center">
+                        <h6 class="mt-0 text-center">Both Sexes</h6>
+                    </div>
+                    <div class="col-4 text-center">
+                        <h6 class="mt-0 text-center">Female or Make</h6>
+                    </div>
+                    <hr>
+                </div>
+
+
+                
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Primary</h6>
+                    </div>
+                    <div class="col-4 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 105%;" aria-valuenow="105" aria-valuemin="0" aria-valuemax="100">105%</div>
+                        </div>
+                    </div>
+                    <div class="col-4 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 105%;" aria-valuenow="105" aria-valuemin="0" aria-valuemax="100">105%</div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Secondary</h6>
+                    </div>
+                    <div class="col-4 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 105%;" aria-valuenow="105" aria-valuemin="0" aria-valuemax="100">105%</div>
+                        </div>
+                    </div>
+                    <div class="col-4 text-center">
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 105%;" aria-valuenow="105" aria-valuemin="0" aria-valuemax="100">105%</div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <br><br>
+                <h5 class="mt-0 text-center">Learning and Monetary Poverty</h5>
+                <div class="row justify-content-center">
+                    <hr>
+                </div>
+
+
+                
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Learning Poverty</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">10%</h6>
+                    </div>
+                </div>
+            
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Learning Poverty (Female)</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">10%</h6>
+                    </div>
+                    
+                </div>
+               
+
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Monetary Poverty</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">12%</h6>
+                    </div>
+                </div>
+
+
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Schools without Internet</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">4%</h6>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Children without Internet</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">6%</h6>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Dropout Rate (By Gender)</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">3%</h6>
+                    </div>
+                </div>
+
+
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Dropout Rate (Total)</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">3%</h6>
+                    </div>
+                </div>
+
+            </div>
+    
+                
+            </div>
+    
+    </div>
+
+
+    <div class="spacer-10"></div>
+
+    <script>
+
+      var vm;
+
+      const initTippy = () => {
+        tippy('[title]', {
+          placement: 'top',
+          onShow(instance) {
+            instance.setContent(instance.reference.title);
+          }
+        });
+        tippy('[show-popout]', {
+          placement: 'bottom',
+          allowHTML: true,
+          interactive: true,
+          onShow(instance) {
+            const clone = (instance.reference.nextElementSibling.innerHTML);
+            instance.setContent('<table>' + clone + '</table>');
+          }
+        });
+      }
+
+      const csvFieldMapping = [
+        {jsonField: '', csvField: ''}
+      ]
+
+      const mostRecentInPersonAdditionalSupportFields = [
+        {name: 'mostRecentInPersonAdditionalSupportPrePrimary', text: 'Pre-Primary'},
+        {name: 'mostRecentInPersonAdditionalSupportPrimary', text: 'Primary'},
+        {name: 'mostRecentInPersonAdditionalSupportLowerSecondary', text: 'Lower Secondary'},
+        {name: 'mostRecentInPersonAdditionalSupportUpperSecondary', text: 'Upper Secondary'}
+      ]
+      const mostRecentInPersonAdditionalSupportTypes = [
+        {value: '1', title: 'School Day Changes', faIcon: 'calendar-day'},
+        {value: '2', title: 'School Year Changes', faIcon: 'calendar-alt'},
+        {value: '3', title: 'Teacher Tutoring', faIcon: 'school'},
+        {value: '4', title: 'Non-Teacher Tutoring', faIcon: 'home'},
+        {value: '5', title: 'Targeted Remedial Measures', faIcon: 'bullseye'},
+        {value: '6', title: 'Other', faIcon: 'question'}
+      ]
+      const mostRecentRemoteEducationModalityFields = [
+        {name: 'mostRecentRemoteEducationModalitiesPrePrimaryCode', text: 'Pre-Primary'},
+        {name: 'mostRecentRemoteEducationModalitiesPrimaryCode', text: 'Primary'},
+        {name: 'mostRecentRemoteEducationModalitiesLowerSecondaryCode', text: 'Lower Secondary'},
+        {name: 'mostRecentRemoteEducationModalitiesUpperSecondaryCode', text: 'Upper Secondary'},
+        {name: 'mostRecentRemoteEducationModalitiesHigherCode', text: 'Higher Education'},
+        {name: 'mostRecentRemoteEducationModalitiesVocationalCode', text: 'Technical/Vocational'}
+      ]
+      const mostRecentRemoteEducationModalityTypes = [
+        {value: '1', title: 'Online platforms', faIcon: 'globe'},
+        {value: '2', title: 'Television', faIcon: 'tv'},
+        {value: '3', title: 'Radio', faIcon: 'broadcast-tower'},
+        {value: '4', title: 'Mobile devices', faIcon: 'mobile'},
+        {value: '5', title: 'Take-home packages', faIcon: 'paperclip'},
+        {value: '8', title: 'Tutoring', faIcon: 'chalkboard-teacher'}
+      ]
+
+      const prepareData = (countries) => {
+        countries.sort((country1, country2) => {
+          return country1.fields.countryName.localeCompare(country2.fields.countryName)
+        });
+
+        mostRecentResponseDate = new Date('2021-01-24')
+        for (country of countries) {
+          country.educationServices = [];
+          if (country.fields.mostRecentExtendedBreakCode && country.fields.mostRecentExtendedBreakCode.includes('1')) {
+            country.educationServices.push('extendedBreak');
+          } else if (country.fields.mostRecentEducationStatusCode) {
+            if (country.fields.mostRecentEducationStatusCode.includes('1')) {country.educationServices.push('covidClosed')}
+            if (country.fields.mostRecentEducationStatusCode.includes('2')) {country.educationServices.push('remote')}
+            if (country.fields.mostRecentEducationStatusCode.includes('3')) {country.educationServices.push('hybrid')}
+            if (country.fields.mostRecentEducationStatusCode.includes('4')) {country.educationServices.push('inPerson')}
+          }
+
+          country.hasInPersonAdditionalSupports = mostRecentInPersonAdditionalSupportFields.reduce((flag, item) => {
+            if (country.fields[item.name] && !country.fields[item.name].includes('7') && !country.fields[item.name].includes('8')) return true;
+          }, false)
+
+          country.hasRemoteEducationModalities = mostRecentRemoteEducationModalityFields.reduce((flag, item) => {
+            if (country.fields[item.name] && !country.fields[item.name].includes('6') && !country.fields[item.name].includes('7')) return true;
+          }, false)
+
+          if (country.fields.mostRecentResponseDate) {
+            responseDate = new Date(country.fields.mostRecentResponseDate);
+            if (responseDate.getTime() > mostRecentResponseDate.getTime()) {mostRecentResponseDate = responseDate}
+          }
+        }
+        return {
+            countries: countries,
+            mostRecentResponseDate: mostRecentResponseDate,
+            mostRecentInPersonAdditionalSupportFields: mostRecentInPersonAdditionalSupportFields,
+            mostRecentInPersonAdditionalSupportTypes: mostRecentInPersonAdditionalSupportTypes,
+            mostRecentRemoteEducationModalityFields: mostRecentRemoteEducationModalityFields,
+            mostRecentRemoteEducationModalityTypes: mostRecentRemoteEducationModalityTypes
+        }
+      }
+
+      const renderData = (data) => {
+        vm = new Vue({
+          el: '#vue-app',
+          data: prepareData(data),
+          delimiters: ['${','}'],  // need to use these because jekyll competes for {{ and }}
+          filters: {
+            iso8601ToLocaleDateString: (value) => {
+              if (value) {
+                return (new Date(value)).toLocaleDateString(undefined, {timeZone:'UTC'});
+              } else {
+                return null
+              }
+            }
+          },
+          mounted: () => {
+            initTippy();
+          }
+        });
+      }
+
+      // if we have a token, use it to call the api, otherwise redirect to login screen
+      const dataSource = '/data/global.json'
+      fetch(dataSource)
+        .then(response => {
+          switch (response.status) {
+            case 200:
+              // huzzah we have the data
+              response.json().then(data => renderData(data));
+              break;
+            case 403: 
+              // denied because of invalid token
+              window.location = '/login';
+              break;
+            default:
+          }
+        })
+        .catch(error => {
+          document.getElementById(`loading`).innerText = "Error loading the data. We apologize for the inconvenience; please try again later.";
+          console.error(error);
+        })
+    </script>
+  </body>
+</html>

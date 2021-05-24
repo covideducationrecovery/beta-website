@@ -42,3 +42,5 @@ Icon
 .Trashes
 
 .vscode/settings.json
+Gemfile
+Gemfile.lock
