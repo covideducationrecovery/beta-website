@@ -303,37 +303,37 @@ title: "Maps"
           },
           watch: {
             selectedEducationStatusGradeLevel: function(newValue, oldValue) {
-              console.log(`Selector changes from ${oldValue} to ${newValue}`)
               for (const country of this.countries) {
                 if (country.fields.mostRecentExtendedBreakCode && country.fields.mostRecentExtendedBreakCode.includes('1')) {
                   country.modalityMapClass = 'modality-extended-break';
-                  country.modalityText = "Extended break / holiday";
+                  // country.modalityText = "Extended break / holiday";
                 } else if (country.fields[newValue]) {
                   if (country.fields[newValue].length > 1) {
                     country.modalityMapClass = 'modality-multiple';
-                    country.modalityText = "Mixed / Multiple";
+                    // country.modalityText = "Mixed / Multiple";
                   } else {
                     switch (country.fields[newValue][0]) {
                       case '1':
                         country.modalityMapClass = 'modality-covid-closure';
-                        country.modalityText = "Closed due to COVID-19";
+                        // country.modalityText = "Closed due to COVID-19";
                       break
                       case '2':
                         country.modalityMapClass = 'modality-remote';
-                        country.modalityText = 'Remote';
+                        // country.modalityText = 'Remote';
                       break
                       case '3':
                         country.modalityMapClass = "modality-hybrid";
-                        country.modalityText = "Hybrid"
+                        // country.modalityText = "Hybrid"
                       break
                       case '4':
                         country.modalityMapClass = 'modality-in-person';
-                        country.modalityText = 'In person';
+                        // country.modalityText = 'In person';
                       break
                     }
                   }
                 } else {
-                  country.modalityText = 'Unknown / no data';
+                  delete country.modalityMapClass
+                  // country.modalityText = 'Unknown / no data';
                 }
               }
               document.querySelectorAll('#svg-modality-map .modality-extended-break, #svg-modality-map .modality-multiple, #svg-modality-map .modality-covid-closure, #svg-modality-map .modality-remote, #svg-modality-map .modality-hybrid, #svg-modality-map .modality-in-person')
