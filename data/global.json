@@ -144,42 +144,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-09",
+      "mostRecentResponseDate": "2021-04-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3"
+        "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "8"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "6"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -194,12 +164,12 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
+      "mostRecentResponseDate": "2021-05-01",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
         "8"
       ],
@@ -226,31 +196,12 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-05",
+      "mostRecentResponseDate": "2021-04-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "1",
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "1",
-        "2",
-        "6"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "1",
-        "2",
-        "6"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "1",
-        "2",
-        "6"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "1"
     }
   },
   {
@@ -293,13 +244,50 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-28",
+      "mostRecentResponseDate": "2021-02-24",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3",
-        "2"
+        "2",
+        "3"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2"
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "1"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1",
+        "4",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "1",
+        "4",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1",
+        "4",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1",
+        "4",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "1",
+        "4",
+        "5"
+      ]
     }
   },
   {
@@ -366,7 +354,25 @@
       "wbRegionCode": "LCN",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "owidHasVaccine": true
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-04-30",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ]
     }
   },
   {
@@ -381,9 +387,42 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
-      "mostRecentExtendedBreakCode": "1",
-      "mostRecentVaccineAvailabilityForTeachersCode": "2"
+      "mostRecentResponseDate": "2021-05-07",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "5"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "5"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "5"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "1"
+      ]
     }
   },
   {
@@ -398,12 +437,13 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-05-08",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
+        "4",
         "3"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
         "8"
       ],
@@ -417,16 +457,16 @@
         "8"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "6"
+        "7"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "6"
+        "7"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "6"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "6"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
         "6"
@@ -503,13 +543,15 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-09",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3"
+        "3",
+        "2"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentVaccineAvailabilityForTeachersCode": "1",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "1",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
@@ -554,12 +596,21 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-05",
+      "mostRecentResponseDate": "2021-04-29",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "2"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "2"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "2"
+      ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "2",
         "3"
@@ -659,24 +710,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-03-31",
+      "mostRecentResponseDate": "2021-04-28",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "7"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "1"
     }
   },
   {
@@ -691,9 +730,43 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
-      "mostRecentExtendedBreakCode": "1",
-      "mostRecentVaccineAvailabilityForTeachersCode": "2"
+      "mostRecentResponseDate": "2021-05-07",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4",
+        "3"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "1"
+      ]
     }
   },
   {
@@ -721,23 +794,13 @@
       "wbRegionCode": "SSF",
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
-      "mostRecentResponseDate": "2021-03-02",
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-04-28",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "1"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "7"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -752,9 +815,42 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
-      "mostRecentExtendedBreakCode": "1",
-      "mostRecentVaccineAvailabilityForTeachersCode": "1"
+      "mostRecentResponseDate": "2021-05-07",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "3"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "3"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "3"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "3"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "3"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "1"
+      ]
     }
   },
   {
@@ -769,59 +865,12 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-02-26",
+      "mostRecentResponseDate": "2021-04-21",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "1",
-        "2",
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "4",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "7"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1",
-        "2",
-        "3",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1",
-        "2",
-        "3",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1",
-        "2",
-        "3",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1",
-        "2",
-        "3",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1",
-        "2",
-        "3",
-        "5"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -836,12 +885,43 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-05-04",
+      "mostRecentResponseDate": "2021-03-01",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "5"
+        "2",
+        "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2"
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "7"
+      ]
     }
   },
   {
@@ -901,7 +981,13 @@
       "wbRegionCode": "SSF",
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
-      "owidHasVaccine": true
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-04-26",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "4"
     }
   },
   {
@@ -916,25 +1002,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-05-04",
+      "mostRecentResponseDate": "2021-04-14",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3",
         "2"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "8"
-      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "7"
       ],
@@ -967,9 +1040,24 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-10",
-      "mostRecentExtendedBreakCode": "1",
-      "mostRecentVaccineAvailabilityForTeachersCode": "1"
+      "mostRecentResponseDate": "2021-04-30",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ]
     }
   },
   {
@@ -983,7 +1071,25 @@
       "wbRegionCode": "EAS",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "owidHasVaccine": true
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-05-06",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ]
     }
   },
   {
@@ -1053,13 +1159,14 @@
       "wbRegionCode": "SSF",
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
-      "mostRecentResponseDate": "2021-03-03",
+      "mostRecentResponseDate": "2021-05-04",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "1"
+        "7"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
         "6"
@@ -1109,11 +1216,12 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-02-05",
+      "mostRecentResponseDate": "2021-05-05",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "3"
       ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "6"
       ],
@@ -1121,10 +1229,12 @@
         "2"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "2"
+        "2",
+        "3"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "2"
+        "2",
+        "3"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
         "6"
@@ -1209,12 +1319,12 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-05-09",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "3"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentVaccineAvailabilityForTeachersCode": "1",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
         "8"
       ],
@@ -1228,22 +1338,28 @@
         "8"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "1"
+        "1",
+        "2"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1"
+        "1",
+        "2"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1"
+        "1",
+        "2"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1"
+        "1",
+        "2"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1"
+        "1",
+        "2"
       ],
       "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1"
+        "1",
+        "2"
       ]
     }
   },
@@ -1259,22 +1375,26 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "3",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
+        "3",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "3",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "3",
         "6"
       ]
     }
@@ -1289,7 +1409,23 @@
       "wbRegion": "Sub-Saharan Africa",
       "wbRegionCode": "SSF",
       "wbIncomeLevelCode": "LIC",
-      "wbIncomeLevelName": "Low income"
+      "wbIncomeLevelName": "Low income",
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-05-04",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "7"
+      ]
     }
   },
   {
@@ -1332,9 +1468,24 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
-      "mostRecentExtendedBreakCode": "1",
-      "mostRecentVaccineAvailabilityForTeachersCode": "2"
+      "mostRecentResponseDate": "2021-05-06",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ]
     }
   },
   {
@@ -1349,9 +1500,11 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-03-01",
-      "mostRecentExtendedBreakCode": "1",
-      "mostRecentVaccineAvailabilityForTeachersCode": "1"
+      "mostRecentResponseDate": "2021-05-07",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "2"
+      ]
     }
   },
   {
@@ -1398,11 +1551,10 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-30",
+      "mostRecentResponseDate": "2021-02-25",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3",
-        "2"
+        "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
@@ -1422,15 +1574,13 @@
         "2",
         "3",
         "4",
-        "5",
-        "8"
+        "5"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
         "1",
         "2",
         "3",
         "4",
-        "5",
         "8"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
@@ -1444,8 +1594,7 @@
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
         "1",
         "4",
-        "5",
-        "8"
+        "5"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
         "1",
@@ -1454,8 +1603,7 @@
       ],
       "mostRecentRemoteEducationModalitiesVocationalCode": [
         "1",
-        "4",
-        "5"
+        "4"
       ]
     }
   },
@@ -1470,25 +1618,13 @@
       "wbRegionCode": "SSF",
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
-      "mostRecentResponseDate": "2021-04-04",
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-04-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "2",
-        "5"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "2"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -1534,7 +1670,13 @@
       "wbRegionCode": "SSF",
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
-      "owidHasVaccine": true
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-04-29",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "3"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -1548,12 +1690,11 @@
       "wbRegionCode": "EAS",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "mostRecentResponseDate": "2021-03-31",
+      "mostRecentResponseDate": "2021-05-04",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
         "7"
       ],
@@ -1565,6 +1706,24 @@
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
         "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "6"
       ]
     }
   },
@@ -1580,24 +1739,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-05-03",
+      "mostRecentResponseDate": "2021-02-18",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "8"
-      ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "2",
         "3"
@@ -1703,9 +1850,31 @@
       "wbRegionCode": "LCN",
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
-      "mostRecentResponseDate": "2021-04-12",
-      "mostRecentExtendedBreakCode": "1",
-      "mostRecentVaccineAvailabilityForTeachersCode": "2"
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-05-06",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "2"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "2"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "2"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "2"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "2"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "2"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "2"
+      ]
     }
   },
   {
@@ -1720,30 +1889,23 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-05-09",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "2",
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "6"
+      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
       ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "6"
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
       ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "6"
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
       ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "6"
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
       ]
     }
   },
@@ -1791,12 +1953,25 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-10",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
+        "3",
         "2"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "7"
+      ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "1",
         "2"
@@ -1809,7 +1984,8 @@
         "1"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1"
+        "1",
+        "2"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
         "1"
@@ -1831,42 +2007,32 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-05-09",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3",
-        "4"
+        "4",
+        "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "4"
+        "3",
+        "4",
+        "5"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
-        "4"
+        "3",
+        "4",
+        "5"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "4"
+        "3",
+        "4",
+        "5"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "4"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1"
+        "3",
+        "4",
+        "5"
       ]
     }
   },
@@ -1882,13 +2048,14 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-03-02",
+      "mostRecentResponseDate": "2021-04-30",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "1",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "1"
+        "7"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
         "5"
@@ -1973,13 +2140,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-30",
+      "mostRecentResponseDate": "2021-02-24",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "1",
         "2"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "6"
       ],
@@ -2021,26 +2187,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-05-04",
+      "mostRecentResponseDate": "2021-02-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "4",
-        "3",
         "2"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "7"
-      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "1",
         "2",
@@ -2093,9 +2245,10 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-06",
+      "mostRecentResponseDate": "2021-04-29",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
+        "4",
         "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
@@ -2145,24 +2298,12 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-05-03",
+      "mostRecentResponseDate": "2021-02-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3"
+        "2"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "7"
-      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "1",
         "2",
@@ -2212,11 +2353,10 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-03-02",
+      "mostRecentResponseDate": "2021-05-05",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "2",
-        "3"
+        "4"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
@@ -2273,27 +2413,12 @@
       "wbRegionCode": "SSF",
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
-      "mostRecentResponseDate": "2021-04-05",
+      "mostRecentResponseDate": "2021-04-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "2",
-        "3"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "2",
-        "3"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "2",
-        "3"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "2",
-        "3"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -2391,28 +2516,12 @@
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-01",
+      "mostRecentResponseDate": "2021-04-28",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "1",
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "1",
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "1",
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "1",
-        "2"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -2426,7 +2535,25 @@
       "wbRegionCode": "ECS",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "owidHasVaccine": true
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-05-09",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ]
     }
   },
   {
@@ -2455,7 +2582,7 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
+      "mostRecentResponseDate": "2021-05-01",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
@@ -2487,9 +2614,43 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
-      "mostRecentExtendedBreakCode": "1",
-      "mostRecentVaccineAvailabilityForTeachersCode": "2"
+      "mostRecentResponseDate": "2021-05-09",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4",
+        "3"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "1"
+      ]
     }
   },
   {
@@ -2503,9 +2664,44 @@
       "wbRegionCode": "EAS",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "mostRecentResponseDate": "2021-04-12",
-      "mostRecentExtendedBreakCode": "1",
-      "mostRecentVaccineAvailabilityForTeachersCode": "2"
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-05-09",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4",
+        "3"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "4",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "1"
+      ]
     }
   },
   {
@@ -2655,39 +2851,39 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "3",
-        "4"
+        "2"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "8"
+        "6"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
-        "8"
+        "6"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "8"
+        "6"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "8"
+        "6"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "6"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "6"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "6"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
         "1"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1"
+        "6"
       ],
       "mostRecentRemoteEducationModalitiesVocationalCode": [
         "6"
@@ -2754,7 +2950,25 @@
       "wbRegionCode": "ECS",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "owidHasVaccine": true
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-05-09",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "6"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "6"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "6"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "6"
+      ]
     }
   },
   {
@@ -2808,9 +3022,10 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-10",
+      "mostRecentResponseDate": "2021-04-30",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
+        "4",
         "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
@@ -2827,13 +3042,13 @@
         "8"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "6"
+        "7"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "6"
+        "7"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "6"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
         "1"
@@ -2842,7 +3057,7 @@
         "1"
       ],
       "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "6"
+        "1"
       ]
     }
   },
@@ -2858,14 +3073,15 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-29",
+      "mostRecentResponseDate": "2021-02-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
+        "3",
         "4"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "7"
+        "1"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
         "7"
@@ -2875,6 +3091,32 @@
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
         "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "1",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1",
+        "2",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "1",
+        "2",
+        "4"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1",
+        "2",
+        "4"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1",
+        "4"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "4"
       ]
     }
   },
@@ -2890,50 +3132,22 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
+      "mostRecentResponseDate": "2021-04-27",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "2",
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "8"
+        "6"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
-        "3",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "3",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "3",
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1",
-        "5",
-        "8"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1",
-        "5",
-        "8"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1",
-        "5",
-        "8"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
         "6"
       ]
     }
@@ -2950,45 +3164,36 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-30",
+      "mostRecentResponseDate": "2021-02-09",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "1",
-        "3"
-      ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "8"
+        "2"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "6"
+        "1",
+        "2",
+        "3",
+        "4"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1",
         "2",
         "3",
         "4",
         "5"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "1",
         "2",
         "3",
         "4",
         "5"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1",
         "2",
         "3",
-        "4",
-        "5"
+        "4"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
         "6"
@@ -3010,10 +3215,20 @@
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-03-05",
+      "mostRecentResponseDate": "2021-05-02",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "2"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "2"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "2"
       ]
     }
   },
@@ -3028,6 +3243,7 @@
       "wbRegionCode": "SSF",
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
+      "owidHasVaccine": true,
       "mostRecentResponseDate": "2021-04-01",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
@@ -3060,15 +3276,15 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-29",
+      "mostRecentResponseDate": "2021-02-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "2",
+        "3",
         "4"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "7"
+        "1"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
         "7"
@@ -3085,19 +3301,16 @@
         "5"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1",
         "2",
         "3",
         "5"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1",
         "2",
         "3",
         "5"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1",
         "2",
         "3",
         "5"
@@ -3121,12 +3334,23 @@
       "wbRegionCode": "LCN",
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
-      "mostRecentResponseDate": "2021-04-29",
+      "mostRecentResponseDate": "2021-02-25",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2"
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "1"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "7"
+      ]
     }
   },
   {
@@ -3141,12 +3365,11 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-05-03",
+      "mostRecentResponseDate": "2021-02-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "2"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "1",
         "2",
@@ -3203,26 +3426,38 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-05-08",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "2"
+        "3"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "6"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1"
+        "6"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1"
+        "6"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1"
+        "6"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1"
+        "6"
       ],
       "mostRecentRemoteEducationModalitiesVocationalCode": [
         "6"
@@ -3241,7 +3476,7 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-09",
+      "mostRecentResponseDate": "2021-05-09",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
@@ -3273,58 +3508,12 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-02-26",
+      "mostRecentResponseDate": "2021-04-27",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3"
+        "2"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "3",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "1"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "1"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "6"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -3411,9 +3600,10 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-07",
+      "mostRecentResponseDate": "2021-04-29",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
+        "4",
         "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
@@ -3462,7 +3652,7 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-19",
+      "mostRecentResponseDate": "2021-05-05",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "3"
@@ -3519,9 +3709,55 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-10",
-      "mostRecentExtendedBreakCode": "1",
-      "mostRecentVaccineAvailabilityForTeachersCode": "2"
+      "mostRecentResponseDate": "2021-04-30",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4",
+        "2"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "5"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "5"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "5"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "1",
+        "4",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1",
+        "4",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "1",
+        "4",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1",
+        "4",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1",
+        "4",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "1",
+        "4",
+        "5"
+      ]
     }
   },
   {
@@ -3535,7 +3771,25 @@
       "wbRegionCode": "ECS",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "owidHasVaccine": true
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-05-01",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ]
     }
   },
   {
@@ -3550,10 +3804,9 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-09",
+      "mostRecentResponseDate": "2021-05-06",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3",
         "4"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
@@ -3568,24 +3821,6 @@
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
         "3"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "7"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "7"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "7"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "7"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1"
       ]
     }
   },
@@ -3601,10 +3836,11 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-05-06",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "4"
+        "4",
+        "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
@@ -3618,6 +3854,24 @@
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
         "5"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "6"
       ]
     }
   },
@@ -3633,24 +3887,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-29",
+      "mostRecentResponseDate": "2021-02-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3"
+        "2"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "7"
-      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "1",
         "2",
@@ -3706,7 +3948,7 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "3"
@@ -3715,53 +3957,38 @@
       "mostRecentInPersonAdditionalSupportPrePrimary": [
         "1",
         "2",
-        "3",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
         "1",
         "2",
-        "3",
-        "5",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "1",
         "2",
-        "3",
-        "5",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "1",
         "2",
-        "3",
-        "5",
         "6"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "1",
-        "4"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1",
-        "4"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1",
-        "4"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1",
-        "4"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1",
-        "4"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1",
-        "4"
+        "1"
       ]
     }
   },
@@ -3777,12 +4004,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-05",
+      "mostRecentResponseDate": "2021-05-02",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "2"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentVaccineAvailabilityForTeachersCode": "1",
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "1",
         "2"
@@ -3988,12 +4215,24 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-05",
+      "mostRecentResponseDate": "2021-05-04",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "2"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "6"
       ],
@@ -4146,12 +4385,26 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-19",
+      "mostRecentResponseDate": "2021-05-01",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
+        "2",
         "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "2",
+        "4"
+      ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "1",
         "4"
@@ -4190,10 +4443,30 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-03-23",
+      "mostRecentResponseDate": "2021-05-05",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "1"
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "2",
+        "4"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "2",
+        "4",
+        "6"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "2",
+        "4",
+        "6"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "2",
+        "3",
+        "6"
       ]
     }
   },
@@ -4208,23 +4481,32 @@
       "wbRegionCode": "SSF",
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
-      "mostRecentResponseDate": "2021-04-19",
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-05-04",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "3"
+        "7"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
-        "3"
+        "2",
+        "3",
+        "4",
+        "5"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "3"
+        "2",
+        "3",
+        "4",
+        "5"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "7"
+        "2",
+        "4",
+        "5"
       ]
     }
   },
@@ -4240,12 +4522,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-05",
+      "mostRecentResponseDate": "2021-05-04",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3"
+        "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "4",
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
         "1",
         "2"
@@ -4263,32 +4545,6 @@
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
         "1",
         "2"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "7"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1",
-        "2",
-        "4"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1",
-        "2",
-        "4"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1",
-        "2",
-        "4"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1",
-        "2",
-        "4"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "6"
       ]
     }
   },
@@ -4303,7 +4559,25 @@
       "wbRegionCode": "ECS",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "owidHasVaccine": true
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-05-01",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ]
     }
   },
   {
@@ -4368,7 +4642,7 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "3"
@@ -4376,22 +4650,19 @@
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
         "1",
-        "5",
+        "2",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
         "1",
-        "5",
+        "2",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
         "1",
-        "5",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "1",
-        "5",
         "6"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
@@ -4407,10 +4678,10 @@
         "1"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1"
+        "6"
       ],
       "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1"
+        "6"
       ]
     }
   },
@@ -4439,8 +4710,12 @@
       "wbRegionCode": "SSF",
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
-      "mostRecentResponseDate": "2021-04-06",
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-04-26",
       "mostRecentExtendedBreakCode": "1",
+      "mostRecentEducationStatusCode": [
+        "1"
+      ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
@@ -4564,44 +4839,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-02-26",
+      "mostRecentResponseDate": "2021-04-24",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3"
+        "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "8"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1",
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1",
-        "2"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -4616,10 +4859,29 @@
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-01-26",
+      "mostRecentResponseDate": "2021-04-30",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "2"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "2"
       ]
     }
   },
@@ -4745,12 +5007,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-30",
+      "mostRecentResponseDate": "2021-02-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "2"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "1",
         "2"
@@ -4980,17 +5242,19 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-19",
+      "mostRecentResponseDate": "2021-05-05",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3",
-        "4"
+        "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
       "mostRecentInPersonAdditionalSupportPrimary": [
         "6"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "6"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
         "6"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
@@ -5043,41 +5307,12 @@
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-02-05",
+      "mostRecentResponseDate": "2021-04-28",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "2"
+        "3"
       ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "7"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1",
-        "4",
-        "5"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -5112,46 +5347,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-08",
+      "mostRecentResponseDate": "2021-04-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "3"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "1"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "1",
-        "3"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "1",
-        "3"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "1",
-        "3"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "5",
-        "8"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "8"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "8"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -5165,7 +5366,25 @@
       "wbRegionCode": "EAS",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "owidHasVaccine": true
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-04-30",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ]
     }
   },
   {
@@ -5180,55 +5399,12 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-02-27",
+      "mostRecentResponseDate": "2021-04-23",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "3"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "2",
-        "4"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "1",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1",
-        "2",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1",
-        "2",
-        "3",
-        "4"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "1"
     }
   },
   {
@@ -5243,10 +5419,9 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
+      "mostRecentResponseDate": "2021-05-06",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3",
         "4"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
@@ -5263,10 +5438,10 @@
         "4"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "6"
+        "7"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1"
+        "7"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
         "1"
@@ -5292,7 +5467,26 @@
       "wbRegion": "East Asia and Pacific",
       "wbRegionCode": "EAS",
       "wbIncomeLevelCode": "HIC",
-      "wbIncomeLevelName": "High income"
+      "wbIncomeLevelName": "High income",
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-05-07",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ]
     }
   },
   {
@@ -5307,23 +5501,41 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-09",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "5"
+        "8"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
-        "5"
+        "8"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "5"
+        "8"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "5"
+        "8"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "6"
       ]
     }
   },
@@ -5339,18 +5551,9 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-30",
+      "mostRecentResponseDate": "2021-02-26",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "4"
-      ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "3",
-        "4"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "3",
         "4"
       ]
     }
@@ -5399,11 +5602,23 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-02-03",
+      "mostRecentResponseDate": "2021-04-30",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3",
-        "4"
+        "3"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "4",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "2"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "2"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "2"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "2"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "6"
@@ -5411,16 +5626,19 @@
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
         "1",
         "2",
+        "3",
         "5"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
         "1",
         "2",
+        "3",
         "5"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
         "1",
         "2",
+        "3",
         "5"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
@@ -5441,7 +5659,25 @@
       "wbRegion": "East Asia and Pacific",
       "wbRegionCode": "EAS",
       "wbIncomeLevelCode": "HIC",
-      "wbIncomeLevelName": "High income"
+      "wbIncomeLevelName": "High income",
+      "mostRecentResponseDate": "2021-04-30",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ]
     }
   },
   {
@@ -5514,7 +5750,7 @@
       "wbRegionCode": "EAS",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "mostRecentResponseDate": "2021-04-11",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "3"
@@ -5564,9 +5800,10 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
+        "4",
         "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
@@ -5614,7 +5851,7 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-05",
+      "mostRecentResponseDate": "2021-05-04",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "2"
@@ -5652,11 +5889,14 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-01-31",
+      "mostRecentResponseDate": "2021-04-29",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
+        "3",
+        "1",
         "4"
-      ]
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -5684,8 +5924,52 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-03-25",
-      "mostRecentExtendedBreakCode": "1"
+      "mostRecentResponseDate": "2021-05-06",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "3"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "6"
+      ]
     }
   },
   {
@@ -5731,12 +6015,38 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-26",
+      "mostRecentResponseDate": "2021-04-17",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "2"
+        "3"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2"
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "6"
+      ]
     }
   },
   {
@@ -5751,59 +6061,8 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-05-04",
-      "mostRecentExtendedBreakCode": "2",
-      "mostRecentEducationStatusCode": [
-        "2",
-        "4"
-      ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "7"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "6"
-      ]
+      "mostRecentResponseDate": "2021-03-25",
+      "mostRecentExtendedBreakCode": "1"
     }
   },
   {
@@ -5926,30 +6185,23 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
+      "mostRecentResponseDate": "2021-05-01",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "2",
         "4"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "7"
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "3"
       ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "7"
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "3"
       ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "7"
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "3"
       ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "7"
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "3"
       ]
     }
   },
@@ -5965,25 +6217,12 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "2",
-        "3"
+        "2"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "7"
-      ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "1"
       ],
@@ -5997,10 +6236,10 @@
         "1"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1"
+        "6"
       ],
       "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1"
+        "6"
       ]
     }
   },
@@ -6016,13 +6255,19 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-05",
+      "mostRecentResponseDate": "2021-04-29",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3",
-        "4"
+        "4",
+        "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "2"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "2"
+      ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "6"
       ],
@@ -6076,24 +6321,12 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-15",
+      "mostRecentResponseDate": "2021-04-28",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "7"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "1"
     }
   },
   {
@@ -6148,7 +6381,8 @@
       "wbRegion": "East Asia and Pacific",
       "wbRegionCode": "EAS",
       "wbIncomeLevelCode": "UMC",
-      "wbIncomeLevelName": "Upper middle income"
+      "wbIncomeLevelName": "Upper middle income",
+      "owidHasVaccine": true
     }
   },
   {
@@ -6163,11 +6397,9 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "2",
-        "3",
         "4"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
@@ -6182,24 +6414,6 @@
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
         "7"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "7"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "7"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1"
       ]
     }
   },
@@ -6215,30 +6429,12 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-03-02",
+      "mostRecentResponseDate": "2021-04-28",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "1",
-        "2"
+        "4"
       ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "7"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "6"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "6"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -6253,43 +6449,9 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-19",
-      "mostRecentExtendedBreakCode": "2",
-      "mostRecentEducationStatusCode": [
-        "2"
-      ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "1",
-        "2",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1",
-        "2",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1",
-        "2",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1",
-        "2",
-        "4",
-        "5"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1",
-        "4"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "6"
-      ]
+      "mostRecentResponseDate": "2021-04-29",
+      "mostRecentExtendedBreakCode": "1",
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -6396,7 +6558,13 @@
       "wbRegionCode": "SSF",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "owidHasVaccine": true
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-04-29",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "3"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2"
     }
   },
   {
@@ -6446,23 +6614,23 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-04-30",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "8"
+        "3"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
-        "6"
+        "3"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "6"
+        "3"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "6"
+        "3"
       ]
     }
   },
@@ -6477,24 +6645,7 @@
       "wbRegionCode": "LCN",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "mostRecentResponseDate": "2021-04-30",
-      "mostRecentExtendedBreakCode": "2",
-      "mostRecentEducationStatusCode": [
-        "4"
-      ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "8"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "8"
-      ]
+      "owidHasVaccine": true
     }
   },
   {
@@ -6509,9 +6660,47 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
-      "mostRecentExtendedBreakCode": "1",
-      "mostRecentVaccineAvailabilityForTeachersCode": "1"
+      "mostRecentResponseDate": "2021-05-02",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4",
+        "2",
+        "3"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "3"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "3",
+        "4"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "4"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1",
+        "2",
+        "5",
+        "8"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "1",
+        "5",
+        "8"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "1"
+      ]
     }
   },
   {
@@ -6526,18 +6715,30 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3",
-        "4"
+        "4",
+        "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
         "7"
       ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+      "mostRecentInPersonAdditionalSupportPrimary": [
         "7"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
         "1"
@@ -6579,24 +6780,24 @@
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-03",
+      "mostRecentResponseDate": "2021-05-04",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "1",
-        "4"
+        "4",
+        "1"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "7"
-      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrimary": [
-        "7"
+        "2",
+        "3"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "7"
+        "2",
+        "3"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "7"
+        "2",
+        "3"
       ]
     }
   },
@@ -6612,10 +6813,10 @@
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-06",
+      "mostRecentResponseDate": "2021-05-04",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3"
+        "4"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrimary": [
@@ -6626,6 +6827,24 @@
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
         "2"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "1"
       ]
     }
   },
@@ -6693,7 +6912,7 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-05-06",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
@@ -6725,10 +6944,11 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-01-29",
+      "mostRecentResponseDate": "2021-05-02",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3"
+        "2",
+        "1"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
@@ -6736,21 +6956,26 @@
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
         "1",
-        "2",
+        "3",
         "4",
-        "5"
+        "5",
+        "8"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
         "1",
         "2",
+        "3",
         "4",
-        "5"
+        "5",
+        "8"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
         "1",
         "2",
+        "3",
         "4",
-        "5"
+        "5",
+        "8"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
         "1",
@@ -6774,7 +6999,25 @@
       "wbRegion": "Latin America and Caribbean",
       "wbRegionCode": "LCN",
       "wbIncomeLevelCode": "HIC",
-      "wbIncomeLevelName": "High income"
+      "wbIncomeLevelName": "High income",
+      "mostRecentResponseDate": "2021-05-01",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ]
     }
   },
   {
@@ -6940,32 +7183,33 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
+        "4",
         "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "8"
+        "6"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
-        "8"
+        "6"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "8"
+        "6"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "8"
+        "6"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "6"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "6"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "6"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
         "1"
@@ -6990,9 +7234,42 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
-      "mostRecentExtendedBreakCode": "1",
-      "mostRecentVaccineAvailabilityForTeachersCode": "2"
+      "mostRecentResponseDate": "2021-05-05",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "7"
+      ]
     }
   },
   {
@@ -7040,6 +7317,7 @@
       "wbRegionCode": "ECS",
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
+      "owidHasVaccine": true,
       "mostRecentResponseDate": "2021-04-09",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
@@ -7230,12 +7508,11 @@
       "wbRegionCode": "EAS",
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
-      "mostRecentResponseDate": "2021-03-31",
+      "mostRecentResponseDate": "2021-05-04",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
         "7"
       ],
@@ -7247,6 +7524,24 @@
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
         "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "6"
       ]
     }
   },
@@ -7300,10 +7595,11 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-07",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "4"
+        "4",
+        "2"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrimary": [
@@ -7313,6 +7609,26 @@
         "6"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1",
+        "2"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1",
+        "2"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
         "6"
       ]
     }
@@ -7396,6 +7712,7 @@
       "wbRegionCode": "ECS",
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
+      "owidHasVaccine": true,
       "mostRecentResponseDate": "2021-03-04",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
@@ -7426,7 +7743,25 @@
       "wbRegionCode": "LCN",
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
-      "owidHasVaccine": true
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-05-01",
+      "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "4"
+      ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "8"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "8"
+      ]
     }
   },
   {
@@ -7440,6 +7775,7 @@
       "wbRegionCode": "EAS",
       "wbIncomeLevelCode": "UMC",
       "wbIncomeLevelName": "Upper middle income",
+      "owidHasVaccine": true,
       "mostRecentResponseDate": "2021-04-01",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
@@ -7602,11 +7938,11 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-05",
+      "mostRecentResponseDate": "2021-05-04",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3",
-        "4"
+        "4",
+        "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
@@ -7653,27 +7989,41 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-11",
+      "mostRecentResponseDate": "2021-05-06",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "3",
-        "4"
+        "3"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
-        "3",
-        "4"
+        "3"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "3",
-        "4"
+        "3"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "3",
-        "4"
+        "3"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "7"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "1"
       ]
     }
   },
@@ -7689,12 +8039,10 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-12",
+      "mostRecentResponseDate": "2021-05-07",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "2",
-        "3",
-        "4"
+        "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
@@ -7710,28 +8058,22 @@
         "8"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "1",
-        "8"
+        "6"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1",
-        "8"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1",
-        "8"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1",
-        "8"
+        "6"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1",
-        "8"
+        "1"
       ],
       "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1",
-        "8"
+        "1"
       ]
     }
   },
@@ -7747,51 +8089,9 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-30",
-      "mostRecentExtendedBreakCode": "2",
-      "mostRecentEducationStatusCode": [
-        "3",
-        "2"
-      ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "1",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "1",
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "1",
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "1",
-        "2"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "8"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1",
-        "2",
-        "4"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1",
-        "2",
-        "4"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1",
-        "4"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "1"
-      ]
+      "mostRecentResponseDate": "2021-04-14",
+      "mostRecentExtendedBreakCode": "1",
+      "mostRecentVaccineAvailabilityForTeachersCode": "1"
     }
   },
   {
@@ -7806,42 +8106,12 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-01",
+      "mostRecentResponseDate": "2021-04-27",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "3"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
-      "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportPrimary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "7"
-      ],
-      "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "7"
-      ],
-      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "2"
-      ],
-      "mostRecentRemoteEducationModalitiesHigherCode": [
-        "1"
-      ],
-      "mostRecentRemoteEducationModalitiesVocationalCode": [
-        "6"
-      ]
+      "mostRecentVaccineAvailabilityForTeachersCode": "1"
     }
   },
   {
@@ -7965,27 +8235,23 @@
       "wbIncomeLevelCode": "HIC",
       "wbIncomeLevelName": "High income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-09",
+      "mostRecentResponseDate": "2021-05-09",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "3",
-        "4"
+        "4",
+        "2"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
-        "3",
         "4"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
-        "3",
         "4"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
-        "3",
         "4"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
-        "3",
         "4"
       ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
@@ -8020,23 +8286,39 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-19",
+      "mostRecentResponseDate": "2021-05-05",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "2"
+        "3"
       ],
-      "mostRecentVaccineAvailabilityForTeachersCode": "2",
+      "mostRecentVaccineAvailabilityForTeachersCode": "1",
+      "mostRecentInPersonAdditionalSupportPrePrimary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportPrimary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "7"
+      ],
+      "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "7"
+      ],
       "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
         "7"
       ],
       "mostRecentRemoteEducationModalitiesPrimaryCode": [
-        "1"
+        "1",
+        "2",
+        "5"
       ],
       "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
-        "1"
+        "1",
+        "2"
       ],
       "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
-        "1"
+        "1",
+        "2"
       ],
       "mostRecentRemoteEducationModalitiesHigherCode": [
         "1"
@@ -8057,21 +8339,26 @@
       "wbRegionCode": "MEA",
       "wbIncomeLevelCode": "LIC",
       "wbIncomeLevelName": "Low income",
-      "mostRecentResponseDate": "2021-02-27",
+      "owidHasVaccine": true,
+      "mostRecentResponseDate": "2021-05-02",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
         "4"
       ],
+      "mostRecentVaccineAvailabilityForTeachersCode": "2",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
         "7"
       ],
       "mostRecentInPersonAdditionalSupportPrimary": [
+        "2",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportLowerSecondary": [
+        "2",
         "6"
       ],
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
+        "2",
         "6"
       ]
     }
@@ -8128,10 +8415,11 @@
       "wbIncomeLevelCode": "LMC",
       "wbIncomeLevelName": "Lower middle income",
       "owidHasVaccine": true,
-      "mostRecentResponseDate": "2021-04-04",
+      "mostRecentResponseDate": "2021-04-29",
       "mostRecentExtendedBreakCode": "2",
       "mostRecentEducationStatusCode": [
-        "4"
+        "4",
+        "3"
       ],
       "mostRecentVaccineAvailabilityForTeachersCode": "1",
       "mostRecentInPersonAdditionalSupportPrePrimary": [
@@ -8149,6 +8437,27 @@
       "mostRecentInPersonAdditionalSupportUpperSecondary": [
         "2",
         "5"
+      ],
+      "mostRecentRemoteEducationModalitiesPrePrimaryCode": [
+        "1",
+        "3"
+      ],
+      "mostRecentRemoteEducationModalitiesPrimaryCode": [
+        "1",
+        "3"
+      ],
+      "mostRecentRemoteEducationModalitiesLowerSecondaryCode": [
+        "1",
+        "3"
+      ],
+      "mostRecentRemoteEducationModalitiesUpperSecondaryCode": [
+        "1"
+      ],
+      "mostRecentRemoteEducationModalitiesHigherCode": [
+        "6"
+      ],
+      "mostRecentRemoteEducationModalitiesVocationalCode": [
+        "6"
       ]
     }
   }
