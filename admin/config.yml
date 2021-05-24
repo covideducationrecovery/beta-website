@@ -26,9 +26,9 @@ collections:
       - { label: 'Media Contacts', name: 'media-contacts', widget: 'markdown' }
       - { label: 'Main Content', name: 'body', widget: 'markdown' }
 
-  - name: 'faq'
-    label: 'FAQ '
-    folder: '_faq'
+  - name: 'faqs'
+    label: 'Faqs'
+    folder: '_faqs'
     identifier_field: question
     create: true
     editor:
