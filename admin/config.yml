@@ -48,7 +48,7 @@ collections:
     slug: '{{title}}'
     fields:
       - {label: 'Title', name: 'title', widget: 'text', default: '', required: true}
-      - {label: 'Url', name: 'url', widget: 'string', default: "https://www.covideducationrecovery.global/"}
+      - {label: 'Url', name: 'link', widget: 'string', default: "https://www.covideducationrecovery.global/"}
       - {label: 'Publish Date', name: 'date', widget: 'date', date_format: "MM-DD-YYYY"}
       - {label: "Featured Image", name: "thumbnail", widget: "image", media_folder: /img/news, default: "unknown.png"}
       - {label: 'Description', name: 'description', widget: 'text', default: '', required: false}
