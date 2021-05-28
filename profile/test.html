@@ -1,0 +1,23 @@
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<div id="app">
+  <p>
+    <router-link to="/foo">/user/foo</router-link>
+    <router-link to="/bar">/user/bar</router-link>
+    <div>User {{ $route.params.id }}</div>
+  </p>
+  <router-view></router-view>
+</div>
+
+<script>
+
+const router = new VueRouter({
+    
+  routes: [
+    { path: '/:id' }
+  ]
+})
+
+const app = new Vue({ router }).$mount('#app')
+</script>

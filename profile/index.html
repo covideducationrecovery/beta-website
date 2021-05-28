@@ -383,6 +383,7 @@ libraries:
       ]
 
       const prepareData = (countries) => {
+        console.log('DATA',countries);
         countries.sort((country1, country2) => {
           return country1.fields.countryName.localeCompare(country2.fields.countryName)
         });
@@ -427,23 +428,24 @@ libraries:
           el: '#vue-app',
           data: prepareData(data),
           delimiters: ['${','}'],  // need to use these because jekyll competes for {{ and }}
-          filters: {
-            iso8601ToLocaleDateString: (value) => {
-              if (value) {
-                return (new Date(value)).toLocaleDateString(undefined, {timeZone:'UTC'});
-              } else {
-                return null
-              }
-            }
-          },
-          mounted: () => {
-            initTippy();
-          }
+          routes: [{ path: '/user/:id', component: this }],
+        //   filters: {
+        //     iso8601ToLocaleDateString: (value) => {
+        //       if (value) {
+        //         return (new Date(value)).toLocaleDateString(undefined, {timeZone:'UTC'});
+        //       } else {
+        //         return null
+        //       }
+        //     }
+        //   },
+        //   mounted: () => {
+        //     initTippy();
+        //   }
         });
       }
 
       // if we have a token, use it to call the api, otherwise redirect to login screen
-      const dataSource = '/data/global.json'
+      const dataSource = 'https://raw.githubusercontent.com/covideducationrecovery/beta-website/master/data/global-with-indicators.json'
       fetch(dataSource)
         .then(response => {
           switch (response.status) {
