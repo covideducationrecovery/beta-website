@@ -282,13 +282,13 @@ libraries:
                         <h6 class="mt-0 text-center">Learning Poverty</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }%</h6>
+                        <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }%</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }%</h6>
+                        <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM_MA" class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }%</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }%</h6>
+                        <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM_FE" class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }%</h6>
                     </div>
                 </div>
 
@@ -297,7 +297,7 @@ libraries:
                         <h6 class="mt-0 text-center">Monetary Poverty</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SI_POV_DDAY_MI.value.toFixed(2) }%</h6>
+                        <h6 v-if="place.fields.indicators.wb_SI_POV_DDAY_MI" class="mt-0 text-center">${ place.fields.indicators.wb_SI_POV_DDAY_MI.value.toFixed(2) }%</h6>
                     </div>
                     <div class="col-3 text-center">
                         <h6 class="mt-0 text-center">-</h6>
@@ -312,28 +312,28 @@ libraries:
                         <h6 class="mt-0 text-center">Learning Years Adjusted</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_HD_HCI_LAYS.value.toFixed(2) }%</h6>
+                        <h6 v-if="place.fields.indicators.wb_HD_HCI_LAYS" class="mt-0 text-center">${ place.fields.indicators.wb_HD_HCI_LAYS.value.toFixed(2) }%</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_HD_HCI_LAYS_MA.value.toFixed(2) }%</h6>
+                        <h6 v-if="place.fields.indicators.wb_HD_HCI_LAYS_MA" class="mt-0 text-center">${ place.fields.indicators.wb_HD_HCI_LAYS_MA.value.toFixed(2) }%</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_HD_HCI_LAYS_FE.value.toFixed(2) }%</h6>
+                        <h6 v-if="place.fields.indicators.wb_HD_HCI_LAYS_FE" class="mt-0 text-center">${ place.fields.indicators.wb_HD_HCI_LAYS_FE.value.toFixed(2) }%</h6>
                     </div>
                 </div>
 
-                <div v-if="place.fields.indicators.NA" class="row justify-content-center">
+                <!-- <div v-if="place.fields.indicators.NA" class="row justify-content-center">
                     <div class="col-3 text-center">
                         <h6 class="mt-0 text-center">N/A</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }%</h6>
+                        <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }%</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }%</h6>
+                        <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM_MA" class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }%</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }%</h6>
+                        <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM_FE" class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }%</h6>
                     </div>
                 </div>
 
@@ -399,7 +399,7 @@ libraries:
                     <div class="col-3 text-center">
                         <h6 class="mt-0 text-center">N/A%</h6>
                     </div>
-                </div>
+                </div> -->
 
             </div>
     
@@ -429,7 +429,7 @@ libraries:
           if (matchingPlaces.length == 0) {
             window.location.assign('/');
           } else {
-            console.log('COUNTRY',matchingPlaces[0]);
+            // console.log('COUNTRY',matchingPlaces[0]);
             return matchingPlaces[0];
           }
         }
@@ -534,7 +534,7 @@ libraries:
               // huzzah we have the data
               response.json().then(data => {
                 placesData = data;
-                console.log('Fetch:',placesData);    
+                // console.log('Fetch:',placesData);    
                 renderData(getPlaceFromPlaceId(placesData, getPlaceId()));
               });
               break;
