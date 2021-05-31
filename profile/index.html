@@ -27,7 +27,7 @@ libraries:
 
         <div class="row g-0 bg-light position-relative rounded">
         <div class="col-md-4 mb-md-0 p-md-4">
-            <img src="https://flagcdn.com/us.svg" class="w-100 rounded" alt="COUNTRY NAME">
+            <img :src="'https://flagcdn.com/' + place.fields.iso3166Alpha2Code.toLowerCase() + '.svg'" class="w-100 rounded" alt="COUNTRY NAME">
         </div>
         <div class="col-md-5 p-4 ps-md-0">
             <h5 class="mt-0">Current COVID-19 Statistics</h5>
