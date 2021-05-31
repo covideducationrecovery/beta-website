@@ -40,7 +40,7 @@ libraries:
         </thead>
         <tbody>
           <tr v-for="country of countries" v-if="country.fields.mostRecentResponseDate">
-            <td>${ country.fields.countryName}</td>
+            <td><a :href="'/profile/?' + country.fields.iso3166Alpha2Code">${ country.fields.countryName}</a></td>
             <td>${ country.fields.wbRegion}</td>
             <td>
               <span class="badge bg-secondary" v-if="country.educationServices.includes('extendedBreak')" title="On extended break"><i class="fas fa-umbrella-beach"></i></span>

@@ -56,12 +56,12 @@ libraries:
 
                 <h5 class="mt-0 text-center">Total Population</h5>
                 <div v-if="place.fields.indicators.wb_SP_POP_TOTL" class="progress" style="height: 50px;">
-                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span style="font-size:22px;font-weight:bold" >${ place.fields.indicators.wb_SP_POP_TOTL.value.toLocaleString('en-US') }</span></div>
+                    <div v-if="place.fields.indicators.wb_SP_POP_TOTL.value" class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span style="font-size:22px;font-weight:bold" >${ place.fields.indicators.wb_SP_POP_TOTL.value.toLocaleString('en-US') }</span></div>
                 </div>
                 <br>
                 <div v-if="PopMalePer" class="progress" style="height: 30px;">
-                    <div :style="{width: PopMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" PopMalePer " aria-valuemin="0" aria-valuemax="100">${ PopMalePer.toFixed(2) }%</div>
-                    <div :style="{width: PopFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" PopFemalePer " aria-valuemin="0" aria-valuemax="100">${ PopFemalePer.toFixed(2) }%</div>
+                    <div v-if="PopMalePer" :style="{width: PopMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" PopMalePer " aria-valuemin="0" aria-valuemax="100">${ PopMalePer.toFixed(2) }%</div>
+                    <div v-if="PopFemalePer" :style="{width: PopFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" PopFemalePer " aria-valuemin="0" aria-valuemax="100">${ PopFemalePer.toFixed(2) }%</div>
                 </div>
                 <br><br>
 
@@ -95,8 +95,8 @@ libraries:
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div :style="{width: prePrimaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" prePrimaryMalePer " aria-valuemin="0" aria-valuemax="100">${ prePrimaryMalePer.toFixed(2) }%</div>
-                            <div :style="{width: prePrimaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" prePrimaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ prePrimaryFemalePer.toFixed(2) }%</div>
+                            <div v-if="prePrimaryMalePer" :style="{width: prePrimaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" prePrimaryMalePer " aria-valuemin="0" aria-valuemax="100">${ prePrimaryMalePer.toFixed(2) }%</div>
+                            <div v-if="prePrimaryFemalePer" :style="{width: prePrimaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" prePrimaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ prePrimaryFemalePer.toFixed(2) }%</div>
                         </div>
                     </div>
                     <div class="col-3 text-center">
@@ -115,14 +115,14 @@ libraries:
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div :style="{width: primaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" primaryMalePer " aria-valuemin="0" aria-valuemax="100">${ primaryMalePer.toFixed(2) }%</div>
-                            <div :style="{width: primaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" primaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ primaryFemalePer.toFixed(2) }%</div>
+                            <div v-if="primaryMalePer" :style="{width: primaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" primaryMalePer " aria-valuemin="0" aria-valuemax="100">${ primaryMalePer.toFixed(2) }%</div>
+                            <div v-if="primaryFemalePer" :style="{width: primaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" primaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ primaryFemalePer.toFixed(2) }%</div>
                         </div>
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div :style="{width: primaryLastMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" primaryLastMalePer " aria-valuemin="0" aria-valuemax="100">${ primaryLastMalePer.toFixed(2) }%</div>
-                            <div :style="{width: primaryLastFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" primaryLastFemalePer " aria-valuemin="0" aria-valuemax="100">${ primaryLastFemalePer.toFixed(2) }%</div>
+                            <div v-if="primaryLastMalePer" :style="{width: primaryLastMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" primaryLastMalePer " aria-valuemin="0" aria-valuemax="100">${ primaryLastMalePer.toFixed(2) }%</div>
+                            <div v-if="primaryLastFemalePer" :style="{width: primaryLastFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" primaryLastFemalePer " aria-valuemin="0" aria-valuemax="100">${ primaryLastFemalePer.toFixed(2) }%</div>
                         </div>
                     </div>
                 </div>
@@ -135,8 +135,8 @@ libraries:
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div :style="{width: lowerSecondaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" lowerSecondaryMalePer " aria-valuemin="0" aria-valuemax="100">${ lowerSecondaryMalePer.toFixed(2) }%</div>
-                            <div :style="{width: lowerSecondaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" lowerSecondaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ lowerSecondaryFemalePer.toFixed(2) }%</div>
+                            <div v-if="lowerSecondaryMalePer" :style="{width: lowerSecondaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" lowerSecondaryMalePer " aria-valuemin="0" aria-valuemax="100">${ lowerSecondaryMalePer.toFixed(2) }%</div>
+                            <div v-if="lowerSecondaryFemalePer" :style="{width: lowerSecondaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" lowerSecondaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ lowerSecondaryFemalePer.toFixed(2) }%</div>
                         </div>
                     </div>
                     <div class="col-3 text-center">
@@ -154,8 +154,8 @@ libraries:
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div :style="{width: secondaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" secondaryMalePer " aria-valuemin="0" aria-valuemax="100">${ secondaryMalePer.toFixed(2) }%</div>
-                            <div :style="{width: secondaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" secondaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ secondaryFemalePer.toFixed(2) }%</div>
+                            <div v-if="secondaryMalePer" :style="{width: secondaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" secondaryMalePer " aria-valuemin="0" aria-valuemax="100">${ secondaryMalePer.toFixed(2) }%</div>
+                            <div v-if="secondaryFemalePer" :style="{width: secondaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" secondaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ secondaryFemalePer.toFixed(2) }%</div>
                         </div>
                     </div>
                     <div class="col-3 text-center">
@@ -169,12 +169,12 @@ libraries:
                         <h6 class="mt-0 text-center">Upper Secondary</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SP_SEC_UTOT_IN.value.toLocaleString('en-US') }</h6>
+                        <h6 v-if="place.fields.indicators.wb_SP_SEC_UTOT_IN" class="mt-0 text-center">${ place.fields.indicators.wb_SP_SEC_UTOT_IN.value.toLocaleString('en-US') }</h6>
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div :style="{width: upperSecondaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" upperSecondaryMalePer " aria-valuemin="0" aria-valuemax="100">${ upperSecondaryMalePer.toFixed(2) }%</div>
-                            <div :style="{width: upperSecondaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" upperSecondaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ upperSecondaryFemalePer.toFixed(2) }%</div>
+                            <div v-if="upperSecondaryMalePer" :style="{width: upperSecondaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" upperSecondaryMalePer " aria-valuemin="0" aria-valuemax="100">${ upperSecondaryMalePer.toFixed(2) }%</div>
+                            <div v-if="upperSecondaryFemalePer" :style="{width: upperSecondaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" upperSecondaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ upperSecondaryFemalePer.toFixed(2) }%</div>
                         </div>
                     </div>
                     <div class="col-3 text-center">
@@ -473,48 +473,51 @@ libraries:
             computed: {
                     // Upper secondary
                 upperSecondaryMalePer: function() {
-                    return 100 * this.place.fields.indicators.wb_SP_SEC_UTOT_MA_IN.value / this.place.fields.indicators.wb_SP_SEC_UTOT_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_MA_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_IN.value;
                 },
                 upperSecondaryFemalePer: function() {
-                    return 100 * this.place.fields.indicators.wb_SP_SEC_UTOT_FE_IN.value / this.place.fields.indicators.wb_SP_SEC_UTOT_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_FE_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_IN.value;
                 },// Secondary
                 secondaryMalePer: function() {
-                    return 100 * this.place.fields.indicators.wb_SP_SEC_TOTL_MA_IN.value / this.place.fields.indicators.wb_SP_SEC_TOTL_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_MA_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_IN.value;
                 },
                 secondaryFemalePer: function() {
-                    return 100 * (1 - this.place.fields.indicators.wb_SP_SEC_TOTL_MA_IN.value / this.place.fields.indicators.wb_SP_SEC_TOTL_IN.value);
+                    return 100 * (1 - this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_MA_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_IN.value);
                 },// Lower Secondary
                 lowerSecondaryMalePer: function() {
-                    return 100 * this.place.fields.indicators.wb_SP_SEC_LTOT_MA_IN.value / this.place.fields.indicators.wb_SP_SEC_LTOT_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_MA_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_IN.value;
                 },
                 lowerSecondaryFemalePer: function() {
-                    return 100 * this.place.fields.indicators.wb_SP_SEC_LTOT_FE_IN.value / this.place.fields.indicators.wb_SP_SEC_LTOT_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_FE_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_IN.value;
                 },// Primary
                 primaryMalePer: function() {
-                    return 100 * this.place.fields.indicators.wb_SP_PRM_TOTL_MA_IN.value / this.place.fields.indicators.wb_SP_PRM_TOTL_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_MA_IN.value / this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_IN.value;
                 },
                 primaryFemalePer: function() {
-                    return 100 * this.place.fields.indicators.wb_SP_PRM_TOTL_FE_IN.value / this.place.fields.indicators.wb_SP_PRM_TOTL_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_FE_IN.value / this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_IN.value;
                 },// Primary Last
                 primaryLastMalePer: function() {
-                    return 100 * this.place.fields.indicators.wb_SP_PRM_GRAD_MA.value / this.place.fields.indicators.wb_SP_PRM_GRAD_TO.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_MA.value / this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_TO.value;
                 },
                 primaryLastFemalePer: function() {
-                    return 100 * this.place.fields.indicators.wb_SP_PRM_GRAD_FE.value / this.place.fields.indicators.wb_SP_PRM_GRAD_TO.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_FE.value / this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_TO.value;
                 },// Pre Primary
                 prePrimaryMalePer: function() {
-                    let prePrimaryPop = this.place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.value + this.place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.value;
-                    return 100 * this.place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.value / prePrimaryPop;
+                    let prePrimaryPop = this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN.value + this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN.value / prePrimaryPop;
                 },
                 prePrimaryFemalePer: function() {
-                    let prePrimaryPop = this.place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.value + this.place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.value;
-                    return 100 * this.place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.value / prePrimaryPop;
+                    let prePrimaryPop = this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN.value +this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN.value / prePrimaryPop;
                 },// Population
                 PopMalePer: function() {
-                return 100 * this.place.fields.indicators.wb_SP_POP_TOTL_MA_IN.value / this.place.fields.indicators.wb_SP_POP_TOTL.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_POP_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_POP_TOTL?.value;
+                    console.log("TEST")
+                    return 10;
                 },
                 PopFemalePer: function() {
-                    return 100 * this.place.fields.indicators.wb_SP_POP_TOTL_FE_IN.value / this.place.fields.indicators.wb_SP_POP_TOTL.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_POP_TOTL_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_POP_TOTL?.value;
+                    return 10;
                 },
             }
           });
