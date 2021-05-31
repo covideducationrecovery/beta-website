@@ -20,7 +20,7 @@ libraries:
     <div class="spacer-5"></div>
 
     <div id="vue-app" class="container-fluid" style="width:50%" v-cloak>
-    <h2 class="text-center">United States Profile</h2>
+    <h2 class="text-center">${ place.fields.countryName } Profile</h2>
     <div class="spacer-3"></div>
     
     <br>
@@ -31,7 +31,7 @@ libraries:
         </div>
         <div class="col-md-5 p-4 ps-md-0">
             <h5 class="mt-0">Current COVID-19 Statistics</h5>
-            <p>Updated COVID-19 Statistics for the United States as of 5/23/2021</p>
+            <p>Updated COVID-19 Statistics for ${ place.fields.countryName } as of 5/23/2021</p>
             <a href="{{ post.url }}" class="btn btn-primary stretched-link">View More</a>
             
         </div>
@@ -55,13 +55,13 @@ libraries:
                 <br>
 
                 <h5 class="mt-0 text-center">Total Population</h5>
-                <div class="progress" style="height: 50px;">
-                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span style="font-size:22px;font-weight:bold" >316,000,000</span></div>
+                <div v-if="place.fields.indicators.wb_SP_POP_TOTL" class="progress" style="height: 50px;">
+                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"><span style="font-size:22px;font-weight:bold" >${ place.fields.indicators.wb_SP_POP_TOTL.value.toLocaleString('en-US') }</span></div>
                 </div>
                 <br>
-                <div class="progress" style="height: 30px;">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                <div v-if="PopMalePer" class="progress" style="height: 30px;">
+                    <div :style="{width: PopMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" PopMalePer " aria-valuemin="0" aria-valuemax="100">${ PopMalePer.toFixed(2) }%</div>
+                    <div :style="{width: PopFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" PopFemalePer " aria-valuemin="0" aria-valuemax="100">${ PopFemalePer.toFixed(2) }%</div>
                 </div>
                 <br><br>
 
@@ -91,12 +91,12 @@ libraries:
                         <h6 class="mt-0 text-center">Pre Primary</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">100,000</h6>
+                        <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="mt-0 text-center">${ (place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.value + place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.value ).toLocaleString('en-US') }</h6>
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                            <div :style="{width: prePrimaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" prePrimaryMalePer " aria-valuemin="0" aria-valuemax="100">${ prePrimaryMalePer.toFixed(2) }%</div>
+                            <div :style="{width: prePrimaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" prePrimaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ prePrimaryFemalePer.toFixed(2) }%</div>
                         </div>
                     </div>
                     <div class="col-3 text-center">
@@ -111,18 +111,18 @@ libraries:
                         <h6 class="mt-0 text-center">Primary</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">100,000</h6>
+                        <h6 v-if="place.fields.indicators.wb_SP_PRM_TOTL_IN" class="mt-0 text-center">${ place.fields.indicators.wb_SP_PRM_TOTL_IN.value.toLocaleString('en-US') }</h6>
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                            <div :style="{width: primaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" primaryMalePer " aria-valuemin="0" aria-valuemax="100">${ primaryMalePer.toFixed(2) }%</div>
+                            <div :style="{width: primaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" primaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ primaryFemalePer.toFixed(2) }%</div>
                         </div>
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                            <div :style="{width: primaryLastMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" primaryLastMalePer " aria-valuemin="0" aria-valuemax="100">${ primaryLastMalePer.toFixed(2) }%</div>
+                            <div :style="{width: primaryLastFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" primaryLastFemalePer " aria-valuemin="0" aria-valuemax="100">${ primaryLastFemalePer.toFixed(2) }%</div>
                         </div>
                     </div>
                 </div>
@@ -131,18 +131,17 @@ libraries:
                         <h6 class="mt-0 text-center">Lower Secondary</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">100,000</h6>
+                        <h6 v-if="place.fields.indicators.wb_SP_SEC_LTOT_IN" class="mt-0 text-center">${ place.fields.indicators.wb_SP_SEC_LTOT_IN.value.toLocaleString('en-US') }</h6>
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                            <div :style="{width: lowerSecondaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" lowerSecondaryMalePer " aria-valuemin="0" aria-valuemax="100">${ lowerSecondaryMalePer.toFixed(2) }%</div>
+                            <div :style="{width: lowerSecondaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" lowerSecondaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ lowerSecondaryFemalePer.toFixed(2) }%</div>
                         </div>
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">N/A</div>
                         </div>
                     </div>
                 </div>
@@ -151,18 +150,17 @@ libraries:
                         <h6 class="mt-0 text-center">Secondary</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">100,000</h6>
+                        <h6 v-if="place.fields.indicators.wb_SP_SEC_TOTL_IN" class="mt-0 text-center">${ place.fields.indicators.wb_SP_SEC_TOTL_IN.value.toLocaleString('en-US') }</h6>
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                            <div :style="{width: secondaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" secondaryMalePer " aria-valuemin="0" aria-valuemax="100">${ secondaryMalePer.toFixed(2) }%</div>
+                            <div :style="{width: secondaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" secondaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ secondaryFemalePer.toFixed(2) }%</div>
                         </div>
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">N/A</div>
                         </div>
                     </div>
                 </div>
@@ -171,18 +169,17 @@ libraries:
                         <h6 class="mt-0 text-center">Upper Secondary</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">100,000</h6>
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SP_SEC_UTOT_IN.value.toLocaleString('en-US') }</h6>
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 45%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                            <div :style="{width: upperSecondaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" upperSecondaryMalePer " aria-valuemin="0" aria-valuemax="100">${ upperSecondaryMalePer.toFixed(2) }%</div>
+                            <div :style="{width: upperSecondaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" upperSecondaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ upperSecondaryFemalePer.toFixed(2) }%</div>
                         </div>
                     </div>
                     <div class="col-3 text-center">
                         <div class="progress">
-                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
-                            <div class="progress-bar bg-danger" role="progressbar" style="width: 0%" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">N/A</div>
                         </div>
                     </div>
                 </div>
@@ -199,44 +196,60 @@ libraries:
                     <div class="col-4 text-center">
                         <h6 class="mt-0 text-center">Both Sexes</h6>
                     </div>
-                    <div class="col-4 text-center">
-                        <h6 class="mt-0 text-center">Female or Make</h6>
+                    <div class="col-2 text-center">
+                        <h6 class="mt-0 text-center">Male</h6>
                     </div>
+                    <div class="col-2 text-center">
+                        <h6 class="mt-0 text-center">Female</h6>
+                    </div>
+                    
                     <hr>
                 </div>
 
 
                 
-                <div class="row justify-content-center">
+                <div v-if="place.fields.indicators.wb_SE_PRM_ENRR" class="row justify-content-center">
                     <div class="col-3 text-center">
                         <h6 class="mt-0 text-center">Primary</h6>
                     </div>
                     <div class="col-4 text-center">
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 105%;" aria-valuenow="105" aria-valuemin="0" aria-valuemax="100">105%</div>
+                        <div v-if="place.fields.indicators.wb_SE_PRM_ENRR" class="progress">
+                            <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR.value + '%' }" class="progress-bar bg-success" role="progressbar" :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR.value "  aria-valuemin="0" aria-valuemax="100">${ place.fields.indicators.wb_SE_PRM_ENRR.value.toFixed(2) }%</div>
                         </div>
                     </div>
-                    <div class="col-4 text-center">
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 105%;" aria-valuenow="105" aria-valuemin="0" aria-valuemax="100">105%</div>
+                    <div class="col-2 text-center">
+                        <div v-if="place.fields.indicators.wb_SE_PRM_ENRR_MA" class="progress">
+                            <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR_MA.value + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR_MA.value "  aria-valuemin="0" aria-valuemax="100">${ place.fields.indicators.wb_SE_PRM_ENRR_MA.value.toFixed(2) } %</div>
                         </div>
                     </div>
+                    <div  class="col-2 text-center">
+                        <div v-if="place.fields.indicators.wb_SE_PRM_ENRR_FE" class="progress">
+                            <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR_FE.value + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR_FE.value " aria-valuemin="0" aria-valuemax="100">${ place.fields.indicators.wb_SE_PRM_ENRR_FE.value.toFixed(2) } %</div>
+                        </div>
+                    </div>
+                
                 </div>
             
-                <div class="row justify-content-center">
+                <div v-if="place.fields.indicators.wb_SE_SEC_ENRR" class="row justify-content-center">
                     <div class="col-3 text-center">
                         <h6 class="mt-0 text-center">Secondary</h6>
                     </div>
                     <div class="col-4 text-center">
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 105%;" aria-valuenow="105" aria-valuemin="0" aria-valuemax="100">105%</div>
+                        <div v-if="place.fields.indicators.wb_SE_SEC_ENRR" class="progress">
+                            <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR.value + '%' }" class="progress-bar bg-success" role="progressbar" :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR.value "  aria-valuemin="0" aria-valuemax="100">${ place.fields.indicators.wb_SE_SEC_ENRR.value.toFixed(2) }%</div>
                         </div>
                     </div>
-                    <div class="col-4 text-center">
-                        <div class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="width: 105%;" aria-valuenow="105" aria-valuemin="0" aria-valuemax="100">105%</div>
+                    <div class="col-2 text-center">
+                        <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_MA" class="progress">
+                            <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_MA.value + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_MA.value "  aria-valuemin="0" aria-valuemax="100">${ place.fields.indicators.wb_SE_SEC_ENRR_MA.value.toFixed(2) } %</div>
                         </div>
                     </div>
+                    <div class="col-2 text-center">
+                        <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_FE" class="progress">
+                            <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_FE.value + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_FE.value " aria-valuemin="0" aria-valuemax="100">${ place.fields.indicators.wb_SE_SEC_ENRR_FE.value.toFixed(2) } %</div>
+                        </div>
+                    </div>
+                    
                 </div>
                 
 
@@ -250,68 +263,141 @@ libraries:
                 
                 <div class="row justify-content-center">
                     <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Measure</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Total</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Male</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Female</h6>
+                    </div>
+                    <hr>
+                </div>
+
+                <div v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="row justify-content-center">
+                    <div class="col-3 text-center">
                         <h6 class="mt-0 text-center">Learning Poverty</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">10%</h6>
-                    </div>
-                </div>
-            
-                <div class="row justify-content-center">
-                    <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">Learning Poverty (Female)</h6>
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }%</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">10%</h6>
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }%</h6>
                     </div>
-                    
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }%</h6>
+                    </div>
                 </div>
-               
 
-                <div class="row justify-content-center">
+                <div v-if="place.fields.indicators.wb_SI_POV_DDAY_MI" class="row justify-content-center">
                     <div class="col-3 text-center">
                         <h6 class="mt-0 text-center">Monetary Poverty</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">12%</h6>
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SI_POV_DDAY_MI.value.toFixed(2) }%</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">-</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">-</h6>
+                    </div>
+                </div>
+
+                <div v-if="place.fields.indicators.wb_HD_HCI_LAYS" class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">Learning Years Adjusted</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_HD_HCI_LAYS.value.toFixed(2) }%</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_HD_HCI_LAYS_MA.value.toFixed(2) }%</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_HD_HCI_LAYS_FE.value.toFixed(2) }%</h6>
+                    </div>
+                </div>
+
+                <div v-if="place.fields.indicators.NA" class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">N/A</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }%</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }%</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }%</h6>
+                    </div>
+                </div>
+
+                <div v-if="place.fields.indicators.NA" class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">N/A</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }%</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }%</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }%</h6>
+                    </div>
+                </div>
+            
+               
+
+                <div v-if="place.fields.indicators.NA" class="row justify-content-center">
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">NA</h6>
+                    </div>
+                    <div class="col-3 text-center">
+                        <h6 class="mt-0 text-center">N/A%</h6>
                     </div>
                 </div>
 
 
-                <div class="row justify-content-center">
+                <div v-if="place.fields.indicators.NA" class="row justify-content-center">
                     <div class="col-3 text-center">
                         <h6 class="mt-0 text-center">Schools without Internet</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">4%</h6>
+                        <h6 class="mt-0 text-center">N/A%</h6>
                     </div>
                 </div>
 
-                <div class="row justify-content-center">
+                <div v-if="place.fields.indicators.NA" class="row justify-content-center">
                     <div class="col-3 text-center">
                         <h6 class="mt-0 text-center">Children without Internet</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">6%</h6>
+                        <h6 class="mt-0 text-center">N/A%</h6>
                     </div>
                 </div>
 
-                <div class="row justify-content-center">
+                <div v-if="place.fields.indicators.NA" class="row justify-content-center">
                     <div class="col-3 text-center">
                         <h6 class="mt-0 text-center">Dropout Rate (By Gender)</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">3%</h6>
+                        <h6 class="mt-0 text-center">N/A%</h6>
                     </div>
                 </div>
 
 
-                <div class="row justify-content-center">
+                <div v-if="place.fields.indicators.NA" class="row justify-content-center">
                     <div class="col-3 text-center">
                         <h6 class="mt-0 text-center">Dropout Rate (Total)</h6>
                     </div>
                     <div class="col-3 text-center">
-                        <h6 class="mt-0 text-center">3%</h6>
+                        <h6 class="mt-0 text-center">N/A%</h6>
                     </div>
                 </div>
 
@@ -325,133 +411,132 @@ libraries:
 
     <div class="spacer-10"></div>
 
+
     <script>
 
-      var vm;
-
-      const initTippy = () => {
-        tippy('[title]', {
-          placement: 'top',
-          onShow(instance) {
-            instance.setContent(instance.reference.title);
+        var vm, placesData;
+    
+        function getPlaceId() {
+          // bounce visitor to the homepage if there isn't an anchor (hash) value in the URL
+          if (!window.location.search) {
+            window.location.assign('/');
           }
-        });
-        tippy('[show-popout]', {
-          placement: 'bottom',
-          allowHTML: true,
-          interactive: true,
-          onShow(instance) {
-            const clone = (instance.reference.nextElementSibling.innerHTML);
-            instance.setContent('<table>' + clone + '</table>');
-          }
-        });
-      }
-
-      const csvFieldMapping = [
-        {jsonField: '', csvField: ''}
-      ]
-
-      const mostRecentInPersonAdditionalSupportFields = [
-        {name: 'mostRecentInPersonAdditionalSupportPrePrimary', text: 'Pre-Primary'},
-        {name: 'mostRecentInPersonAdditionalSupportPrimary', text: 'Primary'},
-        {name: 'mostRecentInPersonAdditionalSupportLowerSecondary', text: 'Lower Secondary'},
-        {name: 'mostRecentInPersonAdditionalSupportUpperSecondary', text: 'Upper Secondary'}
-      ]
-      const mostRecentInPersonAdditionalSupportTypes = [
-        {value: '1', title: 'School Day Changes', faIcon: 'calendar-day'},
-        {value: '2', title: 'School Year Changes', faIcon: 'calendar-alt'},
-        {value: '3', title: 'Teacher Tutoring', faIcon: 'school'},
-        {value: '4', title: 'Non-Teacher Tutoring', faIcon: 'home'},
-        {value: '5', title: 'Targeted Remedial Measures', faIcon: 'bullseye'},
-        {value: '6', title: 'Other', faIcon: 'question'}
-      ]
-      const mostRecentRemoteEducationModalityFields = [
-        {name: 'mostRecentRemoteEducationModalitiesPrePrimaryCode', text: 'Pre-Primary'},
-        {name: 'mostRecentRemoteEducationModalitiesPrimaryCode', text: 'Primary'},
-        {name: 'mostRecentRemoteEducationModalitiesLowerSecondaryCode', text: 'Lower Secondary'},
-        {name: 'mostRecentRemoteEducationModalitiesUpperSecondaryCode', text: 'Upper Secondary'},
-        {name: 'mostRecentRemoteEducationModalitiesHigherCode', text: 'Higher Education'},
-        {name: 'mostRecentRemoteEducationModalitiesVocationalCode', text: 'Technical/Vocational'}
-      ]
-      const mostRecentRemoteEducationModalityTypes = [
-        {value: '1', title: 'Online platforms', faIcon: 'globe'},
-        {value: '2', title: 'Television', faIcon: 'tv'},
-        {value: '3', title: 'Radio', faIcon: 'broadcast-tower'},
-        {value: '4', title: 'Mobile devices', faIcon: 'mobile'},
-        {value: '5', title: 'Take-home packages', faIcon: 'paperclip'},
-        {value: '8', title: 'Tutoring', faIcon: 'chalkboard-teacher'}
-      ]
-
-      const prepareData = (countries) => {
-        console.log('DATA',countries);
-        countries.sort((country1, country2) => {
-          return country1.fields.countryName.localeCompare(country2.fields.countryName)
-        });
-
-        mostRecentResponseDate = new Date('2021-01-24')
-        for (country of countries) {
-          country.educationServices = [];
-          if (country.fields.mostRecentExtendedBreakCode && country.fields.mostRecentExtendedBreakCode.includes('1')) {
-            country.educationServices.push('extendedBreak');
-          } else if (country.fields.mostRecentEducationStatusCode) {
-            if (country.fields.mostRecentEducationStatusCode.includes('1')) {country.educationServices.push('covidClosed')}
-            if (country.fields.mostRecentEducationStatusCode.includes('2')) {country.educationServices.push('remote')}
-            if (country.fields.mostRecentEducationStatusCode.includes('3')) {country.educationServices.push('hybrid')}
-            if (country.fields.mostRecentEducationStatusCode.includes('4')) {country.educationServices.push('inPerson')}
-          }
-
-          country.hasInPersonAdditionalSupports = mostRecentInPersonAdditionalSupportFields.reduce((flag, item) => {
-            if (country.fields[item.name] && !country.fields[item.name].includes('7') && !country.fields[item.name].includes('8')) return true;
-          }, false)
-
-          country.hasRemoteEducationModalities = mostRecentRemoteEducationModalityFields.reduce((flag, item) => {
-            if (country.fields[item.name] && !country.fields[item.name].includes('6') && !country.fields[item.name].includes('7')) return true;
-          }, false)
-
-          if (country.fields.mostRecentResponseDate) {
-            responseDate = new Date(country.fields.mostRecentResponseDate);
-            if (responseDate.getTime() > mostRecentResponseDate.getTime()) {mostRecentResponseDate = responseDate}
+          return window.location.search.replace('?','').toUpperCase();
+        }
+    
+        function getPlaceFromPlaceId(places, placeId) {
+          matchingPlaces = places.filter(place => (place.fields.iso3166Alpha2Code == placeId))
+          if (matchingPlaces.length == 0) {
+            window.location.assign('/');
+          } else {
+            console.log('COUNTRY',matchingPlaces[0]);
+            return matchingPlaces[0];
           }
         }
-        return {
-            countries: countries,
-            mostRecentResponseDate: mostRecentResponseDate,
-            mostRecentInPersonAdditionalSupportFields: mostRecentInPersonAdditionalSupportFields,
-            mostRecentInPersonAdditionalSupportTypes: mostRecentInPersonAdditionalSupportTypes,
-            mostRecentRemoteEducationModalityFields: mostRecentRemoteEducationModalityFields,
-            mostRecentRemoteEducationModalityTypes: mostRecentRemoteEducationModalityTypes
+    
+        function renderData(currentPlace) {
+          vm = new Vue({
+            el: '#vue-app',
+            data: {
+                place: currentPlace
+            },
+            delimiters: ['${','}'],
+            filters: {
+              percentage: function(value) {
+              if (!value) return '';
+              return Math.round(value * 100) + '%';
+            },
+              concatenate: function(value) {
+                if (value) {
+                  return Array.from(value).join(', ')
+                } else {
+                  return 'unknown'
+                }
+              }
+            },
+            methods: {
+              hasCategory: function(categories, categoryTag) {
+                if (categories) {return categories.filter(category => (category.tag === categoryTag)).length}
+                return false;
+              },
+    
+              categoryCount: function(categories, categoryGroups) {
+                let result = 0;
+                if (categories && categoryGroups) {
+                  for (categoryGroup of categoryGroups) {
+                    result += categories.filter(category => (category.group === categoryGroup)).length;
+                  }
+                }
+                return result;
+              }
+            },
+            computed: {
+                    // Upper secondary
+                upperSecondaryMalePer: function() {
+                    return 100 * this.place.fields.indicators.wb_SP_SEC_UTOT_MA_IN.value / this.place.fields.indicators.wb_SP_SEC_UTOT_IN.value;
+                },
+                upperSecondaryFemalePer: function() {
+                    return 100 * this.place.fields.indicators.wb_SP_SEC_UTOT_FE_IN.value / this.place.fields.indicators.wb_SP_SEC_UTOT_IN.value;
+                },// Secondary
+                secondaryMalePer: function() {
+                    return 100 * this.place.fields.indicators.wb_SP_SEC_TOTL_MA_IN.value / this.place.fields.indicators.wb_SP_SEC_TOTL_IN.value;
+                },
+                secondaryFemalePer: function() {
+                    return 100 * (1 - this.place.fields.indicators.wb_SP_SEC_TOTL_MA_IN.value / this.place.fields.indicators.wb_SP_SEC_TOTL_IN.value);
+                },// Lower Secondary
+                lowerSecondaryMalePer: function() {
+                    return 100 * this.place.fields.indicators.wb_SP_SEC_LTOT_MA_IN.value / this.place.fields.indicators.wb_SP_SEC_LTOT_IN.value;
+                },
+                lowerSecondaryFemalePer: function() {
+                    return 100 * this.place.fields.indicators.wb_SP_SEC_LTOT_FE_IN.value / this.place.fields.indicators.wb_SP_SEC_LTOT_IN.value;
+                },// Primary
+                primaryMalePer: function() {
+                    return 100 * this.place.fields.indicators.wb_SP_PRM_TOTL_MA_IN.value / this.place.fields.indicators.wb_SP_PRM_TOTL_IN.value;
+                },
+                primaryFemalePer: function() {
+                    return 100 * this.place.fields.indicators.wb_SP_PRM_TOTL_FE_IN.value / this.place.fields.indicators.wb_SP_PRM_TOTL_IN.value;
+                },// Primary Last
+                primaryLastMalePer: function() {
+                    return 100 * this.place.fields.indicators.wb_SP_PRM_GRAD_MA.value / this.place.fields.indicators.wb_SP_PRM_GRAD_TO.value;
+                },
+                primaryLastFemalePer: function() {
+                    return 100 * this.place.fields.indicators.wb_SP_PRM_GRAD_FE.value / this.place.fields.indicators.wb_SP_PRM_GRAD_TO.value;
+                },// Pre Primary
+                prePrimaryMalePer: function() {
+                    let prePrimaryPop = this.place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.value + this.place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.value;
+                    return 100 * this.place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.value / prePrimaryPop;
+                },
+                prePrimaryFemalePer: function() {
+                    let prePrimaryPop = this.place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.value + this.place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.value;
+                    return 100 * this.place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.value / prePrimaryPop;
+                },// Population
+                PopMalePer: function() {
+                return 100 * this.place.fields.indicators.wb_SP_POP_TOTL_MA_IN.value / this.place.fields.indicators.wb_SP_POP_TOTL.value;
+                },
+                PopFemalePer: function() {
+                    return 100 * this.place.fields.indicators.wb_SP_POP_TOTL_FE_IN.value / this.place.fields.indicators.wb_SP_POP_TOTL.value;
+                },
+            }
+          });
         }
-      }
-
-      const renderData = (data) => {
-        vm = new Vue({
-          el: '#vue-app',
-          data: prepareData(data),
-          delimiters: ['${','}'],  // need to use these because jekyll competes for {{ and }}
-          routes: [{ path: '/user/:id', component: this }],
-        //   filters: {
-        //     iso8601ToLocaleDateString: (value) => {
-        //       if (value) {
-        //         return (new Date(value)).toLocaleDateString(undefined, {timeZone:'UTC'});
-        //       } else {
-        //         return null
-        //       }
-        //     }
-        //   },
-        //   mounted: () => {
-        //     initTippy();
-        //   }
+    
+        // listen for changes to text after the # in the address bar
+        window.addEventListener("hashchange", function() {
+          vue.currentPlace = getPlaceFromPlaceId(placesData, getPlaceId());
         });
-      }
-
-      // if we have a token, use it to call the api, otherwise redirect to login screen
-      const dataSource = 'https://raw.githubusercontent.com/covideducationrecovery/beta-website/master/data/global-with-indicators.json'
-      fetch(dataSource)
+    
+    
+        const dataSource = 'https://raw.githubusercontent.com/covideducationrecovery/beta-website/master/data/global-with-indicators.json'
+        fetch(dataSource)
         .then(response => {
           switch (response.status) {
             case 200:
               // huzzah we have the data
-              response.json().then(data => renderData(data));
+              response.json().then(data => {
+                placesData = data;
+                console.log('Fetch:',placesData);    
+                renderData(getPlaceFromPlaceId(placesData, getPlaceId()));
+              });
               break;
             case 403: 
               // denied because of invalid token
@@ -464,6 +549,9 @@ libraries:
           document.getElementById(`loading`).innerText = "Error loading the data. We apologize for the inconvenience; please try again later.";
           console.error(error);
         })
-    </script>
+        
+      </script>
+
   </body>
 </html>
+
