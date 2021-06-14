@@ -1,5 +1,7 @@
 name: covid_data_fetch
-on: [push]
+on:
+  schedule:
+    - cron: "*/5 * * * *"
 jobs:
   get-covid-data:
     runs-on: ubuntu-latest
