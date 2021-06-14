@@ -2,7 +2,7 @@ name: covid_data_fetch
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '15 10,20 * * *'
+    - cron:  '15 8,20 * * *'
 jobs:
   get-covid-data:
     runs-on: ubuntu-latest
