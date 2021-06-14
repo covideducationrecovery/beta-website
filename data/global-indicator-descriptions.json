@@ -76,6 +76,14 @@
     "description": "Population ages 15-64, total"
   },
   {
+    "id": "wb_SP_POP_65UP_FE_IN",
+    "description": "Population ages 65 and above, female"
+  },
+  {
+    "id": "wb_SP_POP_65UP_MA_IN",
+    "description": "Population ages 65 and above, male"
+  },
+  {
     "id": "wb_SP_POP_65UP_TO",
     "description": "Population ages 65 and above, total"
   },
@@ -134,6 +142,10 @@
   {
     "id": "wb_SP_SEC_LTOT_MA_IN",
     "description": "School age population, lower secondary education, male (number)"
+  },
+  {
+    "id": "wb_SP_SEC_TOTL_FE_IN",
+    "description": "School age population, secondary education, female (number)"
   },
   {
     "id": "wb_SP_SEC_TOTL_IN",
