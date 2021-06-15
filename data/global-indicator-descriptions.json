@@ -1,5 +1,17 @@
 [
   {
+    "id": "wb_HD_HCI_HLOS_FE",
+    "description": "Harmonized Test Scores, Female"
+  },
+  {
+    "id": "wb_HD_HCI_HLOS_MA",
+    "description": "Harmonized Test Scores, Male"
+  },
+  {
+    "id": "wb_HD_HCI_HLOS",
+    "description": "Harmonized Test Scores"
+  },
+  {
     "id": "wb_HD_HCI_LAYS_FE",
     "description": "Learning-Adjusted Years of School, Female"
   },
@@ -36,6 +48,18 @@
     "description": "School enrollment, primary (% gross)"
   },
   {
+    "id": "wb_SE_PRM_NENR_FE",
+    "description": "School enrollment, primary, female (% net)"
+  },
+  {
+    "id": "wb_SE_PRM_NENR_MA",
+    "description": "School enrollment, primary, male (% net)"
+  },
+  {
+    "id": "wb_SE_PRM_NENR",
+    "description": "School enrollment, primary (% net)"
+  },
+  {
     "id": "wb_SE_SEC_ENRR_FE",
     "description": "School enrollment, secondary, female (% gross)"
   },
@@ -46,6 +70,18 @@
   {
     "id": "wb_SE_SEC_ENRR",
     "description": "School enrollment, secondary (% gross)"
+  },
+  {
+    "id": "wb_SE_SEC_NENR_FE",
+    "description": "School enrollment, secondary, female (% net)"
+  },
+  {
+    "id": "wb_SE_SEC_NENR_MA",
+    "description": "School enrollment, secondary, male (% net)"
+  },
+  {
+    "id": "wb_SE_SEC_NENR",
+    "description": "School enrollment, secondary (% net)"
   },
   {
     "id": "wb_SI_POV_DDAY_MI",
@@ -166,5 +202,17 @@
   {
     "id": "wb_SP_SEC_UTOT_MA_IN",
     "description": "School age population, upper secondary education, male (number)"
+  },
+  {
+    "id": "wb_UIS_SCHBSP_1_WINTERN",
+    "description": "Proportion of primary schools with access to Internet for pedagogical purposes (%)"
+  },
+  {
+    "id": "wb_UIS_SCHBSP_2_WINTERN",
+    "description": "Proportion of lower secondary schools with access to Internet for pedagogical purposes (%)"
+  },
+  {
+    "id": "wb_UIS_SCHBSP_3_WINTERN",
+    "description": "Proportion of upper secondary schools with access to Internet for pedagogical purposes (%)"
   }
 ]
