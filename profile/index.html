@@ -30,13 +30,12 @@ libraries:
             </div>
         </template>
         <template v-if="place">
-
             <div class="w-100 bg-light rounded d-flex flex-row justify-content-between align-items-start p-3">
                 <div class="d-flex flex-column flex-grow-1 justify-content-between m-2">
                     <h2>${ place.fields.countryName }</h2>
                     <h5>
                         Total Population:
-                        <span v-if="place.fields.indicators.wb_SP_POP_TOTL.value">${ place.fields.indicators.wb_SP_POP_TOTL.value.toLocaleString() }</span>
+                        <span v-if="place.fields.indicators.wb_SP_POP_TOTL.value">${ place.fields.indicators.wb_SP_POP_TOTL.value | friendlyNumber }</span>
                         <i class="fas fa-info-circle" :popover="`Population is based on the de facto definition of population, which counts all residents regardless of legal status or citizenship. Female or male population is the percentage of the population. <hr>Source: World Bank<br>Date: ${ place.fields.indicators.wb_SP_POP_TOTL.date }`"></i>
                     </h5>
                     <div v-if="PopMalePer" class="progress" style="height: 3em;">
@@ -55,25 +54,25 @@ libraries:
                 <img :src="`https://flagcdn.com/${ place.fields.iso3166Alpha2Code.toLowerCase() }.svg`" class="float-right w-25 rounded m-2" :alt="`Flag of ${ place.fields.countryName }`">
             </div>
 
-            <div class="w-100 bg-light rounded p-3 my-5">
+            <div v-if="placeCovid" class="w-100 bg-light rounded p-3 my-5">
                 <h3>
                     Covid-19 Statistics
-                    <i class="fas fa-info-circle" :popover="`Source: Johns Hopkins Coronavirus Resource Center<br>Date: TK`"></i>
+                    <i class="fas fa-info-circle" :popover="`Cases<br>Deaths</br>Vaccinations: the number of people fully vaccinated.<hr>Source: Johns Hopkins Coronavirus Resource Center<br>Date: TK`"></i>
                 </h3>
                 <div class="d-flex flex-row justify-content-around align-items-start m-5">
                     <div class="d-flex flex-column align-items-center">
-                        <h5 class="bg-warning">Unknown</h5>
-                        <i class="fas fa-virus"></i> </h6>
+                        <h5>${ placeCovid['total_cases'] | friendlyNumber }</h5>
+                        <h2><i class="fas fa-virus"></i> </h2>
                         <span>Cases</span>
                     </div>
                     <div class="d-flex flex-column align-items-center">
-                        <h5 class="bg-warning">Unknown</h5>
-                        <i class="fas fa-skull-crossbones"></i> </h6>
+                        <h5>${ placeCovid['total_deaths'] | friendlyNumber }</h5>
+                        <h2><i class="fas fa-skull-crossbones"></i></h2>
                         <span>Deaths</span>
                     </div>
                     <div class="d-flex flex-column align-items-center">
-                        <h5 class="bg-warning">Unknown</h5>
-                        <i class="fas fa-syringe"></i> </h6>
+                        <h5>${ placeCovid['people_fully_vaccinated'] | friendlyNumber }</h5>
+                        <h2><i class="fas fa-syringe"></i></h2>
                         <span>Vaccinations</span>
                     </div>
                 </div>
@@ -82,15 +81,29 @@ libraries:
                 </div>
             </div>
 
-            <div class="w-100 bg-light rounded p-3 my-5">
+            <div class="w-100 bg-light rounded p-3 my-5 row">
                 <h3>Education Status</h3>
-                <div class="d-flex flex-row">
+                <div class="d-flex flex-row my-2 align-items-center justify-content-start w-100">
                     <h5>Overall <i class="fas fa-info-circle" popover="'Overall status is determined by combining Primary, Lower Secondary, and Upper Secondary status.'"></i></h5>
                     <span class="badge bg-secondary" v-if="educationServices('mostRecentEducationStatusCode').includes('extendedBreak')"><i class="fas fa-umbrella-beach"></i> On extended break</span>
                     <span class="badge bg-danger" v-if="educationServices('mostRecentEducationStatusCode').includes('covidClosed')"><i class="fas fa-times"></i> Closed due to COVID-19</span>
                     <span class="badge bg-secondary" v-if="educationServices('mostRecentEducationStatusCode').includes('remote')"><i class="fas fa-home"></i> Remote</span>
                     <span class="badge bg-info" v-if="educationServices('mostRecentEducationStatusCode').includes('hybrid')"><i class="fas fa-school"></i> + <i class="fas fa-home"></i> Hybrid</span>
                     <span class="badge bg-dark" v-if="educationServices('mostRecentEducationStatusCode').includes('inPerson')"><i class="fas fa-school"></i> In-Person</span>    
+                </div>
+                <template v-for="gradeLevel of gradeLevelList">
+                    <div v-if="place.fields[gradeLevel.mresKey]" class="d-flex col-md-6 flex-row my-2 align-items-center">
+                        <h5 class="flex-grow-1">${ gradeLevel.label }<i v-if="gradeLevel.infoText" class="fas fa-info-circle" :popover="gradeLevel.infoText"></i></h5>
+                        <span class="badge bg-secondary" v-if="educationServices(gradeLevel.mresKey).includes('extendedBreak')"><i class="fas fa-umbrella-beach"></i> On extended break</span>
+                        <span class="badge bg-danger" v-if="educationServices(gradeLevel.mresKey).includes('covidClosed')"><i class="fas fa-times"></i> Closed due to COVID-19</span>
+                        <span class="badge bg-secondary" v-if="educationServices(gradeLevel.mresKey).includes('remote')"><i class="fas fa-home"></i> Remote</span>
+                        <span class="badge bg-info" v-if="educationServices(gradeLevel.mresKey).includes('hybrid')"><i class="fas fa-school"></i> + <i class="fas fa-home"></i> Hybrid</span>
+                        <span class="badge bg-dark" v-if="educationServices(gradeLevel.mresKey).includes('inPerson')"><i class="fas fa-school"></i> In-Person</span>        
+                    </div>
+                </template>
+                <h4 class="mt-4">In-person supports</h4>
+                <div class="d-flex flex-row my-2 align-items-center justify-content-start w-100">
+
                 </div>
             </div>
 
@@ -714,42 +727,93 @@ libraries:
             el: '#vue-app',
             data () {
                 return {
-                    places: [],
-                    place: undefined,
-                    placeId: undefined,
                     errorLoading: false,
                     errorMessage: undefined,
-                    // add covid indicators object here
+                    places: [],
+                    placesCovid: [],
+                    place: undefined,
+                    placeCovid: undefined,
+                    placeId: undefined,
+                    // this structure defines the various grade levels and the variable names for the fields which are broken out by grade level
+                    // if a variable doesn't include a grade level, it is left undefined (e.g. in-person academic supports [ipasKey] isn't collected for higher or vocational)
+                    gradeLevelList: [
+                        { label: 'Pre-Primary', mresKey: 'mostRecentEducationStatusPrePrimaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportPrePrimary', mrremKey: 'mostRecentRemoteEducationModalitiesPrePrimaryCode' },
+                        { label: 'Primary', mresKey: 'mostRecentEducationStatusPrimaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportPrimary', mrremKey: 'mostRecentRemoteEducationModalitiesPrimaryCode' },
+                        { label: 'Lower Secondary', mresKey: 'mostRecentEducationStatusLowerSecondaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportLowerSecondary', mrremKey: 'mostRecentRemoteEducationModalitiesLowerSecondaryCode' },
+                        { label: 'Upper Secondary', mresKey: 'mostRecentEducationStatusUpperSecondaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportUpperSecondary', mrremKey: 'mostRecentRemoteEducationModalitiesUpperSecondaryCode' },
+                        { label: 'Higher Education', mresKey: 'mostRecentEducationStatusHigherCode', ipasKey: undefined, mrremKey: 'mostRecentRemoteEducationModalitiesHigherCode' },
+                        { label: 'Technical/vocational', mresKey: 'mostRecentEducationStatusVocationalCode', ipasKey: undefined, mrremKey: 'mostRecentRemoteEducationModalitiesVocationalCode' }
+                    ],
+                    ipasOptions: [
+                        {value: '1', label: 'School Day Changes', faIcon: 'calendar-day'},
+                        {value: '2', label: 'School Year Changes', faIcon: 'calendar-alt'},
+                        {value: '3', label: 'Teacher Tutoring', faIcon: 'school'},
+                        {value: '4', label: 'Non-Teacher Tutoring', faIcon: 'home'},
+                        {value: '5', label: 'Targeted Remedial Measures', faIcon: 'bullseye'},
+                        {value: '6', label: 'Other', faIcon: 'question'}
+                    ],
+                    mmremOptions: [
+                        {value: '1', label: 'Online platforms', faIcon: 'globe'},
+                        {value: '2', label: 'Television', faIcon: 'tv'},
+                        {value: '3', label: 'Radio', faIcon: 'broadcast-tower'},
+                        {value: '4', label: 'Mobile devices', faIcon: 'mobile'},
+                        {value: '5', label: 'Take-home packages', faIcon: 'paperclip'},
+                        {value: '8', label: 'Tutoring', faIcon: 'chalkboard-teacher'}
+                    ]
+
+                    // add object to contain covid indicators here
                 }
             },
             delimiters: ['${', '}'],
             filters: {
-                percentage: function (value) {
-                    if (!value) return '';
-                    return Math.round(value * 100) + '%';
-                },
                 concatenate: function (value) {
                     if (value) {
                         return Array.from(value).join(', ')
                     } else {
                         return 'unknown'
                     }
+                },
+                friendlyNumber: function(value) {
+                    if (!Number.isNaN(value)) {
+                        return value.toLocaleString()
+                    } else {
+                        return value
+                    }
+                },
+                percentage: function (value) {
+                    if (!value) return '';
+                    return Math.round(value * 100) + '%';
                 }
             },
             async created () {
                 this.placeId = window.location.search.replace('?', '').toUpperCase()
+                // load critical data in this block; a failure will cause an error message to be diplayed
                 try {
-                    const dataSourceResponse = await fetch('/data/global-with-indicators.json')
-                    if (dataSourceResponse.ok) {
-                        this.places = await dataSourceResponse.json()
+                    const placesResponse = await fetch('/data/global-with-indicators.json')
+                    if (placesResponse.ok) {
+                        this.places = await placesResponse.json()
                         this.place = this.places.filter(place => place.fields.iso3166Alpha2Code === this.placeId)[0]
+                        if (!this.place) {
+                            throw new Error('Unknown place identifier.')
+                        }
                     } else {
-                        throw new Error(`HTTP Error ${dataSourceResponse.status}: ${dataSourceResponse.statusText} (${dataSourceResponse.url.split('/').pop()})`)
+                        throw new Error(`HTTP Error ${placesResponse.status}: ${placesResponse.statusText} (${placesResponse.url.split('/').pop()})`)
                     }
-                    // add code to load covid indicators file here, cut and paste the above code
                 } catch (e) {
                     this.errorLoading = true
                     this.errorMessage = e.message
+                }
+                // load non-critical data in this block; a failure will be logged to the console.
+                try {
+                    const placesCovidResponse = await fetch('/data/covid_data.json')
+                    if (placesCovidResponse.ok) {
+                        this.placesCovid = await placesCovidResponse.json()
+                        this.placeCovid = this.placesCovid.filter(placeCovid => placeCovid.iso2 === this.placeId)[0]
+                    } else {
+                        throw new Error(`Error loading covid-data.json: ${placesCovidResponse.status} ${placesCovidResponse.statusText}`)
+                    }
+                } catch (e) {
+                    console.error(e.message)
                 }
             },
             updated () {
@@ -820,13 +884,19 @@ libraries:
                 },// Population
                 PopMalePer () {
                     return 100 * this?.place?.fields?.indicators?.wb_SP_POP_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_POP_TOTL?.value;
-                    console.log("TEST")
-                    return 10;
                 },
                 PopFemalePer () {
                     return 100 * this?.place?.fields?.indicators?.wb_SP_POP_TOTL_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_POP_TOTL?.value;
-                    return 10;
                 },
+                inPersonSupports () {
+                    if (this.place) {
+                        return mostRecentInPersonAdditionalSupportFields.reduce((flag, item) => {
+                            if (country.fields[item.name] && !country.fields[item.name].includes('7') && !country.fields[item.name].includes('8')) return true;
+                        }, false)
+
+                    }
+                    return false
+                }
             }
         });
 
