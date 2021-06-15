@@ -7,6 +7,7 @@ Created on Thu Jun 10 11:01:51 2021
 
 import json
 import pandas as pd
+from datetime import datetime
 
 
 def update_json_file():
@@ -30,14 +31,18 @@ def update_json_file():
         if iso2_code:
             item['iso2'] = iso2_code['iso2']
         else:
-            item['iso2'] = 'N/A'
-            print(item)
+            parsed.remove(item)
+            print("Item Removed:", item)
+            
+    output = {}
+    output["fileDate"] = datetime.now().isoformat()
+    output["places"] = parsed
     
     with open('covid_data.json', 'w', encoding='utf-8') as f:
-        json.dump(parsed, f, ensure_ascii=False, indent=4)
+        json.dump(output, f, ensure_ascii=False, indent=4)
     
     
-    print('Data Fetch Complete')
+    print('\n ---Data Fetch Complete---')
     
 
 
