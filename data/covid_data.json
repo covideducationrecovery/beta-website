@@ -1,5 +1,5 @@
 {
-    "fileDate": "2021-06-15T16:16:08.250214",
+    "fileDate": "2021-06-15T16:22:38.134151",
     "places": [
         {
             "iso_code": "AFG",
@@ -1542,12 +1542,22 @@
             "iso2": "SG"
         },
         {
+            "iso_code": "SXM",
+            "total_cases": null,
+            "total_deaths": null,
+            "total_vaccinations": 34039.0,
+            "people_vaccinated": 19541.0,
+            "people_fully_vaccinated": 14498.0,
+            "iso2": "SX"
+        },
+        {
             "iso_code": "SVK",
             "total_cases": 391038.0,
             "total_deaths": 12441.0,
             "total_vaccinations": 3009146.0,
             "people_vaccinated": 1875457.0,
-            "people_fully_vaccinated": 1133689.0
+            "people_fully_vaccinated": 1133689.0,
+            "iso2": "SK"
         },
         {
             "iso_code": "SVN",
