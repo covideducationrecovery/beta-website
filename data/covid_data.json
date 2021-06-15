@@ -1,5 +1,5 @@
 {
-    "fileDate": "2021-06-15T16:23:51.025293",
+    "fileDate": "2021-06-15T18:43:02.239440",
     "places": [
         {
             "iso_code": "AFG",
@@ -908,8 +908,8 @@
         },
         {
             "iso_code": "JOR",
-            "total_cases": 739847.0,
-            "total_deaths": 9530.0,
+            "total_cases": 743877.0,
+            "total_deaths": 9602.0,
             "total_vaccinations": 2681287.0,
             "people_vaccinated": 1940975.0,
             "people_fully_vaccinated": 740312.0,
