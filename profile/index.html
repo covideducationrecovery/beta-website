@@ -57,7 +57,7 @@ libraries:
             <div v-if="placeCovid" class="w-100 bg-light rounded p-3 my-5">
                 <h3>
                     Covid-19 Statistics
-                    <i class="fas fa-info-circle" :popover="`Cases<br>Deaths</br>Vaccinations: the number of people fully vaccinated.<hr>Source: Johns Hopkins Coronavirus Resource Center<br>Date: TK`"></i>
+                    <i class="fas fa-info-circle" :popover="`<strong>Cases</strong>: total number of cases since the beginning of the Covid-19 pandemic.<br><strong>Deaths</strong>: total number of deaths attributed to Covid-19 since the beginning of the pandemic.</br><strong>Vaccinations</strong>: the number of people who have been fully vaccinated for protection against Covid-19.<hr>Source: Our World In Data<br>Date: This information is updated on a daily basis.`"></i>
                 </h3>
                 <div class="d-flex flex-row justify-content-around align-items-start m-5">
                     <div class="d-flex flex-column align-items-center">
@@ -81,10 +81,13 @@ libraries:
                 </div>
             </div>
 
-            <div class="w-100 bg-light rounded p-3 my-5 row">
-                <h3>Education Status</h3>
+            <div class="w-100 bg-light rounded p-3 my-5">
+                <div class="w-100 d-flex flex-row justify-content-between align-items-baseline">
+                    <h3>Education Status</h3>
+                    <span>Updated ${ this.place.mostRecentResponseDate }</span>
+                </div>
                 <div class="d-flex flex-row my-2 align-items-center justify-content-start w-100">
-                    <h5>Overall <i class="fas fa-info-circle" popover="'Overall status is determined by combining Primary, Lower Secondary, and Upper Secondary status.'"></i></h5>
+                    <h5>Overall <i class="fas fa-info-circle" popover="Overall status is determined by combining Primary, Lower Secondary, and Upper Secondary status."></i></h5>
                     <span class="badge bg-secondary" v-if="educationServices('mostRecentEducationStatusCode').includes('extendedBreak')"><i class="fas fa-umbrella-beach"></i> On extended break</span>
                     <span class="badge bg-danger" v-if="educationServices('mostRecentEducationStatusCode').includes('covidClosed')"><i class="fas fa-times"></i> Closed due to COVID-19</span>
                     <span class="badge bg-secondary" v-if="educationServices('mostRecentEducationStatusCode').includes('remote')"><i class="fas fa-home"></i> Remote</span>
@@ -818,7 +821,7 @@ libraries:
             },
             updated () {
                 // tippy needs to initialize after DOM is rendered. Normally this would be mounted() but
-                // since data is loaded asynchronously mounted() will be called before the data has been loaded.
+                // since data is loaded asynchronously, mounted() will be called before the data has been loaded.
                 tippy('[popover]', {
                     placement: 'top',
                     maxWidth: 350,
