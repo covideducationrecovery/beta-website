@@ -34,9 +34,9 @@ libraries:
                 <div class="d-flex flex-column flex-grow-1 justify-content-between m-2">
                     <h2>${ place.fields.countryName }</h2>
                     <h5>
-                        Total Population:
+                        Population:
                         <span v-if="place.fields.indicators.wb_SP_POP_TOTL.value">${ place.fields.indicators.wb_SP_POP_TOTL.value | friendlyNumber }</span>
-                        <i class="fas fa-info-circle" :popover="`Population is based on the de facto definition of population, which counts all residents regardless of legal status or citizenship. Female or male population is the percentage of the population. <hr>Source: World Bank<br>Date: ${ place.fields.indicators.wb_SP_POP_TOTL.date }`"></i>
+                        <i class="fas fa-info-circle" :popover="`Population is based on the de facto definition of population, which counts all residents regardless of legal status or citizenship. Female or male population is the percentage of the population. <hr>Source: World Bank<br>Updated: ${ place.fields.indicators.wb_SP_POP_TOTL.date }`"></i>
                     </h5>
                     <div v-if="PopMalePer" class="progress" style="height: 3em;">
                         <div v-if="PopMalePer" :style="{width: PopMalePer + '%' }" class="progress-bar bg-male"
@@ -57,7 +57,7 @@ libraries:
             <div v-if="placeCovid" class="w-100 bg-light rounded p-3 my-5">
                 <h3>
                     Covid-19 Statistics
-                    <i class="fas fa-info-circle" :popover="`<strong>Cases</strong>: total number of cases since the beginning of the Covid-19 pandemic.<br><strong>Deaths</strong>: total number of deaths attributed to Covid-19 since the beginning of the pandemic.</br><strong>Vaccinations</strong>: the number of people who have been fully vaccinated for protection against Covid-19.<hr>Source: Our World In Data<br>Date: This information is updated on a daily basis.`"></i>
+                    <i class="fas fa-info-circle" :popover="`<strong>Cases</strong>: total number of cases since the beginning of the Covid-19 pandemic.<br><strong>Deaths</strong>: total number of deaths attributed to Covid-19 since the beginning of the pandemic.</br><strong>Vaccinations</strong>: the number of people who have been fully vaccinated for protection against Covid-19.<hr>Source: Our World In Data<br>Updated: ${ this.placeCovid.updated }`"></i>
                 </h3>
                 <div class="d-flex flex-row justify-content-around align-items-start m-5">
                     <div class="d-flex flex-column align-items-center">
@@ -84,10 +84,10 @@ libraries:
             <div class="w-100 bg-light rounded p-3 my-5">
                 <div class="w-100 d-flex flex-row justify-content-between align-items-baseline">
                     <h3>Education Status</h3>
-                    <span>Updated ${ this.place.mostRecentResponseDate }</span>
+                    <span>Updated ${ this.place.fields.mostRecentResponseDate }</span>
                 </div>
-                <div class="d-flex flex-row my-2 align-items-center justify-content-start w-100">
-                    <h5>Overall <i class="fas fa-info-circle" popover="Overall status is determined by combining Primary, Lower Secondary, and Upper Secondary status."></i></h5>
+                <div class="d-flex flex-row align-items-center col-10 col-md-8 col-lg-6 mx-auto my-2">
+                    <h5 class="flex-grow-1">Overall <i class="fas fa-info-circle" popover="Overall status is determined by combining Primary, Lower Secondary, and Upper Secondary status."></i></h5>
                     <span class="badge bg-secondary" v-if="educationServices('mostRecentEducationStatusCode').includes('extendedBreak')"><i class="fas fa-umbrella-beach"></i> On extended break</span>
                     <span class="badge bg-danger" v-if="educationServices('mostRecentEducationStatusCode').includes('covidClosed')"><i class="fas fa-times"></i> Closed due to COVID-19</span>
                     <span class="badge bg-secondary" v-if="educationServices('mostRecentEducationStatusCode').includes('remote')"><i class="fas fa-home"></i> Remote</span>
@@ -95,7 +95,7 @@ libraries:
                     <span class="badge bg-dark" v-if="educationServices('mostRecentEducationStatusCode').includes('inPerson')"><i class="fas fa-school"></i> In-Person</span>    
                 </div>
                 <template v-for="gradeLevel of gradeLevelList">
-                    <div v-if="place.fields[gradeLevel.mresKey]" class="d-flex col-md-6 flex-row my-2 align-items-center">
+                    <div v-if="place.fields[gradeLevel.mresKey]" class="d-flex flex-row align-items-center col-10 col-md-8 col-lg-6 mx-auto my-2">
                         <h5 class="flex-grow-1">${ gradeLevel.label }<i v-if="gradeLevel.infoText" class="fas fa-info-circle" :popover="gradeLevel.infoText"></i></h5>
                         <span class="badge bg-secondary" v-if="educationServices(gradeLevel.mresKey).includes('extendedBreak')"><i class="fas fa-umbrella-beach"></i> On extended break</span>
                         <span class="badge bg-danger" v-if="educationServices(gradeLevel.mresKey).includes('covidClosed')"><i class="fas fa-times"></i> Closed due to COVID-19</span>
@@ -104,9 +104,17 @@ libraries:
                         <span class="badge bg-dark" v-if="educationServices(gradeLevel.mresKey).includes('inPerson')"><i class="fas fa-school"></i> In-Person</span>        
                     </div>
                 </template>
-                <h4 class="mt-4">In-person supports</h4>
-                <div class="d-flex flex-row my-2 align-items-center justify-content-start w-100">
-
+                <div>
+                    <h4 class="mt-4">In-person education supports by grade level</h4>
+                    <div>
+                        coming soon
+                    </div>
+                </div>
+                <div>
+                    <h4 class="mt-4">Remote education supports by grade level</h4>
+                    <div>
+                        coming soon
+                    </div>
                 </div>
             </div>
 
@@ -114,6 +122,44 @@ libraries:
                 <h3>
                     Education Statistics
                 </h3>
+                <div class="my-3">
+                    <h4>
+                        School-age population
+                    </h4>
+                    <span>Moving here soon.</span>
+                </div>
+                <div v-if="place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN || place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN || place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN" class="my-3">
+                    <h4>
+                        Internet access <i class="fas fa-info-circle" popover="Proportion of schools, by grade level, with access to Internet for pedagogical purposes.<hr>Source: UNESCO Institute for Statistics via World Bank<br>Updated: TK"></i>
+                    </h4>
+                    <div v-if="place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN" class="d-flex flex-row justify-content-center align-items-center my-2">
+                        <span class="col-3">Primary</span>
+                        <div class="col-9 progress text-center w-50" style="height: 3em">
+                            <div class="progress-bar bg-info d-flex flex-row align-items-center" role="progressbar" :style="{ width: place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN?.value.toFixed(2) + '%' }" :aria-valuenow="place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN?.value.toFixed(2)" aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-globe"></i>
+                                ${ place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN?.value.toFixed(2) }%
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN" class="d-flex flex-row justify-content-center align-items-center my-2">
+                        <span class="col-3">Lower Secondary</span>
+                        <div class="col-9 progress text-center w-50" style="height: 3em">
+                            <div class="progress-bar bg-info d-flex flex-row align-items-center" role="progressbar" :style="{ width: place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN?.value.toFixed(2) + '%' }" :aria-valuenow="place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN?.value.toFixed(2)" aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-globe"></i>
+                                ${ place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN?.value.toFixed(2) }%
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN" class="d-flex flex-row justify-content-center align-items-center my-2">
+                        <span class="col-3">Lower Secondary</span>
+                        <div class=" col-9 progress text-center w-50" style="height: 3em">
+                            <div class="progress-bar bg-info d-flex flex-row align-items-center" role="progressbar" :style="{ width: place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN?.value.toFixed(2) + '%' }" :aria-valuenow="place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN?.value.toFixed(2)" aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-globe"></i>
+                                ${ place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN?.value.toFixed(2) }%
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div class="row g-0 bg-light position-relative rounded">
@@ -653,65 +699,11 @@ libraries:
 
 
 
-
-                    <br><br>
-                    <h5 class="mt-0 text-center">Internet Access</h5>
-                    <div class="row justify-content-center">
-                        <hr>
-                    </div>
-
-
-
-                    <div class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Population Group</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Schools with no Internet</h6>
-                        </div>
-
-                        <hr>
-                    </div>
-
-                    <div v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Primary</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'XXXXXXX' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_LPV_PRIM.date">
-                                ${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }% NO DATA</h6>
-                        </div>
-                    </div>
-
-                    <div v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Lower Secondary</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'XXXXXXX' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_LPV_PRIM.date">
-                                ${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }% NO DATA</h6>
-                        </div>
-                    </div>
-
-                    <div v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Upper Secondary</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'XXXXXXX' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_LPV_PRIM.date">
-                                ${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }% NO DATA</h6>
-                        </div>
-                    </div>
-
                 </div>
-
-
             </div>
 
             <div class="spacer-10"></div>
+
             <div class="container">
                 To cite this work, use the following: Johns Hopkins University, World Bank & UNICEF (2021). COVID-19 Global
                 Education Recovery Tracker. Baltimore, Washington DC, New York: JHU, World Bank, UNICEF.
@@ -776,6 +768,19 @@ libraries:
                         return 'unknown'
                     }
                 },
+                friendlyDate: function(value) {
+                    try {
+                        date = new Date.parse(value)
+                        return date
+                            .setHours(0)
+                            .setMinutes(0)
+                            .setSeconds(0)
+                            .setMilliseconds(0)
+                            .toLocaleString()
+                    } catch {
+                        return 'unknown'
+                    }
+                },
                 friendlyNumber: function(value) {
                     if (!Number.isNaN(value)) {
                         return value.toLocaleString()
@@ -811,7 +816,8 @@ libraries:
                     const placesCovidResponse = await fetch('/data/covid_data.json')
                     if (placesCovidResponse.ok) {
                         this.placesCovid = await placesCovidResponse.json()
-                        this.placeCovid = this.placesCovid.filter(placeCovid => placeCovid.iso2 === this.placeId)[0]
+                        this.placeCovid = this.placesCovid.places.filter(placeCovid => placeCovid.iso2 === this.placeId)[0]
+                        this.placeCovid.updated = this.placesCovid.fileDate
                     } else {
                         throw new Error(`Error loading covid-data.json: ${placesCovidResponse.status} ${placesCovidResponse.statusText}`)
                     }
