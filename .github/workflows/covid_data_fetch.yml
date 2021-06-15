@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: git config --global user.email "you@example.com"
-      - run: git config --global user.name "Your Name"
+      - run: git config --global user.email "beta@covideducationrecovery.global"
+      - run: git config --global user.name "Automated Covid Data"
 
       
       - name: setup python
