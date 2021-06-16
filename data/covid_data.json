@@ -1,5 +1,5 @@
 {
-    "fileDate": "2021-06-15T18:43:02.239440",
+    "fileDate": "2021-06-16T01:29:18.992498",
     "places": [
         {
             "iso_code": "AFG",
@@ -1822,8 +1822,8 @@
         },
         {
             "iso_code": "USA",
-            "total_cases": 33474692.0,
-            "total_deaths": 599945.0,
+            "total_cases": 33474734.0,
+            "total_deaths": 599946.0,
             "total_vaccinations": 310645827.0,
             "people_vaccinated": 174234573.0,
             "people_fully_vaccinated": 144919339.0,
