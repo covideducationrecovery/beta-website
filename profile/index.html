@@ -16,7 +16,7 @@ libraries:
         .bg-female { background-color: #AA5986; flex-direction: row; align-items: center }
         .fas { font-size: 0.75em; margin-left: 0.2em; margin-right: 0.2em }
         .percentage:after { content: '%' }
-        .progress.not-available:after { content: 'not available' }
+        .not-available:after { content: 'not available' }
     </style>
 </head>
 
@@ -35,12 +35,13 @@ libraries:
         <template v-if="place">
             <div class="w-100 bg-light rounded d-flex flex-row justify-content-between align-items-start p-3">
                 <div class="d-flex flex-column flex-grow-1 justify-content-between m-2">
-                    <h2>${ place.fields.countryName }</h2>
-                    <h5>
+                    <h2 style="margin-bottom: 0">${ place.fields.countryName }</h2>
+                    <span class="text-muted">${ place.fields.wbRegion }</span>
+                    <h5 class="mt-3">
                         Population:
-                        <span v-if="place.fields.indicators.wb_SP_POP_TOTL.value">${ place.fields.indicators.wb_SP_POP_TOTL.value | friendlyNumber }</span>
+                        <span v-if="place.fields.indicators?.wb_SP_POP_TOTL.value">${ place.fields.indicators.wb_SP_POP_TOTL.value | friendlyNumber }</span>
                         <span v-else>unknown</span>
-                        <i class="fas fa-info-circle" :popover="`Population is based on the de facto definition of population, which counts all residents regardless of legal status or citizenship. Female or male population is the percentage of the population. <hr>Source: World Bank<br>Updated: ${ place.fields.indicators.wb_SP_POP_TOTL.date }`"></i>
+                        <i class="fas fa-info-circle" :popover="`Population is based on the de facto definition of population, which counts all residents regardless of legal status or citizenship. Female or male population is the percentage of the population. <hr>Source: World Bank<br>Updated: ${ place.fields.indicators?.wb_SP_POP_TOTL?.date }`"></i>
                     </h5>
                     <div v-if="PopMalePer" class="progress" style="height: 3em;">
                         <div v-if="PopMalePer" :style="{width: PopMalePer + '%' }" class="progress-bar bg-male"
@@ -54,7 +55,7 @@ libraries:
                             <span class="percentage">${ PopFemalePer.toFixed(2) | friendlyNumber }</span>
                         </div>
                     </div>
-                    <h5 class="mt-3">
+                    <h5 v-if="place.fields.indicators" class="mt-3">
                         School-age population:
                         <span v-if="schoolAgePopulation">${ schoolAgePopulation.total | friendlyNumber }</span>
                         <span v-else>unknown</span>
@@ -146,353 +147,335 @@ libraries:
                 <h3>
                     Education Statistics
                 </h3>
-                <div class="my-3">
-                    <h4>
-                        School-age populations
-                        <i class="fas fa-info-circle" :popover="`Population of the age group theoretically corresponding to the specified education level as indicated by theoretical entrance age and duration.<hr>Source: World Bank<br>Updated: ${ place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.date }`"></i>
-                    </h4>
-                    <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
-                        <h6 class="col-3">Pre-Primary</h6>
-                        <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
-                            ${ (place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.value +
-                            place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.value ).toLocaleString('en-US') }
-                        </h6>
-                        <div class="progress text-center col-6">
-                            <div v-if="prePrimaryMalePer" :style="{width: prePrimaryMalePer + '%' }"
-                                class="progress-bar bg-male" role="progressbar" :aria-valuenow=" prePrimaryMalePer" aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-male mx-1"></i>
-                                <span class="percentage">${ prePrimaryMalePer.toFixed(2) }</span>
-                            </div>
-                            <div v-if="prePrimaryFemalePer" :style="{width: prePrimaryFemalePer + '%' }"
-                                class="progress-bar bg-female" role="progressbar" :aria-valuenow="prePrimaryFemalePer" aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-female mx-1"></i>
-                                <span class="percentage">${ prePrimaryFemalePer.toFixed(2) }</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
-                        <h6 class="col-3">Primary (all years)</h6>
-                        <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
-                            ${ place.fields.indicators.wb_SP_PRM_TOTL_IN.value.toLocaleString() }
-                        </h6>
-                        <div class="progress text-center col-6">
-                            <div v-if="primaryMalePer" :style="{width: primaryMalePer + '%' }"
-                                class="progress-bar bg-male" role="progressbar" :aria-valuenow="primaryMalePer " aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-male mx-1"></i>
-                                <span class="percentage">${ primaryMalePer.toFixed(2) }</span>
-                                
-                            </div>
-                            <div v-if="primaryFemalePer" :style="{width: primaryFemalePer + '%' }"
-                                class="progress-bar bg-female" role="progressbar"
-                                :aria-valuenow="primaryFemalePer" aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-female mx-1"></i>
-                                <span class="percentage">${ primaryFemalePer.toFixed(2) }</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
-                        <h6 class="col-3">Primary (final year)</h6>
-                        <h6 v-if="place.fields.indicators.wb_SP_PRM_GRAD_TO" class="col-3">
-                            ${ place.fields.indicators.wb_SP_PRM_GRAD_TO.value.toLocaleString() }
-                        </h6>
-                        <div class="progress text-center col-6">
-                            <div v-if="primaryLastMalePer" :style="{width: primaryMalePer + '%' }"
-                                class="progress-bar bg-male" role="progressbar" :aria-valuenow="primaryLastMalePer " aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-male mx-1"></i>
-                                <span class="percentage">${ primaryLastMalePer.toFixed(2) }</span>
-                            </div>
-                            <div v-if="primaryLastFemalePer" :style="{width: primaryLastFemalePer + '%' }"
-                                class="progress-bar bg-female" role="progressbar"
-                                :aria-valuenow="primaryLastFemalePer" aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-female mx-1"></i>
-                                <span class="percentage">${ primaryLastFemalePer.toFixed(2) }</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
-                        <h6 class="col-3">Secondary (lower)</h6>
-                        <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
-                            ${ place.fields.indicators.wb_SP_SEC_LTOT_IN.value.toLocaleString() }
-                        </h6>
-                        <div class="progress text-center col-6">
-                            <div v-if="lowerSecondaryMalePer" :style="{width: lowerSecondaryMalePer + '%' }"
-                                class="progress-bar bg-male" role="progressbar" :aria-valuenow="primaryMalePer " aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-male mx-1"></i>
-                                <span class="percentage">${ lowerSecondaryMalePer.toFixed(2) }</span>
-                                
-                            </div>
-                            <div v-if="lowerSecondaryFemalePer" :style="{width: lowerSecondaryFemalePer + '%' }"
-                                class="progress-bar bg-female" role="progressbar"
-                                :aria-valuenow="lowerSecondaryFemalePer" aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-female mx-1"></i>
-                                <span class="percentage">${ lowerSecondaryFemalePer.toFixed(2) }</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
-                        <h6 class="col-3">Secondary (upper)</h6>
-                        <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
-                            ${ place.fields.indicators.wb_SP_SEC_UTOT_IN.value.toLocaleString() }
-                        </h6>
-                        <div class="progress text-center col-6">
-                            <div v-if="upperSecondaryMalePer" :style="{width: upperSecondaryMalePer + '%' }"
-                                class="progress-bar bg-male" role="progressbar" :aria-valuenow="upperSecondaryMalePer " aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-male mx-1"></i>
-                                <span class="percentage">${ upperSecondaryMalePer.toFixed(2) }</span>
-                                
-                            </div>
-                            <div v-if="upperSecondaryFemalePer" :style="{width: upperSecondaryFemalePer + '%' }"
-                                class="progress-bar bg-female" role="progressbar"
-                                :aria-valuenow="upperSecondaryFemalePer" aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-female mx-1"></i>
-                                <span class="percentage">${ upperSecondaryFemalePer.toFixed(2) }</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
-                        <h6 class="col-3">Secondary (combined)</h6>
-                        <h6 v-if="place.fields.indicators.wb_SP_SEC_TOTL_IN" class="col-3">
-                            ${ place.fields.indicators.wb_SP_SEC_TOTL_IN.value.toLocaleString() }
-                        </h6>
-                        <div class="progress text-center col-6">
-                            <div v-if="secondaryMalePer" :style="{width: secondaryMalePer + '%' }"
-                                class="progress-bar bg-male" role="progressbar" :aria-valuenow="secondaryMalePer " aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-male mx-1"></i>
-                                <span class="percentage">${ secondaryMalePer.toFixed(2) }</span>
-                                
-                            </div>
-                            <div v-if="secondaryFemalePer" :style="{width: secondaryFemalePer + '%' }"
-                                class="progress-bar bg-female" role="progressbar"
-                                :aria-valuenow="secondaryFemalePer" aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-female mx-1"></i>
-                                <span class="percentage">${ secondaryFemalePer.toFixed(2) }</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="my-3">
-                    <h4>Enrollment ratios</h4>
-                    <h5 class="my-3">
-                        Gross enrollment ratios
-                        <i class="fas fa-info-circle" popover="The ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown.<hr>Source: World Bank<br>Date: TK"></i>
-                    </h5>
-                    <div>
-                        <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
-                            <h6 class="col-2">Primary</h6>
-                            <div v-if="place.fields.indicators.wb_SE_PRM_ENRR" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR.value + '%' }"
-                                    class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_PRM_ENRR.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                            <div v-if="place.fields.indicators.wb_SE_PRM_ENRR_MA" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR_MA.value + '%' }"
-                                    class="progress-bar bg-male" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR_MA.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <i class="fas fa-male mx-1"></i>
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_PRM_ENRR_MA.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                            <div v-if="place.fields.indicators.wb_SE_PRM_ENRR_FE" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR_FE.value + '%' }"
-                                    class="progress-bar bg-female" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR_FE.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <i class="fas fa-female mx-1"></i>
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_PRM_ENRR_FE.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                        </div>
-                        <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
-                            <h6 class="col-2">Secondary</h6>
-                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR.value + '%' }"
-                                    class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_MA" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_MA.value + '%' }"
-                                    class="progress-bar bg-male" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_MA.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <i class="fas fa-male mx-1"></i>
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR_MA.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_FE" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_FE.value + '%' }"
-                                    class="progress-bar bg-female" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_FE.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <i class="fas fa-female mx-1"></i>
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR_FE.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                        </div>
-                    </div>
-                    <h5 class="my-3">
-                        Net enrollment ratios
-                        <i class="fas fa-info-circle" popover="The ratio of children of official school age who are enrolled in school to the population of the corresponding official school age.<hr>Source: World Bank<br>Date: TK"></i>
-                    </h5>
-                    <div>
-                        <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
-                            <h6 class="col-2">Primary</h6>
-                            <div v-if="place.fields.indicators.wb_SE_PRM_NENR" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_PRM_NENR.value + '%' }"
-                                    class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_NENR.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_PRM_NENR.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                            <div v-if="place.fields.indicators.wb_SE_PRM_NENR_MA" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_PRM_NENR_MA.value + '%' }"
-                                    class="progress-bar bg-male" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_NENR_MA.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <i class="fas fa-male mx-1"></i>
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_PRM_NENR_MA.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                            <div v-if="place.fields.indicators.wb_SE_PRM_NENR_FE" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_PRM_NENR_FE.value + '%' }"
-                                    class="progress-bar bg-female" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_NENR_FE.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <i class="fas fa-female mx-1"></i>
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_PRM_NENR_FE.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                        </div>
-                        <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
-                            <h6 class="col-2">Secondary</h6>
-                            <div v-if="place.fields.indicators.wb_SE_SEC_NENR" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_NENR.value + '%' }"
-                                    class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_NENR.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_NENR.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                            <div v-if="place.fields.indicators.wb_SE_SEC_NENR_MA" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_NENR_MA.value + '%' }"
-                                    class="progress-bar bg-male" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_NENR_MA.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <i class="fas fa-male mx-1"></i>
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_NENR_MA.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                            <div v-if="place.fields.indicators.wb_SE_SEC_NENR_FE" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_NENR_FE.value + '%' }"
-                                    class="progress-bar bg-female" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_NENR_FE.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <i class="fas fa-female mx-1"></i>
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_NENR_FE.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="my-3">
-                    <h4>Poverty</h4>
-                    <div>
-                        <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
-                            <h6 class="col-2">
-                                Learning
-                                <i class="fas fa-info-circle" popover="Share of Children at the End-of-Primary age below minimum reading proficiency adjusted by Out-of-School Children (%).<hr>Source: World Bank<br>Date: TK"></i>
+                <template v-if="place.fields.indicators">
+                    <div class="my-3">
+                        <h4>
+                            School-age populations
+                            <i class="fas fa-info-circle" :popover="`Population of the age group theoretically corresponding to the specified education level as indicated by theoretical entrance age and duration.<hr>Source: World Bank<br>Updated: ${ place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.date }`"></i>
+                        </h4>
+                        <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
+                            <h6 class="col-3">Pre-Primary</h6>
+                            <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
+                                ${ (place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.value +
+                                place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.value ).toLocaleString('en-US') }
                             </h6>
-                            <div v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_LPV_PRIM.value + '%' }"
-                                    class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_LPV_PRIM.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                            <div v-if="place.fields.indicators.wb_SE_LPV_PRIM_MA" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_LPV_PRIM_MA.value + '%' }"
-                                    class="progress-bar bg-male" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_LPV_PRIM_MA.value " aria-valuemin="0"
-                                    aria-valuemax="100">
+                            <div class="progress text-center col-6">
+                                <div v-if="prePrimaryMalePer" :style="{width: prePrimaryMalePer + '%' }"
+                                    class="progress-bar bg-male" role="progressbar" :aria-valuenow=" prePrimaryMalePer" aria-valuemin="0" aria-valuemax="100">
                                     <i class="fas fa-male mx-1"></i>
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }</span>
+                                    <span class="percentage">${ prePrimaryMalePer.toFixed(2) }</span>
                                 </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                            <div v-if="place.fields.indicators.wb_SE_LPV_PRIM_FE" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_LPV_PRIM_FE.value + '%' }"
-                                    class="progress-bar bg-female" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_LPV_PRIM_FE.value " aria-valuemin="0"
-                                    aria-valuemax="100">
+                                <div v-if="prePrimaryFemalePer" :style="{width: prePrimaryFemalePer + '%' }"
+                                    class="progress-bar bg-female" role="progressbar" :aria-valuenow="prePrimaryFemalePer" aria-valuemin="0" aria-valuemax="100">
                                     <i class="fas fa-female mx-1"></i>
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }</span>
+                                    <span class="percentage">${ prePrimaryFemalePer.toFixed(2) }</span>
                                 </div>
                             </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
                         </div>
-                        <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
-                            <h6 class="col-2">
-                                Monetary
-                                <i class="fas fa-info-circle" popover="The ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown.<hr>Source: World Bank<br>Date: TK"></i>
+                        <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
+                            <h6 class="col-3">Primary (all years)</h6>
+                            <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
+                                ${ place.fields.indicators.wb_SP_PRM_TOTL_IN.value.toLocaleString() }
                             </h6>
-                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR.value + '%' }"
-                                    class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR.value " aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR.value.toFixed(2) }</span>
-                                </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_MA" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_MA.value + '%' }"
-                                    class="progress-bar bg-male" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_MA.value " aria-valuemin="0"
-                                    aria-valuemax="100">
+                            <div class="progress text-center col-6">
+                                <div v-if="primaryMalePer" :style="{width: primaryMalePer + '%' }"
+                                    class="progress-bar bg-male" role="progressbar" :aria-valuenow="primaryMalePer " aria-valuemin="0" aria-valuemax="100">
                                     <i class="fas fa-male mx-1"></i>
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR_MA.value.toFixed(2) }</span>
+                                    <span class="percentage">${ primaryMalePer.toFixed(2) }</span>
+                                    
                                 </div>
-                            </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
-                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_FE" class="progress text-center col-3">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_FE.value + '%' }"
+                                <div v-if="primaryFemalePer" :style="{width: primaryFemalePer + '%' }"
                                     class="progress-bar bg-female" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_FE.value " aria-valuemin="0"
-                                    aria-valuemax="100">
+                                    :aria-valuenow="primaryFemalePer" aria-valuemin="0" aria-valuemax="100">
                                     <i class="fas fa-female mx-1"></i>
-                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR_FE.value.toFixed(2) }</span>
+                                    <span class="percentage">${ primaryFemalePer.toFixed(2) }</span>
                                 </div>
                             </div>
-                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                        </div>
+                        <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
+                            <h6 class="col-3">Primary (final year)</h6>
+                            <h6 v-if="place.fields.indicators.wb_SP_PRM_GRAD_TO" class="col-3">
+                                ${ place.fields.indicators.wb_SP_PRM_GRAD_TO.value.toLocaleString() }
+                            </h6>
+                            <div class="progress text-center col-6">
+                                <div v-if="primaryLastMalePer" :style="{width: primaryMalePer + '%' }"
+                                    class="progress-bar bg-male" role="progressbar" :aria-valuenow="primaryLastMalePer " aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-male mx-1"></i>
+                                    <span class="percentage">${ primaryLastMalePer.toFixed(2) }</span>
+                                </div>
+                                <div v-if="primaryLastFemalePer" :style="{width: primaryLastFemalePer + '%' }"
+                                    class="progress-bar bg-female" role="progressbar"
+                                    :aria-valuenow="primaryLastFemalePer" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-female mx-1"></i>
+                                    <span class="percentage">${ primaryLastFemalePer.toFixed(2) }</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
+                            <h6 class="col-3">Secondary (lower)</h6>
+                            <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
+                                ${ place.fields.indicators.wb_SP_SEC_LTOT_IN.value.toLocaleString() }
+                            </h6>
+                            <div class="progress text-center col-6">
+                                <div v-if="lowerSecondaryMalePer" :style="{width: lowerSecondaryMalePer + '%' }"
+                                    class="progress-bar bg-male" role="progressbar" :aria-valuenow="primaryMalePer " aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-male mx-1"></i>
+                                    <span class="percentage">${ lowerSecondaryMalePer.toFixed(2) }</span>
+                                    
+                                </div>
+                                <div v-if="lowerSecondaryFemalePer" :style="{width: lowerSecondaryFemalePer + '%' }"
+                                    class="progress-bar bg-female" role="progressbar"
+                                    :aria-valuenow="lowerSecondaryFemalePer" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-female mx-1"></i>
+                                    <span class="percentage">${ lowerSecondaryFemalePer.toFixed(2) }</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
+                            <h6 class="col-3">Secondary (upper)</h6>
+                            <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
+                                ${ place.fields.indicators.wb_SP_SEC_UTOT_IN.value.toLocaleString() }
+                            </h6>
+                            <div class="progress text-center col-6">
+                                <div v-if="upperSecondaryMalePer" :style="{width: upperSecondaryMalePer + '%' }"
+                                    class="progress-bar bg-male" role="progressbar" :aria-valuenow="upperSecondaryMalePer " aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-male mx-1"></i>
+                                    <span class="percentage">${ upperSecondaryMalePer.toFixed(2) }</span>
+                                    
+                                </div>
+                                <div v-if="upperSecondaryFemalePer" :style="{width: upperSecondaryFemalePer + '%' }"
+                                    class="progress-bar bg-female" role="progressbar"
+                                    :aria-valuenow="upperSecondaryFemalePer" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-female mx-1"></i>
+                                    <span class="percentage">${ upperSecondaryFemalePer.toFixed(2) }</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
+                            <h6 class="col-3">Secondary (combined)</h6>
+                            <h6 v-if="place.fields.indicators.wb_SP_SEC_TOTL_IN" class="col-3">
+                                ${ place.fields.indicators.wb_SP_SEC_TOTL_IN.value.toLocaleString() }
+                            </h6>
+                            <div class="progress text-center col-6">
+                                <div v-if="secondaryMalePer" :style="{width: secondaryMalePer + '%' }"
+                                    class="progress-bar bg-male" role="progressbar" :aria-valuenow="secondaryMalePer " aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-male mx-1"></i>
+                                    <span class="percentage">${ secondaryMalePer.toFixed(2) }</span>
+                                    
+                                </div>
+                                <div v-if="secondaryFemalePer" :style="{width: secondaryFemalePer + '%' }"
+                                    class="progress-bar bg-female" role="progressbar"
+                                    :aria-valuenow="secondaryFemalePer" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-female mx-1"></i>
+                                    <span class="percentage">${ secondaryFemalePer.toFixed(2) }</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="my-3">
-                    <h4>
-                        School internet access <i class="fas fa-info-circle" popover="Proportion of schools, by grade level, with access to Internet for pedagogical purposes.<hr>Source: UNESCO Institute for Statistics via World Bank<br>Updated: TK"></i>
-                    </h4>
-                    <template>
+                    <div class="my-3">
+                        <h4>Enrollment ratios</h4>
+                        <h5 class="my-3">
+                            Gross enrollment ratios
+                            <i class="fas fa-info-circle" popover="The ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown.<hr>Source: World Bank<br>Date: TK"></i>
+                        </h5>
+                        <div>
+                            <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                                <h6 class="col-2">Primary</h6>
+                                <div v-if="place.fields.indicators.wb_SE_PRM_ENRR" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR.value + '%' }"
+                                        class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_PRM_ENRR.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_SE_PRM_ENRR_MA" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR_MA.value + '%' }"
+                                        class="progress-bar bg-male" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR_MA.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <i class="fas fa-male mx-1"></i>
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_PRM_ENRR_MA.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_SE_PRM_ENRR_FE" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR_FE.value + '%' }"
+                                        class="progress-bar bg-female" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR_FE.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <i class="fas fa-female mx-1"></i>
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_PRM_ENRR_FE.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            </div>
+                            <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                                <h6 class="col-2">Secondary</h6>
+                                <div v-if="place.fields.indicators.wb_SE_SEC_ENRR" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR.value + '%' }"
+                                        class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_MA" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_MA.value + '%' }"
+                                        class="progress-bar bg-male" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_MA.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <i class="fas fa-male mx-1"></i>
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR_MA.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_FE" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_FE.value + '%' }"
+                                        class="progress-bar bg-female" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_FE.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <i class="fas fa-female mx-1"></i>
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR_FE.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            </div>
+                        </div>
+                        <h5 class="my-3">
+                            Net enrollment ratios
+                            <i class="fas fa-info-circle" popover="The ratio of children of official school age who are enrolled in school to the population of the corresponding official school age.<hr>Source: World Bank<br>Date: TK"></i>
+                        </h5>
+                        <div>
+                            <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                                <h6 class="col-2">Primary</h6>
+                                <div v-if="place.fields.indicators.wb_SE_PRM_NENR" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_PRM_NENR.value + '%' }"
+                                        class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_PRM_NENR.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_PRM_NENR.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_SE_PRM_NENR_MA" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_PRM_NENR_MA.value + '%' }"
+                                        class="progress-bar bg-male" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_PRM_NENR_MA.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <i class="fas fa-male mx-1"></i>
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_PRM_NENR_MA.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_SE_PRM_NENR_FE" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_PRM_NENR_FE.value + '%' }"
+                                        class="progress-bar bg-female" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_PRM_NENR_FE.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <i class="fas fa-female mx-1"></i>
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_PRM_NENR_FE.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            </div>
+                            <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                                <h6 class="col-2">Secondary</h6>
+                                <div v-if="place.fields.indicators.wb_SE_SEC_NENR" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_SEC_NENR.value + '%' }"
+                                        class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_SEC_NENR.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_SEC_NENR.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_SE_SEC_NENR_MA" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_SEC_NENR_MA.value + '%' }"
+                                        class="progress-bar bg-male" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_SEC_NENR_MA.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <i class="fas fa-male mx-1"></i>
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_SEC_NENR_MA.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_SE_SEC_NENR_FE" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_SEC_NENR_FE.value + '%' }"
+                                        class="progress-bar bg-female" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_SEC_NENR_FE.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <i class="fas fa-female mx-1"></i>
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_SEC_NENR_FE.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-3">
+                        <h4>Poverty</h4>
+                        <div>
+                            <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                                <h6 class="col-2">
+                                    Learning
+                                    <i class="fas fa-info-circle" popover="Share of Children at the End-of-Primary age below minimum reading proficiency adjusted by Out-of-School Children (%).<hr>Source: World Bank<br>Date: TK"></i>
+                                </h6>
+                                <div v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_LPV_PRIM.value + '%' }"
+                                        class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_LPV_PRIM.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_SE_LPV_PRIM_MA" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_LPV_PRIM_MA.value + '%' }"
+                                        class="progress-bar bg-male" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_LPV_PRIM_MA.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <i class="fas fa-male mx-1"></i>
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_SE_LPV_PRIM_FE" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SE_LPV_PRIM_FE.value + '%' }"
+                                        class="progress-bar bg-female" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SE_LPV_PRIM_FE.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <i class="fas fa-female mx-1"></i>
+                                        <span class="percentage">${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            </div>
+                            <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                                <h6 class="col-2">
+                                    Monetary
+                                    <i class="fas fa-info-circle" popover="Multidimensional poverty, Monetary poverty (% of population deprived)<hr>Source: World Bank<br>Date: TK"></i>
+                                </h6>
+                                <div v-if="place.fields.indicators.wb_SI_POV_DDAY_MI" class="progress text-center col-3">
+                                    <div :style="{width: place.fields.indicators.wb_SI_POV_DDAY_MI.value + '%' }"
+                                        class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
+                                        :aria-valuenow=" place.fields.indicators.wb_SI_POV_DDAY_MI.value " aria-valuemin="0"
+                                        aria-valuemax="100">
+                                        <span class="percentage">${ place.fields.indicators.wb_SI_POV_DDAY_MI.value.toFixed(2) }</span>
+                                    </div>
+                                </div>
+                                <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="my-3">
+                        <h4>
+                            School internet access <i class="fas fa-info-circle" popover="Proportion of schools, by grade level, with access to Internet for pedagogical purposes.<hr>Source: UNESCO Institute for Statistics via World Bank<br>Updated: TK"></i>
+                        </h4>
                         <div class="d-flex flex-row justify-content-center align-items-center my-3">
                             <span class="col-3">Primary</span>
                             <div v-if="place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN" class="col-9 progress text-center w-50" style="height: 3em">
@@ -523,207 +506,56 @@ libraries:
                             </div>
                             <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
                         </div>
-                    </template>
-                    <template v-else>
-                        <div class="w-100 text-center">
-                            <span>Information not available.</span>
-                        </div>
-                    </template>
-
-                </div>
-            </div>
-
-            <div class="row g-0 bg-light position-relative rounded">
-
-                <div class="col-md-12 p-4 ps-md-4">
-
-
-                    <br><br>
-                    <h5 class="mt-0 text-center">Learning and Monetary Poverty</h5>
-                    <div class="row justify-content-center">
-                        <hr>
                     </div>
-
-
-
-                    <div class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Measure</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Both Sexes</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Male</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Female</h6>
-                        </div>
-                        <hr>
-                    </div>
-
-                    <div v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Learning Poverty</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'This indicator brings together schooling and learning. It starts with the share of children who have not achieved minimum reading proficiency and adjusts it by the proportion of children who are out of school.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_LPV_PRIM.date">
-                                ${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }%</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM_MA" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'This indicator brings together schooling and learning. It starts with the share of children who have not achieved minimum reading proficiency and adjusts it by the proportion of children who are out of school.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_LPV_PRIM_MA.date">
-                                ${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }%</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM_FE" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'This indicator brings together schooling and learning. It starts with the share of children who have not achieved minimum reading proficiency and adjusts it by the proportion of children who are out of school.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_LPV_PRIM_FE.date">
-                                ${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }%</h6>
+                    <div class="my-3">
+                        <h4>Other</h4>
+                        <div>
+                            <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                                <h6 class="col-3">
+                                    Learning years adjusted
+                                    <i class="fas fa-info-circle" popover="Learning-Adjusted Years of School<hr>Source: World Bank<br>Date: TK"></i>
+                                </h6>
+                                <div v-if="place.fields.indicators.wb_HD_HCI_LAYS" class="text-center col-3">
+                                    <span>${ place.fields.indicators.wb_HD_HCI_LAYS.value.toFixed(2) }</span>
+                                </div>
+                                <div v-else class="col-3 text-muted d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_HD_HCI_LAYS_MA" class="text-center col-3">
+                                    <i class="fas fa-male mx-1"></i>
+                                    <span>${ place.fields.indicators.wb_HD_HCI_LAYS_MA.value.toFixed(2) }</span>
+                                </div>
+                                <div v-else class="col-3 text-muted d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_HD_HCI_LAYS_FE" class="text-center col-3">
+                                    <i class="fas fa-female mx-1"></i>
+                                    <span>${ place.fields.indicators.wb_HD_HCI_LAYS_FE.value.toFixed(2) }</span>
+                                </div>
+                                <div v-else class="col-3 text-muted d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            </div>
+                            <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                                <h6 class="col-3">
+                                    Harmonized test scores
+                                    <i class="fas fa-info-circle" popover="Harmonized Test Scores<hr>Source: World Bank<br>Date: TK"></i>
+                                </h6>
+                                <div v-if="place.fields.indicators.wb_HD_HCI_HLOS" class="text-center col-3">
+                                    <span>${ place.fields.indicators.wb_HD_HCI_HLOS.value.toFixed(2) }</span>
+                                </div>
+                                <div v-else class="col-3 text-muted d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_HD_HCI_HLOS_MA" class="text-center col-3">
+                                    <i class="fas fa-male mx-1"></i>
+                                    <span>${ place.fields.indicators.wb_HD_HCI_HLOS_MA.value.toFixed(2) }</span>
+                                </div>
+                                <div v-else class="col-3 text-muted d-flex flex-row align-items-center justify-content-center not-available"></div>
+                                <div v-if="place.fields.indicators.wb_HD_HCI_HLOS_FEM" class="text-center col-3">
+                                    <i class="fas fa-female mx-1"></i>
+                                    <span>${ place.fields.indicators.wb_HD_HCI_HLOS_FE.value.toFixed(2) }</span>
+                                </div>
+                                <div v-else class="col-3 text-muted d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            </div>
                         </div>
                     </div>
-
-                    <div v-if="place.fields.indicators.wb_SI_POV_DDAY_MI" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Monetary Poverty</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SI_POV_DDAY_MI" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'Multidimensional poverty, Monetary poverty (% of population deprived) is the percentage of the population living on less than $1.90 a day at 2011 international prices. A household is deprived if income or expenditure, in 2011 purchasing power parity U.S. dollars, is less than US$1.90 per person per day. The indicator may differ from the one used for monitoring monetary poverty, if the multidimensional poverty measure comes from a different survey (or different version of the same survey).' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SI_POV_DDAY_MI.date">
-                                ${ place.fields.indicators.wb_SI_POV_DDAY_MI.value.toFixed(2) }%</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">-</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">-</h6>
-                        </div>
-                    </div>
-
-                    <div v-if="place.fields.indicators.wb_HD_HCI_LAYS" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Learning Years Adjusted</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_HD_HCI_LAYS" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'Learning-adjusted years of school are calculated by multiplying the estimates of expected years of school by the ratio of most recent harmonized test scores to 625.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_HD_HCI_LAYS.date">
-                                ${ place.fields.indicators.wb_HD_HCI_LAYS.value.toFixed(2) }</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_HD_HCI_LAYS_MA" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'Learning-adjusted years of school are calculated by multiplying the estimates of expected years of school by the ratio of most recent harmonized test scores to 625.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_HD_HCI_LAYS_MA.date">
-                                ${ place.fields.indicators.wb_HD_HCI_LAYS_MA.value.toFixed(2) }</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_HD_HCI_LAYS_FE" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'Learning-adjusted years of school are calculated by multiplying the estimates of expected years of school by the ratio of most recent harmonized test scores to 625.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_HD_HCI_LAYS_FE.date">
-                                ${ place.fields.indicators.wb_HD_HCI_LAYS_FE.value.toFixed(2) }</h6>
-                        </div>
-                    </div>
-
-                    <div v-if="place.fields.indicators.wb_HD_HCI_HLOS" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Harmonized Test Scores</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_HD_HCI_HLOS" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'Learning-adjusted years of school are calculated by multiplying the estimates of expected years of school by the ratio of most recent harmonized test scores to 625.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_HD_HCI_HLOS.date">
-                                ${ place.fields.indicators.wb_HD_HCI_HLOS.value.toFixed(2) }</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_HD_HCI_HLOS_MA" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'Learning-adjusted years of school are calculated by multiplying the estimates of expected years of school by the ratio of most recent harmonized test scores to 625.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_HD_HCI_HLOS_MA.date">
-                                ${ place.fields.indicators.wb_HD_HCI_HLOS_MA.value.toFixed(2) }</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_HD_HCI_HLOS_FE" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'Learning-adjusted years of school are calculated by multiplying the estimates of expected years of school by the ratio of most recent harmonized test scores to 625.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_HD_HCI_HLOS_FE.date">
-                                ${ place.fields.indicators.wb_HD_HCI_HLOS_FE.value.toFixed(2) }</h6>
-                        </div>
-                    </div>
-
-                    <!-- <div v-if="place.fields.indicators.NA" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">N/A</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }%</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM_MA" class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }%</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SE_LPV_PRIM_FE" class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }%</h6>
-                        </div>
-                    </div>
-
-                    <div v-if="place.fields.indicators.NA" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">N/A</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }%</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }%</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }%</h6>
-                        </div>
-                    </div>
-            
-            
-
-                    <div v-if="place.fields.indicators.NA" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">NA</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">N/A%</h6>
-                        </div>
-                    </div>
-
-
-                    <div v-if="place.fields.indicators.NA" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Schools without Internet</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">N/A%</h6>
-                        </div>
-                    </div>
-
-                    <div v-if="place.fields.indicators.NA" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Children without Internet</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">N/A%</h6>
-                        </div>
-                    </div>
-
-                    <div v-if="place.fields.indicators.NA" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Dropout Rate (By Gender)</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">N/A%</h6>
-                        </div>
-                    </div>
-
-
-                    <div v-if="place.fields.indicators.NA" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Dropout Rate (Total)</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">N/A%</h6>
-                        </div>
-                    </div> -->
-
-
-
-                </div>
+                </template>
+                <template v-else>
+                    <div class="w-100 text-center not-available"></div>
+                </template>
             </div>
 
             <div class="spacer-10"></div>
@@ -802,7 +634,7 @@ libraries:
                     try {
                         return value.toLocaleString()
                     } catch (err) {
-                        return value
+                        return 'unknown'
                     }
                 }
             },
@@ -830,7 +662,9 @@ libraries:
                     if (placesCovidResponse.ok) {
                         this.placesCovid = await placesCovidResponse.json()
                         this.placeCovid = this.placesCovid.places.filter(placeCovid => placeCovid.iso2 === this.placeId)[0]
-                        this.placeCovid.updated = this.placesCovid.fileDate
+                        if (this.placeCovid) {
+                            this.placeCovid.updated = this.placesCovid.fileDate
+                        }
                     } else {
                         throw new Error(`Error loading covid-data.json: ${placesCovidResponse.status} ${placesCovidResponse.statusText}`)
                     }
@@ -872,24 +706,26 @@ libraries:
                 //  if one or both values is missing or the total is 0, return undefined
                 schoolAgePopulation () {
                     try {
-                        const sap = { total: 0, malePercent: 0, femalePercent: 0}
-                        let totalMale = 0; let totalFemale = 0
-                        sap.total += this.place.fields.indicators.wb_SP_PRM_TOTL_IN.value
-                        sap.total += this.place.fields.indicators.wb_SP_SEC_TOTL_IN.value
+                        if (this.place.fields.indicators) {
+                            const sap = { total: 0, malePercent: 0, femalePercent: 0}
+                            let totalMale = 0; let totalFemale = 0
+                            sap.total += this.place.fields.indicators.wb_SP_PRM_TOTL_IN.value
+                            sap.total += this.place.fields.indicators.wb_SP_SEC_TOTL_IN.value
 
-                        totalMale += this.place.fields.indicators.wb_SP_PRM_TOTL_MA_IN?.value
-                        totalMale += this.place.fields.indicators.wb_SP_SEC_TOTL_MA_IN?.value
+                            totalMale += this.place.fields.indicators.wb_SP_PRM_TOTL_MA_IN?.value
+                            totalMale += this.place.fields.indicators.wb_SP_SEC_TOTL_MA_IN?.value
 
-                        totalFemale += this.place.fields.indicators.wb_SP_PRM_TOTL_FE_IN?.value
-                        totalFemale += this.place.fields.indicators.wb_SP_SEC_TOTL_FE_IN?.value
+                            totalFemale += this.place.fields.indicators.wb_SP_PRM_TOTL_FE_IN?.value
+                            totalFemale += this.place.fields.indicators.wb_SP_SEC_TOTL_FE_IN?.value
 
-                        sap.malePercent = this.percentage(totalMale, sap.total)
-                        sap.femalePercent = this.percentage(totalFemale, sap.total)
-                        return sap.total === 0 ? undefined : sap
+                            sap.malePercent = this.percentage(totalMale, sap.total)
+                            sap.femalePercent = this.percentage(totalFemale, sap.total)
+                            return sap.total === 0 ? undefined : sap
+                        }
                     } catch (err) {
                         console.error('schoolAgePopulation', err)
-                        return undefined
                     }
+                    return undefined
                 },
                 // Upper secondary
                 upperSecondaryMalePer () {
