@@ -11,9 +11,12 @@ libraries:
 <head>
     {% include global-tracker-html-head.html %}
     <style>
-        .bg-male { background-color: #0C619D; flex-direction: row; align-items: center}
-        .bg-female { background-color: #AA5986; flex-direction: row; align-items: center}
-        .fas {font-size: 0.75em; margin-left: 0.2em; margin-right: 0.2em}
+        .progress { height: 3em}
+        .bg-male { background-color: #0C619D; flex-direction: row; align-items: center }
+        .bg-female { background-color: #AA5986; flex-direction: row; align-items: center }
+        .fas { font-size: 0.75em; margin-left: 0.2em; margin-right: 0.2em }
+        .percentage:after { content: '%' }
+        .progress.not-available:after { content: 'not available' }
     </style>
 </head>
 
@@ -36,18 +39,39 @@ libraries:
                     <h5>
                         Population:
                         <span v-if="place.fields.indicators.wb_SP_POP_TOTL.value">${ place.fields.indicators.wb_SP_POP_TOTL.value | friendlyNumber }</span>
+                        <span v-else>unknown</span>
                         <i class="fas fa-info-circle" :popover="`Population is based on the de facto definition of population, which counts all residents regardless of legal status or citizenship. Female or male population is the percentage of the population. <hr>Source: World Bank<br>Updated: ${ place.fields.indicators.wb_SP_POP_TOTL.date }`"></i>
                     </h5>
                     <div v-if="PopMalePer" class="progress" style="height: 3em;">
                         <div v-if="PopMalePer" :style="{width: PopMalePer + '%' }" class="progress-bar bg-male"
                             role="progressbar" :aria-valuenow=" PopMalePer " aria-valuemin="0" aria-valuemax="100">
                             <i class="fas fa-male mx-1"></i> 
-                            ${ PopMalePer.toFixed(2) }%
+                            <span class="percentage">${ PopMalePer.toFixed(2) | friendlyNumber }</span>
                         </div>
                         <div v-if="PopFemalePer" :style="{width: PopFemalePer + '%' }" class="progress-bar bg-female"
                             role="progressbar" :aria-valuenow=" PopFemalePer " aria-valuemin="0" aria-valuemax="100">
                             <i class="fas fa-female mx-1"></i> 
-                            ${ PopFemalePer.toFixed(2) }%
+                            <span class="percentage">${ PopFemalePer.toFixed(2) | friendlyNumber }</span>
+                        </div>
+                    </div>
+                    <h5 class="mt-3">
+                        School-age population:
+                        <span v-if="schoolAgePopulation">${ schoolAgePopulation.total | friendlyNumber }</span>
+                        <span v-else>unknown</span>
+                        <i class="fas fa-info-circle" :popover="`School-aged population is calculated by adding the primary and secondary grade-level populations. Refer to education statistics below for more information.`"></i>
+                    </h5>
+                    <div v-if="schoolAgePopulation" class="progress" style="height: 3em;">
+                        <div v-if="schoolAgePopulation.malePercent" :style="{width: schoolAgePopulation.malePercent + '%' }" class="progress-bar bg-male"
+                            role="progressbar" :aria-valuenow=" schoolAgePopulation.malePercent " aria-valuemin="0" aria-valuemax="100">
+                            <i class="fas fa-male mx-1"></i>
+                            <span class="percentage">${ schoolAgePopulation.malePercent }</span>
+                            
+                        </div>
+                        <div v-if="schoolAgePopulation" :style="{width: schoolAgePopulation.femalePercent + '%' }" class="progress-bar bg-female"
+                            role="progressbar" :aria-valuenow=" schoolAgePopulation.femalePercent " aria-valuemin="0" aria-valuemax="100">
+                            <i class="fas fa-female mx-1"></i> 
+                            <span class="percentage">${ schoolAgePopulation.femalePercent }</span>
+                            
                         </div>
                     </div>
                 </div>
@@ -124,394 +148,394 @@ libraries:
                 </h3>
                 <div class="my-3">
                     <h4>
-                        School-age population
+                        School-age populations
+                        <i class="fas fa-info-circle" :popover="`Population of the age group theoretically corresponding to the specified education level as indicated by theoretical entrance age and duration.<hr>Source: World Bank<br>Updated: ${ place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.date }`"></i>
                     </h4>
-                    <span>Moving here soon.</span>
+                    <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
+                        <h6 class="col-3">Pre-Primary</h6>
+                        <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
+                            ${ (place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.value +
+                            place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.value ).toLocaleString('en-US') }
+                        </h6>
+                        <div class="progress text-center col-6">
+                            <div v-if="prePrimaryMalePer" :style="{width: prePrimaryMalePer + '%' }"
+                                class="progress-bar bg-male" role="progressbar" :aria-valuenow=" prePrimaryMalePer" aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-male mx-1"></i>
+                                <span class="percentage">${ prePrimaryMalePer.toFixed(2) }</span>
+                            </div>
+                            <div v-if="prePrimaryFemalePer" :style="{width: prePrimaryFemalePer + '%' }"
+                                class="progress-bar bg-female" role="progressbar" :aria-valuenow="prePrimaryFemalePer" aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-female mx-1"></i>
+                                <span class="percentage">${ prePrimaryFemalePer.toFixed(2) }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
+                        <h6 class="col-3">Primary (all years)</h6>
+                        <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
+                            ${ place.fields.indicators.wb_SP_PRM_TOTL_IN.value.toLocaleString() }
+                        </h6>
+                        <div class="progress text-center col-6">
+                            <div v-if="primaryMalePer" :style="{width: primaryMalePer + '%' }"
+                                class="progress-bar bg-male" role="progressbar" :aria-valuenow="primaryMalePer " aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-male mx-1"></i>
+                                <span class="percentage">${ primaryMalePer.toFixed(2) }</span>
+                                
+                            </div>
+                            <div v-if="primaryFemalePer" :style="{width: primaryFemalePer + '%' }"
+                                class="progress-bar bg-female" role="progressbar"
+                                :aria-valuenow="primaryFemalePer" aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-female mx-1"></i>
+                                <span class="percentage">${ primaryFemalePer.toFixed(2) }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
+                        <h6 class="col-3">Primary (final year)</h6>
+                        <h6 v-if="place.fields.indicators.wb_SP_PRM_GRAD_TO" class="col-3">
+                            ${ place.fields.indicators.wb_SP_PRM_GRAD_TO.value.toLocaleString() }
+                        </h6>
+                        <div class="progress text-center col-6">
+                            <div v-if="primaryLastMalePer" :style="{width: primaryMalePer + '%' }"
+                                class="progress-bar bg-male" role="progressbar" :aria-valuenow="primaryLastMalePer " aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-male mx-1"></i>
+                                <span class="percentage">${ primaryLastMalePer.toFixed(2) }</span>
+                            </div>
+                            <div v-if="primaryLastFemalePer" :style="{width: primaryLastFemalePer + '%' }"
+                                class="progress-bar bg-female" role="progressbar"
+                                :aria-valuenow="primaryLastFemalePer" aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-female mx-1"></i>
+                                <span class="percentage">${ primaryLastFemalePer.toFixed(2) }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
+                        <h6 class="col-3">Secondary (lower)</h6>
+                        <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
+                            ${ place.fields.indicators.wb_SP_SEC_LTOT_IN.value.toLocaleString() }
+                        </h6>
+                        <div class="progress text-center col-6">
+                            <div v-if="lowerSecondaryMalePer" :style="{width: lowerSecondaryMalePer + '%' }"
+                                class="progress-bar bg-male" role="progressbar" :aria-valuenow="primaryMalePer " aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-male mx-1"></i>
+                                <span class="percentage">${ lowerSecondaryMalePer.toFixed(2) }</span>
+                                
+                            </div>
+                            <div v-if="lowerSecondaryFemalePer" :style="{width: lowerSecondaryFemalePer + '%' }"
+                                class="progress-bar bg-female" role="progressbar"
+                                :aria-valuenow="lowerSecondaryFemalePer" aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-female mx-1"></i>
+                                <span class="percentage">${ lowerSecondaryFemalePer.toFixed(2) }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
+                        <h6 class="col-3">Secondary (upper)</h6>
+                        <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
+                            ${ place.fields.indicators.wb_SP_SEC_UTOT_IN.value.toLocaleString() }
+                        </h6>
+                        <div class="progress text-center col-6">
+                            <div v-if="upperSecondaryMalePer" :style="{width: upperSecondaryMalePer + '%' }"
+                                class="progress-bar bg-male" role="progressbar" :aria-valuenow="upperSecondaryMalePer " aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-male mx-1"></i>
+                                <span class="percentage">${ upperSecondaryMalePer.toFixed(2) }</span>
+                                
+                            </div>
+                            <div v-if="upperSecondaryFemalePer" :style="{width: upperSecondaryFemalePer + '%' }"
+                                class="progress-bar bg-female" role="progressbar"
+                                :aria-valuenow="upperSecondaryFemalePer" aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-female mx-1"></i>
+                                <span class="percentage">${ upperSecondaryFemalePer.toFixed(2) }</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
+                        <h6 class="col-3">Secondary (combined)</h6>
+                        <h6 v-if="place.fields.indicators.wb_SP_SEC_TOTL_IN" class="col-3">
+                            ${ place.fields.indicators.wb_SP_SEC_TOTL_IN.value.toLocaleString() }
+                        </h6>
+                        <div class="progress text-center col-6">
+                            <div v-if="secondaryMalePer" :style="{width: secondaryMalePer + '%' }"
+                                class="progress-bar bg-male" role="progressbar" :aria-valuenow="secondaryMalePer " aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-male mx-1"></i>
+                                <span class="percentage">${ secondaryMalePer.toFixed(2) }</span>
+                                
+                            </div>
+                            <div v-if="secondaryFemalePer" :style="{width: secondaryFemalePer + '%' }"
+                                class="progress-bar bg-female" role="progressbar"
+                                :aria-valuenow="secondaryFemalePer" aria-valuemin="0" aria-valuemax="100">
+                                <i class="fas fa-female mx-1"></i>
+                                <span class="percentage">${ secondaryFemalePer.toFixed(2) }</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div v-if="place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN || place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN || place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN" class="my-3">
+                <div class="my-3">
+                    <h4>Enrollment ratios</h4>
+                    <h5 class="my-3">
+                        Gross enrollment ratios
+                        <i class="fas fa-info-circle" popover="The ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown.<hr>Source: World Bank<br>Date: TK"></i>
+                    </h5>
+                    <div>
+                        <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                            <h6 class="col-2">Primary</h6>
+                            <div v-if="place.fields.indicators.wb_SE_PRM_ENRR" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR.value + '%' }"
+                                    class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_PRM_ENRR.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            <div v-if="place.fields.indicators.wb_SE_PRM_ENRR_MA" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR_MA.value + '%' }"
+                                    class="progress-bar bg-male" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR_MA.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <i class="fas fa-male mx-1"></i>
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_PRM_ENRR_MA.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            <div v-if="place.fields.indicators.wb_SE_PRM_ENRR_FE" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR_FE.value + '%' }"
+                                    class="progress-bar bg-female" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR_FE.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <i class="fas fa-female mx-1"></i>
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_PRM_ENRR_FE.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                        </div>
+                        <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                            <h6 class="col-2">Secondary</h6>
+                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR.value + '%' }"
+                                    class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_MA" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_MA.value + '%' }"
+                                    class="progress-bar bg-male" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_MA.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <i class="fas fa-male mx-1"></i>
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR_MA.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_FE" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_FE.value + '%' }"
+                                    class="progress-bar bg-female" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_FE.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <i class="fas fa-female mx-1"></i>
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR_FE.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                        </div>
+                    </div>
+                    <h5 class="my-3">
+                        Net enrollment ratios
+                        <i class="fas fa-info-circle" popover="The ratio of children of official school age who are enrolled in school to the population of the corresponding official school age.<hr>Source: World Bank<br>Date: TK"></i>
+                    </h5>
+                    <div>
+                        <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                            <h6 class="col-2">Primary</h6>
+                            <div v-if="place.fields.indicators.wb_SE_PRM_NENR" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_PRM_NENR.value + '%' }"
+                                    class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_NENR.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_PRM_NENR.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            <div v-if="place.fields.indicators.wb_SE_PRM_NENR_MA" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_PRM_NENR_MA.value + '%' }"
+                                    class="progress-bar bg-male" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_NENR_MA.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <i class="fas fa-male mx-1"></i>
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_PRM_NENR_MA.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            <div v-if="place.fields.indicators.wb_SE_PRM_NENR_FE" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_PRM_NENR_FE.value + '%' }"
+                                    class="progress-bar bg-female" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_NENR_FE.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <i class="fas fa-female mx-1"></i>
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_PRM_NENR_FE.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                        </div>
+                        <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                            <h6 class="col-2">Secondary</h6>
+                            <div v-if="place.fields.indicators.wb_SE_SEC_NENR" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_SEC_NENR.value + '%' }"
+                                    class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_NENR.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_NENR.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            <div v-if="place.fields.indicators.wb_SE_SEC_NENR_MA" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_SEC_NENR_MA.value + '%' }"
+                                    class="progress-bar bg-male" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_NENR_MA.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <i class="fas fa-male mx-1"></i>
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_NENR_MA.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            <div v-if="place.fields.indicators.wb_SE_SEC_NENR_FE" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_SEC_NENR_FE.value + '%' }"
+                                    class="progress-bar bg-female" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_NENR_FE.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <i class="fas fa-female mx-1"></i>
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_NENR_FE.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-3">
+                    <h4>Poverty</h4>
+                    <div>
+                        <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                            <h6 class="col-2">
+                                Learning
+                                <i class="fas fa-info-circle" popover="Share of Children at the End-of-Primary age below minimum reading proficiency adjusted by Out-of-School Children (%).<hr>Source: World Bank<br>Date: TK"></i>
+                            </h6>
+                            <div v-if="place.fields.indicators.wb_SE_LPV_PRIM" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_LPV_PRIM.value + '%' }"
+                                    class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_LPV_PRIM.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_LPV_PRIM.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            <div v-if="place.fields.indicators.wb_SE_LPV_PRIM_MA" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_LPV_PRIM_MA.value + '%' }"
+                                    class="progress-bar bg-male" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_LPV_PRIM_MA.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <i class="fas fa-male mx-1"></i>
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_LPV_PRIM_MA.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            <div v-if="place.fields.indicators.wb_SE_LPV_PRIM_FE" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_LPV_PRIM_FE.value + '%' }"
+                                    class="progress-bar bg-female" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_LPV_PRIM_FE.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <i class="fas fa-female mx-1"></i>
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_LPV_PRIM_FE.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                        </div>
+                        <div class="w-100 my-3 d-flex flew-row justify-content-between align-items-center">
+                            <h6 class="col-2">
+                                Monetary
+                                <i class="fas fa-info-circle" popover="The ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown.<hr>Source: World Bank<br>Date: TK"></i>
+                            </h6>
+                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR.value + '%' }"
+                                    class="progress-bar bg-secondary d-flex flex-row align-items-center" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_MA" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_MA.value + '%' }"
+                                    class="progress-bar bg-male" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_MA.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <i class="fas fa-male mx-1"></i>
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR_MA.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_FE" class="progress text-center col-3">
+                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_FE.value + '%' }"
+                                    class="progress-bar bg-female" role="progressbar"
+                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_FE.value " aria-valuemin="0"
+                                    aria-valuemax="100">
+                                    <i class="fas fa-female mx-1"></i>
+                                    <span class="percentage">${ place.fields.indicators.wb_SE_SEC_ENRR_FE.value.toFixed(2) }</span>
+                                </div>
+                            </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="my-3">
                     <h4>
-                        Internet access <i class="fas fa-info-circle" popover="Proportion of schools, by grade level, with access to Internet for pedagogical purposes.<hr>Source: UNESCO Institute for Statistics via World Bank<br>Updated: TK"></i>
+                        School internet access <i class="fas fa-info-circle" popover="Proportion of schools, by grade level, with access to Internet for pedagogical purposes.<hr>Source: UNESCO Institute for Statistics via World Bank<br>Updated: TK"></i>
                     </h4>
-                    <div v-if="place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN" class="d-flex flex-row justify-content-center align-items-center my-2">
-                        <span class="col-3">Primary</span>
-                        <div class="col-9 progress text-center w-50" style="height: 3em">
-                            <div class="progress-bar bg-info d-flex flex-row align-items-center" role="progressbar" :style="{ width: place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN?.value.toFixed(2) + '%' }" :aria-valuenow="place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN?.value.toFixed(2)" aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-globe"></i>
-                                ${ place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN?.value.toFixed(2) }%
+                    <template>
+                        <div class="d-flex flex-row justify-content-center align-items-center my-3">
+                            <span class="col-3">Primary</span>
+                            <div v-if="place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN" class="col-9 progress text-center w-50" style="height: 3em">
+                                <div class="progress-bar bg-info d-flex flex-row align-items-center" role="progressbar" :style="{ width: place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN?.value.toFixed(2) + '%' }" :aria-valuenow="place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN?.value.toFixed(2)" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-globe mx-1"></i>
+                                    ${ place.fields.indicators.wb_UIS_SCHBSP_1_WINTERN?.value.toFixed(2) }%
+                                </div>
                             </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
                         </div>
-                    </div>
-                    <div v-if="place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN" class="d-flex flex-row justify-content-center align-items-center my-2">
-                        <span class="col-3">Lower Secondary</span>
-                        <div class="col-9 progress text-center w-50" style="height: 3em">
-                            <div class="progress-bar bg-info d-flex flex-row align-items-center" role="progressbar" :style="{ width: place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN?.value.toFixed(2) + '%' }" :aria-valuenow="place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN?.value.toFixed(2)" aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-globe"></i>
-                                ${ place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN?.value.toFixed(2) }%
+                        <div class="d-flex flex-row justify-content-center align-items-center my-3">
+                            <span class="col-3">Lower Secondary</span>
+                            <div v-if="place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN" class="col-9 progress text-center w-50" style="height: 3em">
+                                <div class="progress-bar bg-info d-flex flex-row align-items-center" role="progressbar" :style="{ width: place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN?.value.toFixed(2) + '%' }" :aria-valuenow="place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN?.value.toFixed(2)" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-globe mx-1"></i>
+                                    ${ place.fields.indicators.wb_UIS_SCHBSP_2_WINTERN?.value.toFixed(2) }%
+                                </div>
                             </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
                         </div>
-                    </div>
-                    <div v-if="place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN" class="d-flex flex-row justify-content-center align-items-center my-2">
-                        <span class="col-3">Lower Secondary</span>
-                        <div class=" col-9 progress text-center w-50" style="height: 3em">
-                            <div class="progress-bar bg-info d-flex flex-row align-items-center" role="progressbar" :style="{ width: place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN?.value.toFixed(2) + '%' }" :aria-valuenow="place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN?.value.toFixed(2)" aria-valuemin="0" aria-valuemax="100">
-                                <i class="fas fa-globe"></i>
-                                ${ place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN?.value.toFixed(2) }%
+                        <div class="d-flex flex-row justify-content-center align-items-center my-3">
+                            <span class="col-3">Lower Secondary</span>
+                            <div v-if="place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN" class=" col-9 progress text-center w-50" style="height: 3em">
+                                <div class="progress-bar bg-info d-flex flex-row align-items-center" role="progressbar" :style="{ width: place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN?.value.toFixed(2) + '%' }" :aria-valuenow="place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN?.value.toFixed(2)" aria-valuemin="0" aria-valuemax="100">
+                                    <i class="fas fa-globe mx-1"></i>
+                                    ${ place.fields.indicators.wb_UIS_SCHBSP_3_WINTERN?.value.toFixed(2) }%
+                                </div>
                             </div>
+                            <div v-else class="col-3 text-center text-muted progress d-flex flex-row align-items-center justify-content-center not-available"></div>
                         </div>
-                    </div>
+                    </template>
+                    <template v-else>
+                        <div class="w-100 text-center">
+                            <span>Information not available.</span>
+                        </div>
+                    </template>
+
                 </div>
             </div>
 
             <div class="row g-0 bg-light position-relative rounded">
 
                 <div class="col-md-12 p-4 ps-md-4">
-                    <h4 class="mt-0 text-center">Population Statistics</h5>
-                    <br>
-                    <h5 class="mt-0 text-center">School-Age Population</h5>
-                    <div class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Population Group</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Both Sexes</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Gender Distribution (Group)</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Gender Distribution (Last Year)</h6>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Pre Primary</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'Population of the age-group, genders combined, theoretically corresponding to pre-primary education as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.date">
-                                ${ (place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.value +
-                                place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.value ).toLocaleString('en-US') }</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <div class="progress">
-                                <div v-if="prePrimaryMalePer" :style="{width: prePrimaryMalePer + '%' }"
-                                    class="progress-bar bg-info" role="progressbar" :aria-valuenow=" prePrimaryMalePer "
-                                    aria-valuemin="0" aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Population of the age-group by gender theoretically corresponding to pre-primary education as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.date">
-                                    ${ prePrimaryMalePer.toFixed(2) }%</div>
-                                <div v-if="prePrimaryFemalePer" :style="{width: prePrimaryFemalePer + '%' }"
-                                    class="progress-bar bg-danger" role="progressbar"
-                                    :aria-valuenow=" prePrimaryFemalePer " aria-valuemin="0" aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Population of the age-group by gender theoretically corresponding to pre-primary education as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.date">
-                                    ${ prePrimaryFemalePer.toFixed(2) }%</div>
-                            </div>
-                        </div>
-                        <div class="col-3 text-center">
-                            <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 0%"
-                                    aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">55%</div>
-                                <div class="progress-bar bg-danger" role="progressbar" style="width: 0%"
-                                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">45%</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Primary</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SP_PRM_TOTL_IN" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'Population of the age-group, genders combined, theoretically corresponding to primary education as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_PRM_TOTL_IN.date">
-                                ${ place.fields.indicators.wb_SP_PRM_TOTL_IN.value.toLocaleString('en-US') }</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <div class="progress">
-                                <div v-if="primaryMalePer" :style="{width: primaryMalePer + '%' }"
-                                    class="progress-bar bg-info" role="progressbar" :aria-valuenow=" primaryMalePer "
-                                    aria-valuemin="0" aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Population of the age-group, by gender, theoretically corresponding to primary education as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_PRM_TOTL_MA_IN.date">
-                                    ${ primaryMalePer.toFixed(2) }%</div>
-                                <div v-if="primaryFemalePer" :style="{width: primaryFemalePer + '%' }"
-                                    class="progress-bar bg-danger" role="progressbar"
-                                    :aria-valuenow=" primaryFemalePer " aria-valuemin="0" aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Population of the age-group, by gender, theoretically corresponding to primary education as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_PRM_TOTL_FE_IN.date">
-                                    ${ primaryFemalePer.toFixed(2) }%</div>
-                            </div>
-                        </div>
-                        <div class="col-3 text-center">
-                            <div class="progress">
-                                <div v-if="primaryLastMalePer" :style="{width: primaryLastMalePer + '%' }"
-                                    class="progress-bar bg-info" role="progressbar"
-                                    :aria-valuenow=" primaryLastMalePer " aria-valuemin="0" aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Population of the age-group by gender theoretically corresponding to the last grade of primary school as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_PRM_GRAD_MA.date">
-                                    ${ primaryLastMalePer.toFixed(2) }%</div>
-                                <div v-if="primaryLastFemalePer" :style="{width: primaryLastFemalePer + '%' }"
-                                    class="progress-bar bg-danger" role="progressbar"
-                                    :aria-valuenow=" primaryLastFemalePer " aria-valuemin="0" aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Population of the age-group by gender theoretically corresponding to the last grade of primary school as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_PRM_GRAD_FE.date">
-                                    ${ primaryLastFemalePer.toFixed(2) }%</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Lower Secondary</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SP_SEC_LTOT_IN" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'Population of the age-group, genders combined, theoretically corresponding to lower secondary education as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_SEC_LTOT_IN.date">
-                                ${ place.fields.indicators.wb_SP_SEC_LTOT_IN.value.toLocaleString('en-US') }</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <div class="progress">
-                                <div v-if="lowerSecondaryMalePer" :style="{width: lowerSecondaryMalePer + '%' }"
-                                    class="progress-bar bg-info" role="progressbar"
-                                    :aria-valuenow=" lowerSecondaryMalePer " aria-valuemin="0" aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Population of the age-group, by gender, theoretically corresponding to lower secondary education as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_SEC_LTOT_MA_IN.date">
-                                    ${ lowerSecondaryMalePer.toFixed(2) }%</div>
-                                <div v-if="lowerSecondaryFemalePer" :style="{width: lowerSecondaryFemalePer + '%' }"
-                                    class="progress-bar bg-danger" role="progressbar"
-                                    :aria-valuenow=" lowerSecondaryFemalePer " aria-valuemin="0" aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Population of the age-group, by gender, theoretically corresponding to lower secondary education as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_SEC_LTOT_FE_IN.date">
-                                    ${ lowerSecondaryFemalePer.toFixed(2) }%</div>
-                            </div>
-                        </div>
-                        <div class="col-3 text-center">
-                            <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0"
-                                    aria-valuemin="0" aria-valuemax="100">N/A</div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- <div class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Secondary</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SP_SEC_TOTL_IN" class="mt-0 text-center">${ place.fields.indicators.wb_SP_SEC_TOTL_IN.value.toLocaleString('en-US') }</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <div class="progress">
-                                <div v-if="secondaryMalePer" :style="{width: secondaryMalePer + '%' }" class="progress-bar bg-info" role="progressbar" :aria-valuenow=" secondaryMalePer " aria-valuemin="0" aria-valuemax="100">${ secondaryMalePer.toFixed(2) }%</div>
-                                <div v-if="secondaryFemalePer" :style="{width: secondaryFemalePer + '%' }" class="progress-bar bg-danger" role="progressbar" :aria-valuenow=" secondaryFemalePer " aria-valuemin="0" aria-valuemax="100">${ secondaryFemalePer.toFixed(2) }%</div>
-                            </div>
-                        </div>
-                        <div class="col-3 text-center">
-                            <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">N/A</div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <div class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Upper Secondary</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <h6 v-if="place.fields.indicators.wb_SP_SEC_UTOT_IN" class="mt-0 text-center"
-                                :title="'<strong>Description: </strong>' + 'Population of the age-group, genders combined, theoretically corresponding to upper secondary education as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_SEC_UTOT_IN.date">
-                                ${ place.fields.indicators.wb_SP_SEC_UTOT_IN.value.toLocaleString('en-US') }</h6>
-                        </div>
-                        <div class="col-3 text-center">
-                            <div class="progress">
-                                <div v-if="upperSecondaryMalePer" :style="{width: upperSecondaryMalePer + '%' }"
-                                    class="progress-bar bg-info" role="progressbar"
-                                    :aria-valuenow=" upperSecondaryMalePer " aria-valuemin="0" aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Population of the age-group, by gender, theoretically corresponding to upper secondary education as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_SEC_UTOT_MA_IN.date">
-                                    ${ upperSecondaryMalePer.toFixed(2) }%</div>
-                                <div v-if="upperSecondaryFemalePer" :style="{width: upperSecondaryFemalePer + '%' }"
-                                    class="progress-bar bg-danger" role="progressbar"
-                                    :aria-valuenow=" upperSecondaryFemalePer " aria-valuemin="0" aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Population of the age-group, by gender, theoretically corresponding to upper secondary education as indicated by theoretical entrance age and duration.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SP_SEC_UTOT_FE_IN.date">
-                                    ${ upperSecondaryFemalePer.toFixed(2) }%</div>
-                            </div>
-                        </div>
-                        <div class="col-3 text-center">
-                            <div class="progress">
-                                <div class="progress-bar bg-info" role="progressbar" style="width: 0%" aria-valuenow="0"
-                                    aria-valuemin="0" aria-valuemax="100">N/A</div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <br><br>
-
-
-                    <h5 class="mt-0 text-center">School Enrollment</h5>
-
-                    <h6 class="mt-0 text-center">Gross Enrollment Ratio</h6>
-                    <br>
-                    <div class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Population Group</h6>
-                        </div>
-                        <div class="col-4 text-center">
-                            <h6 class="mt-0 text-center">Both Sexes</h6>
-                        </div>
-                        <div class="col-2 text-center">
-                            <h6 class="mt-0 text-center">Male</h6>
-                        </div>
-                        <div class="col-2 text-center">
-                            <h6 class="mt-0 text-center">Female</h6>
-                        </div>
-
-                        <hr>
-                    </div>
-
-
-
-
-                    <div v-if="place.fields.indicators.wb_SE_PRM_ENRR" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Primary</h6>
-                        </div>
-                        <div class="col-4 text-center">
-                            <div v-if="place.fields.indicators.wb_SE_PRM_ENRR" class="progress">
-                                <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR.value + '%' }"
-                                    class="progress-bar bg-success" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR.value " aria-valuemin="0"
-                                    aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Gross enrollment ratio is the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_PRM_ENRR.date">
-                                    ${ place.fields.indicators.wb_SE_PRM_ENRR.value.toFixed(2) }%</div>
-                            </div>
-                        </div>
-                        <div class="col-2 text-center">
-                            <div v-if="place.fields.indicators.wb_SE_PRM_ENRR_MA" class="progress">
-                                <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR_MA.value + '%' }"
-                                    class="progress-bar bg-info" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR_MA.value " aria-valuemin="0"
-                                    aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Gross enrollment ratio is the ratio of total enrollment, regardless of age and by gender, to the population of the age group that officially corresponds to the level of education shown. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_PRM_ENRR_MA.date">
-                                    ${ place.fields.indicators.wb_SE_PRM_ENRR_MA.value.toFixed(2) } %</div>
-                            </div>
-                        </div>
-                        <div class="col-2 text-center">
-                            <div v-if="place.fields.indicators.wb_SE_PRM_ENRR_FE" class="progress">
-                                <div :style="{width: place.fields.indicators.wb_SE_PRM_ENRR_FE.value + '%' }"
-                                    class="progress-bar bg-danger" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_ENRR_FE.value " aria-valuemin="0"
-                                    aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Gross enrollment ratio is the ratio of total enrollment, regardless of age and by gender, to the population of the age group that officially corresponds to the level of education shown. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_PRM_ENRR_FE.date">
-                                    ${ place.fields.indicators.wb_SE_PRM_ENRR_FE.value.toFixed(2) } %</div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div v-if="place.fields.indicators.wb_SE_SEC_ENRR" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Secondary</h6>
-                        </div>
-                        <div class="col-4 text-center">
-                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR" class="progress">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR.value + '%' }"
-                                    class="progress-bar bg-success" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR.value " aria-valuemin="0"
-                                    aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Gross enrollment ratio is the ratio of total enrollment, regardless of age, to the population of the age group that officially corresponds to the level of education shown. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_SEC_ENRR.date">
-                                    ${ place.fields.indicators.wb_SE_SEC_ENRR.value.toFixed(2) }%</div>
-                            </div>
-                        </div>
-                        <div class="col-2 text-center">
-                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_MA" class="progress">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_MA.value + '%' }"
-                                    class="progress-bar bg-info" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_MA.value " aria-valuemin="0"
-                                    aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Gross enrollment ratio is the ratio of total enrollment, regardless of age and by gender, to the population of the age group that officially corresponds to the level of education shown. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_SEC_ENRR_MA.date">
-                                    ${ place.fields.indicators.wb_SE_SEC_ENRR_MA.value.toFixed(2) } %</div>
-                            </div>
-                        </div>
-                        <div class="col-2 text-center">
-                            <div v-if="place.fields.indicators.wb_SE_SEC_ENRR_FE" class="progress">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_ENRR_FE.value + '%' }"
-                                    class="progress-bar bg-danger" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_ENRR_FE.value " aria-valuemin="0"
-                                    aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Gross enrollment ratio is the ratio of total enrollment, regardless of age and by gender, to the population of the age group that officially corresponds to the level of education shown. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_SEC_ENRR_FE.date">
-                                    ${ place.fields.indicators.wb_SE_SEC_ENRR_FE.value.toFixed(2) } %</div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div v-if="place.fields.indicators.wb_SE_PRM_NENR" class="row justify-content-center">
-                        <br>
-                        <h6 class="mt-0 text-center">Net Enrollment Ratio</h6>
-                        <hr>
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Primary</h6>
-                        </div>
-                        <div class="col-4 text-center">
-                            <div v-if="place.fields.indicators.wb_SE_PRM_NENR" class="progress">
-                                <div :style="{width: place.fields.indicators.wb_SE_PRM_NENR.value + '%' }"
-                                    class="progress-bar bg-success" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_NENR.value " aria-valuemin="0"
-                                    aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Net enrollment rate is the ratio of children of official school age who are enrolled in school to the population of the corresponding official school age. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_PRM_NENR.date">
-                                    ${ place.fields.indicators.wb_SE_PRM_NENR.value.toFixed(2) }%</div>
-                            </div>
-                        </div>
-                        <div class="col-2 text-center">
-                            <div v-if="place.fields.indicators.wb_SE_PRM_NENR_MA" class="progress">
-                                <div :style="{width: place.fields.indicators.wb_SE_PRM_NENR_MA.value + '%' }"
-                                    class="progress-bar bg-info" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_NENR_MA.value " aria-valuemin="0"
-                                    aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Net enrollment rate is the ratio of children of official school age, by gender, who are enrolled in school to the population of the corresponding official school age. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_PRM_NENR_MA.date">
-                                    ${ place.fields.indicators.wb_SE_PRM_NENR_MA.value.toFixed(2) } %</div>
-                            </div>
-                        </div>
-                        <div class="col-2 text-center">
-                            <div v-if="place.fields.indicators.wb_SE_PRM_NENR_FE" class="progress">
-                                <div :style="{width: place.fields.indicators.wb_SE_PRM_NENR_FE.value + '%' }"
-                                    class="progress-bar bg-danger" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_PRM_NENR_FE.value " aria-valuemin="0"
-                                    aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Net enrollment rate is the ratio of children of official school age, by gender, who are enrolled in school to the population of the corresponding official school age. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_PRM_NENR_FE.date">
-                                    ${ place.fields.indicators.wb_SE_PRM_NENR_FE.value.toFixed(2) } %</div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div v-if="place.fields.indicators.wb_SE_SEC_NENR" class="row justify-content-center">
-                        <div class="col-3 text-center">
-                            <h6 class="mt-0 text-center">Secondary</h6>
-                        </div>
-                        <div class="col-4 text-center">
-                            <div v-if="place.fields.indicators.wb_SE_SEC_NENR" class="progress">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_NENR.value + '%' }"
-                                    class="progress-bar bg-success" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_NENR.value " aria-valuemin="0"
-                                    aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Net enrollment rate is the ratio of children of official school age who are enrolled in school to the population of the corresponding official school age. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_SEC_NENR.date">
-                                    ${ place.fields.indicators.wb_SE_SEC_NENR.value.toFixed(2) }%</div>
-                            </div>
-                        </div>
-                        <div class="col-2 text-center">
-                            <div v-if="place.fields.indicators.wb_SE_SEC_NENR_MA" class="progress">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_NENR_MA.value + '%' }"
-                                    class="progress-bar bg-info" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_NENR_MA.value " aria-valuemin="0"
-                                    aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Net enrollment rate is the ratio of children of official school age, by gender, who are enrolled in school to the population of the corresponding official school age. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_SEC_NENR_MA.date">
-                                    ${ place.fields.indicators.wb_SE_SEC_NENR_MA.value.toFixed(2) } %</div>
-                            </div>
-                        </div>
-                        <div class="col-2 text-center">
-                            <div v-if="place.fields.indicators.wb_SE_SEC_NENR_FE" class="progress">
-                                <div :style="{width: place.fields.indicators.wb_SE_SEC_NENR_FE.value + '%' }"
-                                    class="progress-bar bg-danger" role="progressbar"
-                                    :aria-valuenow=" place.fields.indicators.wb_SE_SEC_NENR_FE.value " aria-valuemin="0"
-                                    aria-valuemax="100"
-                                    :title="'<strong>Description: </strong>' + 'Net enrollment rate is the ratio of children of official school age, by gender, who are enrolled in school to the population of the corresponding official school age. Primary education provides children with basic reading, writing, and mathematics skills along with an elementary understanding of such subjects as history, geography, natural science, social science, art, and music.' + '<hr>' + 'Source: World Bank' + '<br>' + 'Date: '  + place.fields.indicators.wb_SE_SEC_NENR_FE.date">
-                                    ${ place.fields.indicators.wb_SE_SEC_NENR_FE.value.toFixed(2) } %</div>
-                            </div>
-                        </div>
-
-                    </div>
 
 
                     <br><br>
@@ -761,13 +785,6 @@ libraries:
             },
             delimiters: ['${', '}'],
             filters: {
-                concatenate: function (value) {
-                    if (value) {
-                        return Array.from(value).join(', ')
-                    } else {
-                        return 'unknown'
-                    }
-                },
                 friendlyDate: function(value) {
                     try {
                         date = new Date.parse(value)
@@ -782,15 +799,11 @@ libraries:
                     }
                 },
                 friendlyNumber: function(value) {
-                    if (!Number.isNaN(value)) {
+                    try {
                         return value.toLocaleString()
-                    } else {
+                    } catch (err) {
                         return value
                     }
-                },
-                percentage: function (value) {
-                    if (!value) return '';
-                    return Math.round(value * 100) + '%';
                 }
             },
             async created () {
@@ -850,8 +863,34 @@ libraries:
                     }
                     return educationServices
                 },
+                percentage (subTotal, total) {
+                    return (100 * subTotal / total).toFixed(2)
+                }
             },
             computed: {
+                // computes school-age population from primary + secondary totals.
+                //  if one or both values is missing or the total is 0, return undefined
+                schoolAgePopulation () {
+                    try {
+                        const sap = { total: 0, malePercent: 0, femalePercent: 0}
+                        let totalMale = 0; let totalFemale = 0
+                        sap.total += this.place.fields.indicators.wb_SP_PRM_TOTL_IN.value
+                        sap.total += this.place.fields.indicators.wb_SP_SEC_TOTL_IN.value
+
+                        totalMale += this.place.fields.indicators.wb_SP_PRM_TOTL_MA_IN?.value
+                        totalMale += this.place.fields.indicators.wb_SP_SEC_TOTL_MA_IN?.value
+
+                        totalFemale += this.place.fields.indicators.wb_SP_PRM_TOTL_FE_IN?.value
+                        totalFemale += this.place.fields.indicators.wb_SP_SEC_TOTL_FE_IN?.value
+
+                        sap.malePercent = this.percentage(totalMale, sap.total)
+                        sap.femalePercent = this.percentage(totalFemale, sap.total)
+                        return sap.total === 0 ? undefined : sap
+                    } catch (err) {
+                        console.error('schoolAgePopulation', err)
+                        return undefined
+                    }
+                },
                 // Upper secondary
                 upperSecondaryMalePer () {
                     return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_MA_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_IN.value;
@@ -897,7 +936,7 @@ libraries:
                 PopFemalePer () {
                     return 100 * this?.place?.fields?.indicators?.wb_SP_POP_TOTL_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_POP_TOTL?.value;
                 },
-                inPersonSupports () {
+                hasInPersonSupports () {
                     if (this.place) {
                         return mostRecentInPersonAdditionalSupportFields.reduce((flag, item) => {
                             if (country.fields[item.name] && !country.fields[item.name].includes('7') && !country.fields[item.name].includes('8')) return true;

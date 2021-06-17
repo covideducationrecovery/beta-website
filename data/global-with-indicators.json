@@ -111,6 +111,10 @@
           "value": 50.1407,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.321,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 7885531,
           "date": "2019"
@@ -161,6 +165,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 530275,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1087480,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -366,6 +374,10 @@
           "value": 1.3,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.597,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 234387,
           "date": "2019"
@@ -416,6 +428,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 49908,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 104207,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -651,6 +667,10 @@
           "value": 52.9321,
           "date": "1997"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.988,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 6439437,
           "date": "2019"
@@ -701,6 +721,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 467603,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 955517,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -819,6 +843,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2222,
+          "date": "1997"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 4597,
           "date": "1997"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -961,12 +989,20 @@
           "value": 49.4399681091309,
           "date": "1983"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.27,
+          "date": "2010"
+        },
         "wb_SP_POP_TOTL": {
           "value": 77142,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 944,
+          "date": "1998"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1997,
           "date": "1998"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -1180,6 +1216,10 @@
           "value": 49.9,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 5.442,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 7391525,
           "date": "2019"
@@ -1230,6 +1270,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1058057,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2135998,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -1410,6 +1454,10 @@
           "value": 88.78981,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.987,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 10520,
           "date": "2019"
@@ -1460,6 +1508,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1461,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2969,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -1670,6 +1722,10 @@
           "value": 1.3,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.247,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 5424934,
           "date": "2019"
@@ -1720,6 +1776,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1102655,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2246965,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -1941,6 +2001,10 @@
           "value": 1.4,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.758,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 288003,
           "date": "2019"
@@ -1991,6 +2055,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 60504,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 128745,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -2169,6 +2237,10 @@
           "value": 76.94634,
           "date": "2011"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.901,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 9201,
           "date": "2019"
@@ -2219,6 +2291,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1086,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2216,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -2431,6 +2507,10 @@
           "value": 0.7,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.657,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2380552,
           "date": "2019"
@@ -2481,6 +2561,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 158046,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 324604,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -2718,6 +2802,10 @@
           "value": 0.6,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.46,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 618036,
           "date": "2019"
@@ -2768,6 +2856,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 124998,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 258143,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -2979,6 +3071,10 @@
           "value": 0,
           "date": "2005"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.8,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1096189,
           "date": "2019"
@@ -3029,6 +3125,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 234482,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 503195,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -3235,6 +3335,10 @@
           "value": 62.4958,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.743,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 42348,
           "date": "2019"
@@ -3285,6 +3389,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 4803,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 9980,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -3509,6 +3617,10 @@
           "value": 90.19346,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.964,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 149847,
           "date": "2019"
@@ -3559,6 +3671,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 31328,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 66625,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -3765,6 +3881,10 @@
           "value": 14.3,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.011,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 21707560,
           "date": "2019"
@@ -3815,6 +3935,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 4261723,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 8709787,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -3957,6 +4081,10 @@
           "value": 93.63078,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.623,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 24043,
           "date": "2019"
@@ -4007,6 +4135,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2942,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 5999,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -4189,6 +4321,10 @@
           "value": 0,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.382,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 783357,
           "date": "2019"
@@ -4239,6 +4375,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 174788,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 360537,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -4457,6 +4597,10 @@
           "value": 0.2,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.57,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 952299,
           "date": "2019"
@@ -4507,6 +4651,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 190146,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 392747,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -4661,6 +4809,10 @@
           "value": 71.149,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.274,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 57111,
           "date": "2019"
@@ -4711,6 +4863,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 7778,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 15701,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -4897,6 +5053,10 @@
           "value": 49.6,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.767,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2454268,
           "date": "2019"
@@ -4947,6 +5107,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 340759,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 691778,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -5113,12 +5277,20 @@
           "value": 72.76762,
           "date": "2011"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.59,
+          "date": "2019"
+        },
         "wb_SP_POP_TOTL": {
           "value": 64027,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 274,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 557,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -5313,6 +5485,10 @@
           "value": 1.5,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.954,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 95162,
           "date": "2019"
@@ -5363,6 +5539,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 12066,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 24547,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -5533,6 +5713,10 @@
           "value": 4.5,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.688,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1724650,
           "date": "2019"
@@ -5583,6 +5767,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 232410,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 475323,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -5737,6 +5925,10 @@
           "value": 0.1,
           "date": "2011"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.254,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 236046,
           "date": "2019"
@@ -5787,6 +5979,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 45241,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 92951,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -5981,6 +6177,10 @@
           "value": 14.1,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.836,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 384639,
           "date": "2019"
@@ -6031,6 +6231,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 80858,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 163490,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -6262,6 +6466,10 @@
           "value": 4.4,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.719,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 21688645,
           "date": "2019"
@@ -6312,6 +6520,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 4253103,
+          "date": "2011"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 8717443,
           "date": "2011"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -6516,6 +6728,10 @@
           "value": 261,
           "date": "2019"
         },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 531,
+          "date": "2019"
+        },
         "wb_SP_PRE_TOTL_MA_IN": {
           "value": 270,
           "date": "2019"
@@ -6716,6 +6932,10 @@
           "value": 82.64549,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.819,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 47512,
           "date": "2019"
@@ -6766,6 +6986,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 10245,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 21166,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -6978,6 +7202,10 @@
           "value": 0.9,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.58,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 497938,
           "date": "2019"
@@ -7028,6 +7256,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 128516,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 264440,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -7234,6 +7466,10 @@
           "value": 43.8,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 5.109,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 4458768,
           "date": "2019"
@@ -7284,6 +7520,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 938591,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1910734,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -7477,6 +7717,10 @@
           "value": 72.8,
           "date": "2013"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 5.321,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2598741,
           "date": "2019"
@@ -7527,6 +7771,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 358488,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 722488,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -7717,6 +7965,10 @@
           "value": 3.4,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.242,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 77184,
           "date": "2019"
@@ -7767,6 +8019,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 15918,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 32315,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -7953,6 +8209,10 @@
           "value": 38.33132,
           "date": "2008"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.478,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2510961,
           "date": "2019"
@@ -8003,6 +8263,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 520973,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1060168,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -8176,6 +8440,10 @@
           "value": 26,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.506,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 5432966,
           "date": "2019"
@@ -8226,6 +8494,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 754416,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1523224,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -8452,6 +8724,10 @@
           "value": 0.3,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.4684,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2908747,
           "date": "2019"
@@ -8502,6 +8778,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 193142,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 395340,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -8650,6 +8930,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 753,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1531,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -8837,6 +9121,10 @@
           "value": 65.8,
           "date": "2008"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.645,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1036056,
           "date": "2019"
@@ -8887,6 +9175,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 212510,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 427985,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -9074,6 +9366,10 @@
           "value": 38.1,
           "date": "2011"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 5.649,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 3717029,
           "date": "2019"
@@ -9124,6 +9420,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 789182,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1586372,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -9240,6 +9540,10 @@
         "7"
       ],
       "indicators": {
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.509,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 12702,
           "date": "2019"
@@ -9415,6 +9719,10 @@
           "value": 0.3,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.627,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1814395,
           "date": "2019"
@@ -9465,6 +9773,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 367734,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 748901,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -9629,6 +9941,10 @@
           "value": 88.1734008789063,
           "date": "2010"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.696,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 115819807,
           "date": "2019"
@@ -9679,6 +9995,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 24412145,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 52249730,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -9944,6 +10264,10 @@
           "value": 4.2,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.789,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 5564641,
           "date": "2019"
@@ -9994,6 +10318,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1082349,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2216004,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -10192,6 +10520,10 @@
           "value": 19.1,
           "date": "2013"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.138,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 164130,
           "date": "2019"
@@ -10242,6 +10574,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 34714,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 70735,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -10434,6 +10770,10 @@
           "value": 77.2,
           "date": "2012"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 5.819,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 19789679,
           "date": "2019"
@@ -10484,6 +10824,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 4249734,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 8579503,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -10690,6 +11034,10 @@
           "value": 39.6,
           "date": "2011"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.374,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1107469,
           "date": "2019"
@@ -10740,6 +11088,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 233995,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 472576,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -11011,6 +11363,10 @@
           "value": 1.5,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.737,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 519612,
           "date": "2019"
@@ -11061,6 +11417,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 69902,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 143155,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -11253,6 +11613,10 @@
           "value": 29.8,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.593,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 5337964,
           "date": "2019"
@@ -11303,6 +11667,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1120951,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2254364,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -11495,6 +11863,10 @@
           "value": 0.5,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.47,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 287375,
           "date": "2019"
@@ -11545,6 +11917,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 77368,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 160060,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -11717,6 +12093,10 @@
           "value": 84.18162,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.602,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 883819,
           "date": "2019"
@@ -11767,6 +12147,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 185821,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 382041,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -11921,6 +12305,10 @@
           "value": 87.2123794555664,
           "date": "2013"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.6,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 14246,
           "date": "2019"
@@ -11971,6 +12359,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2008,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 4118,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -12159,6 +12551,10 @@
           "value": 0,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.321,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 97095,
           "date": "2019"
@@ -12209,6 +12605,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 13615,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 27987,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -12438,6 +12838,10 @@
           "value": 0,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.71,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 816292,
           "date": "2019"
@@ -12488,6 +12892,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 158199,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 325448,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -12712,6 +13120,10 @@
           "value": 0.6,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.7,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 464012,
           "date": "2019"
@@ -12762,6 +13174,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 84244,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 172711,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -12944,6 +13360,10 @@
           "value": 17,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.676,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 135739,
           "date": "2019"
@@ -12994,6 +13414,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 20559,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 40649,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -13194,12 +13618,20 @@
           "value": 87.73568,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.9,
+          "date": "2003"
+        },
         "wb_SP_POP_TOTL": {
           "value": 71808,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 839,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1706,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -13433,6 +13865,10 @@
           "value": 0.4,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.323,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1457873,
           "date": "2019"
@@ -13483,6 +13919,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 285113,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 580254,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -13745,6 +14185,10 @@
           "value": 3.3,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.403,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2354085,
           "date": "2019"
@@ -13795,6 +14239,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 477398,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 976337,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -14034,6 +14482,10 @@
           "value": 3.8,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.28,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 16478478,
           "date": "2019"
@@ -14084,6 +14536,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2450900,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 5057839,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -14337,6 +14793,10 @@
           "value": 1.5,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.021,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 847616,
           "date": "2019"
@@ -14387,6 +14847,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 167580,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 343183,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -14594,6 +15058,10 @@
           "value": 20.36275,
           "date": "2005"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.429,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 247255,
           "date": "2019"
@@ -14644,6 +15112,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 51393,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 104256,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -14797,6 +15269,10 @@
           "value": 41.57501,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.997,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 633320,
           "date": "2011"
@@ -14847,6 +15323,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 94276,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 192954,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -15010,6 +15490,10 @@
           "value": 0.5,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.66,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 105966,
           "date": "2019"
@@ -15060,6 +15544,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 28173,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 57687,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -15280,6 +15768,10 @@
           "value": 29.1,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.958,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 215617,
           "date": "2019"
@@ -15330,6 +15822,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 41827,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 84508,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -15528,6 +16024,10 @@
           "value": 30.8,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.146,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 22315932,
           "date": "2019"
@@ -15578,6 +16078,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 4534005,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 9193250,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -15696,6 +16200,10 @@
         "8"
       ],
       "indicators": {
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.4,
+          "date": "2019"
+        },
         "wb_SP_POP_TOTL": {
           "value": 48678,
           "date": "2019"
@@ -15792,6 +16300,10 @@
           "value": 0.5,
           "date": "2013"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.754,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 127188,
           "date": "2019"
@@ -15842,6 +16354,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 26251,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 53856,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -16048,6 +16564,10 @@
           "value": 0.1,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.35,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 431955,
           "date": "2019"
@@ -16098,6 +16618,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 115586,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 236837,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -16342,6 +16866,10 @@
           "value": 0.1,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.87,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 5834368,
           "date": "2019"
@@ -16392,6 +16920,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1155229,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2356267,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -16562,6 +17094,10 @@
           "value": 99.38568,
           "date": "1996"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.927,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 30717,
           "date": "2019"
@@ -16612,6 +17148,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 7516,
+          "date": "1997"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 15686,
           "date": "1997"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -16802,6 +17342,10 @@
           "value": 3.4,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.922,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 400051,
           "date": "2019"
@@ -16852,6 +17396,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 86798,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 175394,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -17019,6 +17567,10 @@
           "value": 10.3,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 5.154,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 513203,
           "date": "2019"
@@ -17069,6 +17621,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 147466,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 297924,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -17283,6 +17839,10 @@
           "value": 4.5,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.055,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 357017,
           "date": "2019"
@@ -17333,6 +17893,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 83564,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 172816,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -17572,6 +18136,10 @@
           "value": 0.1,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.54,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 5550925,
           "date": "2019"
@@ -17622,6 +18190,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1121007,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2306167,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -17815,6 +18387,10 @@
           "value": 12.7,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.816,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 5562778,
           "date": "2019"
@@ -17865,6 +18441,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 774590,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1582763,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -18049,6 +18629,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 410,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 852,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -18256,6 +18840,10 @@
           "value": 0.7,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.35,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 721549,
           "date": "2019"
@@ -18306,6 +18894,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 85808,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 177356,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -18443,6 +19035,10 @@
         "1"
       ],
       "indicators": {
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.08,
+          "date": "2019"
+        },
         "wb_SP_POP_TOTL": {
           "value": 56225,
           "date": "2019"
@@ -18571,6 +19167,10 @@
           "value": 87.72998,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.042,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 12948,
           "date": "2019"
@@ -18621,6 +19221,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1781,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 3635,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -18779,6 +19383,10 @@
         "1"
       ],
       "indicators": {
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.293,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 19640,
           "date": "2019"
@@ -18829,6 +19437,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1589,
+          "date": "1997"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 3247,
           "date": "1997"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -19014,6 +19626,10 @@
           "value": 8.8,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.822,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2750101,
           "date": "2019"
@@ -19064,6 +19680,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 588009,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1202244,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -19267,6 +19887,10 @@
           "value": 36.1,
           "date": "2012"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.625,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2755687,
           "date": "2019"
@@ -19317,6 +19941,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 560432,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1127542,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -19481,6 +20109,10 @@
           "value": 68.4,
           "date": "2010"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.402,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 402218,
           "date": "2019"
@@ -19531,6 +20163,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 85398,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 172182,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -19751,6 +20387,10 @@
           "value": 82.33976,
           "date": "2012"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.44,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 106818,
           "date": "2019"
@@ -19801,6 +20441,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 22026,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 45368,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -19962,6 +20606,10 @@
           "value": 24.5,
           "date": "2012"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.887,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1818996,
           "date": "2019"
@@ -20012,6 +20660,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 370782,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 754949,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -20234,6 +20886,10 @@
           "value": 16.9,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.427,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1485754,
           "date": "2019"
@@ -20284,6 +20940,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 289699,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 592703,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -20454,6 +21114,10 @@
           "value": 96.14117,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.051,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 437621,
           "date": "2019"
@@ -20504,6 +21168,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 81545,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 174110,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -20722,6 +21390,10 @@
           "value": 0.4,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.49,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 686785,
           "date": "2019"
@@ -20772,6 +21444,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 172058,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 353272,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -20990,6 +21666,10 @@
           "value": 0.2,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.75,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 34565,
           "date": "2019"
@@ -21040,6 +21720,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 6487,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 13113,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -21226,6 +21910,10 @@
           "value": 22.8,
           "date": "2011"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.202,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 172809125,
           "date": "2019"
@@ -21276,6 +21964,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 33241623,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 69886229,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -21516,6 +22208,10 @@
           "value": 3.6,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.288,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 34609603,
           "date": "2019"
@@ -21566,6 +22262,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 4722201,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 9658094,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -21801,6 +22501,10 @@
           "value": 0.5,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.146,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 9949802,
           "date": "2019"
@@ -21851,6 +22555,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 673763,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1389075,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -22082,6 +22790,10 @@
           "value": 1.7,
           "date": "2012"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.597,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 7264655,
           "date": "2019"
@@ -22132,6 +22844,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1034605,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2128882,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -22338,6 +23054,10 @@
           "value": 0.2,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.7,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 508888,
           "date": "2019"
@@ -22388,6 +23108,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 62415,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 128075,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -22506,6 +23230,10 @@
         "8"
       ],
       "indicators": {
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.65,
+          "date": "2002"
+        },
         "wb_SP_POP_TOTL": {
           "value": 84584,
           "date": "2019"
@@ -22642,6 +23370,10 @@
           "value": 0,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.01,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1228785,
           "date": "2019"
@@ -22692,6 +23424,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 244608,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 502786,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -22929,6 +23665,10 @@
           "value": 1.6,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.27,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 3852450,
           "date": "2019"
@@ -22979,6 +23719,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 740476,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1527112,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -23222,6 +23966,10 @@
           "value": 73.96802,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.965,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 340271,
           "date": "2019"
@@ -23272,6 +24020,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 69691,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 142639,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -23448,6 +24200,10 @@
           "value": 2.19711947441101,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.36,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 7725087,
           "date": "2019"
@@ -23498,6 +24254,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2494261,
+          "date": "1970"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 5120222,
           "date": "1970"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -23717,6 +24477,10 @@
           "value": 0.1,
           "date": "2010"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.691,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1665579,
           "date": "2019"
@@ -23767,6 +24531,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 229271,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 467670,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -23999,6 +24767,10 @@
           "value": 0,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.9,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2595136,
           "date": "2019"
@@ -24049,6 +24821,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 583844,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1201910,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -24253,6 +25029,10 @@
           "value": 37.1,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.423,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 10217273,
           "date": "2019"
@@ -24303,6 +25083,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2086991,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 4203907,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -24465,6 +25249,10 @@
           "value": 12.9,
           "date": "2006"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.53,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 20463,
           "date": "2019"
@@ -24515,6 +25303,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 4132,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 8697,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -24632,6 +25424,10 @@
           "value": 92.2727813720703,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.896,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2507697,
           "date": "2019"
@@ -24682,6 +25478,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 326096,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 667616,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -24854,6 +25654,10 @@
           "value": 0,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 0.918,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 3198260,
           "date": "2019"
@@ -24904,6 +25708,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 656034,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1347585,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -25022,6 +25830,10 @@
         "6"
       ],
       "indicators": {
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.97,
+          "date": "2019"
+        },
         "wb_SP_POP_TOTL": {
           "value": 1788878,
           "date": "2019"
@@ -25181,6 +25993,10 @@
           "value": 86.52941,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.077,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 421022,
           "date": "2019"
@@ -25231,6 +26047,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 59848,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 126227,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -25446,6 +26266,10 @@
           "value": 0.6,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.3,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1024287,
           "date": "2019"
@@ -25496,6 +26320,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 311811,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 640128,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -25666,6 +26494,10 @@
           "value": 10,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.626,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1136627,
           "date": "2019"
@@ -25716,6 +26548,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 227793,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 464675,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -25923,6 +26759,10 @@
           "value": 0.6,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.61,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 150700,
           "date": "2019"
@@ -25973,6 +26813,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 40895,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 84755,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -26185,6 +27029,10 @@
           "value": 0,
           "date": "2011"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.075,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 841619,
           "date": "2019"
@@ -26235,6 +27083,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 105279,
+          "date": "1985"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 214430,
           "date": "1985"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -26448,6 +27300,10 @@
           "value": 27.2,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.108,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 344711,
           "date": "2019"
@@ -26498,6 +27354,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 71469,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 143576,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -26700,6 +27560,10 @@
           "value": 44.4,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.247,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 986194,
           "date": "2019"
@@ -26750,6 +27614,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 204362,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 417420,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -26927,6 +27795,10 @@
           "value": 58.4499,
           "date": "1983"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.206,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 926049,
           "date": "2019"
@@ -26977,6 +27849,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 129212,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 265580,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -27143,12 +28019,20 @@
           "value": 85.94145,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.47,
+          "date": "2019"
+        },
         "wb_SP_POP_TOTL": {
           "value": 38019,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 347,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 742,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -27355,6 +28239,10 @@
           "value": 1,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.61,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 205788,
           "date": "2019"
@@ -27405,6 +28293,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 57710,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 118202,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -27642,6 +28534,10 @@
           "value": 0.6,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.34,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 47549,
           "date": "2019"
@@ -27692,6 +28588,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 9641,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 19887,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -27858,6 +28758,10 @@
           "value": 86.42111,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.228,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 43626,
           "date": "2019"
@@ -27908,6 +28812,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 9996,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 20566,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -28106,6 +29014,10 @@
           "value": 78.8,
           "date": "2012"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.026,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 5392800,
           "date": "2019"
@@ -28156,6 +29068,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1110188,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2246480,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -28356,6 +29272,10 @@
           "value": 69.2,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.127,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 4017699,
           "date": "2019"
@@ -28406,6 +29326,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 823523,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1664257,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -28618,6 +29542,10 @@
           "value": 0,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.983,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 3673923,
           "date": "2019"
@@ -28668,6 +29596,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 500140,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1031544,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -28838,6 +29770,10 @@
           "value": 0,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.84,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 50661,
           "date": "2019"
@@ -28888,6 +29824,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 10795,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 22797,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -29104,6 +30044,10 @@
           "value": 50.3,
           "date": "2009"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 5.785,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 4571214,
           "date": "2019"
@@ -29154,6 +30098,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 942761,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1918746,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -29324,6 +30272,10 @@
           "value": 0.2,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.1,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 34895,
           "date": "2019"
@@ -29374,6 +30326,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 4174,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 8662,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -29534,12 +30490,20 @@
           "value": 55.85237,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.05,
+          "date": "2011"
+        },
         "wb_SP_POP_TOTL": {
           "value": 58791,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1414,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2889,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -29731,6 +30695,10 @@
           "value": 6,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.503,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 888212,
           "date": "2019"
@@ -29781,6 +30749,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 188742,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 383917,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -29970,6 +30942,10 @@
           "value": 0.2,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.4,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 107116,
           "date": "2019"
@@ -30020,6 +30996,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 12776,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 26055,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -30248,6 +31228,10 @@
           "value": 1.7,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.103,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 16331592,
           "date": "2019"
@@ -30298,6 +31282,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 3299095,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 6748987,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -30455,6 +31443,10 @@
           "value": 15.4,
           "date": "2013"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.01,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 17454,
           "date": "2019"
@@ -30505,6 +31497,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 3429,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 7109,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -30708,6 +31704,10 @@
           "value": 0,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.269,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 205427,
           "date": "2019"
@@ -30758,6 +31758,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 73598,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 151810,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -30858,6 +31862,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 346,
+          "date": "1970"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 728,
           "date": "1970"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -31069,6 +32077,10 @@
           "value": 0.5,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.867,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 490642,
           "date": "2019"
@@ -31119,6 +32131,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 149431,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 302732,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -31329,6 +32345,10 @@
           "value": 0,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.748,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 54048,
           "date": "2019"
@@ -31379,6 +32399,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 10521,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 21870,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -31632,6 +32656,10 @@
           "value": 0.9,
           "date": "2013"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.382,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 4788360,
           "date": "2019"
@@ -31682,6 +32710,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 676106,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1388288,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -31868,6 +32900,10 @@
           "value": 63.7,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.783,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 6720071,
           "date": "2019"
@@ -31918,6 +32954,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1432760,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2878149,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -32082,6 +33122,10 @@
           "value": 1.4,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.138,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 6956513,
           "date": "2019"
@@ -32132,6 +33176,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 887938,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1790381,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -32360,6 +33408,10 @@
           "value": 13.8,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.344,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 460376,
           "date": "2019"
@@ -32410,6 +33462,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 64595,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 129171,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -32584,6 +33640,10 @@
           "value": 408,
           "date": "2019"
         },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 825,
+          "date": "2019"
+        },
         "wb_SP_PRE_TOTL_MA_IN": {
           "value": 417,
           "date": "2019"
@@ -32748,6 +33808,10 @@
           "value": 15,
           "date": "2010"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.876,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 4196197,
           "date": "2019"
@@ -32798,6 +33862,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 543316,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1095906,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -33023,6 +34091,10 @@
           "value": 0.4,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.57,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1340646,
           "date": "2019"
@@ -33073,6 +34145,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 257048,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 527965,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -33203,6 +34279,10 @@
         "8"
       ],
       "indicators": {
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.94,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 31588,
           "date": "2019"
@@ -33388,6 +34468,10 @@
           "value": 96.86035,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.72,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 474076,
           "date": "2019"
@@ -33438,6 +34522,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 59564,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 122124,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -33640,6 +34728,10 @@
           "value": 3.4,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.377,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 951267,
           "date": "2019"
@@ -33690,6 +34782,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 194952,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 399228,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -33878,6 +34974,10 @@
           "value": 45.4,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 6.824,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 5706375,
           "date": "2019"
@@ -33928,6 +35028,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1181757,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2405520,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -34149,6 +35253,10 @@
           "value": 39.1,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 5.317,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 42923410,
           "date": "2019"
@@ -34199,6 +35307,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2968157,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 6073092,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -34463,6 +35575,10 @@
           "value": 3.4,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.489,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 165029,
           "date": "2019"
@@ -34513,6 +35629,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 33882,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 70370,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -34815,6 +35935,10 @@
           "value": 0.5,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.53,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 453116,
           "date": "2019"
@@ -34865,6 +35989,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 89582,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 184105,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -35085,6 +36213,10 @@
           "value": 96.19256,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.842,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 541958,
           "date": "2019"
@@ -35135,6 +36267,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 76837,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 156830,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -35341,6 +36477,10 @@
           "value": 4.4,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.454,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 36536787,
           "date": "2019"
@@ -35391,6 +36531,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 5080421,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 10568289,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -35524,12 +36668,20 @@
           "value": 116.485107421875,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.21,
+          "date": "2015"
+        },
         "wb_SP_POP_TOTL": {
           "value": 18008,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 348,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 746,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -35760,6 +36912,10 @@
           "value": 63.79138,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.437,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 556268,
           "date": "2019"
@@ -35810,6 +36966,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 76080,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 155536,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -35985,6 +37145,10 @@
           "value": 38,
           "date": "2009"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.52,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1505102,
           "date": "2019"
@@ -36035,6 +37199,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 410162,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 849005,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -36229,6 +37397,10 @@
           "value": 1.4,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.405,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1004833,
           "date": "2019"
@@ -36279,6 +37451,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 201580,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 412484,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -36532,6 +37708,10 @@
           "value": 2.7,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.233,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 4083555,
           "date": "2019"
@@ -36582,6 +37762,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 782207,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1587911,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -36790,6 +37974,10 @@
           "value": 6.1,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.526,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 16055516,
           "date": "2019"
@@ -36840,6 +38028,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1116763,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2291513,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -37064,6 +38256,10 @@
           "value": 0,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.42,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2809775,
           "date": "2019"
@@ -37114,6 +38310,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 727408,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1492586,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -37332,6 +38532,10 @@
           "value": 0.3,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.42,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 664065,
           "date": "2019"
@@ -37382,6 +38586,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 122322,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 252728,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -37566,6 +38774,10 @@
           "value": 75.91911,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.035,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 251907,
           "date": "2019"
@@ -37616,6 +38828,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 66171,
+          "date": "2013"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 135856,
           "date": "2013"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -37835,6 +39051,10 @@
           "value": 93.8946,
           "date": "2010"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.846,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 188064,
           "date": "2019"
@@ -37885,6 +39105,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 39397,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 80744,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -38070,6 +39294,10 @@
           "value": 0,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.76,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1466331,
           "date": "2019"
@@ -38120,6 +39348,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 269422,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 554413,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -38314,6 +39546,10 @@
           "value": 0,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.504,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 12766750,
           "date": "2019"
@@ -38364,6 +39600,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 3710555,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 7632193,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -38568,6 +39808,10 @@
           "value": 56.5,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.99,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2503424,
           "date": "2019"
@@ -38618,6 +39862,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 508176,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1021651,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -38788,6 +40036,10 @@
           "value": 1.1,
           "date": "2013"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.83,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 35893,
           "date": "2019"
@@ -38838,6 +40090,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 4991,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 10378,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -39010,12 +40266,20 @@
           "value": 66.54351,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.26,
+          "date": "2012"
+        },
         "wb_SP_POP_TOTL": {
           "value": 33860,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 452,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 936,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -39186,6 +40450,10 @@
           "value": 35.2,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.267,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 44830,
           "date": "2019"
@@ -39236,6 +40504,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 9191,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 18590,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -39405,6 +40677,10 @@
           "value": 96.36052,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.275,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 4190102,
           "date": "2019"
@@ -39455,6 +40731,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 893657,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1817417,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -39664,6 +40944,10 @@
           "value": 38.5,
           "date": "2011"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.556,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 3444947,
           "date": "2019"
@@ -39714,6 +40998,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 735513,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1491550,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -39934,6 +41222,10 @@
           "value": 0,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.52,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 521279,
           "date": "2019"
@@ -39984,6 +41276,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 127559,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 263139,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -40166,6 +41462,10 @@
           "value": 0.5,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.34,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 11280,
           "date": "2019"
@@ -40216,6 +41516,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1560,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 3213,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -40407,6 +41711,10 @@
           "value": 43,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.169,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1588142,
           "date": "2019"
@@ -40457,6 +41765,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 328005,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 657168,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -40690,6 +42002,10 @@
           "value": 99.78462,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.14,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 341603,
           "date": "2019"
@@ -40740,6 +42056,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 54750,
+          "date": "2018"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 112587,
           "date": "2018"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -40906,12 +42226,20 @@
           "value": 69.75968,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.03,
+          "date": "2011"
+        },
         "wb_SP_POP_TOTL": {
           "value": 40733,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 856,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1744,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -41137,6 +42465,10 @@
           "value": 0.2,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.56,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 413515,
           "date": "2019"
@@ -41187,6 +42519,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 82580,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 168993,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -41405,6 +42741,10 @@
           "value": 0,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.61,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 153129,
           "date": "2019"
@@ -41455,6 +42795,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 31372,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 64544,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -41625,6 +42969,10 @@
           "value": 25.1,
           "date": "2013"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.361,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 130175,
           "date": "2019"
@@ -41675,6 +43023,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 28641,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 59137,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -41860,6 +43212,10 @@
           "value": 0.21503,
           "date": "1980"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 5.978,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 3557117,
           "date": "2019"
@@ -41910,6 +43266,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 741440,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1494185,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -42131,6 +43491,10 @@
           "value": 18.7,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.381,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 8386465,
           "date": "2019"
@@ -42181,6 +43545,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2314213,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 4684743,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -42361,6 +43729,10 @@
           "value": 76.4,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.619,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2270706,
           "date": "2019"
@@ -42411,6 +43783,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 483081,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 978611,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -42617,6 +43993,10 @@
           "value": 1,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.24,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 3327054,
           "date": "2019"
@@ -42667,6 +44047,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 611057,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1258899,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -42892,6 +44276,10 @@
           "value": 0.9,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.188,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2584450,
           "date": "2019"
@@ -42942,6 +44330,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 329624,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 670628,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -43071,6 +44463,10 @@
         "8"
       ],
       "indicators": {
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.81,
+          "date": "2019"
+        },
         "wb_SP_POP_TOTL": {
           "value": 38002,
           "date": "2019"
@@ -43163,12 +44559,20 @@
           "value": 98.00256,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.107,
+          "date": "2002"
+        },
         "wb_SP_POP_TOTL": {
           "value": 52834,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 709,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1418,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -43337,6 +44741,10 @@
           "value": 81.31252,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.424,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 16433,
           "date": "2019"
@@ -43387,6 +44795,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2211,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 4474,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -43584,6 +44996,10 @@
           "value": 89.47196,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.872,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 12163,
           "date": "2019"
@@ -43634,6 +45050,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1661,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 3324,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -43822,6 +45242,10 @@
           "value": 12.2,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.347,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 8476450,
           "date": "2019"
@@ -43872,6 +45296,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1175180,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2384221,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -44032,6 +45460,10 @@
           "value": 57.78983,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.394,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 75377,
           "date": "2019"
@@ -44082,6 +45514,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 10196,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 21154,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -44314,6 +45750,10 @@
           "value": 0.9,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.7,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 881101,
           "date": "2019"
@@ -44364,6 +45804,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 230529,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 473365,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -44559,6 +46003,10 @@
           "value": 0.2,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.48,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 624324,
           "date": "2019"
@@ -44609,6 +46057,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 84678,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 174130,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -44815,6 +46267,10 @@
           "value": 48.50187,
           "date": "2013"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.771,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 2598099,
           "date": "2019"
@@ -44865,6 +46321,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 517421,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1056939,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -45041,6 +46501,10 @@
           "value": 4.1,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.556,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1679821,
           "date": "2019"
@@ -45091,6 +46555,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 485721,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 997986,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -45248,6 +46716,10 @@
           "value": 49.4,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.832,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 12572337,
           "date": "2019"
@@ -45298,6 +46770,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1697874,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 3436505,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -45509,6 +46985,10 @@
           "value": 0,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.514,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 5687471,
           "date": "2019"
@@ -45559,6 +47039,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1104647,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2273176,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -45768,6 +47252,10 @@
           "value": 22,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.943,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 236904,
           "date": "2019"
@@ -45818,6 +47306,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 46912,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 95664,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -46012,6 +47504,10 @@
           "value": 51.3,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.259,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1651824,
           "date": "2019"
@@ -46062,6 +47558,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 343757,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 689454,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -46291,6 +47791,10 @@
           "value": 1,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.518,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 17607,
           "date": "2019"
@@ -46341,6 +47845,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2445,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 5002,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -46512,6 +48020,10 @@
           "value": 72.64738,
           "date": "2004"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.711,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 139170,
           "date": "2019"
@@ -46562,6 +48074,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 18644,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 37908,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -46789,6 +48305,10 @@
           "value": 0.2,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.174,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 1372560,
           "date": "2019"
@@ -46839,6 +48359,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 304769,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 627358,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -47075,6 +48599,10 @@
           "value": 0,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.055,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 9903949,
           "date": "2019"
@@ -47125,6 +48653,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2012362,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 4121637,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -47248,6 +48780,10 @@
           "value": 89.6706085205078,
           "date": "2019"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.74,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 901234,
           "date": "2019"
@@ -47298,6 +48834,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 209109,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 424410,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -47458,6 +48998,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 485,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 993,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -47651,6 +49195,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 398,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 815,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -47867,6 +49415,10 @@
           "value": 41.3,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.824,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 10199858,
           "date": "2019"
@@ -47917,6 +49469,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2196391,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 4434842,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -48140,6 +49696,10 @@
           "value": 0,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.228,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 3432678,
           "date": "2019"
@@ -48190,6 +49750,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 730667,
+          "date": "2014"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1505278,
           "date": "2014"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -48423,6 +49987,10 @@
           "value": 92.79992,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.387,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 708435,
           "date": "2019"
@@ -48473,6 +50041,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 101676,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 205994,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -48695,6 +50267,10 @@
           "value": 0.6,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.65,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 5776355,
           "date": "2019"
@@ -48745,6 +50321,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 796626,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1632570,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -48983,6 +50563,10 @@
           "value": 1,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.705,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 29768273,
           "date": "2019"
@@ -49033,6 +50617,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 5872228,
+          "date": "2018"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 12015598,
           "date": "2018"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -49269,6 +50857,10 @@
           "value": 0.1,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 1.963,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 346272,
           "date": "2019"
@@ -49319,6 +50911,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 70128,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 143195,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -49509,6 +51105,10 @@
           "value": 90.85635,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.785,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 4704236,
           "date": "2019"
@@ -49559,6 +51159,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1309862,
+          "date": "2020"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2691460,
           "date": "2020"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -49729,6 +51333,10 @@
           "value": 13.2,
           "date": "2010"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.744,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 56017,
           "date": "2019"
@@ -49779,6 +51387,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 7499,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 15548,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -49948,6 +51560,10 @@
           "value": 73.24477,
           "date": "2017"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.25,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 3826758,
           "date": "2019"
@@ -49998,6 +51614,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 809401,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1653448,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -50173,6 +51793,10 @@
           "value": 1.8,
           "date": "2018"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.05,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 10592532,
           "date": "2019"
@@ -50223,6 +51847,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 2174098,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 4604535,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -50359,6 +51987,10 @@
         "7"
       ],
       "indicators": {
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 2.05,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 10232,
           "date": "2019"
@@ -50409,6 +52041,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 938,
+          "date": "1997"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 1877,
           "date": "1997"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -50625,6 +52261,10 @@
           "value": 0.8,
           "date": "2016"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.56,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 885354,
           "date": "2019"
@@ -50675,6 +52315,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 133196,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 272543,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -50896,6 +52540,10 @@
           "value": 18.3,
           "date": "2014"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.7,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 5605454,
           "date": "2019"
@@ -50946,6 +52594,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1178275,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2405443,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -51110,6 +52762,10 @@
           "value": 58.7,
           "date": "2015"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 4.559,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 3934936,
           "date": "2019"
@@ -51160,6 +52816,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 1109616,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 2241404,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {
@@ -51390,6 +53050,10 @@
           "value": 48.73362,
           "date": "2013"
         },
+        "wb_SP_DYN_TFRT_IN": {
+          "value": 3.531,
+          "date": "2019"
+        },
         "wb_SP_POP_0014_FE_IN": {
           "value": 3075751,
           "date": "2019"
@@ -51440,6 +53104,10 @@
         },
         "wb_SP_PRE_TOTL_FE_IN": {
           "value": 452841,
+          "date": "2019"
+        },
+        "wb_SP_PRE_TOTL_IN": {
+          "value": 909487,
           "date": "2019"
         },
         "wb_SP_PRE_TOTL_MA_IN": {

@@ -88,6 +88,10 @@
     "description": "Multidimensional poverty, Monetary poverty (% of population deprived)"
   },
   {
+    "id": "wb_SP_DYN_TFRT_IN",
+    "description": "Fertility rate, total (births per woman)"
+  },
+  {
     "id": "wb_SP_POP_0014_FE_IN",
     "description": "Population ages 0-14, female"
   },
@@ -138,6 +142,10 @@
   {
     "id": "wb_SP_PRE_TOTL_FE_IN",
     "description": "School age population, pre-primary education, female (number)"
+  },
+  {
+    "id": "wb_SP_PRE_TOTL_IN",
+    "description": "School age population, pre-primary education, both sexes (number)"
   },
   {
     "id": "wb_SP_PRE_TOTL_MA_IN",
