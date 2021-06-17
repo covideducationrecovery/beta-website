@@ -17,6 +17,7 @@ libraries:
         .fas { font-size: 0.75em; margin-left: 0.2em; margin-right: 0.2em }
         .percentage:after { content: '%' }
         .not-available:after { content: 'not available' }
+        .table > :not(caption) > * > * {border-bottom: none;}
     </style>
 </head>
 
@@ -131,14 +132,24 @@ libraries:
                 </template>
                 <div>
                     <h4 class="mt-4">In-person education supports by grade level</h4>
-                    <div>
-                        coming soon
+                    <div class="table-responsive">
+                        <table class="w-100 table table-hover">
+                            <tr v-for="gradeLevel in gradeLevelList">
+                            <th scope="row">${gradeLevel.label}</td>
+                            <td v-for="ipasOption in ipasOptions"><small v-if="place.fields[gradeLevel.ipasKey]?.includes(ipasOption.value)" class="d-flex flex-row align-items-start"><i v-bind:class="`fas fa-${ ipasOption.faIcon } mx-1 my-auto`"></i><span>${ ipasOption.label }</span></small></td>
+                            </tr>
+                        </table>    
                     </div>
                 </div>
                 <div>
                     <h4 class="mt-4">Remote education supports by grade level</h4>
-                    <div>
-                        coming soon
+                    <div class="table-responsive">
+                        <table class="w-100 table table-hover">
+                            <tr v-for="gradeLevel in gradeLevelList">
+                            <th scope="row">${gradeLevel.label}</td>
+                            <td v-for="mrremOption in mrremOptions"><small v-if="place.fields[gradeLevel.mrremKey]?.includes(mrremOption.value)" class="d-flex flex-row align-items-start"><i v-bind:class="`fas fa-${ mrremOption.faIcon } mx-1 my-auto`"></i><span>${ mrremOption.label }</span></small></td>
+                            </tr>
+                        </table>    
                     </div>
                 </div>
             </div>
@@ -603,7 +614,7 @@ libraries:
                         {value: '5', label: 'Targeted Remedial Measures', faIcon: 'bullseye'},
                         {value: '6', label: 'Other', faIcon: 'question'}
                     ],
-                    mmremOptions: [
+                    mrremOptions: [
                         {value: '1', label: 'Online platforms', faIcon: 'globe'},
                         {value: '2', label: 'Television', faIcon: 'tv'},
                         {value: '3', label: 'Radio', faIcon: 'broadcast-tower'},
@@ -772,15 +783,6 @@ libraries:
                 PopFemalePer () {
                     return 100 * this?.place?.fields?.indicators?.wb_SP_POP_TOTL_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_POP_TOTL?.value;
                 },
-                hasInPersonSupports () {
-                    if (this.place) {
-                        return mostRecentInPersonAdditionalSupportFields.reduce((flag, item) => {
-                            if (country.fields[item.name] && !country.fields[item.name].includes('7') && !country.fields[item.name].includes('8')) return true;
-                        }, false)
-
-                    }
-                    return false
-                }
             }
         });
 
