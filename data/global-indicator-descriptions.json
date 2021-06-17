@@ -36,6 +36,22 @@
     "description": "Learning poverty: Share of Children at the End-of-Primary age below minimum reading proficiency adjusted by Out-of-School Children (%)"
   },
   {
+    "id": "wb_SE_PRE_ENRL_FE",
+    "description": "Enrolment in pre-primary education, female (number)"
+  },
+  {
+    "id": "wb_SE_PRE_ENRL",
+    "description": "Enrolment in pre-primary education, both sexes (number)"
+  },
+  {
+    "id": "wb_SE_PRM_ENRL_FE",
+    "description": "Enrolment in primary education, female (number)"
+  },
+  {
+    "id": "wb_SE_PRM_ENRL",
+    "description": "Primary education, pupils"
+  },
+  {
     "id": "wb_SE_PRM_ENRR_FE",
     "description": "School enrollment, primary, female (% gross)"
   },
@@ -58,6 +74,14 @@
   {
     "id": "wb_SE_PRM_NENR",
     "description": "School enrollment, primary (% net)"
+  },
+  {
+    "id": "wb_SE_SEC_ENRL_FE",
+    "description": "Enrolment in secondary education, female (number)"
+  },
+  {
+    "id": "wb_SE_SEC_ENRL",
+    "description": "Secondary education, pupils"
   },
   {
     "id": "wb_SE_SEC_ENRR_FE",
@@ -210,6 +234,42 @@
   {
     "id": "wb_SP_SEC_UTOT_MA_IN",
     "description": "School age population, upper secondary education, male (number)"
+  },
+  {
+    "id": "wb_UIS_E_02_M",
+    "description": "Enrolment in pre-primary education, male (number)"
+  },
+  {
+    "id": "wb_UIS_E_1_M",
+    "description": "Enrolment in primary education, male (number)"
+  },
+  {
+    "id": "wb_UIS_E_2_F",
+    "description": "Enrolment in lower secondary education, female (number)"
+  },
+  {
+    "id": "wb_UIS_E_2_M",
+    "description": "Enrolment in lower secondary education, male (number)"
+  },
+  {
+    "id": "wb_UIS_E_2",
+    "description": "Enrolment in lower secondary education, both sexes (number)"
+  },
+  {
+    "id": "wb_UIS_E_23_M",
+    "description": "Enrolment in secondary education, male (number)"
+  },
+  {
+    "id": "wb_UIS_E_3_F",
+    "description": "Enrolment in upper secondary education, female (number)"
+  },
+  {
+    "id": "wb_UIS_E_3_M",
+    "description": "Enrolment in upper secondary education, male (number)"
+  },
+  {
+    "id": "wb_UIS_E_3",
+    "description": "Enrolment in upper secondary education, both sexes (number)"
   },
   {
     "id": "wb_UIS_SCHBSP_1_WINTERN",
