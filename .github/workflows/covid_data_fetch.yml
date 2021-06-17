@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '15 6,12,18,0 * * *'
+    - cron:  '15 12,0 * * *'
 jobs:
   get-covid-data:
     runs-on: ubuntu-latest
