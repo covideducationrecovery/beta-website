@@ -1,5 +1,5 @@
 {
-    "fileDate": "2021-06-17T12:50:55.197962",
+    "fileDate": "2021-06-18T01:33:19.569944",
     "places": [
         {
             "iso_code": "AFG",
@@ -1267,7 +1267,7 @@
         },
         {
             "iso_code": "NZL",
-            "total_cases": 2713.0,
+            "total_cases": 2714.0,
             "total_deaths": 26.0,
             "total_vaccinations": 891702.0,
             "people_vaccinated": 567188.0,
@@ -1334,6 +1334,15 @@
             "people_vaccinated": 9308890.0,
             "people_fully_vaccinated": 3107671.0,
             "iso2": "PK"
+        },
+        {
+            "iso_code": "PLW",
+            "total_cases": 2.0,
+            "total_deaths": null,
+            "total_vaccinations": null,
+            "people_vaccinated": null,
+            "people_fully_vaccinated": null,
+            "iso2": "PW"
         },
         {
             "iso_code": "PSE",
