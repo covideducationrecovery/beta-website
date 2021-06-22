@@ -4,9 +4,16 @@ gtag: G-4XJB9Q7EK5
 keep_files:
  - CNAME
  - .git
+ - .github
  - .nojekyll
  - README.md
+ - data/fetch_covid_data.py
+ - data/countries_codes.csv
+ - data/covid_data.json
 exclude:
  - CNAME
  - README.md
  - admin/
+ - data/fetch_covid_data.py
+ - data/countries_codes.csv
+ - data/covid_data.json
