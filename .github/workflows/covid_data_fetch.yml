@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-      - run: git config --global --add url."git@github.com:".insteadOf "https://github.com/"
+#       - run: git config --global --add url."git@github.com:".insteadOf "https://github.com/"
       
       - name: checkout
         uses: actions/checkout@v2
