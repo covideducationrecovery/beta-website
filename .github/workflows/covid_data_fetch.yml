@@ -9,8 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       
-#       - run: git config --global --add url."git@github.com:".insteadOf "https://github.com/"
-      
       - name: checkout
         uses: actions/checkout@v2
         with:
@@ -34,7 +32,6 @@ jobs:
         run: |
           cd data
           python fetch_covid_data.py
-
 
       - run: git pull
       - run: git add .
