@@ -2,6 +2,7 @@
 
 This repository sources our [testing website](https://beta.covideducationrecovery.global/). The information on this site may be out of date, presented incorrectly, or otherwise generally unreliable.
 
+Automated Covid Status: [![covid_data_fetch](https://github.com/covideducationrecovery/beta-website/actions/workflows/covid_data_fetch.yml/badge.svg?branch=master)](https://github.com/covideducationrecovery/beta-website/actions/workflows/covid_data_fetch.yml)
 
 # Local Testing
 To test this site locally, run
