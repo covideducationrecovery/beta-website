@@ -3,6 +3,7 @@ if (!(process.env.AIRTABLE_API_KEY && process.env.AIRTABLE_BASE_ID)) {
   process.exit(1)
 }
 
+// get command-line arguments after 'node filename'
 const myArgs = process.argv.slice(2)
 
 if (myArgs.length === 0) {
@@ -10,6 +11,7 @@ if (myArgs.length === 0) {
   process.exit
 }
 
+// load the configuration from filename provided at the command line
 let configuration
 try {
   configuration = require(myArgs[0])
@@ -18,9 +20,11 @@ try {
   process.exit(1)
 }
 
+// these statements require esm, so best to launch this script with 'node -r esm'
 import airtableJson from 'airtable-json'
 import fs from 'fs'
 
+// function call download data from airtable
 const getCountries = async(configurationItem) => {
   const results = await airtableJson({
     auth_key: process.env.AIRTABLE_API_KEY,
@@ -32,6 +36,7 @@ const getCountries = async(configurationItem) => {
   return { ...configurationItem, results: results }
 }
 
+// function call to save a data file once it has been downloaded
 const saveFile = (configurationItem) => {
   if (configurationItem.keepFields) {
     configurationItem.results = configurationItem.results.map((dataItem) => {
@@ -50,6 +55,7 @@ const saveFile = (configurationItem) => {
   })
 }
 
+// chain the configuration items so they are downloaded and saved in series (not parallel)
 const starterPromise = Promise.resolve(null)
 configuration.reduce((p, configurationItem) =>
   p.then(() => getCountries(configurationItem)
