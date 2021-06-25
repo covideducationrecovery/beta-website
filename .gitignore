@@ -5,6 +5,12 @@ _cache
 
 CNAME
 
+# nodejs modules
+node_modules/
+
+# environment variables
+.env
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
