@@ -11,6 +11,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "AFG",
     "m49code": 4,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -80,6 +81,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "ALB",
     "m49code": 8,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -256,6 +258,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "DZA",
     "m49code": 12,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-27",
@@ -396,6 +399,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "ASM",
     "m49code": 16,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -633,6 +637,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "AND",
     "m49code": 20,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-03",
@@ -883,6 +888,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "AGO",
     "m49code": 24,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-30",
@@ -1139,6 +1145,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "AIA",
     "m49code": 660,
+    "owidHasVaccine": true,
     "__id": "recIJLIkGEi0fHzfX"
   },
   {
@@ -1153,6 +1160,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "ATG",
     "m49code": 28,
+    "owidHasVaccine": true,
     "__id": "recC3akhVkuj3Of82"
   },
   {
@@ -1167,6 +1175,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "ARG",
     "m49code": 32,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-12",
@@ -1347,6 +1356,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "ARM",
     "m49code": 51,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -1500,6 +1510,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "ABW",
     "m49code": 533,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-04-30",
@@ -1639,6 +1650,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "AUS",
     "m49code": 36,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-23",
@@ -1967,6 +1979,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "AUT",
     "m49code": 40,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-28",
@@ -2268,6 +2281,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "AZE",
     "m49code": 31,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-02",
@@ -2462,6 +2476,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "BHS",
     "m49code": 44,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-31",
@@ -2863,6 +2878,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "BHR",
     "m49code": 48,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-09",
@@ -3049,6 +3065,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "BGD",
     "m49code": 50,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-15",
@@ -3233,6 +3250,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "BRB",
     "m49code": 52,
+    "owidHasVaccine": true,
     "__id": "recNRNZRfhPVxLhKj"
   },
   {
@@ -3247,6 +3265,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "BLR",
     "m49code": 112,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -3344,6 +3363,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "BEL",
     "m49code": 56,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-31",
@@ -3679,6 +3699,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "BLZ",
     "m49code": 84,
+    "owidHasVaccine": true,
     "__id": "recJ8MnEujcoWujEj"
   },
   {
@@ -3693,6 +3714,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "BEN",
     "m49code": 204,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-02",
@@ -3801,6 +3823,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "BMU",
     "m49code": 60,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -4010,6 +4033,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "BTN",
     "m49code": 64,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -4156,6 +4180,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "BOL",
     "m49code": 68,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-01",
@@ -4243,6 +4268,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "BIH",
     "m49code": 70,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -4399,6 +4425,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "BWA",
     "m49code": 72,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-04-26",
@@ -4506,6 +4533,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "BRA",
     "m49code": 76,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-02",
@@ -4792,6 +4820,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "VGB",
     "m49code": 92,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -5128,6 +5157,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "BRN",
     "m49code": 96,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-05-06",
@@ -5185,6 +5215,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "BGR",
     "m49code": 100,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -5290,6 +5321,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "BFA",
     "m49code": 854,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-04",
@@ -5504,6 +5536,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "CPV",
     "m49code": 132,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-05",
@@ -5659,6 +5692,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "KHM",
     "m49code": 116,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -5858,6 +5892,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "CMR",
     "m49code": 120,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-04",
@@ -5955,6 +5990,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "CAN",
     "m49code": 124,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -6361,6 +6397,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "CYM",
     "m49code": 136,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -6565,6 +6602,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "CAF",
     "m49code": 140,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-05-04",
@@ -6660,6 +6698,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "TCD",
     "m49code": 148,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-04",
@@ -6768,6 +6807,7 @@
     "wbIncomeLevelCode": "HIC",
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "CHI",
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -6999,6 +7039,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "CHL",
     "m49code": 152,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-12",
@@ -7058,6 +7099,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "CHN",
     "m49code": 156,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -7153,6 +7195,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "COL",
     "m49code": 170,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-12",
@@ -7447,6 +7490,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "COM",
     "m49code": 174,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -7592,6 +7636,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "COD",
     "m49code": 180,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-27",
@@ -7723,6 +7768,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "COG",
     "m49code": 178,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-04-29",
@@ -7819,6 +7865,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "COK",
     "m49code": 184,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-26",
@@ -7964,6 +8011,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "CRI",
     "m49code": 188,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-18",
@@ -8088,6 +8136,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "CIV",
     "m49code": 384,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-05",
@@ -8201,6 +8250,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "HRV",
     "m49code": 191,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-28",
@@ -8335,6 +8385,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "CUB",
     "m49code": 192,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -8595,6 +8646,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "CUW",
     "m49code": 531,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -8821,6 +8873,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "CYP",
     "m49code": 196,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-11",
@@ -8980,6 +9033,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "CZE",
     "m49code": 203,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -9363,6 +9417,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "DNK",
     "m49code": 208,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -9726,6 +9781,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "DJI",
     "m49code": 262,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-28",
@@ -9815,6 +9871,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "DMA",
     "m49code": 212,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-13",
@@ -9920,6 +9977,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "DOM",
     "m49code": 214,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-09",
@@ -10070,6 +10128,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "ECU",
     "m49code": 218,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-12",
@@ -10276,6 +10335,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "EGY",
     "m49code": 818,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -10469,6 +10529,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "SLV",
     "m49code": 222,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-12",
@@ -10652,6 +10713,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "GNQ",
     "m49code": 226,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -10949,6 +11011,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "EST",
     "m49code": 233,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-03",
@@ -11057,6 +11120,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "SWZ",
     "m49code": 748,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -11183,6 +11247,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "ETH",
     "m49code": 231,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-27",
@@ -11306,6 +11371,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "FRO",
     "m49code": 234,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-05-09",
@@ -11363,6 +11429,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "FJI",
     "m49code": 242,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-06-06",
@@ -11408,6 +11475,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "FIN",
     "m49code": 246,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-02",
@@ -11687,6 +11755,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "FRA",
     "m49code": 250,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-04",
@@ -12007,6 +12076,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "PYF",
     "m49code": 258,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -12299,6 +12369,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "GAB",
     "m49code": 266,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-05",
@@ -12494,6 +12565,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "GMB",
     "m49code": 270,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-04",
@@ -12566,6 +12638,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "GEO",
     "m49code": 268,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -12734,6 +12807,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "DEU",
     "m49code": 276,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -13101,6 +13175,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "GHA",
     "m49code": 288,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-05",
@@ -13197,6 +13272,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "GIB",
     "m49code": 292,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-05-09",
@@ -13254,6 +13330,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "GRC",
     "m49code": 300,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -13374,6 +13451,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "GRL",
     "m49code": 304,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-23",
@@ -13703,6 +13781,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "GRD",
     "m49code": 308,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-13",
@@ -13847,6 +13926,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "GUM",
     "m49code": 316,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -14167,6 +14247,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "GTM",
     "m49code": 320,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-09",
@@ -14293,6 +14374,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "GIN",
     "m49code": 324,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-04",
@@ -14427,6 +14509,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "GNB",
     "m49code": 624,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-05",
@@ -14536,6 +14619,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "GUY",
     "m49code": 328,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-13",
@@ -14784,6 +14868,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "HND",
     "m49code": 340,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-16",
@@ -14933,6 +15018,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "HKG",
     "m49code": 344,
+    "owidHasVaccine": true,
     "__id": "rec4j4t1NGdtOTdHy"
   },
   {
@@ -14947,6 +15033,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "HUN",
     "m49code": 348,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-02",
@@ -15207,6 +15294,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "ISL",
     "m49code": 352,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-04",
@@ -15416,6 +15504,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "IND",
     "m49code": 356,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -15625,6 +15714,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "IDN",
     "m49code": 360,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-02",
@@ -15907,6 +15997,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "IRN",
     "m49code": 364,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-09",
@@ -16086,6 +16177,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "IRQ",
     "m49code": 368,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -16352,6 +16444,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "IRL",
     "m49code": 372,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -16688,6 +16781,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "IMN",
     "m49code": 833,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-05-01",
@@ -16827,6 +16921,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "ISR",
     "m49code": 376,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-30",
@@ -17162,6 +17257,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "ITA",
     "m49code": 380,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-30",
@@ -17506,6 +17602,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "JAM",
     "m49code": 388,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-12",
@@ -17707,6 +17804,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "JPN",
     "m49code": 392,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-30",
@@ -18164,6 +18262,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "JOR",
     "m49code": 400,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-28",
@@ -18353,6 +18452,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "KAZ",
     "m49code": 398,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-25",
@@ -18474,6 +18574,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "KEN",
     "m49code": 404,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-09",
@@ -18712,6 +18813,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "KOR",
     "m49code": 410,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -18860,6 +18962,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "KWT",
     "m49code": 414,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-09",
@@ -19022,6 +19125,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "KGZ",
     "m49code": 417,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-01",
@@ -19133,6 +19237,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "LAO",
     "m49code": 418,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-06-03",
@@ -19197,6 +19302,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "LVA",
     "m49code": 428,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-12",
@@ -19314,6 +19420,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "LBN",
     "m49code": 422,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -19536,6 +19643,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "LSO",
     "m49code": 426,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -19670,6 +19778,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "LBR",
     "m49code": 430,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-05",
@@ -19841,6 +19950,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "LBY",
     "m49code": 434,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-04",
@@ -20065,6 +20175,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "LIE",
     "m49code": 438,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-05-01",
@@ -20204,6 +20315,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "LTU",
     "m49code": 440,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-03",
@@ -20320,6 +20432,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "LUX",
     "m49code": 442,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-30",
@@ -20745,6 +20858,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "MAC",
     "m49code": 446,
+    "owidHasVaccine": true,
     "__id": "recEiLw68B2Atp9X0"
   },
   {
@@ -20759,6 +20873,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "MDG",
     "m49code": 450,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-28",
@@ -20931,6 +21046,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "MWI",
     "m49code": 454,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-06",
@@ -21063,6 +21179,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "MYS",
     "m49code": 458,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -21271,6 +21388,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "MDV",
     "m49code": 462,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -21453,6 +21571,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "MLI",
     "m49code": 466,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-26",
@@ -21573,6 +21692,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "MLT",
     "m49code": 470,
+    "owidHasVaccine": true,
     "__id": "recCVDdtLAfVkc6so"
   },
   {
@@ -21587,6 +21707,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "MHL",
     "m49code": 584,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-12",
@@ -21846,6 +21967,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "MUS",
     "m49code": 480,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-28",
@@ -22021,6 +22143,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "MEX",
     "m49code": 484,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-26",
@@ -22186,6 +22309,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "MDA",
     "m49code": 498,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-26",
@@ -22351,6 +22475,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "MCO",
     "m49code": 492,
+    "owidHasVaccine": true,
     "__id": "recZFQ3a8Q1Jr140Y"
   },
   {
@@ -22365,6 +22490,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "MNG",
     "m49code": 496,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-26",
@@ -22501,6 +22627,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "MNE",
     "m49code": 499,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-27",
@@ -22751,6 +22878,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "MSR",
     "m49code": 500,
+    "owidHasVaccine": true,
     "__id": "rec50DBehdXT2GCEA"
   },
   {
@@ -22765,6 +22893,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "MAR",
     "m49code": 504,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-28",
@@ -23089,6 +23218,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "MOZ",
     "m49code": 508,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-05",
@@ -23246,6 +23376,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "MMR",
     "m49code": 104,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-02",
@@ -23323,6 +23454,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "NAM",
     "m49code": 516,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-04-08",
@@ -23544,6 +23676,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "NRU",
     "m49code": 520,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-04-30",
@@ -23683,6 +23816,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "NPL",
     "m49code": 524,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -23884,6 +24018,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "NLD",
     "m49code": 528,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-30",
@@ -24242,6 +24377,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "NCL",
     "m49code": 540,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-05-07",
@@ -24299,6 +24435,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "NZL",
     "m49code": 554,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-30",
@@ -24568,6 +24705,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "NIC",
     "m49code": 558,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-12",
@@ -24678,6 +24816,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "NER",
     "m49code": 562,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-04",
@@ -24813,6 +24952,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "NGA",
     "m49code": 566,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -25139,6 +25279,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "MKD",
     "m49code": 807,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-27",
@@ -25738,6 +25879,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "NOR",
     "m49code": 578,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-30",
@@ -26038,6 +26180,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "OMN",
     "m49code": 512,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-09",
@@ -26187,6 +26330,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "PAK",
     "m49code": 586,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-31",
@@ -26369,6 +26513,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "PAN",
     "m49code": 591,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-09",
@@ -26506,6 +26651,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "PNG",
     "m49code": 598,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -26641,6 +26787,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "PRY",
     "m49code": 600,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-07",
@@ -26868,6 +27015,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "PER",
     "m49code": 604,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-12",
@@ -26982,6 +27130,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "PHL",
     "m49code": 608,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-27",
@@ -27237,6 +27386,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "POL",
     "m49code": 616,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -27388,6 +27538,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "PRT",
     "m49code": 620,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-31",
@@ -27713,6 +27864,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "PRI",
     "m49code": 630,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -28057,6 +28209,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "QAT",
     "m49code": 634,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-09",
@@ -28230,6 +28383,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "ROU",
     "m49code": 642,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-26",
@@ -28426,6 +28580,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "RUS",
     "m49code": 643,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-27",
@@ -28564,6 +28719,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "RWA",
     "m49code": 646,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-02",
@@ -28780,6 +28936,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "WSM",
     "m49code": 882,
+    "owidHasVaccine": true,
     "__id": "rec12PLwAYyD8eW4r"
   },
   {
@@ -28794,6 +28951,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "SMR",
     "m49code": 674,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -29077,6 +29235,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "STP",
     "m49code": 678,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-02",
@@ -29192,6 +29351,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "SAU",
     "m49code": 682,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-28",
@@ -29340,6 +29500,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "SEN",
     "m49code": 686,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-04",
@@ -29480,6 +29641,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "SRB",
     "m49code": 688,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -29635,6 +29797,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "SYC",
     "m49code": 690,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-04-29",
@@ -29745,6 +29908,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "SLE",
     "m49code": 694,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-05",
@@ -29914,6 +30078,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "SGP",
     "m49code": 702,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-31",
@@ -30160,6 +30325,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "SXM",
     "m49code": 534,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-04-30",
@@ -30217,6 +30383,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "SVK",
     "m49code": 703,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-31",
@@ -30589,6 +30756,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "SVN",
     "m49code": 705,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-31",
@@ -30927,6 +31095,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "SLB",
     "m49code": 90,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-06-02",
@@ -30975,6 +31144,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "SOM",
     "m49code": 706,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-07",
@@ -31140,6 +31310,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "ZAF",
     "m49code": 710,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -31301,6 +31472,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "SSD",
     "m49code": 728,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-28",
@@ -31431,6 +31603,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "ESP",
     "m49code": 724,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -31721,6 +31894,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "LKA",
     "m49code": 144,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -32059,6 +32233,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "KNA",
     "m49code": 659,
+    "owidHasVaccine": true,
     "__id": "recJGlOsss5q96Jf2"
   },
   {
@@ -32073,6 +32248,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "LCA",
     "m49code": 662,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-12",
@@ -32172,6 +32348,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "VCT",
     "m49code": 670,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-14",
@@ -32262,6 +32439,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "SDN",
     "m49code": 729,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-26",
@@ -32373,6 +32551,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "SUR",
     "m49code": 740,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-02",
@@ -32472,6 +32651,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "SWE",
     "m49code": 752,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-01",
@@ -32890,6 +33070,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "CHE",
     "m49code": 756,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-31",
@@ -33189,6 +33370,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "SYR",
     "m49code": 760,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-02",
@@ -33299,6 +33481,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "TJK",
     "m49code": 762,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-25",
@@ -33416,6 +33599,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "THA",
     "m49code": 764,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -33563,6 +33747,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "TLS",
     "m49code": 626,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-27",
@@ -33705,6 +33890,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "TGO",
     "m49code": 768,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-04",
@@ -33951,6 +34137,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "TON",
     "m49code": 776,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -34018,6 +34205,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "TTO",
     "m49code": 780,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-10",
@@ -34044,6 +34232,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "TUN",
     "m49code": 788,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-26",
@@ -34172,6 +34361,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "TUR",
     "m49code": 792,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-26",
@@ -34339,6 +34529,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "TKM",
     "m49code": 795,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -34395,6 +34586,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "TCA",
     "m49code": 796,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-05-01",
@@ -34534,6 +34726,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "TUV",
     "m49code": 798,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-26",
@@ -34642,6 +34835,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "UGA",
     "m49code": 800,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-27",
@@ -34781,6 +34975,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "UKR",
     "m49code": 804,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -35009,6 +35204,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "ARE",
     "m49code": 784,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-09",
@@ -35196,6 +35392,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "GBR",
     "m49code": 826,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-31",
@@ -35512,6 +35709,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "USA",
     "m49code": 840,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-08",
@@ -35951,6 +36149,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "URY",
     "m49code": 858,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-12",
@@ -36138,6 +36337,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "UZB",
     "m49code": 860,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-26",
@@ -36300,6 +36500,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "VUT",
     "m49code": 548,
+    "owidHasVaccine": true,
     "__id": "recxO3I0YDePFU7I4"
   },
   {
@@ -36314,6 +36515,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "VEN",
     "m49code": 862,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-03-02",
@@ -36374,6 +36576,7 @@
     "wbLendingTypeCode": "IBD",
     "wbCountryCode": "VNM",
     "m49code": 704,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-02-03",
@@ -36424,6 +36627,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "VIR",
     "m49code": 850,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-31",
@@ -36805,6 +37009,7 @@
     "wbLendingTypeCode": "LNX",
     "wbCountryCode": "PSE",
     "m49code": 275,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-29",
@@ -37033,6 +37238,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "YEM",
     "m49code": 887,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-28",
@@ -37169,6 +37375,7 @@
     "wbLendingTypeCode": "IDX",
     "wbCountryCode": "ZMB",
     "m49code": 894,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-27",
@@ -37323,6 +37530,7 @@
     "wbLendingTypeCode": "IDB",
     "wbCountryCode": "ZWE",
     "m49code": 716,
+    "owidHasVaccine": true,
     "responsesPublic": [
       {
         "responseDate": "2021-01-27",
