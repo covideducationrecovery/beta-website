@@ -6,17 +6,18 @@
     "keepFields": [
       "__id",
       "countryName",
-      "wbCountryCode",
+      "iso3166Alpha2Code",
+      "iso3166Alpha3Code",
       "m49code",
-      "wbRegion",
-      "wbRegionCode",
+      "owidHasVaccine",
+      "responsesPublic",
+      "wbCountryCode",
       "wbIncomeLevelCode",
       "wbIncomeLevelName",
       "wbLendingTypeCode",
       "wbLendingTypeName",
-      "iso3166Alpha2Code",
-      "iso3166Alpha3Code",
-      "responsesPublic"
+      "wbRegion",
+      "wbRegionCode"
     ]
   },
   {
