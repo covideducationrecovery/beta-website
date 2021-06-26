@@ -22,7 +22,11 @@ const responsesPublicMap = new Map(responsesPublic.map(responsePublic => [respon
 
 // swap out the responsesPublic record identifiers for the real records in each country record
 countries.forEach((country) => {
-  country.responsesPublic = country.responsesPublic?.map(responsePublicId => responsesPublicMap.get(responsePublicId))
+  country.responsesPublic = country.responsesPublic
+    ?.map(responsePublicId => responsesPublicMap.get(responsePublicId))
+    .sort((responsePublic1, responsePublic2) => {
+      return responsePublic1.roundId - responsePublic2.roundId
+    })
 })
 
 // write the result to file, both readable and minified
