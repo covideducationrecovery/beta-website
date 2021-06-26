@@ -21,13 +21,17 @@ for (responsePublic of responsesPublic) {
 const responsesPublicMap = new Map(responsesPublic.map(responsePublic => [responsePublic.__id, responsePublic]))
 
 // swap out the responsesPublic record identifiers for the real records in each country record
-countries.forEach((country) => {
-  country.responsesPublic = country.responsesPublic
-    ?.map(responsePublicId => responsesPublicMap.get(responsePublicId))
-    .sort((responsePublic1, responsePublic2) => {
-      return responsePublic1.roundId - responsePublic2.roundId
-    })
-})
+countries
+  .sort((country1, country2) => {
+    return country1.countryName?.localeCompare(country2.countryName)
+  })
+  .forEach((country) => {
+    country.responsesPublic = country.responsesPublic
+      ?.map(responsePublicId => responsesPublicMap.get(responsePublicId))
+      .sort((responsePublic1, responsePublic2) => {
+        return responsePublic1.roundId - responsePublic2.roundId
+      })
+  })
 
 // write the result to file, both readable and minified
 const fs = require('fs')
