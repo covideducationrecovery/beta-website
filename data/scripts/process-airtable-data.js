@@ -1,8 +1,8 @@
 const countriesFilename = './countries.json'
 const responsesPublicFilename = './responses-public.json'
 const responseRoundsFilename = './response-rounds.json'
-const outputFilename = "./global.v2.json"
-const outputMinifiedFilename = "./global.v2.min.json"
+const outputFilename = "../global.v2.json"
+const outputMinifiedFilename = "../global.v2.min.json"
 
 
 // load the data from files
