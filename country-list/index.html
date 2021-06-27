@@ -5,6 +5,9 @@ libraries:
  - vuejs
  - bootstrap
  - tippy
+
+ # NOTE: Variables with a $ prefix are used to help improve performance or help control rendering.
+ #   See the Vue > methods : processCountries () method for details
 ---
 <div class="spacer-5"></div>
 
@@ -60,9 +63,9 @@ libraries:
             <span v-if="country.$displayedResponse?.$hasInPersonAdditionalSupports" class="badge bg-secondary" v-bind:show-popout="country.iso3166Alpha2Code + '-ips'"><i class="fas fa-eye"></i>&nbsp;&nbsp;View</button></span>
             <div v-if="country.$displayedResponse?.$hasInPersonAdditionalSupports" v-bind:id="country.iso3166Alpha2Code + '-ips'" class="hidden">
               <table>
-                <tr v-for="field in mostRecentInPersonAdditionalSupportFields" v-if="country.$displayedResponse[field.name] && !country.$displayedResponse[field.name].includes('7') && !country.$displayedResponse[field.name].includes('8')">
+                <tr v-for="field in inPersonAdditionalSupportFields" v-if="country.$displayedResponse[field.name] && !country.$displayedResponse[field.name].includes('7') && !country.$displayedResponse[field.name].includes('8')">
                   <td><small class="">${field.text}</small></td>
-                  <td><span class="badge bg-dark mx-1" v-for="supportType in mostRecentInPersonAdditionalSupportTypes" v-bind:marked="country.$displayedResponse[field.name].includes(supportType.value)" v-bind:title="supportType.title"><i v-bind:class="'fas fa-' + supportType.faIcon"></i></span></td>
+                  <td><span class="badge bg-dark mx-1" v-for="supportType in inPersonAdditionalSupportTypes" v-bind:marked="country.$displayedResponse[field.name].includes(supportType.value)" v-bind:title="supportType.title"><i v-bind:class="'fas fa-' + supportType.faIcon"></i></span></td>
                 </tr>
               </table>
               <hr >
@@ -73,9 +76,9 @@ libraries:
             <span v-if="country.$displayedResponse?.$hasRemoteEducationModalities" class="badge bg-secondary" show-popout><i class="fas fa-eye"></i>&nbsp;&nbsp;View</button></span>
             <div v-if="country.$displayedResponse?.$hasRemoteEducationModalities" class="hidden">
               <table>
-                <tr v-for="field in mostRecentRemoteEducationModalityFields" v-if="country.$displayedResponse[field.name] && !country.$displayedResponse[field.name].includes('6') && !country.$displayedResponse[field.name].includes('7')">
+                <tr v-for="field in remoteEducationModalityFields" v-if="country.$displayedResponse[field.name] && !country.$displayedResponse[field.name].includes('6') && !country.$displayedResponse[field.name].includes('7')">
                   <td><small>${field.text}</small></td>
-                  <td><span class="badge bg-dark mx-1" v-for="modalityType in mostRecentRemoteEducationModalityTypes" v-bind:marked="country.$displayedResponse[field.name].includes(modalityType.value)" v-bind:title="modalityType.title"><i v-bind:class="'fas fa-' + modalityType.faIcon"></i></span></td>
+                  <td><span class="badge bg-dark mx-1" v-for="modalityType in remoteEducationModalityTypes" v-bind:marked="country.$displayedResponse[field.name].includes(modalityType.value)" v-bind:title="modalityType.title"><i v-bind:class="'fas fa-' + modalityType.faIcon"></i></span></td>
                 </tr>                    
               </table>
               <hr >
@@ -110,13 +113,13 @@ libraries:
           upToRoundId: Infinity,
           showNoResponses: false
         },
-        mostRecentInPersonAdditionalSupportFields: [
+        inPersonAdditionalSupportFields: [
           {name: 'inPersonAdditionalSupportPrePrimary', text: 'Pre-Primary'},
           {name: 'inPersonAdditionalSupportPrimary', text: 'Primary'},
           {name: 'inPersonAdditionalSupportLowerSecondary', text: 'Lower Secondary'},
           {name: 'inPersonAdditionalSupportUpperSecondary', text: 'Upper Secondary'}
         ],
-        mostRecentInPersonAdditionalSupportTypes: [
+        inPersonAdditionalSupportTypes: [
           {value: '1', title: 'School Day Changes', faIcon: 'calendar-day'},
           {value: '2', title: 'School Year Changes', faIcon: 'calendar-alt'},
           {value: '3', title: 'Teacher Tutoring', faIcon: 'school'},
@@ -124,7 +127,7 @@ libraries:
           {value: '5', title: 'Targeted Remedial Measures', faIcon: 'bullseye'},
           {value: '6', title: 'Other', faIcon: 'question'}
         ],
-        mostRecentRemoteEducationModalityFields: [
+        remoteEducationModalityFields: [
           {name: 'remoteEducationModalitiesPrePrimaryCode', text: 'Pre-Primary'},
           {name: 'remoteEducationModalitiesPrimaryCode', text: 'Primary'},
           {name: 'remoteEducationModalitiesLowerSecondaryCode', text: 'Lower Secondary'},
@@ -132,7 +135,7 @@ libraries:
           {name: 'remoteEducationModalitiesHigherCode', text: 'Higher Education'},
           {name: 'remoteEducationModalitiesVocationalCode', text: 'Technical/Vocational'}
         ],
-        mostRecentRemoteEducationModalityTypes: [
+        remoteEducationModalityTypes: [
           {value: '1', title: 'Online platforms', faIcon: 'globe'},
           {value: '2', title: 'Television', faIcon: 'tv'},
           {value: '3', title: 'Radio', faIcon: 'broadcast-tower'},
@@ -185,6 +188,7 @@ libraries:
       });
     },
     computed: {
+      // access this computed property to render the data, it applies the rules set by this.filter
       displayedCountries () {
         return this.countries
           .map((country) => {
@@ -198,27 +202,26 @@ libraries:
           })
       },
       mostRecentResponseDate () {
-        let mrrd = '0000-00-00'
-        for (country of this.countries) {
-          const mrcrd = this.mostRecentCountryResponseDate(country)
-          if (mrcrd) {
-            mrrd = mrcrd > mrrd ? mrcrd : mrrd
-          }
-        }
-        return mrrd
+        // flatten all the responses into an array and iterate through them to
+        // determine the most recent date for all of them
+        return this.countries
+          .flatMap(country => country.responsesPublic || [] )
+          .reduce((mrrd, response) => {
+            return response.responseDate > mrrd ? response.responseDate : mrrd
+          }, '0000-00-00')
       }
     },
     methods: {
-      mostRecentCountryResponseDate (country) {
-        return country?.responsesPublic?.reduce((mrcrd, responsePublic) => {
-          return responsePublic.responseDate > mrcrd ? responsePublic.responseDate : mrcrd
-        }, '0000-00-00')
-      },
       // pre-process the data to improve performance
       processCountries (countries) {
         for (const country of countries) {
+
+          // responsesPublic are sorted chronologically by default, so we set up 
+          // $responsesReversed to improve selection performance for more recent responses
           country.$responsesReversed = country.responsesPublic?.slice().reverse()
           country.responsesPublic?.forEach((response) => {
+
+            // $educationServices is a synthesis of two different fields
             response.$educationServices = []
             if (response.extendedBreakCode?.includes('1')) {
               response.$educationServices.push('extendedBreak');
@@ -231,14 +234,14 @@ libraries:
 
             // set a flag to determine if we should show the icon & its hover table if there are in-person supports
             // codes 7 & 8 correspond to other and unknown so ignore those too
-            response.$hasInPersonAdditionalSupports = this.mostRecentInPersonAdditionalSupportFields
+            response.$hasInPersonAdditionalSupports = this.inPersonAdditionalSupportFields
               .some((item) => {
                 return response[item.name] && !response[item.name].includes('7') && !response[item.name].includes('8')
               })
 
             // set a flag to determine if we should show the icon & its hover table if there are remode education supports
             // codes 6 & 7 correspond to other and unknown so ignore those too
-            response.$hasRemoteEducationModalities = this.mostRecentRemoteEducationModalityFields
+            response.$hasRemoteEducationModalities = this.remoteEducationModalityFields
               .some((item) => {
                 return response[item.name] && !response[item.name].includes('6') && !response[item.name].includes('7')
               })
