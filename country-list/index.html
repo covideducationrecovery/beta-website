@@ -22,7 +22,7 @@ libraries:
       <a class="btn btn-outline-primary" href="/data/"><i class="fas fa-file-download"></i> Get This Data</a>
     </div>
     <div>
-      Showing ${ countries.length } ${ countries.length === 1 ? 'country' : 'countries' }
+      Showing ${ displayedCountries.length } ${ displayedCountries.length === 1 ? 'country' : 'countries' }
     </div>
     <table class="table table-sm table-hover">
       <thead>
@@ -38,31 +38,31 @@ libraries:
         </tr>
       </thead>
       <tbody>
-        <tr v-for="country of countries" v-bind:key="country.__id">
+        <tr v-for="country of displayedCountries" v-bind:key="country.__id">
           <td><a :href="'/profile/?' + country.iso3166Alpha2Code">${ country.countryName }</a></td>
           <td>${ country.wbRegion }</td>
           <td>
-            <span class="badge bg-secondary" v-if="country.educationServices?.includes('extendedBreak')" title="On extended break"><i class="fas fa-umbrella-beach"></i></span>
-            <span class="badge bg-danger" v-if="country.educationServices?.includes('covidClosed')" title="Closed due to COVID-19"><i class="fas fa-times"></i></span>
-            <span class="badge bg-secondary" v-if="country.educationServices?.includes('remote')" title="Remote"><i class="fas fa-home"></i></span>
-            <span class="badge bg-info" v-if="country.educationServices?.includes('hybrid')" title="Hybrid"><i class="fas fa-school"></i> + <i class="fas fa-home"></i></span>
-            <span class="badge bg-dark" v-if="country.educationServices?.includes('inPerson')" title="In-person"><i class="fas fa-school"></i></span>
+            <span class="badge bg-secondary" v-if="country.$displayedResponse?.$educationServices.includes('extendedBreak')" title="On extended break"><i class="fas fa-umbrella-beach"></i></span>
+            <span class="badge bg-danger" v-if="country.$displayedResponse?.$educationServices.includes('covidClosed')" title="Closed due to COVID-19"><i class="fas fa-times"></i></span>
+            <span class="badge bg-secondary" v-if="country.$displayedResponse?.$educationServices.includes('remote')" title="Remote"><i class="fas fa-home"></i></span>
+            <span class="badge bg-info" v-if="country.$displayedResponse?.$educationServices.includes('hybrid')" title="Hybrid"><i class="fas fa-school"></i> + <i class="fas fa-home"></i></span>
+            <span class="badge bg-dark" v-if="country.$displayedResponse?.$educationServices.includes('inPerson')" title="In-person"><i class="fas fa-school"></i></span>
           </td>
-          <td v-if="country.mrrp?.vaccineAvailabilityForTeachersCode">
-            <span class="badge bg-success" v-if="country.mrrp.vaccineAvailabilityForTeachersCode.includes('1')" title="Teachers are currently being vaccinated as a priority group"><i class="fas fa-check"></i></span>
-            <span class="badge bg-danger" v-if="country.mrrp.vaccineAvailabilityForTeachersCode.includes('2')" title="Teachers have not been prioritized"><i class="fas fa-times"></i></span>
+          <td v-if="country.$displayedResponse?.vaccineAvailabilityForTeachersCode" class="text-center">
+            <span class="badge bg-success" v-if="country.$displayedResponse.vaccineAvailabilityForTeachersCode.includes('1')" title="Teachers are currently being vaccinated as a priority group"><i class="fas fa-check"></i></span>
+            <span class="badge bg-danger" v-if="country.$displayedResponse.vaccineAvailabilityForTeachersCode.includes('2')" title="Teachers have not been prioritized"><i class="fas fa-times"></i></span>
           </td>
           <td v-else></td>
-          <td>
-            <span v-if="country.owidHasVaccine" class="badge bg-success text-center" title="Vaccines have been authorized"><i class="fas fa-check"></i></span>
+          <td class="text-center">
+            <span v-if="country.owidHasVaccine" class="badge bg-success" title="Vaccines have been authorized"><i class="fas fa-check"></i></span>
           </td>
           <td>
-            <span v-if="country.hasInPersonAdditionalSupports" class="badge bg-secondary" v-bind:show-popout="country.iso3166Alpha2Code + '-ips'"><i class="fas fa-eye"></i>&nbsp;&nbsp;View</button></span>
-            <div v-if="country.hasInPersonAdditionalSupports" v-bind:id="country.iso3166Alpha2Code + '-ips'" class="hidden">
+            <span v-if="country.$displayedResponse?.$hasInPersonAdditionalSupports" class="badge bg-secondary" v-bind:show-popout="country.iso3166Alpha2Code + '-ips'"><i class="fas fa-eye"></i>&nbsp;&nbsp;View</button></span>
+            <div v-if="country.$displayedResponse?.$hasInPersonAdditionalSupports" v-bind:id="country.iso3166Alpha2Code + '-ips'" class="hidden">
               <table>
-                <tr v-for="field in mostRecentInPersonAdditionalSupportFields" v-if="country.mrrp?.[field.name] && !country.mrrp[field.name].includes('7') && !country.mrrp[field.name].includes('8')">
+                <tr v-for="field in mostRecentInPersonAdditionalSupportFields" v-if="country.$displayedResponse[field.name] && !country.$displayedResponse[field.name].includes('7') && !country.$displayedResponse[field.name].includes('8')">
                   <td><small class="">${field.text}</small></td>
-                  <td><span class="badge bg-dark mx-1" v-for="supportType in mostRecentInPersonAdditionalSupportTypes" v-bind:marked="country.mrrp[field.name].includes(supportType.value)" v-bind:title="supportType.title"><i v-bind:class="'fas fa-' + supportType.faIcon"></i></span></td>
+                  <td><span class="badge bg-dark mx-1" v-for="supportType in mostRecentInPersonAdditionalSupportTypes" v-bind:marked="country.$displayedResponse[field.name].includes(supportType.value)" v-bind:title="supportType.title"><i v-bind:class="'fas fa-' + supportType.faIcon"></i></span></td>
                 </tr>
               </table>
               <hr >
@@ -70,19 +70,19 @@ libraries:
             </div>
           </td>
           <td>
-            <span v-if="country.hasRemoteEducationModalities" class="badge bg-secondary" show-popout><i class="fas fa-eye"></i>&nbsp;&nbsp;View</button></span>
-            <div v-if="country.hasRemoteEducationModalities" class="hidden">
+            <span v-if="country.$displayedResponse?.$hasRemoteEducationModalities" class="badge bg-secondary" show-popout><i class="fas fa-eye"></i>&nbsp;&nbsp;View</button></span>
+            <div v-if="country.$displayedResponse?.$hasRemoteEducationModalities" class="hidden">
               <table>
-                <tr v-for="field in mostRecentRemoteEducationModalityFields" v-if="country.mrrp?.[field.name] && !country.mrrp[field.name].includes('6') && !country.mrrp[field.name].includes('7')">
+                <tr v-for="field in mostRecentRemoteEducationModalityFields" v-if="country.$displayedResponse[field.name] && !country.$displayedResponse[field.name].includes('6') && !country.$displayedResponse[field.name].includes('7')">
                   <td><small>${field.text}</small></td>
-                  <td><span class="badge bg-dark mx-1" v-for="modalityType in mostRecentRemoteEducationModalityTypes" v-bind:marked="country.mrrp[field.name].includes(modalityType.value)" v-bind:title="modalityType.title"><i v-bind:class="'fas fa-' + modalityType.faIcon"></i></span></td>
+                  <td><span class="badge bg-dark mx-1" v-for="modalityType in mostRecentRemoteEducationModalityTypes" v-bind:marked="country.$displayedResponse[field.name].includes(modalityType.value)" v-bind:title="modalityType.title"><i v-bind:class="'fas fa-' + modalityType.faIcon"></i></span></td>
                 </tr>                    
               </table>
               <hr >
               <a class="badge bg-light text-dark" href="/methodology/#definitions">What do these mean?</a>
             </div>
           </td>
-          <td>${ country.mrrp?.responseDate | iso8601ToLocaleDateString }</td>
+          <td class="text-right">${ country.$displayedResponse?.responseDate | iso8601ToLocaleDateString }</td>
         </tr>
       </tbody>
     </table>
@@ -103,7 +103,7 @@ libraries:
     el: '#vue-app',
     data () {
       return {
-        countriesFromFile: [],
+        countries: [],
         errorLoading: false,
         errorMessage: undefined,
         filter: {
@@ -157,11 +157,12 @@ libraries:
       try {
         const countriesResponse = await fetch('/data/global.v2.min.json')
         if (countriesResponse.ok) {
-          this.countriesFromFile = await countriesResponse.json()
+          this.countries = this.processCountries(await countriesResponse.json())
         } else {
           throw new Error(`HTTP Error ${countriesResponse.status}: ${countriesResponse.statusText} (${countriesResponse.url.split('/').pop()})`)
         }
       } catch (e) {
+        console.error(e)
         this.errorLoading = true
         this.errorMessage = e.message
       }
@@ -184,44 +185,21 @@ libraries:
       });
     },
     computed: {
-      countries () {
-        return this.countriesFromFile
+      displayedCountries () {
+        return this.countries
           .map((country) => {
-            country.educationServices = [];
-            country.mrrp = country.responsesPublic
-              ?.filter(responsePublic => responsePublic.roundId <= this.filter.upToRoundId)
-              .slice(-1).pop()
-            if (country.mrrp?.extendedBreakCode?.includes('1')) {
-              country.educationServices.push('extendedBreak');
-            } else if (country.mrrp?.educationStatusCode) {
-              if (country.mrrp?.educationStatusCode.includes('1')) {country.educationServices.push('covidClosed')}
-              if (country.mrrp?.educationStatusCode.includes('2')) {country.educationServices.push('remote')}
-              if (country.mrrp?.educationStatusCode.includes('3')) {country.educationServices.push('hybrid')}
-              if (country.mrrp?.educationStatusCode.includes('4')) {country.educationServices.push('inPerson')}
-            }
-
-            // set a flag to determine if we should show the icon & its hover table if there are in-person supports
-            // codes 7 & 8 correspond to other and unknown so ignore those too
-            country.hasInPersonAdditionalSupports = this.mostRecentInPersonAdditionalSupportFields
-              .some((item) => {
-                return country.mrrp?.[item.name] && !country.mrrp?.[item.name].includes('7') && !country.mrrp?.[item.name].includes('8')
-              })
-
-            // set a flag to determine if we should show the icon & its hover table if there are remode education supports
-            // codes 6 & 7 correspond to other and unknown so ignore those too
-            country.hasRemoteEducationModalities = this.mostRecentRemoteEducationModalityFields
-              .some((item) => {
-                return country.mrrp?.[item.name] && !country.mrrp?.[item.name].includes('6') && !country.mrrp?.[item.name].includes('7')
-              })
+            country.$displayedResponse = country.$responsesReversed?.find((response) => {
+              return response.roundId <= this.filter.upToRoundId
+            })
             return country
           })
           .filter((country) => {
-            return this.filter.showNoResponses ? true : country.mrrp
+            return this.filter.showNoResponses ? true : country.$displayedResponse
           })
       },
       mostRecentResponseDate () {
         let mrrd = '0000-00-00'
-        for (country of this.countriesFromFile) {
+        for (country of this.countries) {
           const mrcrd = this.mostRecentCountryResponseDate(country)
           if (mrcrd) {
             mrrd = mrcrd > mrrd ? mrcrd : mrrd
@@ -235,6 +213,39 @@ libraries:
         return country?.responsesPublic?.reduce((mrcrd, responsePublic) => {
           return responsePublic.responseDate > mrcrd ? responsePublic.responseDate : mrcrd
         }, '0000-00-00')
+      },
+      // pre-process the data to improve performance
+      processCountries (countries) {
+        for (const country of countries) {
+          country.$responsesReversed = country.responsesPublic?.slice().reverse()
+          country.responsesPublic?.forEach((response) => {
+            response.$educationServices = []
+            if (response.extendedBreakCode?.includes('1')) {
+              response.$educationServices.push('extendedBreak');
+            } else if (response.educationStatusCode) {
+              if (response.educationStatusCode.includes('1')) {response.$educationServices.push('covidClosed')}
+              if (response.educationStatusCode.includes('2')) {response.$educationServices.push('remote')}
+              if (response.educationStatusCode.includes('3')) {response.$educationServices.push('hybrid')}
+              if (response.educationStatusCode.includes('4')) {response.$educationServices.push('inPerson')}
+            }
+
+            // set a flag to determine if we should show the icon & its hover table if there are in-person supports
+            // codes 7 & 8 correspond to other and unknown so ignore those too
+            response.$hasInPersonAdditionalSupports = this.mostRecentInPersonAdditionalSupportFields
+              .some((item) => {
+                return response[item.name] && !response[item.name].includes('7') && !response[item.name].includes('8')
+              })
+
+            // set a flag to determine if we should show the icon & its hover table if there are remode education supports
+            // codes 6 & 7 correspond to other and unknown so ignore those too
+            response.$hasRemoteEducationModalities = this.mostRecentRemoteEducationModalityFields
+              .some((item) => {
+                return response[item.name] && !response[item.name].includes('6') && !response[item.name].includes('7')
+              })
+          })
+
+        }
+        return countries
       }
     }
   })
