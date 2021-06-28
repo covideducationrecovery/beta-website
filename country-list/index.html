@@ -212,13 +212,15 @@ libraries:
       }
     },
     methods: {
-      // pre-process the data to improve performance
+      // pre-process the data to improve page rendering performance
       processCountries (countries) {
         for (const country of countries) {
 
           // responsesPublic are sorted chronologically by default, so we set up 
           // $responsesReversed to improve selection performance for more recent responses
           country.$responsesReversed = country.responsesPublic?.slice().reverse()
+
+          // iterate through all the responses and synthesize some helper values for the UI:
           country.responsesPublic?.forEach((response) => {
 
             // $educationServices is a synthesis of two different fields
@@ -232,14 +234,14 @@ libraries:
               if (response.educationStatusCode.includes('4')) {response.$educationServices.push('inPerson')}
             }
 
-            // set a flag to determine if we should show the icon & its hover table if there are in-person supports
+            // $hasInPersonAdditionalSupports determines if we should show the icon & its hover table if there are in-person supports
             // codes 7 & 8 correspond to other and unknown so ignore those too
             response.$hasInPersonAdditionalSupports = this.inPersonAdditionalSupportFields
               .some((item) => {
                 return response[item.name] && !response[item.name].includes('7') && !response[item.name].includes('8')
               })
 
-            // set a flag to determine if we should show the icon & its hover table if there are remode education supports
+            // $hasRemoteEducationModalities determines if we should show the icon & its hover table if there are remode education supports
             // codes 6 & 7 correspond to other and unknown so ignore those too
             response.$hasRemoteEducationModalities = this.remoteEducationModalityFields
               .some((item) => {
