@@ -663,6 +663,7 @@ libraries:
                     this.errorMessage = e.message
                 }
                 // load non-critical data in this block; a failure will be logged to the console.
+                // components which use data loaded from here shouldn't cause unhandled page crashes
                 try {
                     const placesCovidResponse = await fetch('/data/covid_data.json')
                     if (placesCovidResponse.ok) {
