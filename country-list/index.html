@@ -42,7 +42,7 @@ libraries:
       </thead>
       <tbody>
         <tr v-for="country of displayedCountries" v-bind:key="country.__id">
-          <td><a :href="'/profile/?' + country.iso3166Alpha2Code">${ country.countryName }</a></td>
+          <td><a :href="`/profile/?${ country.iso3166Alpha2Code || country.__id || 'unknown'}`">${ country.countryName }</a></td>
           <td>${ country.wbRegion }</td>
           <td>
             <span class="badge bg-secondary" v-if="country.$displayedResponse?.$educationServices.includes('extendedBreak')" title="On extended break"><i class="fas fa-umbrella-beach"></i></span>

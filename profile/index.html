@@ -77,7 +77,7 @@ libraries:
                         </div>
                     </div>
                 </div>
-                <img :src="`https://flagcdn.com/${ place.fields.iso3166Alpha2Code.toLowerCase() }.svg`" class="float-right w-25 rounded m-2" :alt="`Flag of ${ place.fields.countryName }`">
+                <img :src="`https://flagcdn.com/${ place.fields?.iso3166Alpha2Code?.toLowerCase() }.svg`" class="float-right w-25 rounded m-2" :alt="`Flag of ${ place.fields.countryName }`">
             </div>
 
             <div v-if="placeCovid" class="w-100 bg-light rounded p-3 my-5">
@@ -103,7 +103,7 @@ libraries:
                     </div>
                 </div>
                 <div class="d-flex flex-row justify-content-end">
-                    <a :href="`https://coronavirus.jhu.edu/region/${place.fields.iso3166Alpha2Code.toLowerCase()}`">More information about coronavirus in this country <i class="fas fa-external-link-alt"></i></a>
+                    <a :href="`https://coronavirus.jhu.edu/region/${place.fields.iso3166Alpha2Code?.toLowerCase()}`">More information about coronavirus in this country <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
 
@@ -162,13 +162,13 @@ libraries:
                     <div class="my-3">
                         <h4>
                             School-age populations
-                            <i class="fas fa-info-circle" :popover="`Population of the age group theoretically corresponding to the specified education level as indicated by theoretical entrance age and duration.<hr>Source: World Bank<br>Updated: ${ place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.date }`"></i>
+                            <i class="fas fa-info-circle" :popover="`Population of the age group theoretically corresponding to the specified education level as indicated by theoretical entrance age and duration.<hr>Source: World Bank<br>Updated: ${ place.fields.indicators?.wb_SP_PRE_TOTL_MA_IN?.date }`"></i>
                         </h4>
                         <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
                             <h6 class="col-3">Pre-Primary</h6>
                             <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
-                                ${ (place.fields.indicators.wb_SP_PRE_TOTL_FE_IN.value +
-                                place.fields.indicators.wb_SP_PRE_TOTL_MA_IN.value ).toLocaleString('en-US') }
+                                ${ (place.fields.indicators.wb_SP_PRE_TOTL_FE_IN?.value +
+                                place.fields.indicators?.wb_SP_PRE_TOTL_MA_IN?.value ).toLocaleString('en-US') }
                             </h6>
                             <div class="progress text-center col-6">
                                 <div v-if="prePrimaryMalePer" :style="{width: prePrimaryMalePer + '%' }"
@@ -186,7 +186,7 @@ libraries:
                         <div class="w-100 d-flex flex-row justify-content-center align-items-center my-3">
                             <h6 class="col-3">Primary (all years)</h6>
                             <h6 v-if="place.fields.indicators.wb_SP_PRE_TOTL_FE_IN" class="col-3">
-                                ${ place.fields.indicators.wb_SP_PRM_TOTL_IN.value.toLocaleString() }
+                                ${ place.fields.indicators.wb_SP_PRM_TOTL_IN?.value.toLocaleString() }
                             </h6>
                             <div class="progress text-center col-6">
                                 <div v-if="primaryMalePer" :style="{width: primaryMalePer + '%' }"
@@ -593,9 +593,6 @@ libraries:
                     errorMessage: undefined,
                     places: [],
                     placesCovid: [],
-                    place: undefined,
-                    placeCovid: undefined,
-                    placeId: undefined,
                     // this structure defines the various grade levels and the variable names for the fields which are broken out by grade level
                     // if a variable doesn't include a grade level, it is left undefined (e.g. in-person academic supports [ipasKey] isn't collected for higher or vocational)
                     gradeLevelList: [
@@ -650,13 +647,11 @@ libraries:
                 }
             },
             async created () {
-                this.placeId = window.location.search.replace('?', '').toUpperCase()
                 // load critical data in this block; a failure will cause an error message to be diplayed
                 try {
                     const placesResponse = await fetch('/data/global-with-indicators.json')
                     if (placesResponse.ok) {
                         this.places = await placesResponse.json()
-                        this.place = this.places.filter(place => place.fields.iso3166Alpha2Code === this.placeId)[0]
                         if (!this.place) {
                             throw new Error('Unknown place identifier.')
                         }
@@ -672,10 +667,6 @@ libraries:
                     const placesCovidResponse = await fetch('/data/covid_data.json')
                     if (placesCovidResponse.ok) {
                         this.placesCovid = await placesCovidResponse.json()
-                        this.placeCovid = this.placesCovid.places.filter(placeCovid => placeCovid.iso2 === this.placeId)[0]
-                        if (this.placeCovid) {
-                            this.placeCovid.updated = this.placesCovid.fileDate
-                        }
                     } else {
                         throw new Error(`Error loading covid-data.json: ${placesCovidResponse.status} ${placesCovidResponse.statusText}`)
                     }
@@ -713,15 +704,34 @@ libraries:
                 }
             },
             computed: {
+                place () {
+                    let placeId = this.placeId?.toUpperCase()
+                    let place = this.places?.find(place => place.fields.iso3166Alpha2Code === placeId)
+                    if (!place) {
+                        place = this.places?.find(place => place.id === this.placeId)
+                    }
+                    return place
+                },
+                placeCovid () {
+                    let placeId = this.placeId?.toUpperCase()
+                    let placeCovid = this.placesCovid?.places?.find(placeCovid => placeCovid.iso2 === placeId)
+                    if (placeCovid) {
+                        placeCovid.updated = this.placesCovid?.fileDate
+                    }
+                    return placeCovid
+                },
+                placeId () {
+                    return window.location.search.replace('?', '')
+                },
                 // computes school-age population from primary + secondary totals.
                 //  if one or both values is missing or the total is 0, return undefined
                 schoolAgePopulation () {
                     try {
-                        if (this.place.fields.indicators) {
+                        if (this.place?.fields?.indicators) {
                             const sap = { total: 0, malePercent: 0, femalePercent: 0}
                             let totalMale = 0; let totalFemale = 0
-                            sap.total += this.place.fields.indicators.wb_SP_PRM_TOTL_IN.value
-                            sap.total += this.place.fields.indicators.wb_SP_SEC_TOTL_IN.value
+                            sap.total += this.place.fields.indicators.wb_SP_PRM_TOTL_IN?.value
+                            sap.total += this.place.fields.indicators.wb_SP_SEC_TOTL_IN?.value
 
                             totalMale += this.place.fields.indicators.wb_SP_PRM_TOTL_MA_IN?.value
                             totalMale += this.place.fields.indicators.wb_SP_SEC_TOTL_MA_IN?.value
@@ -740,42 +750,42 @@ libraries:
                 },
                 // Upper secondary
                 upperSecondaryMalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_MA_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_IN?.value;
                 },
                 upperSecondaryFemalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_FE_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_IN?.value;
                 },// Secondary
                 secondaryMalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_MA_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_IN?.value;
                 },
                 secondaryFemalePer () {
-                    return 100 * (1 - this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_MA_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_IN.value);
+                    return 100 * (1 - this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_IN?.value);
                 },// Lower Secondary
                 lowerSecondaryMalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_MA_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_IN?.value;
                 },
                 lowerSecondaryFemalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_FE_IN.value / this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_IN?.value;
                 },// Primary
                 primaryMalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_MA_IN.value / this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_IN?.value;
                 },
                 primaryFemalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_FE_IN.value / this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_IN.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_IN?.value;
                 },// Primary Last
                 primaryLastMalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_MA.value / this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_TO.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_MA?.value / this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_TO?.value;
                 },
                 primaryLastFemalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_FE.value / this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_TO.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_FE?.value / this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_TO?.value;
                 },// Pre Primary
                 prePrimaryMalePer () {
-                    let prePrimaryPop = this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN.value + this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN.value;
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN.value / prePrimaryPop;
+                    let prePrimaryPop = this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN?.value + this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN?.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN?.value / prePrimaryPop;
                 },
                 prePrimaryFemalePer () {
-                    let prePrimaryPop = this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN.value + this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN.value;
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN.value / prePrimaryPop;
+                    let prePrimaryPop = this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN?.value + this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN?.value;
+                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN?.value / prePrimaryPop;
                 },// Population
                 PopMalePer () {
                     return 100 * this?.place?.fields?.indicators?.wb_SP_POP_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_POP_TOTL?.value;
