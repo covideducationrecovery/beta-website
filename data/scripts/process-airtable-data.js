@@ -3,6 +3,7 @@ const responsesPublicFilename = './responses-public.json'
 const responseRoundsFilename = './response-rounds.json'
 const outputFilename = "../global.v2.json"
 const outputMinifiedFilename = "../global.v2.min.json"
+const outputCsvFilename = "../gloabl.v2.csv"
 
 
 // load the data from files
@@ -47,3 +48,41 @@ try {
 } catch (err) {
   console.error(`error writing ${outputFilename}`, err)
 }
+
+for (country of countries) {
+  delete country.owidHasVaccine
+  delete country.__id
+  if (country.responsesPublic) {
+    for (response of country.responsesPublic) {
+      delete response.type
+    }
+  }
+}
+
+const responsesForCsv = countries
+  .flatMap((country) => {
+    return (country.responsesPublic || []).map((response) => {
+      return {...country, ...response}
+    })
+  })
+
+responsesForCsv
+  .forEach((responseRecord) => {
+    delete responseRecord.responsesPublic
+    delete responseRecord.owidHasVaccine
+  })
+
+const jsonexport = require('jsonexport')
+const jsonexportOptions = {
+  fillGaps: true,
+  arrayPathString: ','
+}
+jsonexport(responsesForCsv, jsonexportOptions, (err, csv) => {
+  if (err) return console.error(err)
+  try {
+    fs.writeFileSync(outputCsvFilename, csv, 'utf8')
+    return console.log(`${responsesForCsv.length} records written to '${outputCsvFilename}'`)
+  } catch (err) {
+    return console.error(`error writing ${outputCsvFilename}`, err)
+  }
+})
