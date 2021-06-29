@@ -18,6 +18,88 @@ libraries:
         .percentage:after { content: '%' }
         .not-available:after { content: 'not available' }
         .table > :not(caption) > * > * {border-bottom: none;}
+
+                /* RESET RULES
+        –––––––––––––––––––––––––––––––––––––––––––––––––– */
+        :root {
+        --white: #fff;
+        --divider: lightgrey;
+        --body: #f5f7f8;
+        }
+
+        * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        }
+
+        ul {
+        list-style: none;
+        }
+
+        a {
+        text-decoration: none;
+        color: inherit;
+        }
+
+        .chart-wrapper {
+        max-width: 1150px;
+        padding: 0 10px;
+        margin: 0 auto;
+        }
+
+
+        /* CHART-VALUES
+        –––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .chart-wrapper .chart-values {
+        position: relative;
+        display: flex;
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        }
+
+        .chart-wrapper .chart-values li {
+        flex: 1;
+        min-width: 80px;
+        text-align: center;
+        }
+
+        .chart-wrapper .chart-values li:not(:last-child) {
+        position: relative;
+        }
+
+        .chart-wrapper .chart-values li:not(:last-child)::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        height: 230px;
+        border-right: 1px solid var(--divider);
+        }
+
+
+        /* CHART-BARS
+        –––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .chart-wrapper .chart-bars li {
+        position: relative;
+        color: var(--white);
+        margin-bottom: 15px;
+        font-size: 16px;
+        border-radius: 5px;
+        padding: 10px 20px;
+        /*   height: 3em */
+        width: 0;
+        opacity: 0;
+        transition: all 0.65s linear 0.2s;
+        }
+
+        @media screen and (max-width: 600px) {
+        .chart-wrapper .chart-bars li {
+            padding: 10px;
+        }
+        }
+
+
     </style>
 </head>
 
@@ -106,7 +188,35 @@ libraries:
                     <a :href="`https://coronavirus.jhu.edu/region/${place.fields.iso3166Alpha2Code?.toLowerCase()}`">More information about coronavirus in this country <i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
+            <!--- Gant Chart-->
+            
+            <div v-if="placeCovid" class="w-100 bg-light rounded p-3 my-5">
+                <h3>
+                    Education Modalities
+                    <i class="fas fa-info-circle" :popover="`<strong>Cases</strong>: total number of cases since the beginning of the Covid-19 pandemic.<br><strong>Deaths</strong>: total number of deaths attributed to Covid-19 since the beginning of the pandemic.</br><strong>Vaccinations</strong>: the number of people who have been fully vaccinated for protection against Covid-19.<hr>Source: Our World In Data<br>Updated: ${ this.placeCovid.updated }`"></i>
+                </h3>
+                <div class="chart-wrapper">
+                    <ul class="chart-values">
+                      <li data-round="1">Round 1</li>
+                      <li data-round="2">Round 2</li>
+                      <li data-round="3">Round 3</li>
+                      <li data-round="4">Round 4</li>
+                      <li data-round="5">Round 5</li>
+                      <li data-round="6">Round 6</li>
+                      <li data-round="7">Round 7</li>
+                      <li data-round="8">Round 8</li>
+                    </ul>
+                    <ul class="chart-bars">
+                      <li data-duration="1½-2" data-color="#0C619D">Online</li>
+                      <li data-duration="3-7" data-color="#AA5986">Hybrid</li>
+                      <li data-duration="8-8" data-color="#FF9100">In Person</li>
+                  
+                    </ul>
+                </div>
+            </div>
 
+            
+            <!--- Gant Chart-->
             <div class="w-100 bg-light rounded p-3 my-5">
                 <div class="w-100 d-flex flex-row justify-content-between align-items-baseline">
                     <h3>Education Status</h3>
@@ -623,6 +733,17 @@ libraries:
                     // add object to contain covid indicators here
                 }
             },
+            mounted() {
+                this.$nextTick(function() {
+                window.addEventListener('resize', this.createChart);
+                window.addEventListener('load', this.createChart);
+                
+                //Init
+                this.createChart()
+                
+                })
+
+            },
             delimiters: ['${', '}'],
             filters: {
                 friendlyDate: function(value) {
@@ -685,7 +806,10 @@ libraries:
                     onShow(instance) {
                         instance.setContent(instance.reference.attributes.popover.value);
                     }
-                })
+                }),
+
+                this.createChart
+
             },
             methods: {
                 educationServices (educationStatusCodeField) {
@@ -702,7 +826,45 @@ libraries:
                 },
                 percentage (subTotal, total) {
                     return (100 * subTotal / total).toFixed(2)
-                }
+                },
+                createChart(e) {
+                    const days = document.querySelectorAll(".chart-values li");
+                    const tasks = document.querySelectorAll(".chart-bars li");
+                    const daysArray = [...days];
+
+                    tasks.forEach(el => {
+                        const duration = el.dataset.duration.split("-");
+                        console.log(el.dataset);
+                        const startDay = duration[0];
+                        const endDay = duration[1];
+                        let left = 0,
+                        width = 0;
+
+                        if (startDay.endsWith("½")) {
+                        const filteredArray = daysArray.filter(day => day.dataset.round == startDay.slice(0, -1));
+                        left = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2;
+                        } else {
+                        const filteredArray = daysArray.filter(day => day.dataset.round == startDay);
+                        left = filteredArray[0].offsetLeft;
+                        }
+
+                        if (endDay.endsWith("½")) {
+                        const filteredArray = daysArray.filter(day => day.dataset.round == endDay.slice(0, -1));
+                        width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2 - left;
+                        } else {
+                        const filteredArray = daysArray.filter(day => day.dataset.round == endDay);
+                        width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth - left;
+                        }
+
+                        // apply css
+                        el.style.left = `${left}px`;
+                        el.style.width = `${width}px`;
+                        if (e.type == "load") {
+                        el.style.backgroundColor = el.dataset.color;
+                        el.style.opacity = 0.8;
+                        }
+                    });
+                    }
             },
             computed: {
                 place () {
@@ -794,10 +956,59 @@ libraries:
                 PopFemalePer () {
                     return 100 * this?.place?.fields?.indicators?.wb_SP_POP_TOTL_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_POP_TOTL?.value;
                 },
+            },
+            beforeDestroy() {
+            window.removeEventListener('resize', this.createChart);
+            window.removeEventListener('load', this.createChart);
             }
         });
 
     </script>
+
+    <!-- <script>
+        function createChart(e) {
+        const days = document.querySelectorAll(".chart-values li");
+        const tasks = document.querySelectorAll(".chart-bars li");
+        const daysArray = [...days];
+
+        tasks.forEach(el => {
+            const duration = el.dataset.duration.split("-");
+            console.log(el.dataset);
+            const startDay = duration[0];
+            const endDay = duration[1];
+            let left = 0,
+            width = 0;
+
+            if (startDay.endsWith("½")) {
+            const filteredArray = daysArray.filter(day => day.dataset.round == startDay.slice(0, -1));
+            left = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2;
+            } else {
+            const filteredArray = daysArray.filter(day => day.dataset.round == startDay);
+            left = filteredArray[0].offsetLeft;
+            }
+
+            if (endDay.endsWith("½")) {
+            const filteredArray = daysArray.filter(day => day.dataset.round == endDay.slice(0, -1));
+            width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2 - left;
+            } else {
+            const filteredArray = daysArray.filter(day => day.dataset.round == endDay);
+            width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth - left;
+            }
+
+            // apply css
+            el.style.left = `${left}px`;
+            el.style.width = `${width}px`;
+            if (e.type == "load") {
+            el.style.backgroundColor = el.dataset.color;
+            el.style.opacity = 0.8;
+            }
+        });
+        }
+
+        window.addEventListener("load", createChart);
+        window.addEventListener("resize", createChart);
+    </script> -->
+    
 
 </body>
 
