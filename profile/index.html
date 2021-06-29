@@ -82,20 +82,35 @@ libraries:
         –––––––––––––––––––––––––––––––––––––––––––––––––– */
         .chart-wrapper .chart-bars li {
         position: relative;
+        display: flex;
         color: var(--white);
         margin-bottom: 15px;
         font-size: 16px;
         border-radius: 5px;
-        padding: 10px 20px;
+        padding: 10px 10px;
         /*   height: 3em */
+        left: 0;
         width: 0;
-        opacity: 0;
+        opacity: 1;
+        background-color: hotpink;
         transition: all 0.65s linear 0.2s;
         }
 
         @media screen and (max-width: 600px) {
         .chart-wrapper .chart-bars li {
-            padding: 10px;
+            padding: 5px;
+        }
+        .chart-wrapper .chart-values {
+        position: relative;
+        display: flex;
+        margin-bottom: 20px;
+        font-weight: bold;
+        font-size: 0.5rem;
+        }
+        .chart-wrapper .chart-values li {
+        flex: 1;
+        min-width: 40px;
+        text-align: center;
         }
         }
 
@@ -190,6 +205,8 @@ libraries:
             </div>
             <!--- Gant Chart-->
             
+            
+
             <div v-if="placeCovid" class="w-100 bg-light rounded p-3 my-5">
                 <h3>
                     Education Modalities
@@ -207,9 +224,9 @@ libraries:
                       <li data-round="8">Round 8</li>
                     </ul>
                     <ul class="chart-bars">
-                      <li data-duration="1½-2" data-color="#0C619D">Online</li>
+                      <li data-duration="1-2" data-color="#0C619D">Online</li>
                       <li data-duration="3-7" data-color="#AA5986">Hybrid</li>
-                      <li data-duration="8-8" data-color="#FF9100">In Person</li>
+                      <li data-duration="4½-6" data-color="#FF9100">In Person</li>
                   
                     </ul>
                 </div>
@@ -733,17 +750,6 @@ libraries:
                     // add object to contain covid indicators here
                 }
             },
-            mounted() {
-                this.$nextTick(function() {
-                window.addEventListener('resize', this.createChart);
-                window.addEventListener('load', this.createChart);
-                
-                //Init
-                this.createChart()
-                
-                })
-
-            },
             delimiters: ['${', '}'],
             filters: {
                 friendlyDate: function(value) {
@@ -808,7 +814,16 @@ libraries:
                     }
                 }),
 
-                this.createChart
+                this.$nextTick(function() {
+                window.addEventListener('resize', this.createChart);
+                window.addEventListener('load', this.createChart);
+                
+                //Init
+                this.createChart()
+                
+                })
+
+                // this.createChart
 
             },
             methods: {
@@ -831,10 +846,10 @@ libraries:
                     const days = document.querySelectorAll(".chart-values li");
                     const tasks = document.querySelectorAll(".chart-bars li");
                     const daysArray = [...days];
-
+                    
                     tasks.forEach(el => {
                         const duration = el.dataset.duration.split("-");
-                        console.log(el.dataset);
+                        console.log("ELEMENT", el.dataset);
                         const startDay = duration[0];
                         const endDay = duration[1];
                         let left = 0,
@@ -842,27 +857,30 @@ libraries:
 
                         if (startDay.endsWith("½")) {
                         const filteredArray = daysArray.filter(day => day.dataset.round == startDay.slice(0, -1));
-                        left = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2;
+                        left = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2 - 40;
                         } else {
                         const filteredArray = daysArray.filter(day => day.dataset.round == startDay);
-                        left = filteredArray[0].offsetLeft;
+                        left = filteredArray[0].offsetLeft - 40;
+                        
                         }
 
                         if (endDay.endsWith("½")) {
                         const filteredArray = daysArray.filter(day => day.dataset.round == endDay.slice(0, -1));
-                        width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2 - left;
+                        width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2 - left - 40;
                         } else {
                         const filteredArray = daysArray.filter(day => day.dataset.round == endDay);
-                        width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth - left;
+                        width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth - left - 40;
                         }
 
                         // apply css
                         el.style.left = `${left}px`;
                         el.style.width = `${width}px`;
-                        if (e.type == "load") {
+                        
+                        // if (e?.type == "load" || e?.type == "resize") {
+                        console.log("COLOR:", el.dataset.color)
                         el.style.backgroundColor = el.dataset.color;
                         el.style.opacity = 0.8;
-                        }
+                        // }
                     });
                     }
             },
@@ -964,50 +982,6 @@ libraries:
         });
 
     </script>
-
-    <!-- <script>
-        function createChart(e) {
-        const days = document.querySelectorAll(".chart-values li");
-        const tasks = document.querySelectorAll(".chart-bars li");
-        const daysArray = [...days];
-
-        tasks.forEach(el => {
-            const duration = el.dataset.duration.split("-");
-            console.log(el.dataset);
-            const startDay = duration[0];
-            const endDay = duration[1];
-            let left = 0,
-            width = 0;
-
-            if (startDay.endsWith("½")) {
-            const filteredArray = daysArray.filter(day => day.dataset.round == startDay.slice(0, -1));
-            left = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2;
-            } else {
-            const filteredArray = daysArray.filter(day => day.dataset.round == startDay);
-            left = filteredArray[0].offsetLeft;
-            }
-
-            if (endDay.endsWith("½")) {
-            const filteredArray = daysArray.filter(day => day.dataset.round == endDay.slice(0, -1));
-            width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2 - left;
-            } else {
-            const filteredArray = daysArray.filter(day => day.dataset.round == endDay);
-            width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth - left;
-            }
-
-            // apply css
-            el.style.left = `${left}px`;
-            el.style.width = `${width}px`;
-            if (e.type == "load") {
-            el.style.backgroundColor = el.dataset.color;
-            el.style.opacity = 0.8;
-            }
-        });
-        }
-
-        window.addEventListener("load", createChart);
-        window.addEventListener("resize", createChart);
-    </script> -->
     
 
 </body>
