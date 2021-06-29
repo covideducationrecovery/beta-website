@@ -105,7 +105,9 @@ title: "Maps"
         <div class="row text-center my-3">
           <h2>Vaccine Availability for Teachers</h2>
           <p>Are some or all teachers/school staff currently being vaccinated as a priority group?</p>
-          <div id="vaccine-map"></div>
+          <input id="response-rounds-range2" type="range" :min="responseRoundsRange.min" :max="responseRoundsRange.max" v-model="filter_upToRoundId" class="w-50 mx-auto form-range">
+          <label for="response-rounds-range2">Showing most recent response up to ${ mostRecentFilteredResponseDate }</label>
+          <div id="vaccine-map" class="mt-4"></div>
           <div class="my-3">
             This map displays if teachers/school staff are currently eligible for vaccination, in at least some areas of the country, as a priority group as of last survey response date. 
             <br />
