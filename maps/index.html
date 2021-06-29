@@ -47,9 +47,9 @@ title: "Maps"
         <div class="row text-center my-3">
           <h2>School Status / Education Modality</h2>
           <p>How is education being provided in each country?</p>
-          <input type="range" :min="responseRoundsRange.min" :max="responseRoundsRange.max" v-model="filter_upToRoundId" class="w-50 mx-auto">
-          <p>Showing most recent response up to ${ mostRecentFilteredResponseDate }</p>
-          <div id="modality-map-gradelevel-selector">
+          <input id="response-rounds-range" type="range" :min="responseRoundsRange.min" :max="responseRoundsRange.max" v-model="filter_upToRoundId" class="w-50 mx-auto form-range">
+          <label for="response-rounds-range">Showing most recent response up to ${ mostRecentFilteredResponseDate }</label>
+          <div id="modality-map-gradelevel-selector" class="mt-5">
             Select a grade level: 
             <select class="px-2" v-model="selectedEducationStatusField">
               <option v-for="gradeLevelChoice of educationStatusGradeLevelChoices" v-bind:value="gradeLevelChoice.value">${gradeLevelChoice.label}</option>
