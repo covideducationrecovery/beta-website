@@ -258,7 +258,7 @@ title: "Maps"
               range.max = response.roundId > range.max ? response.roundId : range.max
               range.min = response.roundId < range.min ? response.roundId : range.min
               return range
-            }, {min: 0, max: 0})
+            }, {min: Infinity, max: -Infinity})
         }
       },
       delimiters: ['${','}'],  // need to use these because jekyll competes for {{ and }}
