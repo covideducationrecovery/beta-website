@@ -36,221 +36,389 @@ title: "Maps"
     <div class="spacer-5"></div>
 
     <div id="vue-app" class="container mb-5" v-cloak>
-      <h1>Maps</h1>
-      <div class="row text-center my-3">
-        <h2>School Status / Education Modality</h2>
-        <p>How is education being provided in each country?</p>
-        <div id="modality-map-gradelevel-selector">
-          Select a grade level: 
-          <select class="px-2" v-model="selectedEducationStatusGradeLevel">
-            <option v-for="gradeLevelChoice of educationStatusGradeLevelChoices" v-bind:value="gradeLevelChoice.value">${gradeLevelChoice.label}</option>
-          </select>
-        </div>
-        <div id="modality-map"></div>
-        <div class="my-3">
-          This map displays educational modalities at the country level as of last survey response. Grade level information is only available for countries updated after April 20, 2021.
-        </div>
-        <div class="map-key w-100">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col" colspan="2">Legend</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><svg class="modality-in-person map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                <td class="text-start"><strong>In-person education</strong>: Schools are open, and students have returned for in-person instruction.</td>
-              </tr>
-              <tr>
-                <td><svg class="modality-hybrid map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                <td class="text-start"><strong>Hybrid education</strong>:	Schools are open combining remote learning and in-person instruction.</td>
-              </tr>
-              <tr>
-                <td><svg class="modality-remote map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                <td class="text-start"><strong>Remote education</strong>:	Schools are closed and students are exclusively learning remotely.</td>
-              </tr>
-              <tr>
-                <td><svg class="modality-multiple map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                <td class="text-start"><strong>Mixed/multiple</strong>: Schools are operating with a combination of the following: in-person, hybrid, remote, and closed due to COVID-19.</td>
-              </tr>
-              <tr>
-                <td><svg class="modality-extended-break map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                <td class="text-start"><strong>Extended Break</strong>: Schools are closed due to a  regular school calendar closure (e.g., holiday).</td>
-              </tr>
-              <tr>
-                <td><svg class="modality-covid-closure map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                <td class="text-start"><strong>No instruction/closed due to COVID-19</strong>:	Schools are closed due to COVID-19, and no education services currently available.</td>
-              </tr>
-              <tr>
-                <td><svg class="modality-no-data map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                <td class="text-start"><strong>Unknown/Data Not Available</strong>: Unable to obtain information through publicly available data.</td>
-              </tr>
-            </tbody>
-          </table>
+      <template v-if="errorLoading">
+        <div class="w-100 d-flex flex-column justify-content-center align-items-start">
+          <h4>We encountered an error while loading this page.</h4>
+          <span class="text-muted">${ errorMessage }</span>
         </div>  
-      </div>
-
-      <div class="spacer-10"></div>
-      
-      <div class="row text-center my-3">
-        <h2>Vaccine Availability for Teachers</h2>
-        <p>Are some or all teachers/school staff currently being vaccinated as a priority group?</p>
-        <div id="vaccine-map"></div>
-        <div class="my-3">
-          This map displays if teachers/school staff are currently eligible for vaccination, in at least some areas of the country, as a priority group as of last survey response date. 
-          <br />
-          <small>Note: Some teachers may currently be eligible for vaccine based on age or other priority group status.</small>
+      </template>
+      <template v-else>
+        <h1>Maps</h1>
+        <div class="row text-center my-3">
+          <h2>School Status / Education Modality</h2>
+          <p>How is education being provided in each country?</p>
+          <input type="range" :min="responseRoundsRange.min" :max="responseRoundsRange.max" v-model="filter_upToRoundId" class="w-50 mx-auto">
+          <p>Showing most recent response up to ${ mostRecentFilteredResponseDate }</p>
+          <div id="modality-map-gradelevel-selector">
+            Select a grade level: 
+            <select class="px-2" v-model="selectedEducationStatusField">
+              <option v-for="gradeLevelChoice of educationStatusGradeLevelChoices" v-bind:value="gradeLevelChoice.value">${gradeLevelChoice.label}</option>
+            </select>
+          </div>
+          <div id="modality-map"></div>
+          <div class="my-3">
+            This map displays educational modalities at the country level as of last survey response. Grade level information is only available for countries updated after April 20, 2021.
+          </div>
+          <div class="map-key w-100">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="2">Legend</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><svg class="modality-in-person map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start"><strong>In-person education</strong>: Schools are open, and students have returned for in-person instruction.</td>
+                </tr>
+                <tr>
+                  <td><svg class="modality-hybrid map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start"><strong>Hybrid education</strong>:	Schools are open combining remote learning and in-person instruction.</td>
+                </tr>
+                <tr>
+                  <td><svg class="modality-remote map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start"><strong>Remote education</strong>:	Schools are closed and students are exclusively learning remotely.</td>
+                </tr>
+                <tr>
+                  <td><svg class="modality-multiple map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start"><strong>Mixed/multiple</strong>: Schools are operating with a combination of the following: in-person, hybrid, remote, and closed due to COVID-19.</td>
+                </tr>
+                <tr>
+                  <td><svg class="modality-extended-break map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start"><strong>Extended Break</strong>: Schools are closed due to a  regular school calendar closure (e.g., holiday).</td>
+                </tr>
+                <tr>
+                  <td><svg class="modality-covid-closure map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start"><strong>No instruction/closed due to COVID-19</strong>:	Schools are closed due to COVID-19, and no education services currently available.</td>
+                </tr>
+                <tr>
+                  <td><svg class="modality-no-data map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start"><strong>Unknown/Data Not Available</strong>: Unable to obtain information through publicly available data.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>  
         </div>
-        <div class="map-key w-100">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col" colspan="2">Legend</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><svg class="vaccine-yes map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                <td class="text-start"><strong>Yes</strong></td>
-              </tr>
-              <tr>
-                <td><svg class="vaccine-no map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                <td class="text-start"><strong>No</strong></td>
-              </tr>             
-              <tr>
-                <td><svg class="vaccine-unknown map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                <td class="text-start"><strong>Unknown/Data Not Available</strong></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>  
-      </div>
+  
+        <div class="spacer-10"></div>
+        
+        <div class="row text-center my-3">
+          <h2>Vaccine Availability for Teachers</h2>
+          <p>Are some or all teachers/school staff currently being vaccinated as a priority group?</p>
+          <div id="vaccine-map"></div>
+          <div class="my-3">
+            This map displays if teachers/school staff are currently eligible for vaccination, in at least some areas of the country, as a priority group as of last survey response date. 
+            <br />
+            <small>Note: Some teachers may currently be eligible for vaccine based on age or other priority group status.</small>
+          </div>
+          <div class="map-key w-100">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col" colspan="2">Legend</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><svg class="vaccine-yes map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start"><strong>Yes</strong></td>
+                </tr>
+                <tr>
+                  <td><svg class="vaccine-no map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start"><strong>No</strong></td>
+                </tr>             
+                <tr>
+                  <td><svg class="vaccine-unknown map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start"><strong>Unknown/Data Not Available</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>  
+        </div>
+  
+        <div class="spacer-5"></div>
+  
+        <div class="row">
+          To cite this work, use the following: Johns Hopkins University, World Bank & UNICEF (2021). COVID-19 Global Education Recovery Tracker. Last updated as of ${ mostRecentResponseDate | iso8601ToLocaleDateString }. Baltimore, Washington DC, New York: JHU, World Bank, UNICEF. 
+        </div>
+  
+        <div class="spacer-10"></div>
+  
 
-      <div class="spacer-5"></div>
-
-      <div class="row">
-        To cite this work, use the following: Johns Hopkins University, World Bank & UNICEF (2021). COVID-19 Global Education Recovery Tracker. Last updated as of 19 April 2021. Baltimore, Washington DC, New York: JHU, World Bank, UNICEF. 
-      </div>
-
-      <div class="spacer-10"></div>
-
-      <div class="hidden">
-        {% include /worldmap-no-titles.svg %}
-      </div>
+      </template>
       <div id="modality-map-hover" class="hidden">
         <div v-if="selectedCountry">
-          <div><span style="font-size: x-large">${selectedCountry.fields.countryName}</span></div>
+          <div><span style="font-size: x-large">${selectedCountry.countryName}</span></div>
           <hr />
-          <div v-if="selectedCountry.fields.mostRecentResponseDate">
+          <div v-if="selectedCountry.$displayedResponse">
             <div><strong>Education Services</strong></div>
-            <div v-if="selectedCountry.fields.mostRecentExtendedBreakCode">
-              <div v-if="selectedCountry.fields.mostRecentExtendedBreakCode.includes('1')"><i class="fas fa-umbrella-beach"></i> Extended Break</div>
+            <div v-if="selectedCountry.$displayedResponse.extendedBreakCode">
+              <div v-if="selectedCountry.$displayedResponse.extendedBreakCode.includes('1')"><i class="fas fa-umbrella-beach"></i> Extended Break</div>
             </div>
-            <div v-if="selectedCountry.fields[selectedEducationStatusGradeLevel]">
-              <div v-if="selectedCountry.fields[selectedEducationStatusGradeLevel].includes('1')"><i class="fas fa-times"></i> Closed due to COVID-19</div>
-              <div v-if="selectedCountry.fields[selectedEducationStatusGradeLevel].includes('2')"><i class="fas fa-home"></i> Remote</div>
-              <div v-if="selectedCountry.fields[selectedEducationStatusGradeLevel].includes('3')"><i class="fas fa-school"></i> + <i class="fas fa-home"></i> Hybrid</div>
-              <div v-if="selectedCountry.fields[selectedEducationStatusGradeLevel].includes('4')"><i class="fas fa-school"></i> In person</div>
+            <div v-if="selectedCountry.$displayedResponse[selectedEducationStatusField]">
+              <div v-if="selectedCountry.$displayedResponse[selectedEducationStatusField].includes('1')"><i class="fas fa-times"></i> Closed due to COVID-19</div>
+              <div v-if="selectedCountry.$displayedResponse[selectedEducationStatusField].includes('2')"><i class="fas fa-home"></i> Remote</div>
+              <div v-if="selectedCountry.$displayedResponse[selectedEducationStatusField].includes('3')"><i class="fas fa-school"></i> + <i class="fas fa-home"></i> Hybrid</div>
+              <div v-if="selectedCountry.$displayedResponse[selectedEducationStatusField].includes('4')"><i class="fas fa-school"></i> In person</div>
             </div>        
             <hr />
-            <div><small>Updated ${selectedCountry.fields.mostRecentResponseDate | iso8601ToLocaleDateString}</small></div>     
+            <div><small>Updated ${selectedCountry.$displayedResponse.responseDate | iso8601ToLocaleDateString}</small></div>     
           </div>
           <div v-else><small>No data available.</small></div>
         </div>
       </div> 
       <div id="vaccine-map-hover" class="hidden">
         <div v-if="selectedCountry">
-          <div><span style="font-size: x-large">${selectedCountry.fields.countryName}</span></div>
-          <div v-if="selectedCountry.fields.mostRecentResponseDate">
+          <div><span style="font-size: x-large">${selectedCountry.countryName}</span></div>
+          <div v-if="selectedCountry.$displayedResponse">
             <hr />
-            <div v-if="selectedCountry.fields.mostRecentVaccineAvailabilityForTeachersCode">
-              <div v-if="selectedCountry.fields.mostRecentVaccineAvailabilityForTeachersCode.includes('1')"><i class="fas fa-check"></i> Teachers/School Staff are being vaccinated as a priority group</div>
-              <div v-if="selectedCountry.fields.mostRecentVaccineAvailabilityForTeachersCode.includes('2')"><i class="fas fa-times"></i> Teachers/School Staff are not being vaccinated as a priority group</div>
+            <div v-if="selectedCountry.$displayedResponse.vaccineAvailabilityForTeachersCode">
+              <div v-if="selectedCountry.$displayedResponse.vaccineAvailabilityForTeachersCode.includes('1')"><i class="fas fa-check"></i> Teachers/School Staff are being vaccinated as a priority group</div>
+              <div v-if="selectedCountry.$displayedResponse.vaccineAvailabilityForTeachersCode.includes('2')"><i class="fas fa-times"></i> Teachers/School Staff are not being vaccinated as a priority group</div>
             </div>
             <div>
-              <div v-if="selectedCountry.fields.owidHasVaccine"><i class="fas fa-syringe"></i> Vaccines have been authorized for distribution.</div>
+              <div v-if="selectedCountry.owidHasVaccine"><i class="fas fa-syringe"></i> Vaccines have been authorized for distribution.</div>
               <div v-else><i class="fas fa-times"></i> Vaccines have not been authorized for distribution.</div>
             </div>
             <hr />
-            <div><small>Updated ${selectedCountry.fields.mostRecentResponseDate | iso8601ToLocaleDateString}</small></div>     
+            <div><small>Updated ${selectedCountry.$displayedResponse.responseDate | iso8601ToLocaleDateString }</small></div>     
           </div>
           <div v-else><small>No data available.</small></div>
         </div>
-      </div>     
+      </div>    
     </div>
-  </div>
+
+    <div class="hidden">
+      {% include /worldmap-no-titles.svg %}
+    </div>
 
     <script>
 
-      var vm;
+    const vm = new Vue({
+      el: '#vue-app',
+      data() {
+        return {
+          countries: [],
+          errorLoading: false,
+          errorMessage: undefined,
+          filter_upToRoundId: 20,
+          filter_showNoResponses: true,
+          educationStatusGradeLevelChoices: [
+            {label: 'Primary, Lower Secondary, and Upper Secondary', value: "$educationStatusClass", mappedFrom: "educationStatusCode"},
+            {label: 'Pre-Primary', value: "$educationStatusPrePrimaryClass", mappedFrom: "educationStatusPrePrimaryCode"},
+            {label: 'Primary', value: "$educationStatusPrimaryClass", mappedFrom: "educationStatusPrimaryCode"},
+            {label: 'Lower Secondary', value: "$educationStatusLowerSecondaryClass", mappedFrom: "educationStatusLowerSecondaryCode"},
+            {label: 'Upper Secondary', value: "$educationStatusUpperSecondaryClass", mappedFrom: "educationStatusUpperSecondaryCode"},
+            {label: 'Higher', value: "$educationStatusHigherClass", mappedFrom: "educationStatusHigherCode"},
+            {label: 'Technical / Vocational', value: "$educationStatusVocationalClass", mappedFrom: "educationStatusVocationalCode"}
+          ],
+          selectedCountry: undefined,
+          selectedEducationStatusField: undefined
+        }
+      },
+      computed: {
+        // access this computed property to render the data, it applies the rules set by this.filter
+        displayedCountries () {
+          return this.countries
+            .map((country) => {
+              country.$displayedResponse = country.$responsesReversed?.find((response) => {
+                return response.roundId <= this.filter_upToRoundId
+              })
+              if (country.$displayedResponse) {
+                country.$displayedResponse.$displayedEducationStatus = country.$displayedResponse[this.selectedEducationStatusField]
+              }
+              return country
+            })
+            .filter((country) => {
+              return this.filter_showNoResponses ? true : country.$displayedResponse
+            })
+        },
+        mostRecentFilteredResponseDate () {
+          return this.displayedCountries
+            .reduce((mrfrd, country) => {
+              if (country.$displayedResponse?.responseDate) {
+                return country.$displayedResponse.responseDate > mrfrd ? country.$displayedResponse.responseDate : mrfrd
+              }
+              return mrfrd
+            }, '0000-00-00')
+        },
+        mostRecentResponseDate () {
+          // flatten all the responses into an array and iterate through them to
+          // determine the most recent date for all of them
+          return this.countries
+            .flatMap(country => country.responsesPublic || [] )
+            .reduce((mrrd, response) => {
+              return response.responseDate > mrrd ? response.responseDate : mrrd
+            }, '0000-00-00')
+        },
+        responseRoundsRange() {
+          return this.countries
+            .flatMap(country => country.responsesPublic || [])
+            .reduce((range, response) => {
+              range.max = response.roundId > range.max ? response.roundId : range.max
+              range.min = response.roundId < range.min ? response.roundId : range.min
+              return range
+            }, {min: 0, max: 0})
+        }
+      },
+      delimiters: ['${','}'],  // need to use these because jekyll competes for {{ and }}
+      filters: {
+        iso8601ToLocaleDateString (value) {
+          if (value) {
+            return (new Date(value)).toLocaleDateString(undefined, {timeZone: 'UTC'})
+          } else {
+            return null
+          }
+        },
+        outputEducationStatusCodeRow (value) {
+          switch (value) {
+            case '1':
+              return `<td><i class="fas fa-times"></i></td><td>Closed due to COVID-19</td>`
+              break
+            case '2':
+              return `<td><i class="fas fa-home"></i></td><td>Remote</td>`
+              break
+            case '3':
+              return `<td><i class="fas fa-school"></i> + <i class="fas fa-home"></i></td><td>Hybrid</td>`
+              break
+            case '4':
+              return `<td><i class="fas fa-school"></i></td><td>In-person</td>`
+              break
+          }
+        }
+      },
+      methods: {
+        findCountryByIso3166Alpha2Code (countries, code) {
+          if (code && countries) {
+            const findCode = code.toUpperCase()
+            return countries.find(country => country.iso3166Alpha2Code === findCode)
+          }
+          return undefined
+        },
+        processCountries (countries) {
+          const esglcItem = this.educationStatusGradeLevelChoices[0]
 
-      // spin up the maps
-      const map = document.getElementById('svg-worldmap')
-      const modalityMap = map.cloneNode(true);
-      modalityMap.id = 'svg-modality-map';
-      document.getElementById('modality-map').appendChild(modalityMap);
-      const vaccineMap = map.cloneNode(true);
-      vaccineMap.id = 'svg-vaccine-map';
-      document.getElementById('vaccine-map').appendChild(vaccineMap);
+          for (const country of countries) {
+            country.$responsesReversed = country.responsesPublic?.slice().reverse()
 
-      const prepareData = (countries) => {
-        countries.sort((country1, country2) => {
-          return country1.fields.countryName.localeCompare(country2.fields.countryName)
-        });
+            country.responsesPublic?.forEach((response) => {
+              // synthesize map class for the vaccine map
+              if (response.vaccineAvailabilityForTeachersCode) {
+                if (response.vaccineAvailabilityForTeachersCode.includes('1')) {
+                  response.$vaccineClass = 'vaccine-yes'
+                } else if (response.vaccineAvailabilityForTeachersCode.includes('2')) {
+                  response.$vaccineClass = 'vaccine-no'
+                } else if (response.vaccineAvailabilityForTeachersCode.includes('4')) {
+                  response.$vaccineClass = 'vaccine-unknown'
+                }
+              }
+              // synthesize map class for education status map
+              for (const esglcItem of this.educationStatusGradeLevelChoices) {
+                this.processResponseStatusItem(response, esglcItem )
+              }
 
-        for (const country of countries) {
-          if (country.fields.mostRecentVaccineAvailabilityForTeachersCode) {
-            if (country.fields.mostRecentVaccineAvailabilityForTeachersCode.includes('1')) {
-              country.vaccineMapClass = 'vaccine-yes';
-            } else if (country.fields.mostRecentVaccineAvailabilityForTeachersCode.includes('2')) {
-              country.vaccineMapClass = 'vaccine-no';
-            } else if (country.fields.mostRecentVaccineAvailabilityForTeachersCode.includes('4')) {
-              country.vaccineMapClass = 'vaccine-unknown';
+            })
+          }
+          return countries
+        },
+        processResponseStatusItem (response, esglcInfo) {
+          if (response.extendedBreakCode?.includes('1')) {
+            response[esglcInfo.value] = 'modality-extended-break'
+          } else if (response[esglcInfo.mappedFrom]) {
+            if (response[esglcInfo.mappedFrom].length > 1) {
+              response[esglcInfo.value] = 'modality-multiple'
+            } else {
+              switch (response[esglcInfo.mappedFrom][0]) {
+                case '1':
+                  response[esglcInfo.value] = 'modality-covid-closure'
+                break
+                case '2':
+                  response[esglcInfo.value] = 'modality-remote'
+                break
+                case '3':
+                  response[esglcInfo.value] = "modality-hybrid"
+                break
+                case '4':
+                  response[esglcInfo.value] = 'modality-in-person'
+                break
+              }
+            }
+          }
+        },
+        renderEducationStatusMap () {
+          // clear any map classes which may have been applied
+          document.querySelectorAll('#svg-modality-map .modality-extended-break, #svg-modality-map .modality-multiple, #svg-modality-map .modality-covid-closure, #svg-modality-map .modality-remote, #svg-modality-map .modality-hybrid, #svg-modality-map .modality-in-person')
+            .forEach((element) => {element.classList.remove('modality-extended-break', 'modality-multiple', 'modality-covid-closure', 'modality-remote', 'modality-hybrid', 'modality-in-person')})
+
+          // iterate through the currently displayed countries and apply the appropriate style to the map
+          for (const country of this.displayedCountries) {
+            if (country.$displayedResponse && country.iso3166Alpha2Code) {
+              document.querySelector(`#svg-modality-map #${country.iso3166Alpha2Code.toLowerCase()}`)
+                ?.classList.add(country.$displayedResponse[this.selectedEducationStatusField])
+            }
+          }
+        },
+        renderVaccineStatusMap () {
+          // clear any map classes which may have been applied
+          document.querySelectorAll('#svg-vaccine-map .vaccine-yes, #svg-vaccine-map .vaccine-no')
+            .forEach((element) => { element.classList.remove('vaccine-yes', 'vaccine-no') })
+
+          // iterate through the currently displayed countries and apply the appropriate style to the map
+          for (const country of this.displayedCountries) {
+            if (country.$displayedResponse && country.iso3166Alpha2Code) {
+              document.querySelector(`#svg-vaccine-map #${country.iso3166Alpha2Code.toLowerCase()}`)
+                ?.classList.add(country.$displayedResponse.$vaccineClass)
             }
           }
         }
-
-        const gradeLevelChoices = [
-          {label: 'Primary, Lower Secondary, and Upper Secondary', value: "mostRecentEducationStatusCode"},
-          {label: 'Pre-Primary', value: "mostRecentEducationStatusPrePrimaryCode"},
-          {label: 'Primary', value: "mostRecentEducationStatusPrimaryCode"},
-          {label: 'Lower Secondary', value: "mostRecentEducationStatusLowerSecondaryCode"},
-          {label: 'Upper Secondary', value: "mostRecentEducationStatusUpperSecondaryCode"},
-          {label: 'Higher', value: "mostRecentEducationStatusHigherCode"},
-          {label: 'Technical / Vocational', value: "mostRecentEducationStatusVocationalCode"}
-        ]
-
-        return {countries: countries, selectedCountry: null, educationStatusGradeLevelChoices: gradeLevelChoices, selectedEducationStatusGradeLevel: ''}
-      }
-
-      const initTippy = () => {
-        tippy('#svg-modality-map > g, #svg-modality-map > path', {
-          followCursor: true,
-          allowHTML: true,
-          placement: 'right',
-          onShow(instance) {
-            const code = instance.reference.attributes.id.value;
-            const country = findCountryByIso3166Alpha2Code(vm.$data.countries, code);
-            if (country) {
-              vm.$data.selectedCountry = country;
-              Vue.nextTick(() =>{
-                instance.setContent(document.getElementById('modality-map-hover').innerHTML)
-              }, instance)
-            } else {
-              return false
-            }
+      },
+      watch: {
+        countries (newValue, oldValue) {
+          this.renderEducationStatusMap()
+          this.renderVaccineStatusMap()
+        },
+        filter_upToRoundId (newValue, oldValue) {
+          this.renderEducationStatusMap()
+          this.renderVaccineStatusMap()
+        },
+        selectedEducationStatusField (newValue, oldValue) {
+          this.renderEducationStatusMap()
+        }
+      },
+      async created() {
+        // load critical data in this block; a failure will cause an error message to be diplayed
+        try {
+          const countriesResponse = await fetch('/data/global.v2.min.json')
+          if (countriesResponse.ok) {
+            this.countries = this.processCountries(await countriesResponse.json())
+          } else {
+            throw new Error(`HTTP Error ${countriesResponse.status}: ${countriesResponse.statusText} (${countriesResponse.url.split('/').pop()})`)
           }
-        });
+        } catch (e) {
+          console.error(e)
+          this.errorLoading = true
+          this.errorMessage = e.message
+        }
+      },
+      mounted () {
+        // spin up the maps
+        const map = document.getElementById('svg-worldmap')
+        const modalityMap = map.cloneNode(true)
+        modalityMap.id = 'svg-modality-map'
+        document.getElementById('modality-map').appendChild(modalityMap)
+        const vaccineMap = map.cloneNode(true)
+        vaccineMap.id = 'svg-vaccine-map'
+        document.getElementById('vaccine-map').appendChild(vaccineMap)
+
         tippy('#svg-vaccine-map > g, #svg-vaccine-map > path', {
           followCursor: true,
           allowHTML: true,
           placement: 'right',
           onShow(instance) {
-            const code = instance.reference.attributes.id.value;
-            const country = findCountryByIso3166Alpha2Code(vm.$data.countries, code);
+            const code = instance.reference.attributes.id.value
+            const country = vm.$options.methods.findCountryByIso3166Alpha2Code(vm.displayedCountries, code)
             if (country) {
-              vm.$data.selectedCountry = country;
+              vm.$data.selectedCountry = country
               Vue.nextTick(() =>{
                 instance.setContent(document.getElementById('vaccine-map-hover').innerHTML)
               }, instance)
@@ -259,129 +427,29 @@ title: "Maps"
             }
           }
         })
-      }
 
-      const findCountryByIso3166Alpha2Code = (countries, code) => {
-        if (code && countries) {
-          code = code.toUpperCase();
-          return countries.find((country) => {
-            return (country.fields.iso3166Alpha2Code === code)
-          });
-        }
-      }
-
-      const renderData = (data) => {
-
-        vm = new Vue({
-          el: '#vue-app',
-          data: prepareData(data),
-          delimiters: ['${','}'],  // need to use these because jekyll competes for {{ and }}
-          filters: {
-            iso8601ToLocaleDateString: (value) => {
-              if (value) {
-                return (new Date(value)).toLocaleDateString(undefined, {timeZone: 'UTC'});
-              } else {
-                return null
-              }
-            },
-            outputEducationStatusCodeRow: (value) => {
-              switch (value) {
-                case '1':
-                  return `<td><i class="fas fa-times"></i></td><td>Closed due to COVID-19</td>`
-                  break
-                case '2':
-                  return `<td><i class="fas fa-home"></i></td><td>Remote</td>`
-                  break
-                case '3':
-                  return `<td><i class="fas fa-school"></i> + <i class="fas fa-home"></i></td><td>Hybrid</td>`
-                  break
-                case '4':
-                  return `<td><i class="fas fa-school"></i></td><td>In-person</td>`
-                  break
-              }
+        tippy('#svg-modality-map > g, #svg-modality-map > path', {
+          followCursor: true,
+          allowHTML: true,
+          placement: 'right',
+          onShow(instance) {
+            const code = instance.reference.attributes.id.value
+            const country = vm.$options.methods.findCountryByIso3166Alpha2Code(vm.displayedCountries, code)
+            if (country) {
+              vm.$data.selectedCountry = country
+              Vue.nextTick(() =>{
+                instance.setContent(document.getElementById('modality-map-hover').innerHTML)
+              }, instance)
+            } else {
+              return false
             }
-          },
-          watch: {
-            selectedEducationStatusGradeLevel: function(newValue, oldValue) {
-              for (const country of this.countries) {
-                if (country.fields.mostRecentExtendedBreakCode && country.fields.mostRecentExtendedBreakCode.includes('1')) {
-                  country.modalityMapClass = 'modality-extended-break';
-                  // country.modalityText = "Extended break / holiday";
-                } else if (country.fields[newValue]) {
-                  if (country.fields[newValue].length > 1) {
-                    country.modalityMapClass = 'modality-multiple';
-                    // country.modalityText = "Mixed / Multiple";
-                  } else {
-                    switch (country.fields[newValue][0]) {
-                      case '1':
-                        country.modalityMapClass = 'modality-covid-closure';
-                        // country.modalityText = "Closed due to COVID-19";
-                      break
-                      case '2':
-                        country.modalityMapClass = 'modality-remote';
-                        // country.modalityText = 'Remote';
-                      break
-                      case '3':
-                        country.modalityMapClass = "modality-hybrid";
-                        // country.modalityText = "Hybrid"
-                      break
-                      case '4':
-                        country.modalityMapClass = 'modality-in-person';
-                        // country.modalityText = 'In person';
-                      break
-                    }
-                  }
-                } else {
-                  delete country.modalityMapClass
-                  // country.modalityText = 'Unknown / no data';
-                }
-              }
-              document.querySelectorAll('#svg-modality-map .modality-extended-break, #svg-modality-map .modality-multiple, #svg-modality-map .modality-covid-closure, #svg-modality-map .modality-remote, #svg-modality-map .modality-hybrid, #svg-modality-map .modality-in-person')
-                .forEach((element) => {element.classList.remove('modality-extended-break', 'modality-multiple', 'modality-covid-closure', 'modality-remote', 'modality-hybrid', 'modality-in-person')})
-              for (const country of this.countries) {
-                if (country.fields.mostRecentResponseDate) {
-                  if (country.fields.iso3166Alpha2Code) {
-                    const modalityMapCountryNode = document.querySelector(`#svg-modality-map #${country.fields.iso3166Alpha2Code.toLowerCase()}`);
-                    if (modalityMapCountryNode) {
-                      modalityMapCountryNode.classList.add(country.modalityMapClass);
-                    }
-                    const vaccineMapCountryNode = document.querySelector(`#svg-vaccine-map #${country.fields.iso3166Alpha2Code.toLowerCase()}`);
-                    if (vaccineMapCountryNode) {
-                      vaccineMapCountryNode.classList.add(country.vaccineMapClass);
-                    }
-                  }
-                }
-              }
-            }
-          },
-          mounted() {
-            initTippy();
-            this.selectedEducationStatusGradeLevel = 'mostRecentEducationStatusCode';
-          },
-        });
-      }
-
-
-      // if we have a token, use it to call the api, otherwise redirect to login screen
-      const dataSource = '/data/global.json'
-      fetch(dataSource)
-        .then(response => {
-          switch (response.status) {
-            case 200:
-              // huzzah we have the data
-              response.json().then(data => renderData(data));
-              break;
-            case 403: 
-              // denied because of invalid token
-              window.location = '/login';
-              break;
-            default:
           }
         })
-        .catch(error => {
-          document.getElementById(`loading`).innerText = "Error loading the data. We apologize for the inconvenience; please try again later.";
-          console.error(error);
-        })
+
+        this.selectedEducationStatusField = '$educationStatusClass'
+      }
+    })
+
     </script>
   </body>
 </html>
