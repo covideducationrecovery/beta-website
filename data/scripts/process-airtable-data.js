@@ -40,13 +40,13 @@ try {
   fs.writeFileSync(outputFilename, JSON.stringify(countries, null, 2), 'utf8')
   console.log(`${countries.length} records written to '${outputFilename}'`)
 } catch (err) {
-  console.error(`error writing ${outputFilename}`, err)
+  console.error(`error writing '${outputFilename}'`, err)
 }
 try {
   fs.writeFileSync(outputMinifiedFilename, JSON.stringify(countries), 'utf8')
   console.log(`${countries.length} records written to '${outputMinifiedFilename}'`)
 } catch (err) {
-  console.error(`error writing ${outputFilename}`, err)
+  console.error(`error writing '${outputFilename}'`, err)
 }
 
 for (country of countries) {
@@ -64,25 +64,53 @@ const responsesForCsv = countries
     return (country.responsesPublic || []).map((response) => {
       return {...country, ...response}
     })
-  })
-
-responsesForCsv
-  .forEach((responseRecord) => {
+  }).map((responseRecord) => {
     delete responseRecord.responsesPublic
     delete responseRecord.owidHasVaccine
+    return responseRecord
   })
 
-const jsonexport = require('jsonexport')
-const jsonexportOptions = {
-  fillGaps: true,
-  arrayPathString: ','
-}
-jsonexport(responsesForCsv, jsonexportOptions, (err, csv) => {
-  if (err) return console.error(err)
-  try {
-    fs.writeFileSync(outputCsvFilename, csv, 'utf8')
-    return console.log(`${responsesForCsv.length} records written to '${outputCsvFilename}'`)
-  } catch (err) {
-    return console.error(`error writing ${outputCsvFilename}`, err)
-  }
-})
+const csvHeaders = [
+  "__id",
+  "countryName",
+  "iso3166Alpha2Code",
+  "iso3166Alpha3Code",
+  "m49code",
+  "wbCountryCode",
+  "wbIncomeLevelCode",
+  "wbIncomeLevelName",
+  "wbLendingTypeCode",
+  "wbLendingTypeName",
+  "wbRegion",
+  "wbRegionCode",
+  "responseDate",
+  "roundId",
+  "extendedBreakCode",
+  "educationStatusCode",
+  "educationStatusPrePrimaryCode",
+  "educationStatusPrimaryCode",
+  "educationStatusLowerSecondaryCode",
+  "educationStatusUpperSecondaryCode",
+  "educationStatusHigherCode",
+  "educationStatusVocationalCode",
+  "vaccineAvailabilityForTeachersCode",
+  "inPersonAdditionalSupportPrePrimary",
+  "inPersonAdditionalSupportPrimary",
+  "inPersonAdditionalSupportLowerSecondary",
+  "inPersonAdditionalSupportUpperSecondary",
+  "remoteEducationModalitiesPrePrimaryCode",
+  "remoteEducationModalitiesPrimaryCode",
+  "remoteEducationModalitiesLowerSecondaryCode",
+  "remoteEducationModalitiesUpperSecondaryCode",
+  "remoteEducationModalitiesHigherCode",
+  "remoteEducationModalitiesVocationalCode"
+]
+
+const fastCsv = require('@fast-csv/format')
+fastCsv.writeToPath(outputCsvFilename, responsesForCsv, {headers: csvHeaders})
+  .on('error', err => {
+    console.error(`error writing '${outputCsvFilename}'`, err)
+  })
+  .on('finish', () => {
+    console.log(`${responsesForCsv.length} records written to '${outputCsvFilename}'`)
+  })
