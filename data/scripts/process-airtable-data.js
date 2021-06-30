@@ -3,7 +3,7 @@ const responsesPublicFilename = './responses-public.json'
 const responseRoundsFilename = './response-rounds.json'
 const outputFilename = "../global.v2.json"
 const outputMinifiedFilename = "../global.v2.min.json"
-const outputCsvFilename = "../gloabl.v2.csv"
+const outputCsvFilename = "../global.v2.csv"
 
 
 // load the data from files
