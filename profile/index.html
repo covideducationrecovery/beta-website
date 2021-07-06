@@ -204,31 +204,28 @@ libraries:
                 </div>
             </div>
             <!--- Gant Chart-->
-            
+           
             
 
-            <div v-if="placeCovid" class="w-100 bg-light rounded p-3 my-5">
+            <div v-if="placeTimeline" class="w-100 bg-light rounded p-3 my-5">
                 <h3>
                     Education Modalities
                     <i class="fas fa-info-circle" :popover="`<strong>Cases</strong>: total number of cases since the beginning of the Covid-19 pandemic.<br><strong>Deaths</strong>: total number of deaths attributed to Covid-19 since the beginning of the pandemic.</br><strong>Vaccinations</strong>: the number of people who have been fully vaccinated for protection against Covid-19.<hr>Source: Our World In Data<br>Updated: ${ this.placeCovid.updated }`"></i>
                 </h3>
                 <div class="chart-wrapper">
                     <ul class="chart-values">
-                      <li data-round="1">Round 1</li>
-                      <li data-round="2">Round 2</li>
-                      <li data-round="3">Round 3</li>
-                      <li data-round="4">Round 4</li>
-                      <li data-round="5">Round 5</li>
-                      <li data-round="6">Round 6</li>
-                      <li data-round="7">Round 7</li>
-                      <li data-round="8">Round 8</li>
-                      <li data-round="9">Round 9</li>
-                      <li data-round="10">Round 10</li>
+                      <li v-for='index in placeTimeline?.dates' :data-round="placeTimeline?.dates?.indexOf(index)" :key='placeTimeline?.dates?.indexOf(index)'>${ index }</li>
                     </ul>
                     <ul class="chart-bars">
-                      <li data-duration="1-2" data-color="#0C619D">Online</li>
+                      <!-- <li data-duration="1-2" data-color="#0C619D">Online</li>
                       <li data-duration="3-7" data-color="#AA5986">Hybrid</li>
-                      <li data-duration="4½-6" data-color="#FF9100">In Person</li>
+                      <li data-duration="4½-6" data-color="#FF9100">In Person</li> -->
+                      <li v-for='dates in placeTimeline[1].times' :data-duration="dates" data-color="#0C619D">None</li>
+                      <li v-for='dates in placeTimeline[2].times' :data-duration="dates" data-color="#AA5986">Remote</li>
+                      <li v-for='dates in placeTimeline[3].times' :data-duration="dates" data-color="#FF9100">Hybrid</li>
+                      <li v-for='dates in placeTimeline[4].times' :data-duration="dates" data-color="#0C619D">In Person</li>
+                      <!--- Unknown Data -->   
+                      <!-- <li v-for='dates in placeTimeline[5].times' :data-duration="dates" data-color="#FF9100">${ dates }</li> -->
                   
                     </ul>
                 </div>
@@ -713,7 +710,9 @@ libraries:
     <div class="spacer-10"></div>
 
 
-    <script>
+
+
+    <!-- <script>
         const vm = new Vue({
             el: '#vue-app',
             data () {
@@ -983,8 +982,486 @@ libraries:
             }
         });
 
-    </script>
+    </script> -->
     
+
+    <script>
+
+        const vm = new Vue({
+          el: '#vue-app',
+          data () {
+            return {
+              countries: [],
+              errorLoading: false,
+              errorMessage: undefined,
+              places: [],
+              placesCovid: [],
+              placesTimeline: [],
+              // this structure defines the various grade levels and the variable names for the fields which are broken out by grade level
+              // if a variable doesn't include a grade level, it is left undefined (e.g. in-person academic supports [ipasKey] isn't collected for higher or vocational)
+              gradeLevelList: [
+                  { label: 'Pre-Primary', mresKey: 'mostRecentEducationStatusPrePrimaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportPrePrimary', mrremKey: 'mostRecentRemoteEducationModalitiesPrePrimaryCode' },
+                  { label: 'Primary', mresKey: 'mostRecentEducationStatusPrimaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportPrimary', mrremKey: 'mostRecentRemoteEducationModalitiesPrimaryCode' },
+                  { label: 'Lower Secondary', mresKey: 'mostRecentEducationStatusLowerSecondaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportLowerSecondary', mrremKey: 'mostRecentRemoteEducationModalitiesLowerSecondaryCode' },
+                  { label: 'Upper Secondary', mresKey: 'mostRecentEducationStatusUpperSecondaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportUpperSecondary', mrremKey: 'mostRecentRemoteEducationModalitiesUpperSecondaryCode' },
+                  { label: 'Higher Education', mresKey: 'mostRecentEducationStatusHigherCode', ipasKey: undefined, mrremKey: 'mostRecentRemoteEducationModalitiesHigherCode' },
+                  { label: 'Technical/vocational', mresKey: 'mostRecentEducationStatusVocationalCode', ipasKey: undefined, mrremKey: 'mostRecentRemoteEducationModalitiesVocationalCode' }
+              ],
+              ipasOptions: [
+                  {value: '1', label: 'School Day Changes', faIcon: 'calendar-day'},
+                  {value: '2', label: 'School Year Changes', faIcon: 'calendar-alt'},
+                  {value: '3', label: 'Teacher Tutoring', faIcon: 'school'},
+                  {value: '4', label: 'Non-Teacher Tutoring', faIcon: 'home'},
+                  {value: '5', label: 'Targeted Remedial Measures', faIcon: 'bullseye'},
+                  {value: '6', label: 'Other', faIcon: 'question'}
+              ],
+              mrremOptions: [
+                  {value: '1', label: 'Online platforms', faIcon: 'globe'},
+                  {value: '2', label: 'Television', faIcon: 'tv'},
+                  {value: '3', label: 'Radio', faIcon: 'broadcast-tower'},
+                  {value: '4', label: 'Mobile devices', faIcon: 'mobile'},
+                  {value: '5', label: 'Take-home packages', faIcon: 'paperclip'},
+                  {value: '8', label: 'Tutoring', faIcon: 'chalkboard-teacher'}
+              ],
+      
+              // add object to contain covid indicators here
+      
+              filter: {
+                upToRoundId: Infinity,
+                showNoResponses: false
+              },
+              inPersonAdditionalSupportFields: [
+                {name: 'inPersonAdditionalSupportPrePrimary', text: 'Pre-Primary'},
+                {name: 'inPersonAdditionalSupportPrimary', text: 'Primary'},
+                {name: 'inPersonAdditionalSupportLowerSecondary', text: 'Lower Secondary'},
+                {name: 'inPersonAdditionalSupportUpperSecondary', text: 'Upper Secondary'}
+              ],
+              inPersonAdditionalSupportTypes: [
+                {value: '1', title: 'School Day Changes', faIcon: 'calendar-day'},
+                {value: '2', title: 'School Year Changes', faIcon: 'calendar-alt'},
+                {value: '3', title: 'Teacher Tutoring', faIcon: 'school'},
+                {value: '4', title: 'Non-Teacher Tutoring', faIcon: 'home'},
+                {value: '5', title: 'Targeted Remedial Measures', faIcon: 'bullseye'},
+                {value: '6', title: 'Other', faIcon: 'question'}
+              ],
+              remoteEducationModalityFields: [
+                {name: 'remoteEducationModalitiesPrePrimaryCode', text: 'Pre-Primary'},
+                {name: 'remoteEducationModalitiesPrimaryCode', text: 'Primary'},
+                {name: 'remoteEducationModalitiesLowerSecondaryCode', text: 'Lower Secondary'},
+                {name: 'remoteEducationModalitiesUpperSecondaryCode', text: 'Upper Secondary'},
+                {name: 'remoteEducationModalitiesHigherCode', text: 'Higher Education'},
+                {name: 'remoteEducationModalitiesVocationalCode', text: 'Technical/Vocational'}
+              ],
+              remoteEducationModalityTypes: [
+                {value: '1', title: 'Online platforms', faIcon: 'globe'},
+                {value: '2', title: 'Television', faIcon: 'tv'},
+                {value: '3', title: 'Radio', faIcon: 'broadcast-tower'},
+                {value: '4', title: 'Mobile devices', faIcon: 'mobile'},
+                {value: '5', title: 'Take-home packages', faIcon: 'paperclip'},
+                {value: '8', title: 'Tutoring', faIcon: 'chalkboard-teacher'}
+              ]
+            }
+          },
+          delimiters: ['${','}'],  // need to use these because jekyll competes for {{ and }}
+          filters: {
+            iso8601ToLocaleDateString: (value) => {
+              if (value) {
+                return (new Date(value)).toLocaleDateString(undefined, {timeZone:'UTC'});
+              } else {
+                return null
+              }
+            },
+            friendlyDate: function(value) {
+                try {
+                    date = new Date.parse(value)
+                    return date
+                        .setHours(0)
+                        .setMinutes(0)
+                        .setSeconds(0)
+                        .setMilliseconds(0)
+                        .toLocaleString()
+                } catch {
+                    return 'unknown'
+                }
+            },
+            friendlyNumber: function(value) {
+                try {
+                    return value.toLocaleString()
+                } catch (err) {
+                    return 'unknown'
+                }
+            }
+          },
+          async created() {
+            // load critical data in this block; a failure will cause an error message to be diplayed
+            try {
+              const placesResponse = await fetch('/data/global-with-indicators.json')
+              if (placesResponse.ok) {
+                  this.places = await placesResponse.json()
+                  if (!this.place) {
+                      throw new Error('Unknown place identifier.')
+                  }
+              } else {
+                  throw new Error(`HTTP Error ${placesResponse.status}: ${placesResponse.statusText} (${placesResponse.url.split('/').pop()})`)
+              }
+            } catch (e) {
+              console.error(e)
+              this.errorLoading = true
+              this.errorMessage = e.message
+            }
+      
+            // load non-critical data in this block; a failure will be logged to the console.
+            // components which use data loaded from here shouldn't cause unhandled page crashes
+            // Covid Data
+            try {
+                const placesCovidResponse = await fetch('/data/covid_data.json')
+                if (placesCovidResponse.ok) {
+                    this.placesCovid = await placesCovidResponse.json()
+                } else {
+                    throw new Error(`Error loading covid-data.json: ${placesCovidResponse.status} ${placesCovidResponse.statusText}`)
+                }
+            } catch (e) {
+                console.error(e.message)
+            }
+      
+            // Timeline Responses
+            try {
+                const placesTimelineResponse = await fetch('/data/global.v2.json')
+                if (placesTimelineResponse.ok) {
+                    this.placesTimeline = await placesTimelineResponse.json()
+                } else {
+                    throw new Error(`Error loading covid-data.json: ${placesTimelineResponse.status} ${placesTimelineResponse.statusText}`)
+                }
+            } catch (e) {
+                console.error(e.message)
+            }
+            // End Data Loading
+          },
+          updated () {
+            // tippy needs to initialize after DOM is rendered. Normally this would be mounted() but
+            // since data is loaded asynchronously, mounted() will be called before the data has been loaded.
+            tippy('[popover]', {
+                placement: 'top',
+                maxWidth: 350,
+                allowHTML: true,
+                onShow(instance) {
+                    instance.setContent(instance.reference.attributes.popover.value);
+                }
+            }),
+      
+            this.$nextTick(function() {
+            window.addEventListener('resize', this.createChart);
+            window.addEventListener('load', this.createChart);
+            
+            //Init
+            this.createChart()
+            
+            })
+      
+            // this.createChart
+          },
+          computed: {
+            // access this computed property to render the data, it applies the rules set by this.filter
+            displayedCountries () {
+              return this.countries
+                .map((country) => {
+                  country.$displayedResponse = country.$responsesReversed?.find((response) => {
+                    return response.roundId <= this.filter.upToRoundId
+                  })
+                  return country
+                })
+                .filter((country) => {
+                  return this.filter.showNoResponses ? true : country.$displayedResponse
+                })
+            },
+            mostRecentResponseDate () {
+              // flatten all the responses into an array and iterate through them to
+              // determine the most recent date for all of them
+              return this.countries
+                .flatMap(country => country.responsesPublic || [] )
+                .reduce((mrrd, response) => {
+                  return response.responseDate > mrrd ? response.responseDate : mrrd
+                }, '0000-00-00')
+            },
+      
+            place () {
+                let placeId = this.placeId?.toUpperCase()
+                let place = this.places?.find(place => place.fields.iso3166Alpha2Code === placeId)
+                if (!place) {
+                    place = this.places?.find(place => place.id === this.placeId)
+                }
+                return place
+            },
+            placeTimeline () {
+                let placeId = this.placeId?.toUpperCase()
+                let place = this.placesTimeline?.find(place => place.iso3166Alpha2Code === placeId)
+                if (!place) {
+                    place = this.placesTimeline?.find(place => place.id === this.placeId)
+                    return place
+                }
+                
+                let educationStatusTimeline = {
+                    dates: [],
+                    1: {
+                        text: "None",
+                        responses: [],
+                        times: []
+                    },
+                    2: {
+                        text: "Remote",
+                        responses: [],
+                        times: []
+                    },
+                    3: {
+                        text: "Hybrid",
+                        responses: [],
+                        times: []
+                    },
+                    4: {
+                        text: "In Person",
+                        responses: [],
+                        times: []
+                    },
+                    5: {
+                        text: "Unknown",
+                        responses: [],
+                        times: []
+                    }
+                }
+
+                place.responsesPublic.forEach(item => {
+                    educationStatusTimeline.dates.push(item.responseDate)
+                    // for each code, check current response
+                    for (let code = 1; code <= 5; code++) {
+                        if (item.educationStatusCode?.includes(code.toString())) {
+                            educationStatusTimeline[code]?.responses.push(true);
+                        } else {
+                            educationStatusTimeline[code]?.responses.push(false);
+                        }
+                    }
+                })     
+                
+                for (let code = 1; code <= 5; code++) {
+                    
+                    for (let index = 0; index <= educationStatusTimeline[code]?.responses.length; ) {
+                        start = educationStatusTimeline[code]?.responses.indexOf(true, index)
+                        end = educationStatusTimeline[code]?.responses.indexOf(false, start) - 1
+
+                        if (start < 0) {
+                            break;
+                        }
+
+                        if (end < 0) {
+                            end = educationStatusTimeline[code]?.responses.length - 1;
+                        }
+
+                        let time = start + "-" + end
+
+                        if (start >= 0 && start <= end) {
+                            educationStatusTimeline[code]?.times.push(time)
+                        }
+                            
+                        index = end + 1
+                    }
+
+                }
+                
+
+
+
+
+                return educationStatusTimeline;
+            },
+            placeCovid () {
+                let placeId = this.placeId?.toUpperCase()
+                let placeCovid = this.placesCovid?.places?.find(placeCovid => placeCovid.iso2 === placeId)
+                if (placeCovid) {
+                    placeCovid.updated = this.placesCovid?.fileDate
+                }
+                return placeCovid
+            },
+            placeId () {
+                return window.location.search.replace('?', '')
+            },
+            // computes school-age population from primary + secondary totals.
+            //  if one or both values is missing or the total is 0, return undefined
+            schoolAgePopulation () {
+                try {
+                    if (this.place?.fields?.indicators) {
+                        const sap = { total: 0, malePercent: 0, femalePercent: 0}
+                        let totalMale = 0; let totalFemale = 0
+                        sap.total += this.place.fields.indicators.wb_SP_PRM_TOTL_IN?.value
+                        sap.total += this.place.fields.indicators.wb_SP_SEC_TOTL_IN?.value
+      
+                        totalMale += this.place.fields.indicators.wb_SP_PRM_TOTL_MA_IN?.value
+                        totalMale += this.place.fields.indicators.wb_SP_SEC_TOTL_MA_IN?.value
+      
+                        totalFemale += this.place.fields.indicators.wb_SP_PRM_TOTL_FE_IN?.value
+                        totalFemale += this.place.fields.indicators.wb_SP_SEC_TOTL_FE_IN?.value
+      
+                        sap.malePercent = this.percentage(totalMale, sap.total)
+                        sap.femalePercent = this.percentage(totalFemale, sap.total)
+                        return sap.total === 0 ? undefined : sap
+                    }
+                } catch (err) {
+                    console.error('schoolAgePopulation', err)
+                }
+                return undefined
+            },
+            // Upper secondary
+            upperSecondaryMalePer () {
+                return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_IN?.value;
+            },
+            upperSecondaryFemalePer () {
+                return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_IN?.value;
+            },// Secondary
+            secondaryMalePer () {
+                return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_IN?.value;
+            },
+            secondaryFemalePer () {
+                return 100 * (1 - this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_IN?.value);
+            },// Lower Secondary
+            lowerSecondaryMalePer () {
+                return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_IN?.value;
+            },
+            lowerSecondaryFemalePer () {
+                return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_IN?.value;
+            },// Primary
+            primaryMalePer () {
+                return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_IN?.value;
+            },
+            primaryFemalePer () {
+                return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_IN?.value;
+            },// Primary Last
+            primaryLastMalePer () {
+                return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_MA?.value / this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_TO?.value;
+            },
+            primaryLastFemalePer () {
+                return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_FE?.value / this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_TO?.value;
+            },// Pre Primary
+            prePrimaryMalePer () {
+                let prePrimaryPop = this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN?.value + this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN?.value;
+                return 100 * this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN?.value / prePrimaryPop;
+            },
+            prePrimaryFemalePer () {
+                let prePrimaryPop = this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN?.value + this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN?.value;
+                return 100 * this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN?.value / prePrimaryPop;
+            },// Population
+            PopMalePer () {
+                return 100 * this?.place?.fields?.indicators?.wb_SP_POP_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_POP_TOTL?.value;
+            },
+            PopFemalePer () {
+                return 100 * this?.place?.fields?.indicators?.wb_SP_POP_TOTL_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_POP_TOTL?.value;
+            },
+          },
+          methods: {
+      
+            educationServices (educationStatusCodeField) {
+                educationServices = []
+                if (this.place?.fields.mostRecentExtendedBreakCode && this.plase?.fields.mostRecentExtendedBreakCode.includes('1')) {
+                    educationServices.push('extendedBreak');
+                } else if (this.place?.fields[educationStatusCodeField]) {
+                    if (this.place.fields[educationStatusCodeField].includes('1')) {educationServices.push('covidClosed')}
+                    if (this.place.fields[educationStatusCodeField].includes('2')) {educationServices.push('remote')}
+                    if (this.place.fields[educationStatusCodeField].includes('3')) {educationServices.push('hybrid')}
+                    if (this.place.fields[educationStatusCodeField].includes('4')) {educationServices.push('inPerson')}
+                }
+                return educationServices
+            },
+            percentage (subTotal, total) {
+                return (100 * subTotal / total).toFixed(2)
+            },
+            createChart(e) {
+                const days = document.querySelectorAll(".chart-values li");
+                const tasks = document.querySelectorAll(".chart-bars li");
+                const daysArray = [...days];
+                
+                tasks.forEach(el => {
+                    const duration = el.dataset.duration.split("-");
+                    console.log(el)
+                    console.log("ELEMENT", el.dataset);
+                    const startDay = duration[0];
+                    const endDay = duration[1];
+                    let left = 0,
+                    width = 0;
+      
+                    if (startDay.endsWith("½")) {
+                    const filteredArray = daysArray.filter(day => day.dataset.round == startDay.slice(0, -1));
+                    left = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2 - 40;
+                    } else {
+                    const filteredArray = daysArray.filter(day => day.dataset.round == startDay);
+                    left = filteredArray[0].offsetLeft - 40;
+                    
+                    }
+      
+                    if (endDay.endsWith("½")) {
+                    const filteredArray = daysArray.filter(day => day.dataset.round == endDay.slice(0, -1));
+                    width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2 - left - 40;
+                    } else {
+                    const filteredArray = daysArray.filter(day => day.dataset.round == endDay);
+                    width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth - left - 40;
+                    }
+      
+                    // apply css
+                    el.style.left = `${left}px`;
+                    el.style.width = `${width}px`;
+                    
+                    // if (e?.type == "load" || e?.type == "resize") {
+                    console.log("COLOR:", el.dataset.color)
+                    el.style.backgroundColor = el.dataset.color;
+                    el.style.opacity = 0.8;
+                    // }
+                });
+                },
+      
+            // pre-process the data to improve page rendering performance
+            processCountries (countries) {
+              for (const country of countries) {
+      
+                // responsesPublic are sorted chronologically by default, so we set up 
+                // $responsesReversed to improve selection performance for more recent responses
+                country.$responsesReversed = country.responsesPublic?.slice().reverse()
+      
+                // iterate through all the responses and synthesize some helper values for the UI:
+                country.responsesPublic?.forEach((response) => {
+      
+                  // $educationServices is a synthesis of two different fields
+                  response.$educationServices = []
+                  if (response.extendedBreakCode?.includes('1')) {
+                    response.$educationServices.push('extendedBreak');
+                  } else if (response.educationStatusCode) {
+                    if (response.educationStatusCode.includes('1')) {response.$educationServices.push('covidClosed')}
+                    if (response.educationStatusCode.includes('2')) {response.$educationServices.push('remote')}
+                    if (response.educationStatusCode.includes('3')) {response.$educationServices.push('hybrid')}
+                    if (response.educationStatusCode.includes('4')) {response.$educationServices.push('inPerson')}
+                  }
+      
+                  // $hasInPersonAdditionalSupports determines if we should show the icon & its hover table if there are in-person supports
+                  // codes 7 & 8 correspond to other and unknown so ignore those too
+                  response.$hasInPersonAdditionalSupports = this.inPersonAdditionalSupportFields
+                    .some((item) => {
+                      return response[item.name] && !response[item.name].includes('7') && !response[item.name].includes('8')
+                    })
+      
+                  // $hasRemoteEducationModalities determines if we should show the icon & its hover table if there are remode education supports
+                  // codes 6 & 7 correspond to other and unknown so ignore those too
+                  response.$hasRemoteEducationModalities = this.remoteEducationModalityFields
+                    .some((item) => {
+                      return response[item.name] && !response[item.name].includes('6') && !response[item.name].includes('7')
+                    })
+                })
+      
+              }
+              return countries
+            }
+          },
+          beforeDestroy() {
+              window.removeEventListener('resize', this.createChart);
+              window.removeEventListener('load', this.createChart);
+          }
+        });
+      </script>
+
 
 </body>
 
