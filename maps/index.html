@@ -201,10 +201,6 @@ title: "Maps"
       data() {
         return {
           countries: [],
-          errorLoading: false,
-          errorMessage: undefined,
-          filter_upToRoundId: 20,
-          filter_showNoResponses: true,
           educationStatusGradeLevelChoices: [
             {label: 'Primary, Lower Secondary, and Upper Secondary', value: "$educationStatusClass", mappedFrom: "educationStatusCode"},
             {label: 'Pre-Primary', value: "$educationStatusPrePrimaryClass", mappedFrom: "educationStatusPrePrimaryCode"},
@@ -214,6 +210,11 @@ title: "Maps"
             {label: 'Higher', value: "$educationStatusHigherClass", mappedFrom: "educationStatusHigherCode"},
             {label: 'Technical / Vocational', value: "$educationStatusVocationalClass", mappedFrom: "educationStatusVocationalCode"}
           ],
+          errorLoading: false,
+          errorMessage: undefined,
+          filter_upToRoundId: 20,
+          filter_showNoResponses: true,
+          responseRounds: [],
           selectedCountry: undefined,
           selectedEducationStatusField: undefined
         }
@@ -390,11 +391,14 @@ title: "Maps"
       async created() {
         // load critical data in this block; a failure will cause an error message to be diplayed
         try {
-          const countriesResponse = await fetch('/data/global.v2.min.json')
-          if (countriesResponse.ok) {
-            this.countries = this.processCountries(await countriesResponse.json())
+          const globalV2 = await fetch('/data/global.v2.min.json')
+          if (globalV2.ok) {
+            const data = await globalV2.json()
+
+            this.countries = this.processCountries(data.countries)
+            this.responseRounds = data.responseRounds
           } else {
-            throw new Error(`HTTP Error ${countriesResponse.status}: ${countriesResponse.statusText} (${countriesResponse.url.split('/').pop()})`)
+            throw new Error(`HTTP Error ${globalV2.status}: ${globalV2.statusText} (${globalV2globalV2.url.split('/').pop()})`)
           }
         } catch (e) {
           console.error(e)

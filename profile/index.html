@@ -997,6 +997,7 @@ libraries:
               places: [],
               placesCovid: [],
               placesTimeline: [],
+              responseRounds: [],
               // this structure defines the various grade levels and the variable names for the fields which are broken out by grade level
               // if a variable doesn't include a grade level, it is left undefined (e.g. in-person academic supports [ipasKey] isn't collected for higher or vocational)
               gradeLevelList: [
@@ -1126,11 +1127,13 @@ libraries:
       
             // Timeline Responses
             try {
-                const placesTimelineResponse = await fetch('/data/global.v2.json')
+                const placesTimelineResponse = await fetch('/data/global.v2.min.json')
                 if (placesTimelineResponse.ok) {
-                    this.placesTimeline = await placesTimelineResponse.json()
+                    const data = await placesTimelineResponse.json()
+                    this.placesTimeline = data.countries
+                    this.responseRounds = data.responseRounds
                 } else {
-                    throw new Error(`Error loading covid-data.json: ${placesTimelineResponse.status} ${placesTimelineResponse.statusText}`)
+                    throw new Error(`Error loading global.v2.json: ${placesTimelineResponse.status} ${placesTimelineResponse.statusText}`)
                 }
             } catch (e) {
                 console.error(e.message)
