@@ -158,11 +158,12 @@ libraries:
     async created() {
       // load critical data in this block; a failure will cause an error message to be diplayed
       try {
-        const countriesResponse = await fetch('/data/global.v2.min.json')
-        if (countriesResponse.ok) {
-          this.countries = this.processCountries(await countriesResponse.json())
+        const globalV2Response = await fetch('/data/global.v2.min.json')
+        if (globalV2Response.ok) {
+          const globalV2data = await globalV2Response.json()
+          this.countries = this.processCountries(globalV2data.countries)
         } else {
-          throw new Error(`HTTP Error ${countriesResponse.status}: ${countriesResponse.statusText} (${countriesResponse.url.split('/').pop()})`)
+          throw new Error(`HTTP Error ${globalV2Response.status}: ${globalV2Response.statusText} (${globalV2Response.url.split('/').pop()})`)
         }
       } catch (e) {
         console.error(e)
