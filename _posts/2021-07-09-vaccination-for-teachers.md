@@ -2,7 +2,7 @@
 layout: global-tracker-default
 title: "COVID-19 Vaccination for Teachers: Global Implications for Reopening Schools Equitably"
 description: "168 million students have been out of school for over a year. It is likely many of them will never return in countries like India, where education is a path to advancement and human capital building. Data collected through the COVID-19 Global Education Recovery Tracker (GERT) show a continuing trend in school closures in parts of the world where the urgency of reopening schools and striving towards recovery is ever more pressing."
-thumbnail: "stories/2021-07-09-vaccination-for-teachers/img/capturing-the-human-heart-FQ1L770x6l8-unsplash.jpg"
+thumbnail: "/stories/2021-07-09-vaccination-for-teachers/img/capturing-the-human-heart-FQ1L770x6l8-unsplash.jpg"
 libraries:
 - bootstrap
 - fontawesome
