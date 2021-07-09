@@ -32182,6 +32182,213 @@
     "__id": "rec6Q9ADFlBatSZz3"
   },
   {
+    "responseDate": "2021-06-08",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "2",
+      "3"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1",
+      "2",
+      "3"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1",
+      "2",
+      "3"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "6"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "8"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "3"
+    ],
+    "educationStatusPrimaryCode": [
+      "3"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "3"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "3"
+    ],
+    "__id": "rec8TzmjJIT5jMAa7"
+  },
+  {
+    "responseDate": "2021-06-08",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "2"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1",
+      "2"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "2"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1",
+      "2"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1",
+      "2"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "6"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "2"
+    ],
+    "educationStatusPrimaryCode": [
+      "2"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "2"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "2"
+    ],
+    "educationStatusHigherCode": [
+      "2"
+    ],
+    "educationStatusVocationalCode": [
+      "2"
+    ],
+    "__id": "recaEJub0ozYNDLiH"
+  },
+  {
+    "responseDate": "2021-06-08",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "3",
+      "4"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "3",
+      "4"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recDHRsg2r61ZwYLi"
+  },
+  {
+    "responseDate": "2021-06-08",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "5"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "3",
+      "5"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "2",
+      "3"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "2",
+      "3"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "6"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "2"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "reci5EcE0MpP5cSk1"
+  },
+  {
     "responseDate": "2021-06-09",
     "extendedBreakCode": "2",
     "educationStatusCode": [
@@ -32237,5 +32444,2514 @@
     "responseDate": "2021-06-10",
     "extendedBreakCode": "2",
     "__id": "recuFmg456iG1DwN9"
+  },
+  {
+    "responseDate": "2021-06-10",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4",
+      "3",
+      "2"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1",
+      "2",
+      "3",
+      "5",
+      "8"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1",
+      "3",
+      "4",
+      "5",
+      "8"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1",
+      "3",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1",
+      "4",
+      "5"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "7"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4",
+      "3",
+      "2"
+    ],
+    "educationStatusPrimaryCode": [
+      "4",
+      "3",
+      "2"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4",
+      "3",
+      "2"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4",
+      "3",
+      "2"
+    ],
+    "educationStatusHigherCode": [
+      "4",
+      "3",
+      "2"
+    ],
+    "educationStatusVocationalCode": [
+      "4",
+      "3",
+      "2"
+    ],
+    "__id": "recVIy93oGWYp23aN"
+  },
+  {
+    "responseDate": "2021-06-11",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1",
+      "5"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "7"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recWn70e6DVH8efjr"
+  },
+  {
+    "responseDate": "2021-06-12",
+    "extendedBreakCode": "1",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "8"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "5"
+    ],
+    "educationStatusVocationalCode": [
+      "5"
+    ],
+    "__id": "recDtItJSEletGb17"
+  },
+  {
+    "responseDate": "2021-06-12",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "3",
+      "4"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "3",
+      "4"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "3",
+      "4"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "3",
+      "4"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recFO3GKTeywjJmvZ"
+  },
+  {
+    "responseDate": "2021-06-12",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "4"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "4"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "4"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "5"
+    ],
+    "__id": "receku6AAuLiKcO44"
+  },
+  {
+    "responseDate": "2021-06-13",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "7"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "7"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "7"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "7"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "2"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "3"
+    ],
+    "__id": "recovmyvJGFNaLxRR"
+  },
+  {
+    "responseDate": "2021-06-13",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "recqrYNsQ9xOOfUbz"
+  },
+  {
+    "responseDate": "2021-06-13",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "7"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recxJOVTBILSuSgso"
+  },
+  {
+    "responseDate": "2021-06-13",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "2"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1",
+      "2"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "2",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1",
+      "2",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1",
+      "2",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1",
+      "4"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1",
+      "4",
+      "5"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "2"
+    ],
+    "educationStatusPrimaryCode": [
+      "2"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "2"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "2"
+    ],
+    "educationStatusHigherCode": [
+      "2"
+    ],
+    "educationStatusVocationalCode": [
+      "2"
+    ],
+    "__id": "recOrcba9TaHmPCCW"
+  },
+  {
+    "responseDate": "2021-06-14",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "rec8qSRGBgKRVoEg8"
+  },
+  {
+    "responseDate": "2021-06-14",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "2",
+    "__id": "recT6Foh8yrAqpMGO"
+  },
+  {
+    "responseDate": "2021-06-14",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "6"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "8"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "3"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "3"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "2"
+    ],
+    "educationStatusVocationalCode": [
+      "2"
+    ],
+    "__id": "reccOC2ZojLef0KEa"
+  },
+  {
+    "responseDate": "2021-06-14",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4",
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "6"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "6"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "6"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "6"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "6"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4",
+      "3"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4",
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "3",
+      "2"
+    ],
+    "educationStatusVocationalCode": [
+      "3",
+      "2"
+    ],
+    "__id": "reclZ6GWABjvzj53p"
+  },
+  {
+    "responseDate": "2021-06-14",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "reclJeKPZETIpIcbK"
+  },
+  {
+    "responseDate": "2021-06-14",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "2",
+    "__id": "recPwLjx43c5dCThA"
+  },
+  {
+    "responseDate": "2021-06-14",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "recPh4waKEg62Jo6y"
+  },
+  {
+    "responseDate": "2021-06-15",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "6"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "6"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "6"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "6"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recEN45ZSmvxIgnbQ"
+  },
+  {
+    "responseDate": "2021-06-15",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "recOKLm8jg9356NFc"
+  },
+  {
+    "responseDate": "2021-06-15",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1",
+      "2",
+      "4",
+      "5",
+      "8"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1",
+      "2",
+      "4",
+      "8"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1",
+      "2",
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "3",
+      "5"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "3",
+      "5"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "3",
+      "5"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "3"
+    ],
+    "educationStatusPrimaryCode": [
+      "3"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "3"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "3"
+    ],
+    "__id": "recWTfsESZFz27PcD"
+  },
+  {
+    "responseDate": "2021-06-15",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "5"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "reczDgrfrKH4P2NXe"
+  },
+  {
+    "responseDate": "2021-06-15",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "recl93oK5nsaRiaXl"
+  },
+  {
+    "responseDate": "2021-06-16",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4",
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "6"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "1",
+      "6"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "1",
+      "6"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "1",
+      "6"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "1",
+      "6"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4",
+      "3"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4",
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "5"
+    ],
+    "educationStatusVocationalCode": [
+      "5"
+    ],
+    "__id": "rec2EGthkRchveyxP"
+  },
+  {
+    "responseDate": "2021-06-16",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4",
+      "3",
+      "2"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "7"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "2",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1",
+      "2",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1",
+      "2",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1",
+      "4",
+      "5"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "2"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4",
+      "3",
+      "2"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4",
+      "3",
+      "2"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recMn7WgqSHzFVToX"
+  },
+  {
+    "responseDate": "2021-06-16",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4",
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "7"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "7"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "6"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "1"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "1"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "1"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "1"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4",
+      "3"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4",
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "3",
+      "2"
+    ],
+    "educationStatusVocationalCode": [
+      "3",
+      "2"
+    ],
+    "__id": "recdEUVXsFLdADTmo"
+  },
+  {
+    "responseDate": "2021-06-16",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "2",
+    "__id": "recSKNaBxvJYC32Az"
+  },
+  {
+    "responseDate": "2021-06-16",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "7"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "3"
+    ],
+    "educationStatusPrimaryCode": [
+      "3"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "3"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "3"
+    ],
+    "__id": "recZWACIt5uM76xaO"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4",
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "5"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "3"
+    ],
+    "__id": "recTY2UsMjJJ1v3wM"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "1",
+      "2"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "1",
+      "2"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "1",
+      "2"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "1",
+      "2"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "3"
+    ],
+    "educationStatusPrimaryCode": [
+      "3"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "3"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "3"
+    ],
+    "__id": "recWxzpZp5hgQgecO"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "rec0JQdmBnbpbPPNh"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "7"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recfh5o5b26vRC9HJ"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "3"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "3"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "3"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "3"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recwFJXMaloHlDueq"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "8"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recxRMGUHAJycqwCi"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "3",
+      "2"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1",
+      "2",
+      "3"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "2",
+      "3"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1",
+      "2",
+      "3"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1",
+      "2",
+      "3"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "8"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "3",
+      "2"
+    ],
+    "educationStatusPrimaryCode": [
+      "3",
+      "2"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "3",
+      "2"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "3",
+      "2"
+    ],
+    "educationStatusHigherCode": [
+      "3",
+      "2"
+    ],
+    "educationStatusVocationalCode": [
+      "3",
+      "2"
+    ],
+    "__id": "recBTKyLMDcDFkCgB"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "recRF6iAJxOvuDHxU"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "1"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "1"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "1"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "1"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "3"
+    ],
+    "educationStatusPrimaryCode": [
+      "3"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "3"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "3"
+    ],
+    "__id": "reciWIxhD9uKlkEYF"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "5"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recdT0iRUgHjI7PbN"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "2",
+    "__id": "recmItvTy2gdoU4ZQ"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "4",
+      "5"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "4",
+      "5"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "4",
+      "5"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "4",
+      "5"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recnqHaDR6l7X9S1k"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "2",
+    "__id": "recpyswvkMVDEMdzj"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "recuFaNCSjMNFzrGf"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "2",
+    "__id": "rec3o9y5rn5EPJQlC"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "recGrdbaVqCkTg5Mj"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "2",
+    "__id": "recHDBKhUG1HUd7xk"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "2"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "2"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1",
+      "2"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1",
+      "2"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "7"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "2"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "2"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "2"
+    ],
+    "educationStatusHigherCode": [
+      "2"
+    ],
+    "educationStatusVocationalCode": [
+      "2"
+    ],
+    "__id": "recKEPXUhIdwfwz0d"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "5"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recoQrMRh3FkVUHq4"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "8"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recqxOSGsu0TC8slx"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4",
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "8"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "3",
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "3",
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "3"
+    ],
+    "__id": "recrkfieE5kj6s8mQ"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "8"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "rect2JzTzexwBDLC6"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "8"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "rec5XT7R8M1qXpdOY"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "5"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "reckS1csrPIaeDQv9"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "7"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "7"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "7"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "7"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1",
+      "4"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1",
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "8"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4",
+      "2"
+    ],
+    "educationStatusVocationalCode": [
+      "4",
+      "2"
+    ],
+    "__id": "rec3RAFp4RPMugQ57"
+  },
+  {
+    "responseDate": "2021-06-17",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "8"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recHYu3vAjTB4pHtD"
+  },
+  {
+    "responseDate": "2021-06-19",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "6"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "6"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "6"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "6"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recqMaBozWXt3vHEx"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "rec5es9Dtfm4kBlea"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "2"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "6"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "1"
+    ],
+    "educationStatusPrimaryCode": [
+      "2"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "2"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "2"
+    ],
+    "educationStatusHigherCode": [
+      "2"
+    ],
+    "educationStatusVocationalCode": [
+      "2"
+    ],
+    "__id": "rec8c6YM76uVUOV2x"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "5"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "5"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "rec9krSb8KR6YC0Ar"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "rec9r3JWbnK56mUMI"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "recKopg8TWwGYjREg"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "2"
+    ],
+    "vaccineAvailabilityForTeachersCode": "2",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recKroDceEgTGQ0IN"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "2"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1",
+      "2"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "2",
+      "5"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1",
+      "2",
+      "5"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1",
+      "2",
+      "5"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "2"
+    ],
+    "educationStatusPrimaryCode": [
+      "2"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "2"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "2"
+    ],
+    "educationStatusHigherCode": [
+      "2"
+    ],
+    "educationStatusVocationalCode": [
+      "2"
+    ],
+    "__id": "recOBg6ML4gY8sH5T"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4",
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "2"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "6"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "7"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "3"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recRDaSifZVnySEZ3"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4",
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "4"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1",
+      "4"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1",
+      "4"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1",
+      "4"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "6"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "2"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "3"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recXZ1JawzXGGUTCb"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "2",
+    "__id": "rec1eNB6dyVkCxh44"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "1",
+    "vaccineAvailabilityForTeachersCode": "1",
+    "__id": "recoEUK49HcWg1KLx"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4",
+      "2",
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1",
+      "4"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "4"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1",
+      "4"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1",
+      "4"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1",
+      "4"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1",
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "7"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "2",
+      "4"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4",
+      "2"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4",
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "4",
+      "2"
+    ],
+    "educationStatusVocationalCode": [
+      "4",
+      "2"
+    ],
+    "__id": "recb3OIqcm3ZL5slC"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "1",
+      "2"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1",
+      "2",
+      "4",
+      "5"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "1",
+      "2",
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "6"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "6"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "6"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "3"
+    ],
+    "educationStatusPrimaryCode": [
+      "3"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "3"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "3"
+    ],
+    "__id": "recfIFdajia2KlRA8"
+  },
+  {
+    "responseDate": "2021-06-21",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4",
+      "3"
+    ],
+    "remoteEducationModalitiesPrePrimaryCode": [
+      "6"
+    ],
+    "remoteEducationModalitiesPrimaryCode": [
+      "1",
+      "2"
+    ],
+    "remoteEducationModalitiesLowerSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesUpperSecondaryCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesHigherCode": [
+      "1"
+    ],
+    "remoteEducationModalitiesVocationalCode": [
+      "7"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "8"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "8"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4",
+      "3"
+    ],
+    "educationStatusHigherCode": [
+      "3"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recE6fUe0keOAwMKZ"
+  },
+  {
+    "responseDate": "2021-06-22",
+    "extendedBreakCode": "2",
+    "educationStatusCode": [
+      "4"
+    ],
+    "inPersonAdditionalSupportPrePrimary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportPrimary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportLowerSecondary": [
+      "2"
+    ],
+    "inPersonAdditionalSupportUpperSecondary": [
+      "2"
+    ],
+    "vaccineAvailabilityForTeachersCode": "1",
+    "educationStatusPrePrimaryCode": [
+      "4"
+    ],
+    "educationStatusPrimaryCode": [
+      "4"
+    ],
+    "educationStatusLowerSecondaryCode": [
+      "4"
+    ],
+    "educationStatusUpperSecondaryCode": [
+      "4"
+    ],
+    "educationStatusHigherCode": [
+      "4"
+    ],
+    "educationStatusVocationalCode": [
+      "4"
+    ],
+    "__id": "recRKFhPWAeN632Hu"
   }
 ]
