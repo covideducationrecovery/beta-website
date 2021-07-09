@@ -1,7 +1,7 @@
 ---
 layout: global-tracker-default
 title: "COVID-19 Vaccination for Teachers: Global Implications for Reopening Schools Equitably"
-description: "168 million students have been out of school for over a year. It is likely many of them will never return in countries like India, where education is a path to advancement and human capital building. Data collected through the COVID-19 Global Education Recovery Tracker (GERT) show a continuing trend in school closures in parts of the world where the urgency of reopening schools and striving towards recovery is ever more pressing."
+description: "In some high-income countries (HICs), such as the United States, school reopening conversations incorporate vaccinating teachers as an important point in the agenda towards returning to in-person learning. The context is somewhat different in low- and middle-income countries (LMICs), where vaccine availability is scarce."
 thumbnail: "/stories/2021-07-09-vaccination-for-teachers/img/capturing-the-human-heart-FQ1L770x6l8-unsplash.jpg"
 libraries:
 - bootstrap
@@ -43,7 +43,7 @@ libraries:
     </div>
 
     <p>
-      The context is somewhat different in low- and middle-income countries (LMICs), where vaccine availability is scarce. While policies are currently focused on prioritization of key segments of the population, many <a href="https://en.unesco.org/covid19/educationresponse/teacher-vaccination">institutions</a> are calling on governments to prioritize teachers in their COVID-19 vaccine rollout. Data from Data from GERT suggests that in these settings, teachers are overwhelmingly not prioritized for COVID-19 vaccination even though many <a href="https://en.unesco.org/covid19/educationresponse/teacher-vaccination">institutions</a> call for such prioritization. This is to be expected, particularly as in countries with vaccine scarcity, prioritization conversations may be limited to health professionals or not happening at all. These dynamics are reflected d across regions: countries across North America are vaccinating teachers compared only to 35% in Sub-Saharan Africa and 48% in East Asia and Pacific.  
+      The context is somewhat different in low- and middle-income countries (LMICs), where vaccine availability is scarce. While policies are currently focused on prioritization of key segments of the population, many <a href="https://en.unesco.org/covid19/educationresponse/teacher-vaccination">institutions</a> are calling on governments to prioritize teachers in their COVID-19 vaccine rollout. Data from Data from GERT suggests that in these settings, teachers are overwhelmingly not prioritized for COVID-19 vaccination even though many <a href="https://en.unesco.org/covid19/educationresponse/teacher-vaccination">institutions</a> call for such prioritization. This is to be expected, particularly as in countries with vaccine scarcity, prioritization conversations may be limited to health professionals or not happening at all. These dynamics are reflected across regions: countries across North America are vaccinating teachers compared only to 35% in Sub-Saharan Africa and 48% in East Asia and Pacific.  
     </p>
 
     <div class="text-center">
