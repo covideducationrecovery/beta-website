@@ -7,20 +7,32 @@ keep_files:
  - .github
  - .nojekyll
  - README.md
+ - data/countries_codes.csv
+ - data/covid_data.json
+ - data/fetch_covid_data.py
+ - data/global-indicator-descriptions.json
+ - data/global-with-indicators.json
+ - data/global-with-indicsators.min.json
  - data/global.csv
  - data/global.json
  - data/global.min.json
- - data/fetch_covid_data.py
- - data/countries_codes.csv
- - data/covid_data.json
+ - data/global.v2.csv
+ - data/global.v2.json
+ - data/global.v2.min.json
 
 exclude:
  - CNAME
  - README.md
  - admin/
+ - data/countries_codes.csv
+ - data/covid_data.json
+ - data/fetch_covid_data.py
+ - data/global-indicator-descriptions.json
+ - data/global-with-indicators.json
+ - data/global-with-indicsators.min.json
  - data/global.csv
  - data/global.json
  - data/global.min.json
- - data/fetch_covid_data.py
- - data/countries_codes.csv
- - data/covid_data.json
+ - data/global.v2.csv
+ - data/global.v2.json
+ - data/global.v2.min.json
