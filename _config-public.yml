@@ -17,3 +17,6 @@ exclude:
  - data/fetch_covid_data.py
  - data/countries_codes.csv
  - data/covid_data.json
+ - data/scripts/node_modules
+ - data/scripts/temp
+ - data/scripts/.env

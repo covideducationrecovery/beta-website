@@ -36,3 +36,6 @@ exclude:
  - data/global.v2.csv
  - data/global.v2.json
  - data/global.v2.min.json
+ - data/scripts/node_modules
+ - data/scripts/temp
+ - data/scripts/.env
