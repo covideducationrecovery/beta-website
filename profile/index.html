@@ -82,7 +82,7 @@ libraries:
       display: flex;
       margin-bottom: 20px;
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1rem;
     }
 
     .chart-wrapper .chart-values li {
@@ -126,8 +126,9 @@ libraries:
     }
 
     .chart-wrapper .chart-bars .group {
-      position: static;
+      position: relative;
       display: flex;
+      flex-direction: row;
       margin-bottom: 70px;
       font-size: 16px;
       border-radius: 0px;
@@ -267,24 +268,24 @@ libraries:
         </h3>
         <div class="chart-wrapper">
           <ul class="chart-values">
-            <li v-for='index in placeTimeline?.dates' :data-round="placeTimeline?.dates?.indexOf(index)"
-              :key='placeTimeline?.dates?.indexOf(index)'>${ index }</li>
+            <li v-for='index in placeTimeline?.periods' :data-round="placeTimeline?.periods?.indexOf(index)"
+              :key='placeTimeline?.periods?.indexOf(index)'>${ index.endDate }</li>
           </ul>
           <ul class="chart-bars">
             <!-- <li data-duration="1-2" data-color="#0C619D">Online</li>
                       <li data-duration="3-7" data-color="#AA5986">Hybrid</li>
                       <li data-duration="4½-6" data-color="#FF9100">In Person</li> -->
-              <div class="group">
-                <li v-for='dates in placeTimeline[1].times' :data-duration="dates" data-color="#A3B4A2">None</li>
+              <div  v-if="placeTimeline.countryInfo[1].times.length > 0" class="group">
+                <li v-for='dates in placeTimeline.countryInfo[1].times' :data-duration="dates" data-color="#A3B4A2">None</li>
               </div>
-              <div class="group">
-                <li v-for='dates in placeTimeline[2].times' :data-duration="dates" data-color="#AA5986">Remote</li>
+              <div  v-if="placeTimeline.countryInfo[2].times.length > 0"class="group">
+                <li v-for='dates in placeTimeline.countryInfo[2].times' :data-duration="dates" data-color="#AA5986">Remote</li>
               </div>
-              <div class="group">
-                <li v-for='dates in placeTimeline[3].times' :data-duration="dates" data-color="#FF9100">Hybrid</li>
+              <div  v-if="placeTimeline.countryInfo[3].times.length > 0"class="group">
+                <li v-for='dates in placeTimeline.countryInfo[3].times' :data-duration="dates" data-color="#FF9100">Hybrid</li>
               </div>
-              <div class="group">
-                <li v-for='dates in placeTimeline[4].times' :data-duration="dates" data-color="#0C619D">In Person</li>
+              <div  v-if="placeTimeline.countryInfo[4].times.length > 0"class="group">
+                <li v-for='dates in placeTimeline.countryInfo[4].times' :data-duration="dates" data-color="#0C619D">In Person</li>
               </div>
             
             
@@ -1363,12 +1364,18 @@ libraries:
           return place
         },
         placeTimeline() {
+          
           let placeId = this.placeId?.toUpperCase()
           let place = this.placesTimeline?.find(place => place.iso3166Alpha2Code === placeId)
           if (!place) {
             place = this.placesTimeline?.find(place => place.id === this.placeId)
             return place
           }
+
+
+          let dateArr = this?.responseRounds
+          let length = dateArr.length
+
 
           let educationStatusTimeline = {
             dates: [],
@@ -1399,14 +1406,18 @@ libraries:
             }
           }
 
+         
+
+          // for each public response
           place.responsesPublic.forEach(item => {
             educationStatusTimeline.dates.push(item.responseDate)
             // for each code, check current response
             for (let code = 1; code <= 5; code++) {
               if (item.educationStatusCode?.includes(code.toString())) {
-                educationStatusTimeline[code]?.responses.push(true);
+                educationStatusTimeline[code].responses[item.roundId - 1] = true;
+                console.log(item.roundId)
               } else {
-                educationStatusTimeline[code]?.responses.push(false);
+                educationStatusTimeline[code].responses[item.roundId - 1] = false;
               }
             }
           })
@@ -1438,9 +1449,24 @@ libraries:
 
 
 
+          console.log(place)
 
 
-          return educationStatusTimeline;
+
+          // Get Round Periods
+
+          // function checkDate(item) {
+          //   let today = new Date().toLocaleDateString()
+          //   console.log(item.endDate, Date.parse(item.endDate))
+          //   return Date.parse(endDate) <= today;
+          // }
+
+          
+          
+          return {
+            periods: dateArr,
+            countryInfo: educationStatusTimeline
+          }
         },
         placeCovid() {
           let placeId = this.placeId?.toUpperCase()
@@ -1548,8 +1574,8 @@ libraries:
 
           tasks.forEach(el => {
             const duration = el.dataset.duration.split("-");
-            console.log(el)
-            console.log("ELEMENT", el.dataset);
+            // console.log(el)
+            // console.log("ELEMENT", el.dataset);
             const startDay = duration[0];
             const endDay = duration[1];
             let left = 0,
@@ -1577,7 +1603,7 @@ libraries:
             el.style.width = `${width}px`;
 
             // if (e?.type == "load" || e?.type == "resize") {
-            console.log("COLOR:", el.dataset.color)
+            // console.log("COLOR:", el.dataset.color)
             el.style.backgroundColor = el.dataset.color;
             el.style.opacity = 0.8;
             // }
