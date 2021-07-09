@@ -106,21 +106,39 @@ libraries:
 
     /* CHART-BARS
         –––––––––––––––––––––––––––––––––––––––––––––––––– */
-    .chart-wrapper .chart-bars li {
-      position: relative;
+
+    
+
+    .chart-wrapper .chart-bars .group li {
+      position: absolute;
       display: flex;
       color: var(--white);
-      margin-bottom: 15px;
+      margin-bottom: 0px;
       font-size: 16px;
       border-radius: 5px;
-      padding: 10px 10px;
-      /*   height: 3em */
+      padding: 15px 10px;
+      /* height: 3em; */
       left: 0;
       width: 0;
       opacity: 1;
       background-color: hotpink;
       transition: all 0.65s linear 0.2s;
     }
+
+    .chart-wrapper .chart-bars .group {
+      position: static;
+      display: flex;
+      margin-bottom: 70px;
+      font-size: 16px;
+      border-radius: 0px;
+      
+      /* height: 3em; */
+      
+      width: 100%;
+      
+    }
+
+    
 
     @media screen and (max-width: 600px) {
       .chart-wrapper .chart-bars li {
@@ -256,14 +274,27 @@ libraries:
             <!-- <li data-duration="1-2" data-color="#0C619D">Online</li>
                       <li data-duration="3-7" data-color="#AA5986">Hybrid</li>
                       <li data-duration="4½-6" data-color="#FF9100">In Person</li> -->
-            <li v-for='dates in placeTimeline[1].times' :data-duration="dates" data-color="#A3B4A2">None</li>
-            <li v-for='dates in placeTimeline[2].times' :data-duration="dates" data-color="#AA5986">Remote</li>
-            <li v-for='dates in placeTimeline[3].times' :data-duration="dates" data-color="#FF9100">Hybrid</li>
-            <li v-for='dates in placeTimeline[4].times' :data-duration="dates" data-color="#0C619D">In Person</li>
+              <div class="group">
+                <li v-for='dates in placeTimeline[1].times' :data-duration="dates" data-color="#A3B4A2">None</li>
+              </div>
+              <div class="group">
+                <li v-for='dates in placeTimeline[2].times' :data-duration="dates" data-color="#AA5986">Remote</li>
+              </div>
+              <div class="group">
+                <li v-for='dates in placeTimeline[3].times' :data-duration="dates" data-color="#FF9100">Hybrid</li>
+              </div>
+              <div class="group">
+                <li v-for='dates in placeTimeline[4].times' :data-duration="dates" data-color="#0C619D">In Person</li>
+              </div>
+            
+            
+            
+            
             <!--- Unknown Data -->
             <!-- <li v-for='dates in placeTimeline[5].times' :data-duration="dates" data-color="#FF9100">${ dates }</li> -->
 
           </ul>
+          
         </div>
       </div>
 
