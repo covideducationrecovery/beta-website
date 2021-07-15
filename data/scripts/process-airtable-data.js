@@ -39,17 +39,19 @@ const output = {
   responseRounds: responseRounds
 }
 
+const outputResponsesCount = output.countries.flatMap(country => country.responsesPublic || []).length
+
 // write the result to file, both readable and minified
 const fs = require('fs')
 try {
   fs.writeFileSync(outputFilename, JSON.stringify(output, null, 2), 'utf8')
-  console.log(`${output.responseRounds.length} responseRound and ${output.countries.length} country records written to '${outputFilename}'`)
+  console.log(`${output.responseRounds.length} responseRound; ${output.countries.length} country; ${outputResponsesCount} response records written to '${outputFilename}'`)
 } catch (err) {
   console.error(`error writing '${outputFilename}'`, err)
 }
 try {
   fs.writeFileSync(outputMinifiedFilename, JSON.stringify(output), 'utf8')
-  console.log(`${output.responseRounds.length} responseRound and ${output.countries.length} country records written to '${outputMinifiedFilename}'`)
+  console.log(`${output.responseRounds.length} responseRound; ${output.countries.length} country; ${outputResponsesCount} response records written to '${outputMinifiedFilename}'`)
 } catch (err) {
   console.error(`error writing '${outputFilename}'`, err)
 }

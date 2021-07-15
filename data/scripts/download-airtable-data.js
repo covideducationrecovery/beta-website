@@ -46,13 +46,12 @@ const saveFile = (configurationItem) => {
       return dataItem
     })
   }
-  fs.writeFile(configurationItem.filename, JSON.stringify(configurationItem.results, null, 2), 'utf8', (err)=> {
-    if (err) {
-      console.error(`error writing file '${configurationItem.filename}': ${err}`); process.exitCode = 1; return 1
-    } else {
-      console.log(`${configurationItem.results.length} records written to '${configurationItem.filename}'`)
-    }
-  })
+  try {
+    fs.writeFileSync(configurationItem.filename, JSON.stringify(configurationItem.results, null, 2), 'utf8')
+    console.log(`${configurationItem.results.length} records written to '${configurationItem.filename}'`)
+  } catch (err) {
+    console.error(`error writing file '${configurationItem.filename}': ${err}`); process.exitCode = 1; return 1
+  }
 }
 
 // chain the configuration items so they are downloaded and saved in series (not parallel)
