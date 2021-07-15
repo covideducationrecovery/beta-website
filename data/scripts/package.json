@@ -6,6 +6,6 @@
     "esm": "^3.2.25"
   },
   "scripts": {
-    "generate": "node -r esm -r dotenv/config download-airtable-data.js ./download-airtable-data-config.json && node process-airtable-data.js"
+    "generate-v2": "node -r esm -r dotenv/config download-airtable-data.js ./download-airtable-data-config.json && node process-airtable-data.js"
   }
 }
