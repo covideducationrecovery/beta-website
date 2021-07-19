@@ -22,6 +22,11 @@ jobs:
           cd data/scripts/
           node -v
           npm install
+          MY_NAME="Mona The Octocat"
+          echo "::add-mask::$MY_NAME"
+          
+          MY_TEST= ${{ secrets.TEST_SECRET }}
+          echo $MY_NAME
         
       - name: Set Environment Variables
         run: |
