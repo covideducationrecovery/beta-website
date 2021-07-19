@@ -28,13 +28,19 @@ jobs:
           MY_TEST= ${{ secrets.TEST_SECRET }}
           echo $MY_NAME
         
-      - name: Set Environment Variables
+      - name: Set Environment Variables / Generate Files
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_SECRET }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID_SECRET }}
+          AIRTABLE_TABLENAME_RESPONSETRACKING: responseTracking
+          AIRTABLE_TABLENAME_RESPONSES: responses
+          AIRTABLE_TABLENAME_COUNTRIES: countries
+          AIRTABLE_TABLENAME_RESPONSESPUBLIC: responsesPublic
+          AIRTABLE_TABLENAME_RESPONSESPUBLICTEST: responsesPublicTest
+
         run: |
           cd data/scripts/
           echo "set variables"
-      - name: Generate Files
-        run: |
-          cd data/scripts/
           npm run generate-v2
 
       - run: git pull
