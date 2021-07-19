@@ -24,9 +24,11 @@ jobs:
         
       - name: Set Environment Variables
         run: |
+          cd data/scripts/
           echo "set variables"
       - name: Generate Files
         run: |
+          cd data/scripts/
           npm run generate-v2
 
       - run: git pull
