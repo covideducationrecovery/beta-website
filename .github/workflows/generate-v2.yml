@@ -1,1 +1,39 @@
 
+name: Generate V2-Data
+on:
+  workflow_dispatch:
+
+jobs:
+  get-covid-data:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.COVID }}
+          
+      - run: git config --global user.email "beta@covideducationrecovery.global"
+      - run: git config --global user.name "Automated Survey V2-Data"
+
+      
+      - name: Install Dependencies  
+        run: |
+          cd data/scripts/
+          npm install
+        
+      - name: Set Environment Variables
+        run: |
+          echo "set variables"
+      - name: Generate Files
+        run: |
+          npm run generate-v2
+
+      - run: git pull
+      - run: git add .
+      - run: git commit -m "automated V2-Data update"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.COVID }}
+          branch: ${{ github.ref }}
