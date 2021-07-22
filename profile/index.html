@@ -100,7 +100,7 @@ libraries:
 
     .chart-wrapper .chart-values li {
       flex: 1;
-      min-width: 80px;
+      min-width: 120px;
       text-align: center;
     }
 
@@ -154,7 +154,7 @@ libraries:
 
     
 
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 1000px) {
       .chart-wrapper .chart-bars li {
         padding: 5px;
       }
@@ -172,6 +172,15 @@ libraries:
         min-width: 40px;
         text-align: center;
       }
+
+      .chart-wrapper .chart-bars .group li {
+        font-size: 10px;
+        border-radius: 5px;
+        padding: 15px 10px;
+        /* height: 3em; */
+      } 
+
+
     }
   </style>
 </head>
@@ -289,7 +298,10 @@ libraries:
                       <li data-duration="3-7" data-color="#AA5986">Hybrid</li>
                       <li data-duration="4½-6" data-color="#FF9100">In Person</li> -->
               <div  v-if="placeTimeline.countryInfo[1].times.length > 0" class="group">
-                <li v-for='dates in placeTimeline.countryInfo[1].times' :data-duration="dates" data-color="#A3B4A2">None</li>
+                <li v-for='dates in placeTimeline.countryInfo[1].times' :data-duration="dates" data-color="#e63946">Closed</li>
+              </div>
+              <div  v-if="placeTimeline.countryInfo[6].times.length > 0" class="group">
+                <li v-for='dates in placeTimeline.countryInfo[6].times' :data-duration="dates" data-color="#1B1725">Extended Break</li>
               </div>
               <div  v-if="placeTimeline.countryInfo[2].times.length > 0"class="group">
                 <li v-for='dates in placeTimeline.countryInfo[2].times' :data-duration="dates" data-color="#AA5986">Remote</li>
@@ -893,279 +905,6 @@ libraries:
 
 
 
-  <!-- <script>
-        const vm = new Vue({
-            el: '#vue-app',
-            data () {
-                return {
-                    errorLoading: false,
-                    errorMessage: undefined,
-                    places: [],
-                    placesCovid: [],
-                    // this structure defines the various grade levels and the variable names for the fields which are broken out by grade level
-                    // if a variable doesn't include a grade level, it is left undefined (e.g. in-person academic supports [ipasKey] isn't collected for higher or vocational)
-                    gradeLevelList: [
-                        { label: 'Pre-Primary', mresKey: 'mostRecentEducationStatusPrePrimaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportPrePrimary', mrremKey: 'mostRecentRemoteEducationModalitiesPrePrimaryCode' },
-                        { label: 'Primary', mresKey: 'mostRecentEducationStatusPrimaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportPrimary', mrremKey: 'mostRecentRemoteEducationModalitiesPrimaryCode' },
-                        { label: 'Lower Secondary', mresKey: 'mostRecentEducationStatusLowerSecondaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportLowerSecondary', mrremKey: 'mostRecentRemoteEducationModalitiesLowerSecondaryCode' },
-                        { label: 'Upper Secondary', mresKey: 'mostRecentEducationStatusUpperSecondaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportUpperSecondary', mrremKey: 'mostRecentRemoteEducationModalitiesUpperSecondaryCode' },
-                        { label: 'Higher Education', mresKey: 'mostRecentEducationStatusHigherCode', ipasKey: undefined, mrremKey: 'mostRecentRemoteEducationModalitiesHigherCode' },
-                        { label: 'Technical/vocational', mresKey: 'mostRecentEducationStatusVocationalCode', ipasKey: undefined, mrremKey: 'mostRecentRemoteEducationModalitiesVocationalCode' }
-                    ],
-                    ipasOptions: [
-                        {value: '1', label: 'School Day Changes', faIcon: 'calendar-day'},
-                        {value: '2', label: 'School Year Changes', faIcon: 'calendar-alt'},
-                        {value: '3', label: 'Teacher Tutoring', faIcon: 'school'},
-                        {value: '4', label: 'Non-Teacher Tutoring', faIcon: 'home'},
-                        {value: '5', label: 'Targeted Remedial Measures', faIcon: 'bullseye'},
-                        {value: '6', label: 'Other', faIcon: 'question'}
-                    ],
-                    mrremOptions: [
-                        {value: '1', label: 'Online platforms', faIcon: 'globe'},
-                        {value: '2', label: 'Television', faIcon: 'tv'},
-                        {value: '3', label: 'Radio', faIcon: 'broadcast-tower'},
-                        {value: '4', label: 'Mobile devices', faIcon: 'mobile'},
-                        {value: '5', label: 'Take-home packages', faIcon: 'paperclip'},
-                        {value: '8', label: 'Tutoring', faIcon: 'chalkboard-teacher'}
-                    ]
-
-                    // add object to contain covid indicators here
-                }
-            },
-            delimiters: ['${', '}'],
-            filters: {
-                friendlyDate: function(value) {
-                    try {
-                        date = new Date.parse(value)
-                        return date
-                            .setHours(0)
-                            .setMinutes(0)
-                            .setSeconds(0)
-                            .setMilliseconds(0)
-                            .toLocaleString()
-                    } catch {
-                        return 'unknown'
-                    }
-                },
-                friendlyNumber: function(value) {
-                    try {
-                        return value.toLocaleString()
-                    } catch (err) {
-                        return 'unknown'
-                    }
-                }
-            },
-            async created () {
-                // load critical data in this block; a failure will cause an error message to be diplayed
-                try {
-                    const placesResponse = await fetch('/data/global-with-indicators.json')
-                    if (placesResponse.ok) {
-                        this.places = await placesResponse.json()
-                        if (!this.place) {
-                            throw new Error('Unknown place identifier.')
-                        }
-                    } else {
-                        throw new Error(`HTTP Error ${placesResponse.status}: ${placesResponse.statusText} (${placesResponse.url.split('/').pop()})`)
-                    }
-                } catch (e) {
-                    this.errorLoading = true
-                    this.errorMessage = e.message
-                }
-                // load non-critical data in this block; a failure will be logged to the console.
-                // components which use data loaded from here shouldn't cause unhandled page crashes
-                try {
-                    const placesCovidResponse = await fetch('/data/covid_data.json')
-                    if (placesCovidResponse.ok) {
-                        this.placesCovid = await placesCovidResponse.json()
-                    } else {
-                        throw new Error(`Error loading covid-data.json: ${placesCovidResponse.status} ${placesCovidResponse.statusText}`)
-                    }
-                } catch (e) {
-                    console.error(e.message)
-                }
-            },
-            updated () {
-                // tippy needs to initialize after DOM is rendered. Normally this would be mounted() but
-                // since data is loaded asynchronously, mounted() will be called before the data has been loaded.
-                tippy('[popover]', {
-                    placement: 'top',
-                    maxWidth: 350,
-                    allowHTML: true,
-                    onShow(instance) {
-                        instance.setContent(instance.reference.attributes.popover.value);
-                    }
-                }),
-
-                this.$nextTick(function() {
-                window.addEventListener('resize', this.createChart);
-                window.addEventListener('load', this.createChart);
-                
-                //Init
-                this.createChart()
-                
-                })
-
-                // this.createChart
-
-            },
-            methods: {
-                educationServices (educationStatusCodeField) {
-                    educationServices = []
-                    if (this.place?.fields.mostRecentExtendedBreakCode && this.plase?.fields.mostRecentExtendedBreakCode.includes('1')) {
-                        educationServices.push('extendedBreak');
-                    } else if (this.place?.fields[educationStatusCodeField]) {
-                        if (this.place.fields[educationStatusCodeField].includes('1')) {educationServices.push('covidClosed')}
-                        if (this.place.fields[educationStatusCodeField].includes('2')) {educationServices.push('remote')}
-                        if (this.place.fields[educationStatusCodeField].includes('3')) {educationServices.push('hybrid')}
-                        if (this.place.fields[educationStatusCodeField].includes('4')) {educationServices.push('inPerson')}
-                    }
-                    return educationServices
-                },
-                percentage (subTotal, total) {
-                    return (100 * subTotal / total).toFixed(2)
-                },
-                createChart(e) {
-                    const days = document.querySelectorAll(".chart-values li");
-                    const tasks = document.querySelectorAll(".chart-bars li");
-                    const daysArray = [...days];
-                    
-                    tasks.forEach(el => {
-                        const duration = el.dataset.duration.split("-");
-                        console.log("ELEMENT", el.dataset);
-                        const startDay = duration[0];
-                        const endDay = duration[1];
-                        let left = 0,
-                        width = 0;
-
-                        if (startDay.endsWith("½")) {
-                        const filteredArray = daysArray.filter(day => day.dataset.round == startDay.slice(0, -1));
-                        left = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2 - 40;
-                        } else {
-                        const filteredArray = daysArray.filter(day => day.dataset.round == startDay);
-                        left = filteredArray[0].offsetLeft - 40;
-                        
-                        }
-
-                        if (endDay.endsWith("½")) {
-                        const filteredArray = daysArray.filter(day => day.dataset.round == endDay.slice(0, -1));
-                        width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth / 2 - left - 40;
-                        } else {
-                        const filteredArray = daysArray.filter(day => day.dataset.round == endDay);
-                        width = filteredArray[0].offsetLeft + filteredArray[0].offsetWidth - left - 40;
-                        }
-
-                        // apply css
-                        el.style.left = `${left}px`;
-                        el.style.width = `${width}px`;
-                        
-                        // if (e?.type == "load" || e?.type == "resize") {
-                        console.log("COLOR:", el.dataset.color)
-                        el.style.backgroundColor = el.dataset.color;
-                        el.style.opacity = 0.8;
-                        // }
-                    });
-                    }
-            },
-            computed: {
-                place () {
-                    let placeId = this.placeId?.toUpperCase()
-                    let place = this.places?.find(place => place.fields.iso3166Alpha2Code === placeId)
-                    if (!place) {
-                        place = this.places?.find(place => place.id === this.placeId)
-                    }
-                    return place
-                },
-                placeCovid () {
-                    let placeId = this.placeId?.toUpperCase()
-                    let placeCovid = this.placesCovid?.places?.find(placeCovid => placeCovid.iso2 === placeId)
-                    if (placeCovid) {
-                        placeCovid.updated = this.placesCovid?.fileDate
-                    }
-                    return placeCovid
-                },
-                placeId () {
-                    return window.location.search.replace('?', '')
-                },
-                // computes school-age population from primary + secondary totals.
-                //  if one or both values is missing or the total is 0, return undefined
-                schoolAgePopulation () {
-                    try {
-                        if (this.place?.fields?.indicators) {
-                            const sap = { total: 0, malePercent: 0, femalePercent: 0}
-                            let totalMale = 0; let totalFemale = 0
-                            sap.total += this.place.fields.indicators.wb_SP_PRM_TOTL_IN?.value
-                            sap.total += this.place.fields.indicators.wb_SP_SEC_TOTL_IN?.value
-
-                            totalMale += this.place.fields.indicators.wb_SP_PRM_TOTL_MA_IN?.value
-                            totalMale += this.place.fields.indicators.wb_SP_SEC_TOTL_MA_IN?.value
-
-                            totalFemale += this.place.fields.indicators.wb_SP_PRM_TOTL_FE_IN?.value
-                            totalFemale += this.place.fields.indicators.wb_SP_SEC_TOTL_FE_IN?.value
-
-                            sap.malePercent = this.percentage(totalMale, sap.total)
-                            sap.femalePercent = this.percentage(totalFemale, sap.total)
-                            return sap.total === 0 ? undefined : sap
-                        }
-                    } catch (err) {
-                        console.error('schoolAgePopulation', err)
-                    }
-                    return undefined
-                },
-                // Upper secondary
-                upperSecondaryMalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_IN?.value;
-                },
-                upperSecondaryFemalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_UTOT_IN?.value;
-                },// Secondary
-                secondaryMalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_IN?.value;
-                },
-                secondaryFemalePer () {
-                    return 100 * (1 - this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_TOTL_IN?.value);
-                },// Lower Secondary
-                lowerSecondaryMalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_IN?.value;
-                },
-                lowerSecondaryFemalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_SEC_LTOT_IN?.value;
-                },// Primary
-                primaryMalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_IN?.value;
-                },
-                primaryFemalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_PRM_TOTL_IN?.value;
-                },// Primary Last
-                primaryLastMalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_MA?.value / this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_TO?.value;
-                },
-                primaryLastFemalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_FE?.value / this?.place?.fields?.indicators?.wb_SP_PRM_GRAD_TO?.value;
-                },// Pre Primary
-                prePrimaryMalePer () {
-                    let prePrimaryPop = this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN?.value + this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN?.value;
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN?.value / prePrimaryPop;
-                },
-                prePrimaryFemalePer () {
-                    let prePrimaryPop = this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN?.value + this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_MA_IN?.value;
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_PRE_TOTL_FE_IN?.value / prePrimaryPop;
-                },// Population
-                PopMalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_POP_TOTL_MA_IN?.value / this?.place?.fields?.indicators?.wb_SP_POP_TOTL?.value;
-                },
-                PopFemalePer () {
-                    return 100 * this?.place?.fields?.indicators?.wb_SP_POP_TOTL_FE_IN?.value / this?.place?.fields?.indicators?.wb_SP_POP_TOTL?.value;
-                },
-            },
-            beforeDestroy() {
-            window.removeEventListener('resize', this.createChart);
-            window.removeEventListener('load', this.createChart);
-            }
-        });
-
-    </script> -->
-
-
   <script>
 
     const vm = new Vue({
@@ -1416,6 +1155,11 @@ libraries:
               text: "Unknown",
               responses: [],
               times: []
+            },
+            6: {
+              text: "Extended Break",
+              responses: [],
+              times: []
             }
           }
 
@@ -1428,14 +1172,24 @@ libraries:
             for (let code = 1; code <= 5; code++) {
               if (item.educationStatusCode?.includes(code.toString())) {
                 educationStatusTimeline[code].responses[item.roundId - 1] = true;
-                console.log(item.roundId)
+                //console.log(item.roundId)
               } else {
                 educationStatusTimeline[code].responses[item.roundId - 1] = false;
               }
             }
+
+            // Extended Break
+            if (item.extendedBreakCode?.includes(1)) { // Includes True
+              educationStatusTimeline[6].responses[item.roundId - 1] = true;
+              //console.log(item.roundId)
+            } else {
+              educationStatusTimeline[6].responses[item.roundId - 1] = false;
+            }
+
+
           })
 
-          for (let code = 1; code <= 5; code++) {
+          for (let code = 1; code <= 6; code++) { // Convert to start and end dates
 
             for (let index = 0; index <= educationStatusTimeline[code]?.responses.length;) {
               start = educationStatusTimeline[code]?.responses.indexOf(true, index)
@@ -1462,7 +1216,8 @@ libraries:
 
 
 
-          console.log(place)
+          //console.log(place)
+          //console.log("DATA:",educationStatusTimeline)
 
 
 
