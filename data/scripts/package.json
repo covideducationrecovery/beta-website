@@ -1,4 +1,8 @@
 {
+  "name": "global-education-tracker-data-manipulation",
+  "version": "0.0.1",
+  "description": "",
+  "main": "script.js",
   "dependencies": {
     "@fast-csv/format": "^4.3.5",
     "airtable-json": "^1.3.2",
