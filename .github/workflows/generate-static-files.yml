@@ -1,0 +1,49 @@
+
+name: Generate V2-Data
+on:
+  workflow_dispatch:
+
+jobs:
+  get-v2-data:
+    runs-on: ubuntu-latest
+    steps:
+      
+      - name: checkout
+        uses: actions/checkout@v2
+        with:
+          token: ${{ secrets.COVID }}
+          
+      - run: git config --global user.email "beta@covideducationrecovery.global"
+      - run: git config --global user.name "Automated Survey V2-Data"
+
+      
+      - name: Install Dependencies  
+        run: |
+          cd data/scripts/
+          node -v
+          npm install
+        
+        
+      - name: Set Environment Variables / Generate Files
+        env:
+          AIRTABLE_API_KEY: ${{ secrets.AIRTABLE_API_SECRET }}
+          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID_SECRET }}
+          AIRTABLE_TABLENAME_RESPONSETRACKING: responseTracking
+          AIRTABLE_TABLENAME_RESPONSES: responses
+          AIRTABLE_TABLENAME_COUNTRIES: countries
+          AIRTABLE_TABLENAME_RESPONSESPUBLIC: responsesPublic
+          AIRTABLE_TABLENAME_RESPONSESPUBLICTEST: responsesPublicTest
+
+        run: |
+          cd data/scripts/
+          echo "set variables"
+          npm run generate-v2
+
+      - run: git pull
+      - run: git add .
+      - run: git commit -m "automated V2-Data update"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.COVID }}
+          branch: ${{ github.ref }}
