@@ -1,10 +1,10 @@
 
-name: Generate V2-Data
+name: Generate Static-Data
 on:
   workflow_dispatch:
 
 jobs:
-  get-v2-data:
+  get-static-data:
     runs-on: ubuntu-latest
     steps:
       
