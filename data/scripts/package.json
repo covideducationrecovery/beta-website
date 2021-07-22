@@ -7,5 +7,11 @@
   },
   "scripts": {
     "generate-v2": "node -r esm -r dotenv/config download-airtable-data.js ./download-airtable-data-config.json && node process-airtable-data.js"
+    "regenerate-responses": "./regenerateResponseData.sh",
+    "generate-static": "./generateStaticFiles.sh",
+    "update-owid": "./updateOwidVaccinationCountries.sh",
+    "upload-responses-public": "./uploadResponsesPublic.sh",
+    "upload-responses-public-test": "./uploadResponsesPublicTest.sh",
+    "get-worldbank-data": "./get-worldbank-data.sh"
   }
 }
