@@ -37,11 +37,11 @@ jobs:
         run: |
           cd data/scripts/
           echo "set variables"
-          npm run generate-v2
+          npm run generate-static
 
       - run: git pull
       - run: git add .
-      - run: git commit -m "automated V2-Data update"
+      - run: git commit -m "automated Data-Static update"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
