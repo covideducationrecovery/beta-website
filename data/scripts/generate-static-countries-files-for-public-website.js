@@ -1,5 +1,5 @@
 const countriesFilename = '../countries.json';
-const responsesPublicFilename = '../responsesPublic.json';
+const responsesPublicFilename = './responsesPublic.json';
 const globalPublicFilename = "../global.json";
 const globalPublicMinifiedFilename = "../global.min.json";
 const globalPublicCSVFilename = '../global.csv';
