@@ -291,8 +291,8 @@ libraries:
         </h3>
         <div class="chart-wrapper">
           <ul class="chart-values">
-            <li v-for='index in placeTimeline?.periods' :data-round="placeTimeline?.periods?.indexOf(index)"
-              :key='placeTimeline?.periods?.indexOf(index)'>${ index.endDate }</li>
+            <li v-for='(index, pos) in placeTimeline?.periods' v-bind:style= "[placeTimeline?.periods[pos]?.type == 'observed' ? {'color': ''} : {'color': 'lightgray'}]" :data-round="pos"
+              :key='pos'>${ index.endDate }</li>
           </ul>
           <ul class="chart-bars">
             <!-- <li data-duration="1-2" data-color="#0C619D">Online</li>
@@ -1204,6 +1204,9 @@ libraries:
             } else {
               educationStatusTimeline[6].responses[item.roundId - 1] = false;
             }
+
+            /* Color Dates Based On Data Availability */
+            dateArr[item.roundId-1].type="observed"
 
 
           })
