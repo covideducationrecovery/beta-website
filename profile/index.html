@@ -1116,6 +1116,13 @@ libraries:
           }
           return place
         },
+        mostRecentRoundId () {
+          return this.placesTimeline
+            .flatMap(country => country.responsesPublic || [])
+            .reduce((mrrid, response) => {
+              return response.roundId > mrrid ? response.roundId : mrrid
+            }, 0)
+        },
         placeTimeline() {
           
           let placeId = this.placeId?.toUpperCase()
@@ -1135,7 +1142,7 @@ libraries:
           */
 
           /* Based on most recent data collection round: */
-          maxRound = 10;
+          maxRound = this.mostRecentRoundId;
 
           let dateArr = this?.responseRounds.slice(0,maxRound)
           let length = dateArr.length
