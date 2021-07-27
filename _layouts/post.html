@@ -1,8 +1,5 @@
 ---
 layout: default
-libraries:
-- bootstrap
-- fontawesome
 ---
 <div class="spacer-5"></div>
 <article class="container">
@@ -19,6 +16,7 @@ libraries:
       <div class="col-md-1"></div>
       <div class="col-md-3" id="logo-unicef" style="height: 57px; background-image: url(/img/UNICEF_Logo.svg); background-repeat: no-repeat; background-size: contain; background-position: center center;"></div>
     </div>
+    {% if page.media-contacts %}
     <aside>
       <div class="row alert alert-info mx-2" role="alert">
         <h4 class="alert-heading">Media Contacts</h4>
@@ -27,6 +25,7 @@ libraries:
         
       </div>  
     </aside>
+    {% endif %}
 
     {{ content }}
   

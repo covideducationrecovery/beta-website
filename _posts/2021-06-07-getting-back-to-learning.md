@@ -1,11 +1,8 @@
 ---
-layout: global-tracker-default
+layout: default
 title: "Education Systems' Response to COVID-19 - Brief June 7th, 2021: Getting Back to Learning"
 description: "The COVID-19 Global Education Recovery Tracker, sourced by teams across the World Bank, Johns Hopkins, and UNICEF, monitors recovery planning efforts in more than 200 countries and territories. Based on its data, learning modalities across regions shifted in recent weeks with many more countries shifting to hybrid and returning to in-person education."
 thumbnail: "/stories/2021-06-07-getting-back-to-learning/img/8938Filipino_homeschooling_students_02.jpg"
-libraries:
-- bootstrap
-- fontawesome
 ---
 
 <div class="spacer-5"></div>

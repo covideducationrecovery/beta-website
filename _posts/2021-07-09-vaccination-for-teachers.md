@@ -1,11 +1,8 @@
 ---
-layout: global-tracker-default
+layout: default
 title: "COVID-19 Vaccination for Teachers: Global Implications for Reopening Schools Equitably"
 description: "In some high-income countries (HICs), such as the United States, school reopening conversations incorporate vaccinating teachers as an important point in the agenda towards returning to in-person learning. The context is somewhat different in low- and middle-income countries (LMICs), where vaccine availability is scarce."
 thumbnail: "/stories/2021-07-09-vaccination-for-teachers/img/capturing-the-human-heart-FQ1L770x6l8-unsplash.jpg"
-libraries:
-- bootstrap
-- fontawesome
 ---
 
 <div class="spacer-5"></div>

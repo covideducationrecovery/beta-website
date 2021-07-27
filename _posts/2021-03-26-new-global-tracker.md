@@ -1,11 +1,8 @@
 ---
-layout: global-tracker-default
+layout: default
 title: "New Global Tracker to Measure Pandemic’s Impact on Education Worldwide"
 description: "Tracker a collaborative effort of Johns Hopkins University, the World Bank, and UNICEF."
 thumbnail: "/img/wb_shutterstock_1893399223.jpg"
-libraries:
-- bootstrap
-- fontawesome
 ---
 <div class="spacer-5"></div>
 <article class="container">

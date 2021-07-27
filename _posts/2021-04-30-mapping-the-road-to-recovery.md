@@ -1,11 +1,8 @@
 ---
-layout: global-tracker-default
+layout: default
 title: "Mapping the road to recovery: How a new venture helps track learning in the wake of the pandemic"
 description: "This is the first of a series of blogs and briefs highlighting key findings of the COVID Education Recovery Tracker."
 thumbnail: "/img/kelly-sikkema-r2hTBxEkgWQ-unsplash.jpg"
-libraries:
-- bootstrap
-- fontawesome
 ---
 
 <div class="spacer-5"></div>

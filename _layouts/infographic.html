@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<div class="spacer-5"></div>
+<article class="container">
+
+    <div class="row">
+      <h2>{{ page.title }}</h2>
+      <p class="text-muted">{% if page.date %}{{ page.date | date: '%Y %B %e' }}{% endif %} </p>
+      <h4 class="text-muted"> {{ page.description }}</h4>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <a href="{{ page.asset }}" download class="btn btn-primary">Download</a>
+        <a href="{{ page.asset }}" download class="btn btn-primary">Subcribe</a>
+      </div>
+      <iframe width="100%" height="1000px" src="{{ page.asset }}">
+    </div>
+
+</article>
+<div class="spacer-5"></div>

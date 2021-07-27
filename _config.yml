@@ -26,8 +26,8 @@ defaults:
     values:
       layout: "post"
       libraries:
-      - bootstrap
-      - fontawesome
+     
+     
 
 collections:
   - faqs

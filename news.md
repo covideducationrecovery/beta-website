@@ -1,9 +1,11 @@
 ---
 layout: default
+title: News
+permalink: /news/
 ---
 <div class="spacer-5"></div>
 <div class="container">
-  <h2 class="text-center">Stories and Insights</h2>
+  <h2 class="text-center">In the news</h2>
   <div class="spacer-3"></div>
   {% for post in site.news %}
   <br>

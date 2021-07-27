@@ -7,7 +7,7 @@ Automated Covid Status: [![covid_data_fetch](https://github.com/covideducationre
 # Local Testing
 To test this site locally, run
 ```
-beta-website     % jekyll serve -w
+beta-website     % jekyll serve --livereload
 ```
 and access the site at http://localhost:5002/
 
