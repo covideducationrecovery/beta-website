@@ -1128,9 +1128,15 @@ libraries:
           console.log(place)
 
           // Get max round ID for this location
+
+          /* Based on most recent data for particular country:
           let maxRound = place.responsesPublic.slice(-1)[0].roundId;
           console.log(maxRound);
+          */
 
+          /* Based on most recent data collection round: */
+
+          
           let dateArr = this?.responseRounds.slice(0,maxRound)
           let length = dateArr.length
 
