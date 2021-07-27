@@ -101,6 +101,7 @@ libraries:
     .chart-wrapper .chart-values li {
       flex: 1;
       min-width: 120px;
+      max-width: 120px;
       text-align: center;
     }
 
@@ -1124,8 +1125,13 @@ libraries:
             return place
           }
 
+          console.log(place)
 
-          let dateArr = this?.responseRounds
+          // Get max round ID for this location
+          let maxRound = place.responsesPublic.slice(-1)[0].roundId;
+          console.log(maxRound);
+
+          let dateArr = this?.responseRounds.slice(0,maxRound)
           let length = dateArr.length
 
 
@@ -1163,7 +1169,7 @@ libraries:
             }
           }
 
-         
+          
 
           // for each public response
           place.responsesPublic.forEach(item => {
