@@ -8,6 +8,6 @@
   },
   "scripts": {
     "generate-v2": "node -r esm -r dotenv/config download-airtable-data.js ./download-airtable-data-config.json && node process-airtable-data.js",
-    "generate-v1": "node -r esm -r dotenv/config download-airtable-data.js ./download-airtable-data-config.json && node generate-static-countries-files-for-public-website.js && node get-worldbank-data.js && node inject-indicators-into-countries.js"
+    "generate-v1": "node -r dotenv/config airtable-downloader.js && node generate-static-countries-files-for-public-website.js && node get-worldbank-data.js && node inject-indicators-into-countries.js"
   }
 }
