@@ -12,10 +12,10 @@ const reduceToFields = true;
 //    view: the displayed name of the view (use 'Grid view' if you aren't sure); note that views affect row selection, column selection, sort order, and record grouping
 //    filename: the name of the local file which you'd like to save the data to. It will be replaced if it already exists.
 const airtableTables = [
-  {table: 'responseTracking', view: 'export', filename: './data/globalResponseTracking.json'},
-  {table: 'responses', view: 'export', filename: './data/globalResponses.json'},
-  {table: 'countries', view: 'export', filename: './data/countries.json'},
-  {table: 'responsesPublic', view: 'export', filename: './data/responsesPublic.json'}
+  {table: 'responseTracking', view: 'export', filename: '../globalResponseTracking.json'},
+  {table: 'responses', view: 'export', filename: '../globalResponses.json'},
+  {table: 'countries', view: 'export', filename: '../countries.json'},
+  {table: 'responsesPublic', view: 'export', filename: '../responsesPublic.json'}
 ];
 
 require('dotenv').config();
