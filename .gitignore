@@ -8,6 +8,14 @@ CNAME
 # nodejs modules
 node_modules/
 
+# intermediate data files
+data/countries.json
+data/responsesPublic.json
+data/unmatched-country-indicators.json
+data/globalResponses.json
+data/globalResponseTracking.json
+
+
 # environment variables
 .env
 
