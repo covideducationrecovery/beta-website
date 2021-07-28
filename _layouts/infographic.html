@@ -5,16 +5,26 @@ layout: default
 <article class="container">
 
     <div class="row">
-      <h2>{{ page.title }}</h2>
-      <p class="text-muted">{% if page.date %}{{ page.date | date: '%Y %B %e' }}{% endif %} </p>
-      <h4 class="text-muted"> {{ page.description }}</h4>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        <a href="{{ page.asset }}" download class="btn btn-primary">Download</a>
-        <a href="{{ page.asset }}" download class="btn btn-primary">Subcribe</a>
+      <div class="col-md-12 d-flex justify-content-start align-items-center">
+        {% if page.date %}
+        <h2 class="m-0">{{ page.date | date: '%Y %B %e' }}</h2>
+        {% endif %}
+  
+        <a href="#" class="btn btn-primary m-1 me-auto"><i class="fas fa-envelope"></i> Subcribe</a>
+
+        {% if page.asset_png %}
+        <a href="{{ page.asset_png }}" download class="btn btn-primary m-1"><i class="fas fa-file-image"></i> Download PNG</a>
+        {% endif %}
+        {% if page.asset_pdf %}
+        <a href="{{ page.asset_pdf }}" download class="btn btn-primary m-1"><i class="fas fa-file-pdf"></i> Download PDF</a>
+        {% endif %}
+
       </div>
-      <iframe width="100%" height="1000px" src="{{ page.asset }}">
+      {% if page.asset_png %}
+      <img class="img-fluid" src="{{ page.asset_png }}">
+      {% else %}
+      <iframe src="{{ page.asset_pdf }}" width="100%" height="600" frameborder="0"></iframe>
+      {% endif %}
     </div>
 
 </article>

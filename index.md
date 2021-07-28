@@ -5,6 +5,10 @@ style: |
     height: 80vh;
     }
 
+  .flex-even {
+    flex: 1;
+  }
+
   .footer {
     position: absolute;
     bottom: 0;
@@ -65,9 +69,9 @@ style: |
 </div>
 <div class="spacer-10"></div>
 <section id="cards" class="container">
+  <h2>Stories and Insights</h2>
   <div class="row">
-    <h2>Stories and Insights</h2>
-    <!-- <div class="row"> -->
+    <!-- <div class="d-flex flex-row"> -->
     {% for post in site.posts limit:3 %}
     {% include post-card.html %}
     {% endfor %}
