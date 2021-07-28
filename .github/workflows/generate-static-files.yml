@@ -22,6 +22,7 @@ jobs:
           cd data/scripts/
           node -v
           npm install
+          npm start
         
         
       - name: Set Environment Variables / Generate Files
