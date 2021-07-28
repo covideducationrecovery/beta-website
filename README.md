@@ -6,7 +6,7 @@ Automated Covid Status: [![covid_data_fetch](https://github.com/covideducationre
 
 V-2 Data Updater: [![Generate V2-Data](https://github.com/covideducationrecovery/beta-website/actions/workflows/generate-v2.yml/badge.svg)](https://github.com/covideducationrecovery/beta-website/actions/workflows/generate-v2.yml)
 
-V-1 Data Updater:
+V-1 Data Updater: [![Generate Static-Data](https://github.com/covideducationrecovery/beta-website/actions/workflows/generate-static-files.yml/badge.svg)](https://github.com/covideducationrecovery/beta-website/actions/workflows/generate-static-files.yml)
 
 # Local Testing
 To test this site locally, run
