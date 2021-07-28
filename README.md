@@ -4,6 +4,10 @@ This repository sources our [testing website](https://beta.covideducationrecover
 
 Automated Covid Status: [![covid_data_fetch](https://github.com/covideducationrecovery/beta-website/actions/workflows/covid_data_fetch.yml/badge.svg?branch=master)](https://github.com/covideducationrecovery/beta-website/actions/workflows/covid_data_fetch.yml)
 
+V-2 Data Updater: [![Generate V2-Data](https://github.com/covideducationrecovery/beta-website/actions/workflows/generate-v2.yml/badge.svg)](https://github.com/covideducationrecovery/beta-website/actions/workflows/generate-v2.yml)
+
+V-1 Data Updater:
+
 # Local Testing
 To test this site locally, run
 ```
