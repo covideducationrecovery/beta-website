@@ -1,6 +1,6 @@
-const wbDataFolderName = './worldbank'
-const countriesOutputFilename = '../global-indicator-data.json'
-const indicatorDescriptionsFilename = "../global-indicator-descriptions.json"
+const wbDataFolderName = './data/worldbank'
+const countriesOutputFilename = './data/global-indicator-data.json'
+const indicatorDescriptionsFilename = "./data/global-indicator-descriptions.json"
 
 const startTime = Date.now();
 
