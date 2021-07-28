@@ -1,6 +1,7 @@
 # commands
 
 - `npm run generate-v2`: downloads data from airtable and generates the v2 data files.
+- `npm run generate-v1`: downloads data from airtable and generates the v1 data files.
 
 
 
