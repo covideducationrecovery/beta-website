@@ -1,8 +1,8 @@
-const countriesInputFilename = './data/global.json'
-const indicatorsFilename = './data/global-indicator-data.json'
-const missingCountriesFilename = './data/unmatched-country-indicators.json'
-const countriesOutputFilename = './data/global-with-indicators.json'
-const countriesOutputMinifiedFilename = './data/global-with-indicators.min.json'
+const countriesInputFilename = '../global.json'
+const indicatorsFilename = '../global-indicator-data.json'
+const missingCountriesFilename = '../unmatched-country-indicators.json'
+const countriesOutputFilename = '../global-with-indicators.json'
+const countriesOutputMinifiedFilename = '../global-with-indicators.min.json'
 
 const startDate = Date.now()
 
