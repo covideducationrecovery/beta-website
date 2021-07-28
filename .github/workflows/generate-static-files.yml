@@ -37,7 +37,7 @@ jobs:
         run: |
           cd data/scripts/
           echo "set variables"
-          npm run generate-static
+          npm run generate-v1
 
       - run: git pull
       - run: git add .
