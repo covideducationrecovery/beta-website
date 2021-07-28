@@ -1,8 +1,8 @@
-const countriesFilename = './countries.json';
-const responsesPublicFilename = './responses-public.json';
-const globalPublicFilename = "../global.json";
-const globalPublicMinifiedFilename = "../global.min.json";
-const globalPublicCSVFilename = '../global.csv';
+const countriesFilename = './data/countries.json';
+const responsesPublicFilename = './data/responsesPublic.json';
+const globalPublicFilename = "./data/global.json";
+const globalPublicMinifiedFilename = "./data/global.min.json";
+const globalPublicCSVFilename = './data/global.csv';
 
 const fs = require('fs');
 const fastcsv = require('@fast-csv/format')
