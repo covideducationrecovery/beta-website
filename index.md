@@ -73,6 +73,9 @@ style: |
     {% endfor %}
     <!-- </div> -->
   </div>
+  <div class="w-100 d-flex justify-content-end mt-3">
+  <a href="/stories">See more stories and insights</a>
+  </div>
 </section>
 <div class="spacer-10"></div>
 <section id="about" class="container">
