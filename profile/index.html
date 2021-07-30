@@ -287,11 +287,13 @@ libraries:
         <h3>
           Education Status History
           <i class="fas fa-info-circle"
-            popover="Overall status is determined by combining Primary, Lower Secondary, and Upper Secondary status. Light gray indicates no data for a particular response round."></i>
+            popover="Overall status is determined by combining Primary, Lower Secondary, and Upper Secondary status. <strong>Light gray indicates no data for a particular response round.</strong>"></i>
         </h3>
         <div class="chart-wrapper">
           <ul class="chart-values">
-            <li v-for='(index, pos) in placeTimeline?.periods' v-bind:style= "[placeTimeline?.periods[pos]?.type == 'observed' ? {'color': ''} : {'color': 'lightgray'}]" :data-round="pos"
+            <li v-for='(index, pos) in placeTimeline?.periods' v-bind:style= "[placeTimeline?.periods[pos]?.type == 'observed' ? {'color': ''} : {'color': 'lightgray'}]" 
+              :popover="placeTimeline?.periods[pos]?.type == 'observed' ? 'Round ' + index.roundNumber : 'Round ' + index.roundNumber + '<hr> No data collected.'"
+              :data-round="pos"
               :key='pos'>${ index.endDate }</li>
           </ul>
           <ul class="chart-bars">
