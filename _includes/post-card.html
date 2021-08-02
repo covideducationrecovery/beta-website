@@ -1,5 +1,5 @@
-<div class="col-4 d-flex align-items-stretch">
-  <div class="card">
+<div class="col-lg-4 d-flex align-items-stretch">
+  <div class="card w-100">
     {% if post.categories contains 'infographic' %}
       {% if post.asset_png %}
       <div class="ratio" style="--bs-aspect-ratio: 250%">
@@ -17,7 +17,7 @@
     {% endif %}
     <div class="card-body d-flex flex-column">
       {% if post.categories contains 'infographic' %}
-      <h5 class="card-title">{{ post.date | date: '%Y %B %d' }}</h5>
+
       {% else %}
       <h5 class="card-title">{{ post.title }}</h5>
       {% endif %}
@@ -26,6 +26,7 @@
       {% else %}
       <p class="card-text">{% if post.description %}{{ post.description }}{% else %}{{ post.excerpt }}{% endif %}</p>
       {% endif %}
+      <p class="card-text text-muted">{{ post.date | date: '%Y %B %d' }}</p>
       <div class="mt-auto text-center">
         {% if post.categories contains 'infographic' %}
         <a href="{{ post.url }}" class="btn btn-primary mx-auto stretched-link">View</a>
