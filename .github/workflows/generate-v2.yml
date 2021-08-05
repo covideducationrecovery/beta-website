@@ -40,7 +40,7 @@ jobs:
           npm run generate-v2
 
       - run: git pull
-      - run: git add .
+      - run: git add data/global.v2.csv data/global.v2.json data/global.v2.min.json
       - run: git commit -m "automated V2-Data update"
       - name: Push changes
         uses: ad-m/github-push-action@master
