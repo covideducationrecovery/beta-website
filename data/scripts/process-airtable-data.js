@@ -110,7 +110,11 @@ const csvHeaders = [
   "remoteEducationModalitiesLowerSecondaryCode",
   "remoteEducationModalitiesUpperSecondaryCode",
   "remoteEducationModalitiesHigherCode",
-  "remoteEducationModalitiesVocationalCode"
+  "remoteEducationModalitiesVocationalCode",
+  "inPersonPrioritizationCategoriesCode",
+  "inPersonPrioritizationGradeLevelCode",
+  "inPersonPrioritizationStudentNeedCode",
+  "inPersonPrioritizationGeographyCode"
 ]
 
 const fastCsv = require('@fast-csv/format')
