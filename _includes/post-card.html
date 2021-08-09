@@ -2,7 +2,7 @@
   <div class="card w-100">
     {% if post.categories contains 'infographic' %}
       {% if post.asset_png %}
-      <div class="ratio" style="--bs-aspect-ratio: 250%">
+      <div class="ratio" style="--bs-aspect-ratio: {% if post.bs_aspect_ratio %}{{ post.bs_aspect_ratio }}{% else %}100%{% endif %}">
         <img src="{{ post.asset_png }}" alt="{{ post.title }}">
       </div>
       {% else %}
