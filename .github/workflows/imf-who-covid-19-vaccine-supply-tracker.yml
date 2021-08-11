@@ -19,7 +19,7 @@ jobs:
       - name: download latest file
         run: | 
           CURRENTDATESTRING=$(date +"%Y-%m-%d")
-          NEWFILENAME="/data/imf-who/imf-who-vaccine-supply-tracker-${CURRENTDATESTRING}.xlsx"
+          NEWFILENAME="data/imf-who/imf-who-vaccine-supply-tracker-${CURRENTDATESTRING}.xlsx"
           STATUS=$(curl -s -S -o ${NEWFILENAME} -w '%{http_code}' "https://www.imf.org/en/Topics/imf-and-covid19/-/media/Files/Topics/COVID/IMF-WHO/imf-who-covid-19-vaccine-supply-tracker.ashx")
       
       - name: add latest file for commit
