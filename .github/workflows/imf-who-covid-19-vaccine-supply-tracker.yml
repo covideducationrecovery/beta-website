@@ -1,5 +1,5 @@
 
-name: Generate V2-Data
+name: transfer-imf-who-vaccine-supply-data
 on:
   workflow_dispatch:
 
