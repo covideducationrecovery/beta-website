@@ -1,5 +1,5 @@
 
-name: transfer-imf-who-vaccine-supply-data
+name: Get latest IMF-WHO Vaccine Supply Data
 on:
   workflow_dispatch:
   schedule:
