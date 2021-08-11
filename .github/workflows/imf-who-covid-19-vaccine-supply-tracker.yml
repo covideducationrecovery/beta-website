@@ -14,7 +14,7 @@ jobs:
           token: ${{ secrets.COVID }}
           
       - run: git config --global user.email "beta@covideducationrecovery.global"
-      - run: git config --global user.name "Automated Survey V2-Data"
+      - run: git config --global user.name "automated imf-who download"
 
       - name: download latest file
         run: | 
@@ -22,7 +22,7 @@ jobs:
           NEWFILENAME="data/imf-who/imf-who-vaccine-supply-tracker-${CURRENTDATESTRING}.xlsx"
           STATUS=$(curl -s -S -o ${NEWFILENAME} -w '%{http_code}' "https://www.imf.org/en/Topics/imf-and-covid19/-/media/Files/Topics/COVID/IMF-WHO/imf-who-covid-19-vaccine-supply-tracker.ashx")
           if [ $STATUS -eq 200 ]; then
-            echo "downloaded file"
+            echo "downloaded file ${NEWFILENAME}"
           else
             echo "error code $STATUS downloading file"
             rm -rf ${NEWFILENAME}
@@ -30,10 +30,10 @@ jobs:
           fi
 
       - name: add latest file for commit
-        run: git add ${NEWFILENAME}
+        run: git add "./${NEWFILENAME}"
 
       - name: commit changes
-        run: git commit -m "automated V2-Data update"
+        run: git commit -m "automated imf-who download"
 
       - name: Push changes
         run: git push
