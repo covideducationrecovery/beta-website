@@ -45571,6 +45571,10 @@
       "owidHasVaccine": true,
       "mostRecentResponseDate": "2021-08-17",
       "mostRecentExtendedBreakCode": "2",
+      "mostRecentEducationStatusCode": [
+        "2",
+        "3"
+      ],
       "mostRecentEducationStatusPrePrimaryCode": [
         "3",
         "2",
