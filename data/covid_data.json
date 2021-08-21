@@ -1,5 +1,5 @@
 {
-    "fileDate": "2021-08-20T12:45:31.778008",
+    "fileDate": "2021-08-21T01:16:32.211151",
     "places": [
         {
             "iso_code": "AFG",
@@ -406,7 +406,7 @@
         },
         {
             "iso_code": "CIV",
-            "total_cases": 53089.0,
+            "total_cases": 52936.0,
             "total_deaths": 373.0,
             "total_vaccinations": 1246309.0,
             "people_vaccinated": 1246309.0,
