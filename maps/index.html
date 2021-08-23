@@ -1,8 +1,6 @@
 ---
 libraries:
  - vuejs
-
-
  - tippy
 title: "Maps"
 ---
@@ -22,8 +20,10 @@ title: "Maps"
       .modality-no-data {fill: #DDDDDD;}
 
       .vaccine-yes {fill: #1A49BF;}
-      /* .vaccine-other {fill: #FFBD66;} */
+      .vaccine-limited-supply-and-prioritized {fill: #26B1FF;}
+      .vaccine-prioritized-but-now-all-adults-are-eligible {fill: #C7A7FF;}
       .vaccine-no {fill: #FFA733;}
+      .vaccine-not-prioritized-but-now-all-adults-are-eligible {fill: #4FFFCD;} 
       .map-key {max-width: 600px; margin: auto; font-size: smaller;}
       /* .map-key {display: flex; flex-flow: row nowrap; align-items: center; justify-content: center; font-size: small;} */
       .map-key-color {height: 2rem; width: 2rem; margin: 0.2rem;}
@@ -122,16 +122,28 @@ title: "Maps"
               </thead>
               <tbody>
                 <tr>
+                  <td><svg class="vaccine-limited-supply-and-prioritized map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start">Vaccine supply is limited; teachers and other school staff are a prioritized group and will be offered vaccine as supply increases</td>
+                </tr>             
+                <tr>
                   <td><svg class="vaccine-yes map-key-color" viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                  <td class="text-start"><strong>Yes</strong></td>
+                  <td class="text-start">Teachers and other school staff are currently being offered vaccine as a priority group</td>
                 </tr>
                 <tr>
+                  <td><svg class="vaccine-prioritized-but-now-all-adults-are-eligible map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start">Teachers and other school staff were once a prioritized group, but now vaccine supply exceeds demand and all adults in the country are eligible for vaccination</td>
+                </tr>             
+                <tr>
                   <td><svg class="vaccine-no map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                  <td class="text-start"><strong>No</strong></td>
+                  <td class="text-start">Vaccine supply is limited; teachers and other school staff have not been prioritized to receive vaccine</td>
+                </tr>             
+                <tr>
+                  <td><svg class="vaccine-not-prioritized-but-now-all-adults-are-eligible map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
+                  <td class="text-start">Teachers and other school staff were never prioritized but now vaccine supply exceeds demand and all adults in the country are eligible for vaccination</td>
                 </tr>             
                 <tr>
                   <td><svg class="vaccine-unknown map-key-color"viewbox="0 0 20 20"><rect x="0" y="0" width="20" height="20"></rect></svg></td>
-                  <td class="text-start"><strong>Unknown/Data Not Available</strong></td>
+                  <td class="text-start">Unknown/Data Not Available</td>
                 </tr>
               </tbody>
             </table>
@@ -175,8 +187,11 @@ title: "Maps"
           <div v-if="selectedCountry.$displayedResponse">
             <hr />
             <div v-if="selectedCountry.$displayedResponse.vaccineAvailabilityForTeachersCode">
-              <div v-if="selectedCountry.$displayedResponse.vaccineAvailabilityForTeachersCode.includes('1')"><i class="fas fa-check"></i> Teachers/School Staff are being vaccinated as a priority group</div>
-              <div v-if="selectedCountry.$displayedResponse.vaccineAvailabilityForTeachersCode.includes('2')"><i class="fas fa-times"></i> Teachers/School Staff are not being vaccinated as a priority group</div>
+              <div v-if="selectedCountry.$displayedResponse.vaccineAvailabilityForTeachersCode.includes('1')"><i class="fas fa-check"></i> Teachers and other school staff are currently being offered vaccine as a priority group</div>
+              <div v-if="selectedCountry.$displayedResponse.vaccineAvailabilityForTeachersCode.includes('2')"><i class="fas fa-times"></i> Vaccine supply is limited; teachers and other school staff have not been prioritized to receive vaccine</div>
+              <div v-if="selectedCountry.$displayedResponse.vaccineAvailabilityForTeachersCode.includes('5')"><i class="fas fa-clock"></i> Vaccine supply is limited; teachers and other school staff are a prioritized group and will be offered vaccine as supply increases</div>
+              <div v-if="selectedCountry.$displayedResponse.vaccineAvailabilityForTeachersCode.includes('6')"><i class="fas fa-check"></i> Teachers and other school staff were once a prioritized group, but now vaccine supply exceeds demand and all adults in the country are eligible for vaccination</div>
+              <div v-if="selectedCountry.$displayedResponse.vaccineAvailabilityForTeachersCode.includes('7')"><i class="fas fa-times"></i> Teachers and other school staff were never prioritized but now vaccine supply exceeds demand and all adults in the country are eligible for vaccination</div>
             </div>
             <div>
               <div v-if="selectedCountry.owidHasVaccine"><i class="fas fa-syringe"></i> Vaccines have been authorized for distribution.</div>
@@ -316,6 +331,12 @@ title: "Maps"
                   response.$vaccineClass = 'vaccine-yes'
                 } else if (response.vaccineAvailabilityForTeachersCode.includes('2')) {
                   response.$vaccineClass = 'vaccine-no'
+                } else if (response.vaccineAvailabilityForTeachersCode.includes('5')) {
+                  response.$vaccineClass = 'vaccine-limited-supply-and-prioritized'
+                } else if (response.vaccineAvailabilityForTeachersCode.includes('6')) {
+                  response.$vaccineClass = 'vaccine-prioritized-but-now-all-adults-are-eligible'
+                } else if (response.vaccineAvailabilityForTeachersCode.includes('7')) {
+                  response.$vaccineClass = 'vaccine-not-prioritized-but-now-all-adults-are-eligible'
                 } else if (response.vaccineAvailabilityForTeachersCode.includes('4')) {
                   response.$vaccineClass = 'vaccine-unknown'
                 }
@@ -368,8 +389,8 @@ title: "Maps"
         },
         renderVaccineStatusMap () {
           // clear any map classes which may have been applied
-          document.querySelectorAll('#svg-vaccine-map .vaccine-yes, #svg-vaccine-map .vaccine-no')
-            .forEach((element) => { element.classList.remove('vaccine-yes', 'vaccine-no') })
+          document.querySelectorAll('#svg-vaccine-map .vaccine-yes, #svg-vaccine-map .vaccine-no, #svg-vaccine-map .vaccine-limited-supply-and-prioritized, #svg-vaccine-map .vaccine-prioritized-but-now-all-adults-are-eligible, #svg-vaccine-map .vaccine-not-prioritized-but-now-all-adults-are-eligible')
+            .forEach((element) => { element.classList.remove('vaccine-yes', 'vaccine-no', 'vaccine-limited-supply-and-prioritized', 'vaccine-prioritized-but-now-all-adults-are-eligible', 'vaccine-not-prioritized-but-now-all-adults-are-eligible') })
 
           // iterate through the currently displayed countries and apply the appropriate style to the map
           for (const country of this.displayedCountries) {
