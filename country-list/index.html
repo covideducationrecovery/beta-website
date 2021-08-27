@@ -49,7 +49,7 @@ libraries:
         <span v-if="data.item.$displayedResponse.vaccineAvailabilityForTeachersCode?.includes('2') || data.item.$displayedResponse.vaccineAvailabilityForTeachersCode?.includes('7')" class="badge bg-danger" tippy="Teachers were or are not prioritized"><i class="fas fa-tasks"></i></span>
         <span v-if="data.item.$displayedResponse.vaccineAvailabilityForTeachersCode?.includes('1') || data.item.$displayedResponse.vaccineAvailabilityForTeachersCode?.includes('5') || data.item.$displayedResponse.vaccineAvailabilityForTeachersCode?.includes('6')" class="badge bg-success" tippy="Teachers were or are prioritized"><i class="fas fa-tasks"></i></span>
         <span v-if="data.item.$displayedResponse.vaccineAvailabilityForTeachersCode?.includes('1') || data.item.$displayedResponse.vaccineAvailabilityForTeachersCode?.includes('2') || data.item.$displayedResponse.vaccineAvailabilityForTeachersCode?.includes('5')" class="badge bg-warning" tippy="Vaccine supply is limited to prioritized groups"><i class="fas fa-infinity"></i></span>
-        <span v-if="data.item.$displayedResponse.vaccineAvailabilityForTeachersCode?.includes('6') || data.item.$displayedResponse.vaccineAvailabilityForTeachersCode?.includes('7')" class="badge bg-success" tippy="Vaccine supply is not limited"><i class="fas fa-infinity"></i></span>
+        <span v-if="data.item.$displayedResponse.vaccineAvailabilityForTeachersCode?.includes('6') || data.item.$displayedResponse.vaccineAvailabilityForTeachersCode?.includes('7')" class="badge bg-success" tippy="Vaccine supply is not limited and eligibility is open to all authorized individuals"><i class="fas fa-infinity"></i></span>
       </template>
 
       <template #cell(inPersonSupports)="data">
