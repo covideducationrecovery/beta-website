@@ -126,7 +126,12 @@
       [v-cloak], .hidden {display: none;}
       {% endif %}
 
+      {% if page.libraries contains 'worldmapcss' %}
+      {% include /worldmap.css %}
+      {% endif %}
+
       {% if page.style %}
       {{ page.style }}
       {% endif %}
+
     </style>
