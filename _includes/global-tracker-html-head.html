@@ -18,28 +18,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    {% if site.safe == true %}
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
-    <link href="/css/all.min.css" rel="stylesheet">
-      {% if page.libraries contains 'bootstrapvue' %}
-    <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
-      {% endif %}
-      {% if page.libraries contains 'vuejs' %}
-    <script src="/js/vue.min.js" type="text/javascript"></script>
-      {% endif %}
-      {% if page.libraries contains 'bootstrapvue' %}
-    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
-    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
-      {% endif %}
-      {% if page.libraries contains 'd3js' %}
-    <script src="/js/d3.min.js" type="text/javascript"></script>
-      {% endif %}
-      {% if page.libraries contains 'tippy' %}
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-      {% endif %}  
-    {% else %}
+    {% if site.url contains 'beta' or site.url contains 'localhost' %}
     <script src="/js/bootstrap.bundle.js" type="text/javascript"></script>
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link href="/css/all.css" rel="stylesheet">
@@ -50,11 +29,32 @@
     <script src="/js/vue.js" type="text/javascript"></script>
       {% endif %}
       {% if page.libraries contains 'bootstrapvue' %}
-    <link type="text/css" rel="stylesheet" href="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
-    <script src="//unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap-vue.min.css" />
+    <script src="/js/bootstrap-vue.js"></script>
       {% endif %}
       {% if page.libraries contains 'd3js' %}
     <script src="/js/d3.js" type="text/javascript"></script>
+      {% endif %}
+      {% if page.libraries contains 'tippy' %}
+    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+      {% endif %}  
+    {% else %}
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <link href="/css/all.min.css" rel="stylesheet">
+      {% if page.libraries contains 'bootstrapvue' %}
+    <script src="//polyfill.io/v3/polyfill.min.js?features=es2015%2CIntersectionObserver" crossorigin="anonymous"></script>
+      {% endif %}
+      {% if page.libraries contains 'vuejs' %}
+    <script src="/js/vue.min.js" type="text/javascript"></script>
+      {% endif %}
+      {% if page.libraries contains 'bootstrapvue' %}
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap-vue.min.css" />
+    <script src="/js/bootstrap-vue.min.js"></script>
+      {% endif %}
+      {% if page.libraries contains 'd3js' %}
+    <script src="/js/d3.min.js" type="text/javascript"></script>
       {% endif %}
       {% if page.libraries contains 'tippy' %}
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
@@ -122,9 +122,7 @@
       [marked] {background-color: green !important;}
       .table-header-sticky {position: sticky; top: 0; background-color: #FFFFFF !important; box-shadow: 0 5px 5px -5px #00000040 !important;}
 
-      {% if page.libraries contains 'vuejs' %}
-      [v-cloak], .hidden {display: none;}
-      {% endif %}
+      .hidden, [v-cloak] {display: none;}
 
       {% if page.libraries contains 'worldmapcss' %}
       {% include /worldmap.css %}
