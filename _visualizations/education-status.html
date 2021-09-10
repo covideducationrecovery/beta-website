@@ -1,10 +1,13 @@
 ---
 layout: default
+permalink: /maps/education-status/
+type: map
 libraries:
  - vuejs
  - tippy
  - worldmapcss
-title: "Maps"
+title: "School status / education modality"
+description: "This map displays educational modalities at the country level as of last survey response."
 style: |
   svg {fill: #DDDDDD;}
   {% include /worldmap.css %}
@@ -29,17 +32,22 @@ style: |
     </div>  
   </template>
   <template v-else>
-    <h1>Maps</h1>
-    <div class="row text-center my-3">
-      <h2>School Status / Education Modality</h2>
-      <p>How is education being provided in each country?</p>
+    <h1>{{ page.title }}</h1>
+    <div class="my-3 d-flex flex-column">
+      <span>
+        This map displays educational modalities at the country level as of last survey response.
+        (<a href="#notes">see notes below</a>)      
+      </span>
+    </div>
+
+    <div class="row my-3">
       <div class="alert alert-success d-flex flex-column align-items-start">
         <label for="response-rounds-range2">Showing most recent response up to ${ mostRecentFilteredResponseDate }</label>
         <div class="d-flex flex-row justify-content-between w-100 text-start mt-2">
           <span class="mr-3" style="width: 8em">Change date</span>
           <input id="response-rounds-range2" type="range" class="custom-range w-100" :min="responseRoundsRange.min" :max="responseRoundsRange.max" v-model="filter_upToRoundId" class="w-50 mx-auto form-range">
         </div>
-        <div class="d-flex flex-row w-100 text-start mt-2">
+        <div class="d-flex flex-row align-items-center w-100 text-start mt-2">
           <span class="me-3">Select a grade level</span>
           <select class="px-2" v-model="selectedEducationStatusField">
             <option v-for="gradeLevelChoice of educationStatusGradeLevelChoices" v-bind:value="gradeLevelChoice.value">${gradeLevelChoice.label}</option>
@@ -52,7 +60,6 @@ style: |
         {% include worldmap-no-titles.svg %}
       </div>
       <div class="my-3">
-        This map displays educational modalities at the country level as of last survey response. Grade level information is only available for countries updated after April 20, 2021.
       </div>
       <div class="map-key w-100">
         <table class="table">
@@ -98,7 +105,8 @@ style: |
     <div class="row">
       <h2 id="notes" class="text-muted">Notes about this data</h2>
       <p>
-        TK
+        From the start of data collection until 19 April, 2021, we did not collect grade-level information; our responses represented Primary, Lower Secondary, and Upper Secondary grade-levels. On 20 April, 2021, we began collecting this information at grade-levels.
+        To maintain compatibility with the earlier data which did not have grade-levels, the default selection on this map shows "Primary, Lower Secondary, and Upper Secondary" grade levels. For responses after 20 April, 2021, we synthesize this information by merging those three grade-level responses together.
       </p>
     </div>
 

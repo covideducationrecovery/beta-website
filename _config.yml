@@ -7,6 +7,12 @@ safe: false
 
 timezone: America/New_York
 
+plugins:
+ - jekyll-redirect-from
+
+redirect_from:
+  json: false
+
 url: https://beta.covideducationrecovery.global
 baseurl: /
 
@@ -30,8 +36,10 @@ defaults:
      
 
 collections:
-  - faqs
-  - news
+  visualizations:
+    output: true
+  faqs:
+  news:
 
 # Build settings
 markdown: kramdown
