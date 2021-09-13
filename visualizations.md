@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Visualizations of the global education recovery
-permalink: /visualizations
+permalink: /visualizations/
 redirect_from:
   - /maps
   - /graphs

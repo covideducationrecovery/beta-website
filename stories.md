@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Stories and insights
-permalink: /stories
+permalink: /stories/
 ---
 <div class="spacer-5"></div>
 <div class="container">
