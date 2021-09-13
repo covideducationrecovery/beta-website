@@ -1,5 +1,11 @@
 ---
 layout: default
+permalink: /tables/global-summary
+redirect_from: /country-list
+type: table
+title: Global summary
+description: Our table of countries lists all the countries we track, along with the most recent summary status information.
+image: /img/visualizations/global-summary.jpg
 libraries:
   - vuejs
   - bootstrapvue
@@ -17,8 +23,8 @@ libraries:
   </template>
   <template v-else>
     <div class="d-flex flex-row justify-content-between align-items-center">
-      <h1>Country Details</h1>
-      <span>Latest Update: ${ mostRecentResponseDate }</span>
+      <h1>{{ page.title }}</h1>
+      <span>Latest update: ${ mostRecentResponseDate }</span>
       <a class="btn btn-outline-primary" href="/data/"><i class="fas fa-file-download"></i> Get This Data</a>
     </div>
     <div>
@@ -160,6 +166,7 @@ const $vm = new Vue({
     }
   },
   updated () {
+    console.log('updated')
     tippy('[tippy]', {
       placement: 'top',
       onShow(instance) {

@@ -49,9 +49,7 @@ style: |
           <div class="carousel-caption text-dark bg-light">
             <h2>COVID-19 Global Education Recovery Tracker </h2>
             <p><i>Monitoring the impact of the COVID-19 pandemic on response and recovery for students across the globe</i></p>
-            <a class="btn btn-primary my-1 mx-1" href="/maps">Maps</a> 
-            <a class="btn btn-primary my-1 mx-1" href="/graphs">Graphs</a>
-            <a class="btn btn-primary my-1 mx-1" href="/country-list">Data</a>
+            <a class="btn btn-primary my-1 mx-1" href="/visualizations">Maps, Graphs, and Tables</a> 
             <a class="btn btn-primary my-1 mx-1" href="/methodology">Methodology</a>
           </div>
         </div>
