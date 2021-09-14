@@ -4,7 +4,7 @@ permalink: /tables/global-summary/
 redirect_from: /country-list/
 type: table
 title: Global summary
-description: Our table of countries lists all the countries we track, along with the most recent summary status information.
+description: Our table of countries lists all the countries/territories we track, along with the most recent summary status information.
 image: /img/visualizations/global-summary.jpg
 libraries:
   - vuejs
@@ -28,7 +28,7 @@ libraries:
       <a class="btn btn-outline-primary" href="/data/"><i class="fas fa-file-download"></i> Get This Data</a>
     </div>
     <div>
-      Showing ${ displayedCountries.length } ${ displayedCountries.length === 1 ? 'country' : 'countries' }
+      Showing ${ displayedCountries.length } ${ displayedCountries.length === 1 ? 'country / territory' : 'countries / territories' }
     </div>
     <b-table
       :fields="displayedColumns"
