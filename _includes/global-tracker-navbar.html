@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FF9100;">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
     <a class="navbar-brand" href="/">
       <svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 250 50" style="enable-background:new 0 0 250 50;" xml:space="preserve">
@@ -130,15 +130,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav w-100 ms-5 mb-2 mb-lg-0 justify-content-between">
-        {% if site.url contains 'beta' or site.url contains 'localhost' %}
+        
         <li class="nav-item">
-          <a class="btn btn-warning">Subscribe / Contact</a>
-        </li>
-        {% else %}
-        <li class="nav-item">
-          <a class="btn btn-outline-primary" href="/contact">Subscribe / Contact</a>
-        </li>
-        {% endif %}
+          <a class="btn {% if site.url contains 'beta' or site.url contains 'localhost' %}btn-warning{% else %}btn-outline-primary{% endif %}" href="/contact/">Subscribe / Contact</a>
+        </li>        
         <li class="nav-item">
           <a class="nav-link" href="/stories/">Stories</a>
         </li>
