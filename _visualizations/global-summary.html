@@ -37,6 +37,8 @@ libraries:
       responsive
       small
       :sort-by="'name'"
+      @sort-changed="sortChanged"
+      primary-key="__id"
     >
       <template #cell(countryName)="data">
         <a :href="data.item.href">${ data.value }</a>
@@ -166,22 +168,7 @@ const $vm = new Vue({
     }
   },
   updated () {
-    console.log('updated')
-    tippy('[tippy]', {
-      placement: 'top',
-      onShow(instance) {
-        instance.setContent(instance.reference.getAttribute('tippy'));
-      }
-    });
-    tippy('[show-popout]', {
-      placement: 'bottom',
-      allowHTML: true,
-      interactive: true,
-      onShow(instance) {
-        const clone = (instance.reference.nextElementSibling.innerHTML);
-        instance.setContent('<table>' + clone + '</table>');
-      }
-    });
+    this.bindTippy()
   },
   computed: {
     // access this computed property to render the data, it applies the rules set by this.filter
@@ -215,6 +202,26 @@ const $vm = new Vue({
     }
   },
   methods: {
+    bindTippy () {
+      // bind tippy to the elements that need it, but wait until vue rendering is complete
+      this.$nextTick(() => {
+        tippy('[tippy]', {
+          placement: 'top',
+          onShow(instance) {
+            instance.setContent(instance.reference.getAttribute('tippy'));
+          }
+        });
+        tippy('[show-popout]', {
+          placement: 'bottom',
+          allowHTML: true,
+          interactive: true,
+          onShow(instance) {
+            const clone = (instance.reference.nextElementSibling.innerHTML);
+            instance.setContent('<table>' + clone + '</table>');
+          }
+        });
+      })
+    },
     // pre-process the data to improve page rendering performance
     processCountries (countries) {
       for (const country of countries) {
@@ -254,6 +261,10 @@ const $vm = new Vue({
 
       }
       return countries
+    },
+    sortChanged (ctx) {
+      // rebind tippy popovers, because <b-table> sorting doesn't preserve 
+      this.bindTippy()
     }
   }
 })
