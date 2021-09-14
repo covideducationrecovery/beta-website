@@ -3,8 +3,8 @@ layout: default
 title: Visualizations of the global education recovery
 permalink: /visualizations/
 redirect_from:
-  - /maps
-  - /graphs
+  - /maps/
+  - /graphs/
 style: |
   .card::hover {
     background-color: #00000080;
