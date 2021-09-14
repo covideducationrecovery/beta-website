@@ -109,7 +109,7 @@
 
       nav {min-height: 80px; font-family: FuturaPTWebDemi; font-size: 90%;}
       {% if site.url contains 'beta' or site.url contains 'localhost' %}
-      nav {background-color: #FF9100;}
+      nav {background-color: #FF9100 !important;}
       nav .container:before {
         transform: rotate(315deg);
         content: "BETA";
@@ -118,6 +118,8 @@
         transform: rotate(315deg);
         content: "BETA";
       }
+      {% else %}
+      nav { background-color: var(--bs-light); }
       {% endif %}
       nav svg {width: 250px; height: 50px;}
 
