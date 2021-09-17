@@ -20,10 +20,10 @@ description: These files contain the data we present on this web site in raw for
       <p>
         To cite this work, use the following:
       </p>  
-      <blockquote class="bg-light">Johns Hopkins University, World Bank & UNICEF (2021). COVID-19 Global Education Recovery Tracker. Baltimore, Washington DC, New York: JHU, World Bank, UNICEF.</blockquote> 
+      <blockquote class="bg-white rounded p-1">Johns Hopkins University, World Bank & UNICEF (2021). COVID-19 Global Education Recovery Tracker. Baltimore, Washington DC, New York: JHU, World Bank, UNICEF.</blockquote> 
       </div>
   </div>
-  <div class="row bg-light rounded mt-3">
+  <div class="row bg-light rounded mt-3 p-2">
     <h2 id="version1">Version 1 Files</h2>
     <p>Version 1 files provide only the most recent information for each country / territory.</p>
     <div class="alert alert-warning">
@@ -46,7 +46,7 @@ description: These files contain the data we present on this web site in raw for
       <a class="btn btn-outline-primary" download href="/data/global.json"><i class="fas fa-file-code"></i> JSON</a>
     </div>
   </div>
-  <div class="row bg-light rounded mt-3">
+  <div class="row bg-light rounded mt-3 p-2">
     <h2 id="version2">Version 2 Files</h2>
     <p>Version 2 files provide the full history of responses for each country/territory.</p>
     <div class="d-flex flex-row row-nowrap justify-content-between align-items-center py-3 border-bottom">
