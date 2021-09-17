@@ -19,8 +19,8 @@ style: |
   <div class="row justify-content-center">
     <h1>Visualizations</h1>
     <p>Our interactive visualizations are updated with the latest information submitted to GERT.</p>
-
-    {% for viz in site.visualizations %}
+`;  {% assign vizzes = site.visualizations | sort: 'order' %}
+    {% for viz in vizzes %}
     <div class="col-sm-12 col-lg-6 p-2 d-flex align-items-stretch">
       <div class="card bg-light">
         <h5 class="card-header bg-light mt-2">
@@ -36,7 +36,7 @@ style: |
         <img src="{{ viz.image }}" class="card-img-top p-2" alt="{{ viz.title }}">
         <div class="card-body">
           <p class="card-text">{{ viz.description }}</p>
-          <div class="mt-auto">
+          <div>
             <a href="{{ viz.permalink }}" class="btn btn-primary stretched-link mt-auto">View</a>
           </div>
         </div>
