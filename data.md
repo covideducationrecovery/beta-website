@@ -1,6 +1,8 @@
 ---
 layout: default
+permalink: /data/
 libraries:
+ - fontawesome
 title: Download our data
 description: These files contain the data we present on this web site in raw formats suitable for re-use.
 ---
