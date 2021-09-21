@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Disparities in access and equity are making inclusive education systems very challenging, making them necessary now more than ever"
+title: "Inclusive Education Needed as Equity Disparities Increase"
 description: "The use of technology is becoming a hallmark of education services in the inter and post COVID era, though they offer they offer fewer opportunities for engagement between students and teachers. Those who can have also introduced or expanded supplemental learning opportunities, but  uneven trends in recovery efforts, coupled with continued pandemic disruptions, are having uneven impact."
-thumbnail: "/stories/2021-09-20-inclusive-education-systems-needed-more-than-ever/img/amol-sonar-FOLReFbwgLI-unsplash.jpg"
+thumbnail: "/stories/2021-09-21-inclusive-education-needed-as-equity-disparities-increase/img/amol-sonar-FOLReFbwgLI-unsplash.jpg"
 ---
 
 <div class="spacer-5"></div>
