@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Inclusive Education Needed as Equity Disparities Increase"
-description: "The use of technology is becoming a hallmark of education services in the inter and post COVID era, though they offer they offer fewer opportunities for engagement between students and teachers. Those who can have also introduced or expanded supplemental learning opportunities, but  uneven trends in recovery efforts, coupled with continued pandemic disruptions, are having uneven impact."
+description: "The use of technology is becoming a hallmark of education services in the inter and post COVID era, though they offer fewer opportunities for engagement between students and teachers. Those who can have also introduced or expanded supplemental learning opportunities, but  uneven trends in recovery efforts, coupled with continued pandemic disruptions, are having uneven impact."
 thumbnail: "/stories/2021-09-21-inclusive-education-needed-as-equity-disparities-increase/img/amol-sonar-FOLReFbwgLI-unsplash.jpg"
 ---
 
@@ -11,6 +11,13 @@ thumbnail: "/stories/2021-09-21-inclusive-education-needed-as-equity-disparities
   <div class="row">
     <h2>{{ page.title }}</h2>
     <h4 class="text-muted">{{ page.description }}</h4>
+  </div>
+
+  <div class="row my-4">
+    <ul class="list-unstyled">
+      <li>Johns Hopkins University: Annette Campbell Anderson, Azka Tariq</li>
+      <li>World Bank: Kaliope Azzi-Huck, Aarya Shinde</li>
+    </ul>
   </div>
 
   <div class="row my-3">
