@@ -16,7 +16,7 @@ thumbnail: "/stories/2021-09-21-inclusive-education-needed-as-equity-disparities
   <div class="row my-4">
     <ul class="list-unstyled">
       <li>Johns Hopkins University: Annette Campbell Anderson, Azka Tariq</li>
-      <li>World Bank: Kaliope Azzi-Huck, Aarya Shinde</li>
+      <li>World Bank: Kaliope Azzi-Huck, Maria Barron, Aarya Shinde, Tigran Shmis</li>
     </ul>
   </div>
 
