@@ -19,6 +19,7 @@ const countryFieldsForExport = [
     'wbRegionCode',
     'wbIncomeLevelCode',
     'wbIncomeLevelName',
+    'wbPopulation2019',
     'owidHasVaccine'
 ]
 
