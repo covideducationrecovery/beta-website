@@ -1,0 +1,1013 @@
+---
+layout: default
+order: 3
+title: "In-person education status & COVID-19 case rates"
+description: "Select a country to view detailed statistics about it, including education and population metrics, coronavirus cases, deaths, and vaccinations, and more."
+image: /img/visualizations/in-person-status.jpg
+permalink: /graphs/in-person-status/
+libraries:
+ - fontawesome
+ - vuejs
+ - bootstrap
+ - tippy
+ - d3js
+style: |
+  .progress { height: 3em }
+  .bg-male { background-color: #0C619D; flex-direction: row; align-items: center }
+  .bg-female { background-color: #AA5986; flex-direction: row; align-items: center }
+
+  .loading-spinner {animation: infinite-rotate 2s linear infinite;}
+
+  @keyframes infinite-rotate {
+    from { transform: rotate(0deg) }
+    to { transform: rotate(360deg) }
+  }
+
+---
+<div class="spacer-5"></div>
+
+<div id="vue-app" class="container" v-cloak>
+  <template v-if="errorMessage">
+    <div class="w-100 d-flex flex-column justify-content-center align-items-start">
+      <h4>We encountered an error while loading this page.</h4>
+      <span class="text-muted">${ errorMessage }</span>
+    </div>
+  </template>
+  <template v-else-if="countries.length > 0">
+    <h2>{{ page.title }}</h2>
+    <div class="row">
+        <div class="flex-fill my-2 mx-2">
+          <div class="form-floating">
+            <select class="form-select" id="region-select" v-model="selectedRegion">
+              <option v-for="region in displayedRegions" :value="region">${ region.label }</option>
+            </select>
+            <label for="region-select">Select a region</label>
+          </div>
+        </div>
+        <div class="flex-fill my-2 mx-2">
+          <div class="form-floating">
+            <select class="form-select" id="country-select" v-model="selectedCountry">
+              <option v-for="country in displayedCountries" :value="country">${ country.countryName }</option>
+            </select>
+            <label for="country-select">Select a country / territory</label>
+          </div>  
+        </div>
+        {% if site.url contains 'beta' or site.url contains 'localhost' %}
+        <div class="alert alert-warning flex-fill my-2 mx-2">
+          <h4>Quick-jump to country</h4>
+          <p class="lead text-muted">(This will not be visible on the live site)</p>
+          <a @click="jumpToCountry(79)" href="#">Greenland</a> |
+          <a @click="jumpToCountry(94)" href="#">Iran</a> |
+          <a @click="jumpToCountry(211)" href="#">United States</a>
+        </div>
+        {% endif %}
+    </div>
+    <div class="row">
+      <svg id="chart" xmlns="http://www.w3.org/2000/svg" version="1.1"></svg>
+      <svg height="10" width="10" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      </svg> 
+    </div>
+    <div class="row mt-5">
+      <h2>About this graph</h2>
+      <p>
+        The GERT survey asks respondents to indicate in-person learning by percentage ranges. Dates in this graph are approximate. GERT collects data in two-week rounds (with a few being slightly shorter or longer). Information about a country can arrive at any point within the round. When we display values by date on these graphs, we draw them beginning at the end date of the round, and they remain in effect until the subsequent round's end date.
+      <p>
+        For graphing purposes we plot the midpoint of the respondent's range selection:
+      </p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Survey response</th>
+            <th scope="col">Graphed value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">90-100%</td>
+            <td>~95%</td>
+          </tr>
+          <tr>
+            <td scope="row">50-90%</td>
+            <td>~70%</td>
+          </tr>
+          <tr>
+            <td scope="row">10-50%</td>
+            <td>~30%</td>
+          </tr>
+          <tr>
+            <td scope="row">0-10%</td>
+            <td>~5%</td>
+          </tr>
+          <tr>
+            <td scope="row">Unknown</td>
+            <td>Not graphed</td>
+          </tr>
+          <tr>
+            <td scope="row">Not applicable</td>
+            <td>Not graphed</td>
+          </tr>
+        </tbody>
+      </table>
+      <h2>Additional data sources</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series">JHU CSSE COVID-19 Time Series</a>
+        </li>
+        <li>
+          <a href="https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/UID_ISO_FIPS_LookUp_Table.csv">JHU CSSE Lookup Table</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container">
+      To cite this work, use the following: Johns Hopkins University, World Bank & UNICEF (2021). COVID-19 Global
+      Education Recovery Tracker. Baltimore, Washington DC, New York: JHU, World Bank, UNICEF.
+    </div>
+    <div class="spacer-10"></div>
+
+    {% if site.url contains 'beta' or site.url contains 'localhost' %}
+    <div class="row mt-5">
+      <div class="alert alert-warning">
+        <h4 class="alert-heading">Debug information</h4>
+        <p class="lead text-muted">(This information will not appear on the live site)</p>
+        <hr />
+        <p>
+          <code>
+            <h2>svgProperties</h2>
+            ${ svgProperties }
+          </code>
+          <hr />
+          <code>
+            <h2>displayedCountryGraphData</h2>
+            ${ displayedCountryGraphData }
+          </code>
+        </p>
+      </div>
+    </div>
+    {% endif %}
+
+  </template>
+  <template v-else>
+    <h2>Loading <span class="loading-spinner"><i class="fas fa-spinner loading-spinner"></i></span></h2>
+  </template>
+</div>
+
+<div class="spacer-10"></div>
+
+<script>
+const vm = new Vue({
+  el: '#vue-app',
+  data() {
+    return {
+      countries: [],
+      covidDataCountryCodes: [],
+      covidDataTimeSeries: [],
+      covidLastUpdated: undefined,
+      errorMessage: undefined,
+      // this structure defines the various grade levels and the variable names for the fields which are broken out by grade level
+      // if a variable doesn't include a grade level, it is left undefined (e.g. in-person academic supports [ipasKey] isn't collected for higher or vocational)
+      gradeLevelList: [
+        { label: 'Pre-Primary', mresKey: 'educationStatusPrePrimaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportPrePrimary', mrremKey: 'mostRecentRemoteEducationModalitiesPrePrimaryCode' },
+        { label: 'Primary', mresKey: 'educationStatusPrimaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportPrimary', mrremKey: 'mostRecentRemoteEducationModalitiesPrimaryCode' },
+        { label: 'Lower Secondary', mresKey: 'educationStatusLowerSecondaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportLowerSecondary', mrremKey: 'mostRecentRemoteEducationModalitiesLowerSecondaryCode' },
+        { label: 'Upper Secondary', mresKey: 'educationStatusUpperSecondaryCode', ipasKey: 'mostRecentInPersonAdditionalSupportUpperSecondary', mrremKey: 'mostRecentRemoteEducationModalitiesUpperSecondaryCode' },
+        { label: 'Higher Education', mresKey: 'educationStatusHigherCode', ipasKey: undefined, mrremKey: 'mostRecentRemoteEducationModalitiesHigherCode' },
+        { label: 'Technical/vocational', mresKey: 'educationStatusVocationalCode', ipasKey: undefined, mrremKey: 'mostRecentRemoteEducationModalitiesVocationalCode' }
+      ],
+      regions: [
+        { id: 'global', label: 'All', countries: [] }
+      ],
+      responseRounds: [],
+      selectedCountry: undefined,
+      selectedRegion: undefined,
+      svgSettings: {
+        width: 1920,
+        height: 900,
+        initialized: false,
+        topGraph: { x1: 200, y1: 75, x2: 1820, y2: 350, 
+          background: { group: 'top-graph-background', fill: '#F8F8F8' }
+        },
+        bottomGraph: { x1: 200, y1: 410, x2: 1820, y2: 735,
+          background: {group: 'bottom-graph-background', fill: '#F8F8F8' }
+        },
+        covidDailyCasesDomain: [0.001, 0],
+        strokeWidth: '10px',
+        educationStatusValues: [
+          { id: 0, color: '#DDFF00', predictedColor: 'url(#diagonal-stripe-4) #DDFF00A0', label: 'Extended Break', rowIndex: 1 },
+          { id: 1, color: '#C7A7FF', predictedColor: 'url(#diagonal-stripe-4) #C7A7FFA0', label: 'COVID Closure', rowIndex: 0 },
+          { id: 2, color: '#4FFFCD', predictedColor: 'url(#diagonal-stripe-4) #4FFFCDA0', label: 'Remote', rowIndex: 2 },
+          { id: 3, color: '#26B1FF', predictedColor: 'url(#diagonal-stripe-4) #26B1FFA0', label: 'Hybrid', rowIndex: 3 },
+          { id: 4, color: '#1A49BF', predictedColor: 'url(#diagonal-stripe-4) #1A49BFA0', label: 'In-person', rowIndex: 4 },
+          { id: 5, color: '#00000010', predictedColor: 'url(#diagonal-stripe-4) #00000010', label: 'Unknown/NA' }
+        ],
+        gradeLevelColors: {
+          prePrimary: { color: 'red', predictedColor: '#FF0000A0' },
+          primary: { color: 'orange', predictedColor: '#FFA500A0' },
+          lowerSecondary: { color: 'yellow', predictedColor: '#FFFF00A0' },
+          upperSecondary: { color: 'green', predictedColor: '#00FF00A0' },
+          higher: { color: 'blue', predictedColor: '#0000FFA0' },
+          vocational: { color: 'purple', predictedColor: '#800080A0' }
+        },
+        inPersonCoverageResponseValues: {
+          '1': { label: '91-100%', graphValue: 0.95 },
+          '2': { label: '51-90%', graphValue: 0.70 },
+          '3': { label: '11-50%', graphValue: 0.30 },
+          '4': { label: '0-10%', graphValue: 0.5 },
+          '5': { label: 'Not applicable'},
+          '6': { label: 'Unknown'},
+        },
+        graphBackgroundValues: [
+          { label: 'Total cases (actual)', key: 'totalCases', formatCode: '~s' },
+          { label: 'Total cases (7-day moving average)', key: 'rollingTotalCases', formatCode: '~s' },
+          { label: 'Total cases per capita (actual)', key: 'totalCasesPerCapita', formatCode: '~%' },
+          { label: 'Total cases per capita (7-day moving average)', key: 'rollingTotalCasesPerCapita', formatCode: '~%' },
+          { label: 'Daily new cases (actual)', key: 'newCases', formatCode: '~s' },
+          { label: 'Daily new cases (7-day moving average)', key: 'rollingNewCases', formatCode: '~s' },
+          { label: 'Daily new cases per capita (actual)', key: 'newCasesPerCapita', formatCode: '~%' },
+          { label: 'Daily new cases per capita (7-day moving average)', key: 'rollingNewCasesPerCapita', formatCode: '~%' }
+        ]
+      },
+      urls: {
+        covidDataCountryCodes: 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/UID_ISO_FIPS_LookUp_Table.csv',
+        covidDataTimeSeries: 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv',
+        global: '/data/global.v2.min.json'
+      }
+    }
+  },
+  delimiters: ['${', '}'],  // need to use these because jekyll competes for {{ and }}
+  filters: {
+    iso8601ToLocaleDateString: (value) => {
+      if (value) {
+        return (new Date(value)).toLocaleDateString(undefined, { timeZone: 'UTC' });
+      } else {
+        return null
+      }
+    },
+    friendlyDate: function (value) {
+      try {
+        date = new Date.parse(value)
+        return date
+          .setHours(0)
+          .setMinutes(0)
+          .setSeconds(0)
+          .setMilliseconds(0)
+          .toLocaleString()
+      } catch {
+        return 'unknown'
+      }
+    },
+    friendlyNumber: function (value) {
+      try {
+        return value.toLocaleString()
+      } catch (err) {
+        return 'unknown'
+      }
+    }
+  },
+  async mounted() {
+    const startTime = Date.now()
+    // newer, slicker data loading
+    const downloadedData = await Promise.allSettled([
+      await fetch(this.urls.global)
+        .then((response) => { if (response.ok) { return response.json() } })
+        .catch(err => console.error(err)),
+      await d3.csv(this.urls.covidDataCountryCodes)
+        .catch(err => console.warn('non-fatal error loading country lookup table \n', err)),
+      await d3.csv(this.urls.covidDataTimeSeries)
+        .catch(err => console.warn('non-fatal error loading covid timeseries data \n', err)),
+    ]).then(([globalDataResponse, covidDataCountryCodes, covidDataTimeSeries]) => {
+      return {
+        global: globalDataResponse.value,
+        covidDataCountryCodes: covidDataCountryCodes.value,
+        covidDataTimeSeries: covidDataTimeSeries.value
+      }
+    })
+
+    console.log(downloadedData)
+    console.log(`data loaded in ${Date.now() - startTime} ms`)
+
+    if (!downloadedData.global) {
+      // if we don't have the core data, we can't do anything
+      this.errorMessage = 'Error loading core data'
+    } else {
+      // otherwise, process the data sources (including non-core data if available)
+
+      // by pushing the data instead of replacing the arrays, vue will correctly bind reactivity
+      this.responseRounds.push(...downloadedData.global.responseRounds)
+      console.log(`loaded ${this.responseRounds.length} response rounds at ${Date.now() - startTime} ms`)
+      this.countries.push(...this.processCountries(downloadedData.global.countries))
+      console.log(`loaded ${this.countries.length} countries at ${Date.now() - startTime} ms`)
+      this.regions[0].countries.push(...this.countries)
+      console.log(`loaded ${this.regions[0].countries.length} countries into region 0 at ${Date.now() - startTime} ms`)
+      this.regions.push(...this.processRegions(downloadedData.global.countries))
+      console.log(`loaded ${this.regions.length} regions at ${Date.now() - startTime} ms`)
+
+      if (downloadedData.covidDataCountryCodes) {
+        this.covidDataCountryCodes.push(...downloadedData.covidDataCountryCodes)
+        console.log(`loaded ${this.covidDataCountryCodes.length} covid data country codes at ${Date.now() - startTime} ms`)
+      }
+
+      if (downloadedData.covidDataTimeSeries) {
+        this.covidDataTimeSeries.push(...downloadedData.covidDataTimeSeries)
+        console.log(`loaded ${this.covidDataTimeSeries.length} covid data time series at ${Date.now() - startTime} ms`)
+      }
+    }
+
+    this.selectedRegion = this.regions[0]
+    this.selectedCountry = this.countries[211]
+
+    console.log(`mounted in ${Date.now() - startTime} ms`)
+  },
+  updated() {
+    const startTime = Date.now()
+
+    if (!this.svgSettings.initialized) {
+      this.initializeGraph()
+      this.svgSettings.initialized = true
+    }
+    this.updateGraph()
+
+    // tippy needs to initialize after DOM is rendered. Normally this would be mounted() but
+    // since data is loaded asynchronously, mounted() will be called before the data has been loaded.
+    // tippy('[popover]', {
+    //   placement: 'top',
+    //   maxWidth: 350,
+    //   allowHTML: true,
+    //   onShow(instance) {
+    //     instance.setContent(instance.reference.attributes.popover.value);
+    //   }
+    // })
+
+    console.log(`updated in ${Date.now() - startTime} ms`)
+  },
+  computed: {
+    // access this computed property to render the data, it applies the rules set by this.filter
+    displayedCountries() {
+      return this.selectedRegion.countries
+    },
+    displayedCountryGraphData() {
+      const startTime = Date.now()
+      const displayedCountryGraphData = this.selectedCountry
+        ? { 
+          covidCasesPath: this.getCovidCasesPath(this.selectedCountryDailyRollingNewCases, this.svgProperties.bottomGraph),
+          inPersonPercentagePoints: [],
+          inPersonPercentageLines: this.getInPersonPercentageLines(this.displayedResponseRoundsWithResponses, this.svgProperties.bottomGraph),
+          educationStatusRectangles: this.getEducationStatusRectangles(this.displayedResponseRoundsWithResponses, this.svgProperties.educationStatusValues, this.svgProperties.topGraph),
+        }
+        : {
+          covidCasesPath: [],
+          inPersonPercentagePoints: [],
+          inPersonPercentageLines: [],
+          educationStatusRectangles: [],
+        }
+      console.log(`computed displayedCountryGraphData in ${Date.now() - startTime} ms`)
+      return displayedCountryGraphData
+    },
+    displayedRegions() {
+      return this.regions
+    },
+    displayedResponseRounds() {
+      const startTime = Date.now()
+      const displayedResponseRounds = Array
+        .from(new Set(this.countries
+          .flatMap(c => c.responsesPublic || [])
+          .map(r => r.roundId)
+        ))
+        .map(rid => {
+          const rr = {...this.responseRounds.find(rr => rr.roundNumber === rid)}
+          rr.startDate = new Date(rr.startDate)
+          rr.endDate = new Date(rr.endDate)
+          return rr
+          // return {...this.responseRounds.find(rr => rr.roundNumber === rid)}
+        })
+        .sort((a,b) => a.roundNumber - b.roundNumber)
+      console.log(`computed displayedResponseRounds in ${Date.now() - startTime} ms`)
+      return displayedResponseRounds
+    },
+    displayedResponseRoundsWithResponses() {
+      const startTime = Date.now()
+      const displayedResponseRoundsWithResponses = this.displayedResponseRounds
+        .map(rr => {
+          const startX = this.svgProperties.topGraph.xAxis.scale(rr.startDate)
+          const endX = this.svgProperties.topGraph.xAxis.scale(d3.timeDay.offset(rr.endDate, 1))
+          const midX = startX + ((endX - startX) / 2)
+          const responses = (this.selectedCountry.responsesPublic || []).filter(rp => rp.roundId === rr.roundNumber)
+          const displayedResponse = responses.slice(-1).pop()
+          return {
+            ...rr,
+            responses,
+            isReal: !!displayedResponse,
+            displayedResponse,
+            startX,
+            midX,
+            endX,
+          }
+        })
+
+      // if there's no displayedResponse for the first round, find the first available one and use that value
+      if (displayedResponseRoundsWithResponses.length > 0) {
+        if (!displayedResponseRoundsWithResponses[0].isReal) {
+          const firstRealIndex = displayedResponseRoundsWithResponses.findIndex(d => d.isReal)
+          if (firstRealIndex > 0) {
+            displayedResponseRoundsWithResponses[0].displayedResponse = displayedResponseRoundsWithResponses[firstRealIndex].displayedResponse
+          }
+        }
+
+        // iterate through the rest of the displayedResponses and copy the previous one if the response is missing
+        if (displayedResponseRoundsWithResponses.length > 1) {
+          for (let i = 1; i < displayedResponseRoundsWithResponses.length; i++) {
+            if (!displayedResponseRoundsWithResponses[i].isReal) {
+              displayedResponseRoundsWithResponses[i].displayedResponse = displayedResponseRoundsWithResponses[i - 1].displayedResponse
+            }
+          }
+        }
+      }
+
+
+      console.log(displayedResponseRoundsWithResponses)
+      console.log(`computed displayedResponseRoundsWithResponses in ${Date.now() - startTime} ms`)
+      return displayedResponseRoundsWithResponses
+    },
+    displayedResponseRoundsRange() {
+      const startTime = Date.now()
+      const displayedResponseRoundsRange = [
+        d3.min(this.displayedResponseRounds, d => new Date(d.startDate)),
+        d3.max(this.displayedResponseRounds, d => new Date(d.endDate))
+      ]
+      console.log(`computed displayedResponseRoundsRange in ${Date.now() - startTime} ms`)
+      return displayedResponseRoundsRange
+    },
+    mostRecentResponseDate() {
+      const startTime = Date.now()
+      const mostRecentResponseDate = d3.max(this.countries
+        .flatMap(c => (c.responsesPublic || []).map(r => r.responseDate))
+      )
+      console.log(`computed mostRecentResponseDate in ${Date.now() - startTime} ms`)
+      return mostRecentResponseDate
+    },
+    selectedCountryDailyRollingNewCases ()  {
+      const startTime = Date.now()
+      // HUGE performance boost using a local copy rather than referring repeatedly to the computed property
+      const scccts = this.selectedCountryCovidCasesTimeSeries
+      try {
+        const selectedCountryPopulation = scccts.population || 1
+        const dailyCases = []
+        let previousDayTotal = 0
+        for (const propName of Object.getOwnPropertyNames(scccts)) {
+          if (propName !== 'iso3' || propName !== 'population') {
+            const currentDate = new Date(propName)
+            const last7Days = dailyCases.slice(-7)
+            const newCases = scccts[propName] - previousDayTotal
+            const rollingNewCases = Math.max(last7Days.reduce((sum, v) => sum + v.newCases, 0) / 7, 0)
+            dailyCases.push({ 
+              date: currentDate, 
+              newCases: newCases,
+              value: rollingNewCases / selectedCountryPopulation,
+              // value2: Math.max(d3.mean(dailyCases.slice(-7), d => d.value2), 0)
+            })
+            previousDayTotal = scccts[propName]
+          }
+        }
+        // return dailyCases
+        const startDate = this.displayedResponseRoundsRange[0].getTime()
+        const endDate = this.displayedResponseRoundsRange[1].getTime()
+
+        const selectedCountryDailyRollingNewCases = dailyCases.filter(d => d.date.getTime() >= startDate && d.date.getTime() <= endDate)
+
+        console.log(`computed selectedCountryDailyRollingNewCases in ${Date.now() - startTime} ms`)
+
+        return selectedCountryDailyRollingNewCases
+        // return dailyCases.filter(dc => {
+        //   const dcDate = dc.date.getTime()
+        //   return dcDate >= startDate && dcDate <= endDate
+        // })
+      } catch (err) {
+        console.error(err)
+        console.log(`selectedCountryDailyRollingNewCases in ${Date.now() - startTime} ms`)
+        return []
+      }
+    },
+    selectedCountryCovidCasesTimeSeries () {
+    const startTime = Date.now()
+    try {
+      const selectedCountryCovidCasesTimeSeries = this.selectedCountryCovidDataCountryInfo
+        ? this.covidDataTimeSeries
+            .filter(c => c['Country/Region'] === this.selectedCountryCovidDataCountryInfo.Country_Region)
+            .reduce((acc, r) => {
+              acc.iso3 = this.selectedCountryCovidDataCountryInfo.iso3
+              acc.population = this.selectedCountryCovidDataCountryInfo.Population
+              for (const propName of Object.getOwnPropertyNames(r)) {
+                switch (propName) {
+                  case 'Province/State':
+                  case 'Country/Region':
+                  case 'Lat':
+                  case 'Long':
+                    break
+                  default:
+                    if (acc[propName]) {
+                      acc[propName] = acc[propName] + Number.parseInt(r[propName])
+                    } else {
+                      acc[propName] = Number.parseInt(r[propName])
+                    }
+                }
+              }
+              return acc
+            }, {})
+        : {}
+      console.log(`computed selectedCountryCovidCasesTimeSeries in ${Date.now() - startTime} ms`)
+      return selectedCountryCovidCasesTimeSeries
+    } catch (e) {
+      console.error(e)
+      return {}
+    }
+    },
+    selectedCountryCovidDataCountryInfo () {
+      const startTime = Date.now()
+      const selectedCountryCovidDataCountryInfo = this.selectedCountry
+        ? this.covidDataCountryCodes.find(cc => this.selectedCountry.iso3166Alpha3Code === cc.iso3)
+        : undefined
+      console.log(`computed selectedCountryCovidDataCountryInfo in ${Date.now() - startTime} ms`)
+      return selectedCountryCovidDataCountryInfo
+    },
+    svgProperties() {
+    const startTime = Date.now()
+    try {
+      // clone the svgSettings from the data
+      const svgProperties = {...this.svgSettings, educationStatusValues: {} }
+
+      // the order of these affect z-order
+      svgProperties.groups = [
+        'graph-labels',
+        'top-graph-y-labels',
+        'top-graph-background',
+        'top-graph-data',
+        'bottom-graph-background',
+        'bottom-graph-covid',
+        'bottom-graph-data-lines',
+        'bottom-graph-data-points',
+        'bottom-graph-data-key',
+        'bottom-graph-yl-axis',
+        'bottom-graph-yr-axis',
+        'top-graph-x-axis',
+        'bottom-graph-x-axis',
+      ]
+
+      // set label positions for the education status values
+      const esvs = this.svgSettings.educationStatusValues.filter(esv => esv.rowIndex !== undefined)
+      const yHeight = (svgProperties.topGraph.y2 - svgProperties.topGraph.y1) / esvs.length
+
+      // set up properties for top graphs
+      svgProperties.topGraph.xAxis = {
+        group: 'top-graph-x-axis',
+        scale: d3.scaleTime()
+          .domain(this.displayedResponseRoundsRange)
+          .rangeRound([svgProperties.topGraph.x1, svgProperties.topGraph.x2])
+          .clamp(true),
+        transform: `translate(0,${svgProperties.topGraph.y2})`
+      }
+      
+      svgProperties.topGraph.yAxis = {
+        scale: d3.scaleBand()
+          .domain(esvs.map((esv, index) => index)
+            // Object.getOwnPropertyNames(svgProperties.educationStatusValues)
+              // .map(esvName => svgProperties.educationStatusValues[esvName])
+              // .filter(esv => esv.rowIndex !== undefined)
+              // .sort((a,b) => b.rowIndex - a.rowIndex)
+          )
+          .range([
+            svgProperties.topGraph.y2,
+            svgProperties.topGraph.y1
+          ])
+          .paddingInner(0.05)
+      }
+      esvs.forEach(v => {
+        svgProperties.educationStatusValues[v.id.toString()] = {
+          ...v,
+          x: svgProperties.topGraph.x1 - 10,
+          y: svgProperties.topGraph.y2 - 20 - (yHeight * v.rowIndex),
+          startY: svgProperties.topGraph.yAxis.scale(v.rowIndex),
+          endY: svgProperties.topGraph.yAxis.scale(v.rowIndex) - svgProperties.topGraph.yAxis.scale.bandwidth()
+        }
+      })
+
+      svgProperties.topGraph.yLAxis = {
+        group: 'top-graph-y-labels',
+        transform: `translate (${svgProperties.topGraph.x1}, 0)`
+      }
+      svgProperties.topGraph.yRAxis = {
+        group: 'top-graph-y-labels',
+        transform: `translate(${svgProperties.topGraph.x2}, 0)`
+      }
+
+      // set up properties for bottom graphs
+      svgProperties.bottomGraph.xAxis = {
+        group: 'bottom-graph-x-axis',
+        scale: svgProperties.topGraph.xAxis.scale,
+        transform: `translate(0,${svgProperties.bottomGraph.y1})`
+      }
+      svgProperties.bottomGraph.yLAxis = {
+        group: 'bottom-graph-yl-axis',
+        scale: d3.scaleLinear()
+          .domain([1,0])
+          .range([svgProperties.bottomGraph.y1, svgProperties.bottomGraph.y2])
+          .clamp(true),
+        tickValues: [0, 0.1, 0.5, 0.9, 1.0],
+        transform: `translate(${svgProperties.bottomGraph.x1}, 0)`,
+        keys: [
+          {
+            field: 'inPersonLearningCoveragePrimaryCode',
+            colors: svgProperties.gradeLevelColors.primary,
+            label: 'Primary',
+            values: svgProperties.inPersonCoverageResponseValues,
+            yOffset: -10,
+            labelX: svgProperties.bottomGraph.x1 - 50,
+            labelY: svgProperties.bottomGraph.y2 + 140
+          },
+          {
+            field: 'inPersonLearningCoverageLowerSecondaryCode',
+            colors: svgProperties.gradeLevelColors.lowerSecondary,
+            label: 'Lower Secondary',
+            values: svgProperties.inPersonCoverageResponseValues,
+            yOffset: 0,
+            labelX: svgProperties.bottomGraph.x1 - 50,
+            labelY: svgProperties.bottomGraph.y2 + 110
+          },
+          {
+            field: 'inPersonLearningCoverageUpperSecondaryCode',
+            colors: svgProperties.gradeLevelColors.upperSecondary,
+            label: 'Upper Secondary',
+            values: svgProperties.inPersonCoverageResponseValues,
+            yOffset: 10,
+            labelX: svgProperties.bottomGraph.x1 - 50,
+            labelY: svgProperties.bottomGraph.y2 + 80
+          }
+        ]
+      }
+      svgProperties.bottomGraph.yRAxis = {
+        group: 'bottom-graph-yr-axis',
+        scale: d3.scaleLinear()
+          .domain(svgProperties.covidDailyCasesDomain)
+          .range([svgProperties.bottomGraph.y1, svgProperties.bottomGraph.y2])
+          .clamp(true),
+        transform: `translate(${svgProperties.bottomGraph.x2}, 0)`
+      }
+
+      svgProperties.mainGraphLabels = [
+        {
+          label: 'Education Status History (Primary, Lower Secondary, and Upper Secondary)',
+          x: svgProperties.width / 2,
+          y: 50,
+          textAnchor: 'middle',
+        },
+        {
+          label: 'Approximate percentage of in-person learning',
+          x: svgProperties.bottomGraph.x1 - 80,
+          y: svgProperties.bottomGraph.y2 + 45,
+          textAnchor: 'start',
+        },
+        {
+          label: 'COVID Daily new cases per capita (7-day moving average)',
+          x: svgProperties.bottomGraph.x2 + 80,
+          y: svgProperties.bottomGraph.y2 + 45,
+          textAnchor: 'end',
+        }
+      ]
+
+
+      console.log(`computed svgProperties in ${Date.now() - startTime} ms`)
+      return svgProperties
+    } catch (err) {
+      console.error(err)
+      console.log(`computed svgProperties in ${Date.now() - startTime} ms`)
+    }
+    }
+  },
+  methods: {
+    getCovidCasesPath (data, graph) {
+      const startTime = Date.now()
+
+      const covidArea = d3.area()
+        .x(d => graph.xAxis.scale(d.date))
+        .y1(d => graph.yRAxis.scale(d.value))
+        .y0(graph.yRAxis.scale(0))
+      const covidCasesPath = covidArea(data)
+
+      console.log(`method covidCasesPath in ${Date.now() - startTime} ms`)
+      return covidCasesPath
+    },
+    getEducationStatusRectangles (data, educationStatusValues, graph) {
+      const startTime = Date.now()
+
+      const rowHeight = graph.yAxis.scale.bandwidth()
+      const educationStatusRectangles = []
+      data.forEach(rr => {
+        if (rr.displayedResponse) {
+          if (rr.displayedResponse.extendedBreakCode === '1') {
+            educationStatusRectangles.push({
+              x: rr.startX,
+              y: graph.yAxis.scale(1),
+              width: rr.endX - rr.startX,
+              height: rowHeight,
+              fill: rr.isReal ? educationStatusValues[0].color : educationStatusValues[0].predictedColor
+            })
+          } else {
+            (rr.displayedResponse.educationStatusCode || []).forEach(esc => {
+              const esv = educationStatusValues[esc]
+              if (esv) {
+                educationStatusRectangles.push({
+                  x: rr.startX,
+                  y: graph.yAxis.scale(esv.rowIndex),
+                  width: rr.endX - rr.startX,
+                  height: rowHeight,
+                  fill: rr.isReal ? esv.color : esv.predictedColor
+                })
+              }
+            })
+          }
+        }
+      })
+
+      console.log(`method educationStatusRectangles in ${Date.now() - startTime} ms`)
+      return educationStatusRectangles
+    },
+    getInPersonPercentageLines (data, graph) {
+      const startTime = Date.now()
+      const inPersonPercentageLines = {
+        points: [],
+        lines:[]
+      }
+      graph.yLAxis.keys.forEach(key => {
+        const linePointInfo = []
+        data.forEach(rr => {
+          if (rr.displayedResponse) {
+            const value = rr.displayedResponse[key.field]
+            if (value) {
+              const responseValue = key.values[value]
+              if (responseValue && responseValue.graphValue) {
+                linePointInfo.push({
+                  startX: rr.startX,
+                  midX: rr.midX,
+                  endX: rr.endX,
+                  isReal: rr.isReal,
+                  roundId: rr.roundNumber,
+                  y: graph.yLAxis.scale(responseValue.graphValue)+ key.yOffset,
+                  stroke: key.colors,
+                  strokeWidth: 2
+                })
+              }              
+            }
+          }
+        })
+        console.debug(linePointInfo)
+        const lines = [], tempPoints = []
+        linePointInfo.forEach((lpi, index) => {
+          const nextLpi = linePointInfo[index + 1]
+          if (nextLpi) {
+            if (lpi.isReal !== nextLpi.isReal) {
+              tempPoints.push(lpi)
+              lines.push(tempPoints.slice())
+              tempPoints.length = 0
+            } else {
+              tempPoints.push(lpi)
+            }
+          } else {
+            tempPoints.push(lpi)
+            lines.push(tempPoints.slice())
+            tempPoints.length = 0
+          }
+        })
+        inPersonPercentageLines.points.push(lines)
+      })
+
+      const lineRenderer = d3.line().curve(d3.curveMonotoneX)
+      inPersonPercentageLines.points.forEach(lineSet => {
+        lineSet.forEach(line => {
+          const path = lineRenderer(line.map(point => [point.midX, point.y]))
+          inPersonPercentageLines.lines.push({
+            path,
+            stroke: line[0].isReal ? line[0].stroke.color : line[0].stroke.predictedColor,
+          })
+        })
+      })
+      console.log(`method inPersonPercentageLines in ${Date.now() - startTime} ms`)
+      return inPersonPercentageLines
+    },
+    drawCovidCases(selection, path) {
+      selection.selectAll('path')
+        .data([this.displayedCountryGraphData.covidCasesPath])
+        .join('path')
+          .attr('d', d => d)
+          .style('fill', '#00000030')
+          .style('stroke','#FFFFFFFF')    
+    },
+    drawEducationStatusRectangles (selection, rectangles) {
+      selection.selectAll('rect')
+        .data(rectangles)
+        .join('rect')
+          .attr('x', d => d.x)
+          .attr('y', d => d.y)
+          .attr('width', d => d.width)
+          .attr('height', d => d.height)
+          .style('fill', d => d.fill)
+    },
+    drawInPersonPercentageLines (selection, lines) {
+      const sw = this.svgSettings.strokeWidth
+      selection.selectAll('path')
+        .data(lines)
+        .join('path')
+          .attr('d', d => d.path)
+          .style('stroke', d => d.stroke)
+          .style('stroke-width', sw)
+          .style('fill', 'none')
+    },
+    drawGraphBackgrounds(svg, graphs) {
+      graphs.forEach(graph => {
+        svg.select(`#${graph.background.group}`)
+          .selectAll('rect')
+          .data([undefined])
+          .join('rect')
+            .attr('x', graph.x1)
+            .attr('y', graph.y1)
+            .attr('width', Math.abs(graph.x2 - graph.x1))
+            .attr('height', Math.abs(graph.y2 - graph.y1))
+            .style('fill', graph.background.fill || '#F8F8F8')
+      })
+    },
+    drawGraphBottomBackground (svg, properties) {
+      svg.select('#bottom-graph-background')
+        .selectAll('rect')
+        .data([0])
+        .join('rect')
+          .attr('x', properties.bottomGraph.x1)
+          .attr('y', properties.bottomGraph.y1)
+          .attr('width', Math.abs(properties.bottomGraph.x2 - properties.bottomGraph.x1))
+          .attr('height', Math.abs(properties.bottomGraph.y2 - properties.bottomGraph.y1))
+          .style('fill', '#F8F8F8')
+    },
+    drawGraphBottomYLAxis(svg, yLAxis) {
+      svg.select('#bottom-graph-yl-axis')
+        .attr('transform', yLAxis.transform)
+        .style('font-size', '25px')
+        .call(d3.axisLeft(yLAxis.scale).tickValues(yLAxis.tickValues).tickFormat((d, i) => Math.round(d * 100) + '%'))
+    },
+    drawGraphBottomYLKey(svg, yLAxis) {
+      svg.select('#bottom-graph-data-key')
+        .selectAll('text')
+          .data(yLAxis.keys)
+          .join('text')
+            .attr('x', d => d.labelX)
+            .attr('y', d => d.labelY)
+            .text(d => d.label)
+
+      svg.select('#bottom-graph-data-key')
+        .selectAll('rect')
+          .data(yLAxis.keys)
+          .join('rect')
+            .attr('x', d => d.labelX - 30)
+            .attr('y', d => d.labelY - 18)
+            .attr('width', 20)
+            .attr('height', 20)
+            .style('fill', d => d.colors.color)
+    },
+    drawGraphBottomYRAxis(svg, properties) {
+      svg.select('#bottom-graph-yr-axis')
+      .attr('transform', properties.bottomGraph.yRAxis.transform)
+      .style('font-size', '25px')
+      .call(d3.axisRight(properties.bottomGraph.yRAxis.scale).tickFormat(d3.format('~%')).ticks(4))
+    },
+    drawGraphTopBackground (svg, properties) {
+      svg.select('#top-graph-background')
+        .selectAll('rect')
+        .data([0])
+        .join('rect')
+          .attr('x', properties.topGraph.x1)
+          .attr('y', properties.topGraph.y1)
+          .attr('width', Math.abs(properties.topGraph.x2 - properties.topGraph.x1))
+          .attr('height', Math.abs(properties.topGraph.y2 - properties.topGraph.y1))
+          .style('fill', '#F8F8F8')
+    },
+
+    drawGraphXAxis(svg, properties) {
+      // add center X axis marks (dates)
+      // top (includes tick marks only)
+
+
+      // const ab = d3.axisBottom(properties.topGraph.xAxis.scale)
+      //   .ticks(5)
+      //   .offset(0)
+      //   .tickFormat('')
+
+      // ab(
+      //   svg.select('#top-graph-x-axis').selectAll('g')
+      //     .attr("transform", properties.topGraph.xAxis.transform)    
+      //     .style("font-size", "25px")
+      // )
+        
+      svg.select('#top-graph-x-axis')
+        .attr("transform", properties.topGraph.xAxis.transform)    
+        .style("font-size", "25px")
+        .call(
+          d3.axisBottom(properties.topGraph.xAxis.scale)
+          .ticks(5)
+          .offset(0)
+          .tickFormat('')
+        )
+      // bottom (includes tick marks and labels)
+      svg
+        .select('#bottom-graph-x-axis')
+        .attr("transform", properties.bottomGraph.xAxis.transform)    
+        .style("font-size", "25px")
+        .call(
+          d3.axisTop(properties.bottomGraph.xAxis.scale)
+          .ticks(5)
+          .offset(0)
+          .tickPadding(15)
+          .tickFormat(d3.timeFormat("%e %b %y"))
+        )
+    },
+    drawGraphMainLabels(svg, labels) {
+      svg.select('#graph-labels')
+        .style('font-size', '30px')
+        .style('font-weight', '600')
+        .selectAll('text')
+          .data(labels)
+          .join('text')
+            .attr('x', d => d.x)
+            .attr('y', d => d.y)
+            .text(d => d.label)
+            .style('text-anchor', d => d.textAnchor)
+    },
+    drawGraphTopYLabels(svg, labels) {
+      svg.select('#top-graph-y-labels')
+        .style('text-anchor', 'end')
+        .selectAll('text')
+          .data(Object.values(labels).filter(esv => esv.rowIndex !== undefined))
+          .join('text')
+            .attr('x', d => d.x)
+            .attr('y', d => d.y)
+            .text(d => d.label)
+    },
+
+    // pre-process the data to improve page rendering performance
+    processCountries(countries) {
+      return countries
+    },
+    processRegions(countries) {
+      return Object.values(countries
+        .reduce((regions, c) => {
+          regions[c.wbRegionCode]
+            ? regions[c.wbRegionCode].countries.push(c)
+            : regions[c.wbRegionCode] = {
+              id: c.wbRegionCode,
+              label: c.wbRegion,
+              countries: [c]
+            } 
+          return regions
+        }, {}))
+        .sort((a, b) => a.label.localeCompare(b.label))
+    },
+    initializeGraph() {
+      const svg = d3.select('#chart')
+        .attr('width', '100%')
+        .attr('height', '100%')
+        .attr('viewBox', `0 0 ${this.svgProperties.width} ${this.svgProperties.height}`)
+        .attr('shape-rendering', 'crispEdges')
+        // .style("border", "1px solid black")
+        .style('font-family', 'sans-serif')
+        .style('font-size', '25px')
+
+      console.log(svg)
+
+      // make sure all the groups are in place
+      svg.selectAll('g')
+        .data(this.svgProperties.groups)
+        .join('g')
+          .attr('id', d => d)
+
+      // make sure all the axes are in place
+      this.drawGraphBackgrounds(svg, [this.svgProperties.topGraph, this.svgProperties.bottomGraph])
+      this.drawGraphMainLabels(svg, this.svgProperties.mainGraphLabels)
+      this.drawGraphTopYLabels(svg, this.svgProperties.educationStatusValues)
+      this.drawGraphBottomYLKey(svg, this.svgProperties.bottomGraph.yLAxis)
+      this.drawGraphBottomYLAxis(svg, this.svgProperties.bottomGraph.yLAxis)
+      this.drawGraphBottomYRAxis(svg, this.svgProperties)
+      this.drawGraphXAxis(svg, this.svgProperties)
+    },
+    jumpToCountry (index) {
+      this.selectedCountry = this.countries[index]
+    },
+    updateGraph() {
+      const startTime = Date.now()
+      const svg = d3.select('#chart')
+      const graphData = this.displayedCountryGraphData
+      const svgProperties = this.svgProperties
+
+      this.drawCovidCases(svg.select('#bottom-graph-covid'), graphData.covidCasesPath)
+      this.drawEducationStatusRectangles(svg.select('#top-graph-data'), graphData.educationStatusRectangles)
+      this.drawInPersonPercentageLines(svg.select('#bottom-graph-data-lines'), graphData.inPersonPercentageLines.lines)
+
+      console.log('graph updated in', Date.now() - startTime, ' ms')
+    }
+  }
+});
+</script>
