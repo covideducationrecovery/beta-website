@@ -3,6 +3,7 @@ layout: default
 order: 3
 title: "In-person education status & COVID-19 case rates"
 description: "Select a country to view detailed statistics about it, including education and population metrics, coronavirus cases, deaths, and vaccinations, and more."
+type: graph
 image: /img/visualizations/in-person-status.jpg
 permalink: /graphs/in-person-status/
 libraries:
@@ -384,6 +385,15 @@ const vm = new Vue({
       console.log(`computed displayedResponseRounds in ${Date.now() - startTime} ms`)
       return displayedResponseRounds
     },
+    displayedResponseRoundsRange() {
+      const startTime = Date.now()
+      const displayedResponseRoundsRange = [
+        d3.min(this.displayedResponseRounds, d => new Date(d.startDate)),
+        d3.max(this.displayedResponseRounds, d => new Date(d.endDate))
+      ]
+      console.log(`computed displayedResponseRoundsRange in ${Date.now() - startTime} ms`)
+      return displayedResponseRoundsRange
+    },
     displayedResponseRoundsWithResponses() {
       const startTime = Date.now()
       const displayedResponseRoundsWithResponses = this.displayedResponseRounds
@@ -427,15 +437,6 @@ const vm = new Vue({
       console.log(displayedResponseRoundsWithResponses)
       console.log(`computed displayedResponseRoundsWithResponses in ${Date.now() - startTime} ms`)
       return displayedResponseRoundsWithResponses
-    },
-    displayedResponseRoundsRange() {
-      const startTime = Date.now()
-      const displayedResponseRoundsRange = [
-        d3.min(this.displayedResponseRounds, d => new Date(d.startDate)),
-        d3.max(this.displayedResponseRounds, d => new Date(d.endDate))
-      ]
-      console.log(`computed displayedResponseRoundsRange in ${Date.now() - startTime} ms`)
-      return displayedResponseRoundsRange
     },
     mostRecentResponseDate() {
       const startTime = Date.now()
@@ -619,7 +620,7 @@ const vm = new Vue({
             colors: svgProperties.gradeLevelColors.primary,
             label: 'Primary',
             values: svgProperties.inPersonCoverageResponseValues,
-            yOffset: -10,
+            yOffset: 10,
             labelX: svgProperties.bottomGraph.x1 - 50,
             labelY: svgProperties.bottomGraph.y2 + 140
           },
@@ -637,7 +638,7 @@ const vm = new Vue({
             colors: svgProperties.gradeLevelColors.upperSecondary,
             label: 'Upper Secondary',
             values: svgProperties.inPersonCoverageResponseValues,
-            yOffset: 10,
+            yOffset: -10,
             labelX: svgProperties.bottomGraph.x1 - 50,
             labelY: svgProperties.bottomGraph.y2 + 80
           }
