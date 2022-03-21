@@ -1,0 +1,169 @@
+---
+layout: default
+title: Page title here
+description: Page description here
+# uncomment and edit the entry below to add a specific page image for social media sharing - if not included a default image will be used
+# image: /img/image.jpg
+libraries:
+  - vuejs
+  - bootstrapvue
+  - fontawesome
+  - tippy
+  - d3js
+style: |
+  svg {fill: #DDDDDD;}
+---
+<div class="spacer-5"></div>
+
+<div id="app" class="container-fluid" v-cloak>
+  <template v-if="errorMessage">
+    <div class="w-100 d-flex flex-column justify-content-center align-items-start">
+        <h4>We encountered an error while loading this page.</h4>
+        <span class="text-muted">${ errorMessage }</span>
+    </div>
+  </template>
+  <template v-else>
+    <div class="container mb-5">
+      <!-- edit page.title and page.description in the YAML page processing section at the top of this file -->
+      <h1>{{ page.title }}</h1>
+      <div class="my-3 d-flex flex-column">
+        <span>
+          {{ page.description }}
+          (<a href="#notes">see notes below</a>)      
+        </span>
+      </div>
+    
+      <div class="row text-center my-3">
+
+        <!-- page content and rendering goes here -->
+        <!-- to display popover text, set a data-tippy-content="content" attribute on the HTML element-->
+
+      </div>
+      <div class="spacer-10"></div>
+
+      <div class="row">
+        <h2 id="notes" class="text-muted">Notes about this data</h2>
+        <p>
+          For additional definitions, please see our <a href="/methodology/">Methodology</a>.
+        </p>
+      </div>
+  
+      <div class="spacer-5"></div>
+  
+      <div class="row">
+        <h5>Citation</h5>
+        <p>
+          Johns Hopkins University, World Bank & UNICEF (2021). COVID-19 Global Education Recovery Tracker. Last updated as of <span id="mostRecentResponseDate"></span>. Accessed on <span id="accessedOn"></span>. Baltimore, Washington DC, New York: JHU, World Bank, UNICEF. 
+        </p>
+      </div>
+    
+    <div class="spacer-10"></div>
+  </template>
+</div>
+       
+<script>
+  Vue.use(BootstrapVue)
+  const $vm = new Vue({
+    el: '#app',
+    data () {
+      return {
+        countries: [],
+        countries2: {},
+        // dataSources is an array of data files to load. each file is expected to contain JSON data
+        // each array entry should have either a processingFunction or a dataKey, or both
+        // {
+        //   url: [url of data file],
+        //   processingFunction: [optional - the string name of a function which is fed the response data; if you return a result it will be put into dataKey (if provided)],
+        //   dataKey: [optional - the string name of a vue data object into which the response data will be loaded],
+        //   isCritical:  [true/false, if an error occurs during loading/processing, page loading will be stopped and an error shown]
+        // }
+        dataSources: [
+          { url: '/data/global.v2.json', processingFunction: 'processGlobal', isCritical: true },
+        ],
+        errorMessage: undefined,
+        responseRounds: []
+      }
+    },
+    delimiters: ['${','}'],  // need to use these because jekyll competes for {{ and }}
+    created() {
+      this.loadData.call(this)
+    },
+    updated () {
+      this.bindTippy()
+    },
+    computed: {},
+    methods: {
+      bindTippy () {
+        // bind tippy to the elements that need it, but wait until vue rendering is complete
+        this.$nextTick(() => {
+          tippy('[data-tippy-content]', {
+            placement: 'top',
+            onShow(instance) {
+              instance.setContent(instance.reference.getAttribute('data-tippy-content'));
+            }
+          });
+        })
+      },
+      async loadData () {
+        const requests = this.dataSources.map(dataFile => {
+          return fetch(dataFile.url)
+            .then((response) => {
+              if (response.ok) {
+                return response.json()
+              } else {
+                throw new Error(`HTTP Error ${response.status}: ${response.statusText}`)
+              }
+            })
+            // .catch(err => console.error(err))
+        })
+        const downloadedData = await Promise.allSettled(requests)
+          .then(responses => {
+            console.log(responses)
+            responses.every((response, index) => {
+              const dataFileEntry = this.dataSources[index]
+              if (response.status === 'fulfilled') {
+                try {
+                  const responseData = dataFileEntry.processingFunction ? this[dataFileEntry.processingFunction].call(this, response.value) : response.value
+                  if (dataFileEntry.dataKey) {
+                    if (Array.isArray(responseData)) {
+                      this[dataFileEntry.dataKey].push(...responseData)
+                    } else {
+                      this[dataFileEntry.dataKey] = responseData
+                    }
+                  }
+                  return true
+                } catch (err) {
+                  console.error('Caught error while processing data: ', err)
+                  if (dataFileEntry.isCritical) {
+                    this.errorMessage = err.message
+                    return false
+                  }
+                  return true
+                }
+              } else {
+                if (dataFileEntry.isCritical) {
+                  this.errorMessage = `Error loading ${dataFileEntry.url}: ${response.reason}`
+                  return false
+                } else {
+                  console.warn(`Non-critical error loading ${dataFileEntry.url}: ${response.reason}`)
+                  return true
+                }
+              }
+            })
+          })
+      },
+      // pre-process the data to improve page rendering performance
+      processGlobal (responseData) {
+        this.responseRounds.push(...responseData.responseRounds)
+        this.countries.push(...responseData.countries)
+        for (const country of this.countries) {
+  
+          // responsesPublic are sorted chronologically by default, so we set up 
+          // $responsesReversed to improve selection performance for more recent responses
+          country.$responsesReversed = country.responsesPublic?.slice().reverse()
+        }
+      }
+    }
+  })
+  </script>
+  
