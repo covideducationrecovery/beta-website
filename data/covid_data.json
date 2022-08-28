@@ -1,5 +1,5 @@
 {
-    "fileDate": "2022-08-27T12:52:48.214536",
+    "fileDate": "2022-08-28T02:51:48.951793",
     "places": [
         {
             "iso_code": "AFG",
@@ -1388,8 +1388,8 @@
         },
         {
             "iso_code": "PER",
-            "total_cases": 4091366.0,
-            "total_deaths": 215514.0,
+            "total_cases": 4094652.0,
+            "total_deaths": 215556.0,
             "total_vaccinations": 82366473.0,
             "people_vaccinated": 29767490.0,
             "people_fully_vaccinated": 28043800.0,
