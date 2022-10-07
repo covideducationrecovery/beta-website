@@ -1,5 +1,5 @@
 {
-    "fileDate": "2022-10-06T13:07:34.312689",
+    "fileDate": "2022-10-07T02:46:48.119455",
     "places": [
         {
             "iso_code": "AFG",
@@ -587,9 +587,9 @@
             "iso_code": "OWID_EUN",
             "total_cases": 168880522.0,
             "total_deaths": 1149608.0,
-            "total_vaccinations": 904590395.0,
-            "people_vaccinated": 337804450.0,
-            "people_fully_vaccinated": 327957471.0
+            "total_vaccinations": 904622464.0,
+            "people_vaccinated": 337804362.0,
+            "people_fully_vaccinated": 327957406.0
         },
         {
             "iso_code": "FRO",
@@ -836,9 +836,9 @@
             "iso_code": "IRQ",
             "total_cases": 2460572.0,
             "total_deaths": 25356.0,
-            "total_vaccinations": 19264920.0,
-            "people_vaccinated": 11163251.0,
-            "people_fully_vaccinated": 7852141.0,
+            "total_vaccinations": null,
+            "people_vaccinated": null,
+            "people_fully_vaccinated": null,
             "iso2": "IQ"
         },
         {
@@ -890,9 +890,9 @@
             "iso_code": "JPN",
             "total_cases": 21455079.0,
             "total_deaths": 45286.0,
-            "total_vaccinations": 324809968.0,
-            "people_vaccinated": 104225414.0,
-            "people_fully_vaccinated": 102860803.0,
+            "total_vaccinations": 324991944.0,
+            "people_vaccinated": 104226959.0,
+            "people_fully_vaccinated": 102863617.0,
             "iso2": "JP"
         },
         {
@@ -1417,9 +1417,9 @@
             "iso_code": "POL",
             "total_cases": 6305467.0,
             "total_deaths": 117660.0,
-            "total_vaccinations": 56860178.0,
-            "people_vaccinated": 22789468.0,
-            "people_fully_vaccinated": 22562802.0,
+            "total_vaccinations": 56892247.0,
+            "people_vaccinated": 22789380.0,
+            "people_fully_vaccinated": 22562737.0,
             "iso2": "PL"
         },
         {
@@ -1713,9 +1713,9 @@
             "iso_code": "SYR",
             "total_cases": 57319.0,
             "total_deaths": 3163.0,
-            "total_vaccinations": 4709714.0,
-            "people_vaccinated": 3015708.0,
-            "people_fully_vaccinated": 2088765.0,
+            "total_vaccinations": null,
+            "people_vaccinated": null,
+            "people_fully_vaccinated": null,
             "iso2": "SY"
         },
         {
@@ -1864,8 +1864,8 @@
         },
         {
             "iso_code": "USA",
-            "total_cases": 96552187.0,
-            "total_deaths": 1061490.0,
+            "total_cases": 96565276.0,
+            "total_deaths": 1061584.0,
             "total_vaccinations": 619765972.0,
             "people_vaccinated": 264112767.0,
             "people_fully_vaccinated": 225284115.0,
