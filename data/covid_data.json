@@ -1,5 +1,5 @@
 {
-    "fileDate": "2023-03-20T12:46:58.054891",
+    "fileDate": "2023-03-21T01:40:56.533024",
     "places": [
         {
             "iso_code": "AFG",
@@ -1651,7 +1651,8 @@
             "total_deaths": 1971.0,
             "total_vaccinations": null,
             "people_vaccinated": null,
-            "people_fully_vaccinated": null
+            "people_fully_vaccinated": null,
+            "iso2": "SN"
         },
         {
             "iso_code": "SRB",
